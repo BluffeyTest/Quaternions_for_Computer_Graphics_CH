@@ -1,0 +1,459 @@
+\chap{数集与代数}
+\section{介绍}
+在本章中，我们将回顾数集的一些基本思想，以及如何用算术和代数方法处理它们。我们简要地看一下表达式和方程，以及用于构造和求值的规则。这些反过来又揭示了用所谓的复数扩展日常数字的需要。
+
+本章的第二部分用于定义组、环和域。
+
+\section{数集}
+\subsection{自然数}
+自然数是整数1,2,3,4等，根据定义(DIN 5473)，自然数的集合和零$\{0,1,2,3,4,\ldots\}$由符号$\mathbb{N}$表示，我们使用:
+$$
+\mathbb{N}=\{0,1,2,3,4, \ldots\} .
+$$
+该语句
+$$
+k \in \mathbb{N}
+$$
+意味着$k$属于集合$\mathbb{N}$，其中$\in$表示属于，或者换句话说，$k$是一个自然数。我们在本书中使用这种符号，以确保对所使用的数值量的类型没有混淆。
+
+$ \mathbb {N} ^{*}$用于表示集合$\{1,2,3,4,\ldots \} $。
+
+\subsection{实数}
+科学计算使用大量的数学对象，如标量、向量和矩阵。标量只有一个数值，而矢量有两个或两个以上的数字来编码矢量的大小和方向。矩阵是一个矩形数组的数字，可能有各种各样的属性。
+
+十进制数构成由$\mathbb{R}$标识的实数集。这样的数字是有符号的，可以组织成一条线，延伸到$-\infty$和$+\infty$，其中包括0。无限的概念很奇怪，德国数学家康托(Georg Cantor, 1845-1918)研究过这个概念。康托尔还发明了集合论，证明了实数比自然数多。幸运的是，我们不需要在本书中使用这些概念。
+
+\subsection{整数}
+整数集$\mathbb{Z}$包含自然数及其负数:
+$$
+\mathbb{Z}=\{\ldots,-3,-2,-1,0,1,2,3, \ldots\} .
+$$
+$\mathbb{Z}$代表zahlen——德语“数字”的意思。
+
+
+\subsection{有理数}
+有理数的集合是$\mathbb{Q}$，包含如下形式的数:
+$$
+\frac{a}{b}
+$$
+其中 $a, b \in \mathbb{Z}$ 且 $b \neq 0$.
+
+\section{算术运算}
+我们使用加法、减法、乘法和除法运算来操作数字，其结果是闭的还是不闭的，或者是未定义的，这取决于底层集合。例如，当我们将两个自然数相加时，结果总是另一个自然数，因此，运算是封闭的:
+$$
+3+4=7 .
+$$
+然而，当我们减去两个自然数时，结果不一定是一个自然数。例如，尽管
+$$
+6-2=4
+$$
+是一个封闭的操作，
+$$
+2-6=-4
+$$
+不是封闭的，因为$-4$不是自然数集合中的一员。两个自然数的乘积通常是一个封闭的运算，但是除法会引起一些问题。首先，将一个偶数除以2是一个封闭运算:
+$$
+16 / 2=8 .
+$$
+然而，将一个奇数自然数除以一个偶数自然数得到一个十进制数:
+$$
+7 / 2=3.5
+$$
+并且不封闭，因为$3.5$不属于自然数集合。这是用集合语言写的
+$$
+3.5 \notin \mathbb{N}
+$$
+其中 $\notin$ 表示不属于.
+
+将任何数字乘以零都得到零——这是一个封闭运算;然而，任何数字除以零都是没有定义的，必须排除。
+
+实数没有任何与自然数相关的问题，并且在加法、乘法和除法上有闭包:
+$$
+\begin{aligned}
+a+b & =c & & a, b, c \in \mathbb{R} \\
+a b & =c & & a, b, c \in \mathbb{R} \\
+a / b & =c & & a, b, c \in \mathbb{R} \text { and } b \neq 0 .
+\end{aligned}
+$$
+注意，$a b$是$a \times b$的简写。
+
+
+\section{公理}
+当我们构造代数表达式时，我们使用称为公理的特定定律。对于加法和乘法，我们知道数字的分组对最终结果没有影响:例如$2+(4+6)=(2+4)+6$和$2 \times(3 \times 4)=$ $(2 \times 3) \times 4$。这是结合律公理，表示为:
+$$
+\begin{aligned}
+a+(b+c) & =(a+b)+c \\
+a(b c) & =(a b) c .
+\end{aligned}
+$$
+我们也知道，当加或乘时，顺序对最终结果没有影响:例如$2+6=6+2$和$2 \times6=6 \times2$。这是交换公理，表示为:
+$$
+\begin{aligned}
+a+b & =b+a \\
+a b & =b a .
+\end{aligned}
+$$
+代数表达式包含各种各样的乘积，涉及一个实数和一串实数，它们服从分配律:
+$$
+\begin{aligned}
+a(b+c) & =a b+a c \\
+(a+b)(c+d) & =a c+a d+b c+b d .
+\end{aligned}
+$$
+我们回顾这些公理的原因是，它们不应该被视为刻在数学石头上的，而适用于所有被发明的东西。因为当我们讲到四元数时，我们会发现它们不遵守交换公理，这并不奇怪。如果你用过矩阵，你就会知道矩阵乘法也是不可交换的，但是是结合的。
+\section{表达式}
+使用上述公理，我们能够构造各种表达式，例如:
+$$
+\begin{aligned}
+& a(2+c)-d / e+a-10 \\
+& g /(a c-b d)+h /(d e-f g) .
+\end{aligned}
+$$
+我们还使用符号来提高一个量的幂，如$n^{2}$。这个符号引入了另一组观察结果:
+$$
+\begin{aligned}
+a^{n} a^{m} & =a^{n+m} \\
+\frac{a^{n}}{a^{m}} & =a^{n-m} \\
+\left(a^{n}\right)^{m} & =a^{n m} \\
+\frac{a^{n}}{a^{n}} & =a^{0}=1 \\
+\frac{1}{a^{n}} & =a^{-1} \\
+a^{1 / n} & =\sqrt[n]{a} .
+\end{aligned}
+$$
+接下来，我们必须包括各种各样的函数，比如平方根、正弦和余弦，这些函数看起来相当简单。但我们必须警惕他们。例如，按惯例，$\sqrt{16}=4$。但是，$x^{2}=16$有两个解:$\pm \sqrt{16}=\pm 4$。然而，$\sqrt{-16}$不存在自然数或实数解。因此，如果$a<0$，表达式$\sqrt{a}$就没有实根。
+
+类似地，在处理正弦和余弦等三角函数时，我们必须记住，这些函数的值范围在$-1$和$+1$之间，包括0，这意味着如果将它们用作分母，结果可能是未定义的。例如，如果$\sin \alpha=0$，则此表达式未定义
+$$
+\frac{a}{\sin \alpha} \text {. }
+$$
+
+\section{等式}
+接下来，我们来到方程，我们将表达式的值赋给变量。在大多数情况下，任务是直接的，并导致一个真实的结果，如
+
+
+$$
+x^{2}-16=0
+$$
+
+where $x=\pm 4$. But what is interesting is that just by reversing the sign to
+
+$$
+x^{2}+16=0
+$$
+
+we create an equation for which there is no real solution. However, there is a complex solution, which is the subject of Chap. 3.
+
+\section{Ordered Pairs}
+An ordered pair or couple $(a, b)$ is an object having two entries, coordinates or projections, where the first or left entry, is distinguishable from the second or right entry. For example, $(a, b)$ is distinguishable from $(b, a)$ unless $a=b$. Perhaps the best example of an ordered pair is $(x, y)$ that represents a point on the plane, where the order of the entries is always the $x$-coordinate followed by the $y$-coordinate.
+
+Ordered pairs and ordered triples are widely used in computer graphics to represent points on the plane $(x, y)$, points in space $(x, y, z)$, and colour values such as $(r, g, b)$ and $(h, s, v)$. In these examples, the fields are all real values. There is nothing to stop us from developing an algebra using ordered pairs that behaves like another algebra, and we will do this for complex numbers in Chap. 3 and quaternions in Chap. 5. For the moment, let's explore some ways ordered pairs can be manipulated.
+
+Say we choose to describe a generic ordered pair as
+
+$$
+a=\left(a_{1}, a_{2}\right) \quad a_{1}, a_{2} \in \mathbb{R} .
+$$
+
+We will define the addition of two such objects as
+
+$$
+\begin{aligned}
+a & =\left(a_{1}, a_{2}\right) \\
+b & =\left(b_{1}, b_{2}\right) \\
+a+b & =\left(a_{1}+b_{1}, a_{2}+b_{2}\right) .
+\end{aligned}
+$$
+
+For example:
+
+$$
+\begin{aligned}
+a & =(2,3) \\
+b & =(4,5) \\
+a+b & =(6,8) .
+\end{aligned}
+$$
+
+We will define the product as
+
+$$
+a b=\left(a_{1} b_{1}, a_{2} b_{2}\right)
+$$
+
+which, using the above values, results in
+
+$$
+a b=(8,15) .
+$$
+
+Remember, we are in charge, and we define the rules.
+
+Another rule will control how an ordered pair responds to scalar multiplication. For example:
+
+$$
+\begin{aligned}
+\lambda\left(a_{1}, a_{2}\right) & =\left(\lambda a_{1}, \lambda a_{2}\right) \quad \lambda \in \mathbb{R} \\
+3(2,3) & =(6,9) .
+\end{aligned}
+$$
+
+With the above rules, we are in a position to write
+
+$$
+\begin{aligned}
+\left(a_{1}, a_{2}\right) & =\left(a_{1}, 0\right)+\left(0, a_{2}\right) \\
+& =a_{1}(1,0)+a_{2}(0,1)
+\end{aligned}
+$$
+
+and if we square these unit ordered pairs $(1,0)$ and $(0,1)$ using the product rule, we obtain
+
+$$
+\begin{aligned}
+& (1,0)^{2}=(1,0) \\
+& (0,1)^{2}=(0,1)
+\end{aligned}
+$$
+
+which suggests that they behave like real numbers, and is not unexpected.
+
+This does not appear to be very useful, but wait and see what happens in the context of complex numbers and quaternions.
+
+\section{Groups, Rings and Fields}
+Mathematicians employ a bewildering range of names to identify their inventions, which seemingly, appear on a daily basis. Even the name 'quaternion' is not original, and appears throughout history often in the context of "a quaternion of soldiers":
+
+"The Romans detached a quaternion or four men for a night guard ..." [19].
+
+Without becoming too formal, let's explore some more mathematical structures that are relevant to the ideas contained in this book.
+
+\subsubsection{Groups}
+We have already covered the idea of a set, and what it means to belong to a set. We have also discovered that when we apply certain arithmetic operations to members of a set we can secure closure, non-closure, or the result is undefined.
+
+When combining sets with arithmetic operations, it is convenient to create another entity: a group, which is a set, together with the axioms describing how elements of the set are combined. The set might contain numbers, matrices, vectors, quaternions, polynomials, etc., and are represented below as $a, b$ and $c$. The axioms employ the ' $o$ ' symbol to represent any binary operation such as $+,-, \times$. And a group is formed from a set and a binary operation. For example, we may wish to form a group of integers under addition: $(\mathbb{Z},+)$, or we may wish to examine whether quaternions form a group under the operation of multiplication: $(\mathbb{H}, \times)$
+
+To be a group, all the following axioms must hold for the set $S$. In particular, there must be a special identity element $e \in S$, and for each $a \in S$ there must exist an inverse element $a^{-1} \in S$, so that the following axioms are satisfied:
+
+Closure:
+
+Associativity:
+
+Identity element:
+
+Inverse element: $a \circ b \in S$
+
+$(a \circ b) \circ c=a \circ(b \circ c)$
+
+$a \circ e=e \circ a=a$
+
+$a \circ a^{-1}=a^{-1} \circ a=e$ $a, b \in S$
+
+$a, b, c \in S$
+
+$a, e \in S$.
+
+$a, a^{-1}, e \in S$
+
+We describe a group as $(S, \circ)$, where $S$ is the set and ' 0 ' the operation. For instance, $(\mathbb{Z},+)$ is the group of integers under the operation of addition, and $(\mathbb{R}, \times)$ is the group of reals under the operation of multiplication.
+
+Let's bring these axioms to life with three examples.
+
+$(\mathbb{Z},+)$ : The integers $\mathbb{Z}$ form a group under the operation of addition:
+
+$$
+\begin{aligned}
+\text { Closure: } & -23+24=1 \\
+\text { Associativity: } & (2+3)+4=2+(3+4)=9 \\
+\text { Identity: } & 2+0=0+2=2 \\
+\text { Inverse: } & 2+(-2)=(-2)+2=0 .
+\end{aligned}
+$$
+
+$(\mathbb{Z}, \times)$ : The integers $\mathbb{Z}$ do not form a group under multiplication:
+
+$$
+\begin{aligned}
+\text { Closure: } & -2 \times 4=-8 \\
+\text { Associativity: } & (2 \times 3) \times 4=2 \times(3 \times 4)=24 \\
+\text { Identity: } & 2 \times 1=1 \times 2=2 \\
+\text { Inverse: } & 2^{-1}=0.5 \quad(0.5 \notin \mathbb{Z}) .
+\end{aligned}
+$$
+
+Also, the integer 0 has no inverse.
+
+$(\mathbb{Q}, \times)$ : The group of non-zero rational numbers form a group under multiplication:
+
+$$
+\begin{aligned}
+\text { Closure: } & \frac{2}{5} \times \frac{2}{3}=\frac{4}{15} \\
+\text { Associativity: } & \left(\frac{2}{5} \times \frac{2}{3}\right) \times \frac{1}{2}=\frac{2}{5} \times\left(\frac{2}{3} \times \frac{1}{2}\right)=\frac{2}{15} \\
+\text { Identity: } & \frac{2}{3} \times \frac{1}{1}=\frac{1}{1} \times \frac{2}{3}=\frac{2}{3} \\
+\text { Inverse: } & \frac{2}{3} \times \frac{3}{2}=\frac{1}{1} \quad\left(\text { where } \frac{3}{2}=\left(\frac{2}{3}\right)^{-1}\right)
+\end{aligned}
+$$
+
+\subsubsection{Abelian Group}
+Lastly, an abelian group, named after the Norwegian mathematician, Neils Henrik Abel (1802-1829), is a group where the order of elements does not influence the result, i.e. the group is commutative. Thus there are five axioms: closure, associativity, identity element, inverse element, and commutativity:
+Commutativity:
+$a \circ b=b \circ a$
+$a, b \in S$.
+
+For example, the set of integers forms an abelian group under ordinary addition $(\mathbb{Z},+)$. However, because 3D rotations do not generally commute, the set of all rotations in 3D space forms a non-commutative group.
+
+\subsubsection{Rings}
+A ring is an extended group, where we have a set of objects which can be added and multiplied together, subject to some precise axioms. There are rings of real numbers, complex numbers, integers, matrices, equations, polynomials, etc. A ring is formally defined as a system where $(S,+)$ and $(S, \times)$ are abelian groups and the distributive axioms:
+
+$$
+\begin{array}{lll}
+\text { Additive associativity: } & a+(b+c)=(a+b)+c & a, b, c \in S . \\
+\text { Multiplicative associativity: } & a \times(b \times c)=(a \times b) \times c & a, b, c \in S . \\
+\text { Distributivity: } & a \times(b+c)=(a \times b)+(a \times c) & \text { and } \\
+& (a+b) \times c=(a \times c)+(b \times c) & a, b, c \in S .
+\end{array}
+$$
+
+For example, we already know that the integers $\mathbb{Z}$ form a group under the operation of addition, but they also form a ring, as the set satisfies the above axioms:
+
+$$
+\begin{aligned}
+& 2 \times(3 \times 4)=(2 \times 3) \times 4 \\
+& 2 \times(3+4)=(2 \times 3)+(2 \times 4) \\
+& (2+3) \times 4=(2 \times 4)+(3 \times 4) .
+\end{aligned}
+$$
+
+\subsubsection{Fields}
+Although rings support addition and multiplication, they do not necessarily support division. However, as division is such an important arithmetic operation, the field was created to support it, with one proviso: division by zero is not permitted. Thus we have fields of real numbers $\mathbb{R}$, rational numbers $\mathbb{Q}$, and as we shall see, the complex numbers $\mathbb{C}$. However, we will discover that quaternions do not form a field, but they do form what is called a division ring.
+
+It follows that every field is a ring, but not every ring is a field.
+
+\subsubsection{Division Ring}
+A division ring or division algebra, is a ring in which every element has an inverse element, with the proviso that the element is non-zero. The algebra also supports non-commutative multiplication. Here is a formal description of the division ring $(S,+, \times)$ :
+
+Additive associativity: $\quad(a+b)+c=a+(b+c)$
+
+$a, b, c \in S$
+
+Additive commutativity:
+
+$a+b=b+a$
+
+$a, b \in S$.
+
+Additive identity 0 :
+
+$0+a=a+0$
+
+$a, 0 \in S$.
+
+Additive inverse:
+
+$a+(-a)=(-a)+a=0$
+
+$a,-a \in S$.
+
+Multiplicative associativity: $(a \times b) \times c=a \times(b \times c)$
+
+$a, b, c \in S$.
+
+Multiplicative identity 1:
+
+$1 \times a=a \times 1$
+
+$a, 1 \in S$.
+
+Multiplicative inverse:
+
+$a \times a^{-1}=a^{-1} \times a=1$
+
+$a, a^{-1} \in S, a \neq 0$.
+
+Distributivity:
+
+$a \times(b+c)=(a \times b)+(a \times c)$ and
+
+$(b+c) \times a=(b \times a)+(c \times a) \quad a, b, c \in S$.
+
+In 1878 the German mathematician, Ferdinand Georg Frobenius (1849-1917), proved that there are only three associative division algebras: real numbers $\mathbb{R}$, complex numbers $\mathbb{C}$, and quaternions $\mathbb{H}$.
+
+\section{Summary}
+The objective of this chapter was to remind you of the axiomatic systems underlying algebra, and how the results of arithmetic operations can be open, closed, or undefined. Perhaps some of the ideas of ordered pairs, sets, groups, fields and rings are new, and they have been included as this notation is often used in association with quaternions.
+
+All of these ideas emerge again when we consider the algebra of complex numbers and later on, quaternions.
+
+\subsubsection{Summary of Definitions}
+\section{Ordered pair}
+An object with two distinguishable components: $(a, b)$ such that $(a, b) \neq(b, a)$ unless $a=b$.
+
+\section{Set}
+Definition: A set is a collection of objects.
+
+Notation: $k \in \mathbb{Z}$ means $k$ belongs to the set $\mathbb{Z}$.
+$\mathbb{C}$ : Set of complex numbers
+$\mathbb{H}$ : Set of quaternions
+$\mathbb{N}$ : Set of natural numbers
+$\mathbb{Q}$ : Set of rational numbers
+$\mathbb{R}:$ Set of real numbers
+$\mathbb{Z}$ : Set of integers.
+
+\section{Group}
+Definition: A group $(S, \circ)$ is a set $S$ and a binary operation ' $\circ$ ' and the axioms defining closure, associativity, an identity element, and an inverse element.
+Closure:
+$a \circ b \in S$
+$a, b \in S$.
+Associativity:
+$(a \circ b) \circ c=a \circ(b \circ c)$
+$a, b, c \in S$.
+Identity element:
+$a \circ e=e \circ a=a$
+$a, e \in S$.
+Inverse element:
+$a \circ a^{-1}=a^{-1} \circ a=e$.
+$a, a^{-1}, e \in S$.
+
+\section{Ring}
+Definition: A ring is a group whose elements can be added/subtracted and multiplied, using some precise axioms:
+Additive associativity:
+$a+(b+c)=(a+b)+c$
+$a, b, c \in S$.
+Multiplicative associativity: $a \times(b \times c)=(a \times b) \times c$
+$a, b, c \in S$.
+Distributivity:
+$a \times(b+c)=(a \times b)+(a \times c)$ and
+$(a+b) \times c=(a \times c)+(b \times c) \quad a, b, c \in S$.
+
+\section{Field}
+Definition: A field is a ring that supports division.
+
+\section{Division ring}
+Every element of a division ring has an inverse element, with the proviso that the element is non-zero. The algebra also supports non-commutative multiplication.
+
+Additive associativity:
+
+Additive commutativity:
+
+Additive identity 0 :
+
+Additive inverse:
+
+Multiplicative associativity: $(a \times b) \times c=a \times(b \times c)$
+
+Multiplicative identity 1: $\quad 1 \times a=a \times 1$
+
+Multiplicative inverse:
+
+Distributivity:
+
+$$
+\begin{array}{ll}
+(a+b)+c=a+(b+c) & a, b, c \in S . \\
+a+b=b+a & a, b \in S . \\
+0+a=a+0 & a, 0 \in S . \\
+a+(-a)=(-a)+a=0 & a,-a \in S . \\
+(a \times b) \times c=a \times(b \times c) & a, b, c \in S . \\
+1 \times a=a \times 1 & a, 1 \in S . \\
+a \times a^{-1}=a^{-1} \times a=1 & a, a^{-1} \in S, a \neq 0 . \\
+a \times(b+c)=(a \times b)+(a \times c) & \text { and } \\
+(b+c) \times a=(b \times a)+(c \times a) & a, b, c \in S .
+\end{array}
+$$

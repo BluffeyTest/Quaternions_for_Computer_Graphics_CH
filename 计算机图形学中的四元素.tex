@@ -1,0 +1,150 @@
+\documentclass[11pt,b5paper,twoside]{book}
+
+%\usepackage{algorithm}  
+%\usepackage{algorithmic}  
+\usepackage{wallpaper} %使用wallpaper宏包
+
+\usepackage[final]{pdfpages} %插入整页pdf
+\usepackage[T1]{fontenc}
+\usepackage{CJKutf8}
+%\usepackage{CJK}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{subfigure}
+\usepackage{graphicx}
+\usepackage{grffile}
+\usepackage{epstopdf}%支持eps格式图
+\usepackage[centerlast]{caption}
+\counterwithin{figure}{section} %图按照章节编号
+\counterwithin{equation}{section} %公式按照章节编号
+\counterwithin{table}{section} %表按照章节编号
+%\usepackage{fourier}
+\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
+
+\usepackage[export]{adjustbox}
+\graphicspath{ {./images/} }
+
+%设置缩进
+\usepackage{indentfirst} 
+\setlength{\parindent}{2em}
+
+%设置行距
+\linespread{1.4}
+
+%设置章节显示
+\usepackage[center]{titlesec}
+%\titleformat{\chapter}
+\definecolor{gray75}{gray}{0.75}
+\newcommand{\hsp}{\hspace{20pt}}
+\titleformat{\chapter}{\Huge\bfseries}{\begin{CJK}{UTF8}{gkai}第\,\thechapter\,章\hsp\textcolor{gray75}{|}\hsp\end{CJK}}{0pt}{\Huge\bfseries}
+\newcommand{\chap}[1]{\begin{CJK}{UTF8}{gkai}\chapter{#1} \end{CJK}}
+
+\makeatletter %使\subsection中的内容左对齐
+\renewcommand{\subsection}{\@startsection{subsection}{2}{0mm}
+  {-\baselineskip}{0.5\baselineskip}{\bf\leftline}}
+
+
+% 更改目录的章显示
+\usepackage{titletoc}
+\titlecontents{chapter}[0pt]{\addvspace{1.5pt}\filright\bf}%
+               {\contentspush{第\,\thecontentslabel\,章\quad}}%
+               {}{\titlerule*[8pt]{.}\contentspage}
+
+% 更改页眉页脚为第几章形式
+%\usepackage{fancyhdr}%导入fancyhdr包
+%\pagestyle{fancy}
+%\fancyhead{} % 初始化页眉
+%\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
+\renewcommand{\chaptermark}[1]{\markboth{\begin{CJK}{UTF8}{gkai}第\,\thechapter\,章\, #1\end{CJK}}{}}
+\renewcommand{\sectionmark}[1]{\markright{\thesection\, #1}}
+
+
+%\fancyhead[LE]{\textsl{\rightmark}}
+%\fancyhead[RO]{\textsl{\leftmark}}
+%\renewcommand{\sectionmark}[1]{\markright{\thesection\,节\, #1}}
+%\renewcommand{\chaptermark}[1]{\markright{第\,\thechapter\,章\, #1}{}}
+
+%c++代码显示环境
+\usepackage{listings}
+\lstset{language=C++}
+
+%算法伪代码环境
+\usepackage[ruled,vlined]{algorithm2e}
+%\usepackage[linesnumbered,lined,boxed,commentsnumbered]{algorithm2e}
+%\usepackage{algorithm}
+%\usepackage{algorithmic}
+
+% 超链接设置及冲突解决
+\usepackage{hyperref}
+\hypersetup{unicode}
+\hypersetup{colorlinks=true, linkcolor=blue, filecolor=magenta, urlcolor=cyan,}
+\urlstyle{same}
+%\hypersetup{CJKbookmarks=true}%让设置超链接后章节里面能写中文
+
+%更改目录
+\renewcommand{\contentsname}{目录}
+
+% 更改算法显示为中文
+\renewcommand{\algorithmcfname}{算法}
+
+%更改图表的显示
+\renewcommand{\figurename}{图}
+\renewcommand{\tablename}{表}
+
+\begin{document}
+\begin{CJK}{UTF8}{gkai}
+
+ 
+\begin{titlepage}
+  \vspace*{1cm}
+	\begin{center}
+		{\Huge \textbf{计算机图形学中的四元数}\par}
+		%{\large \textbf{第三册}\par}
+		%{\Huge\raggedright 图形瑰宝\par}
+  		%\noindent\hrulefill\par
+  		\vspace*{1cm}
+  		{\large\raggedleft John Vince  著\par}
+  		{\large\raggedleft 郭飞  译\par}
+  		
+  		\vfill
+  		{\Large 2023年\par}
+  		%{\Large\raggedleft Institute\par}
+	\end{center}
+\end{titlepage} 
+\begin{titlepage}
+	\vspace*{5cm}
+	\begin{center}
+		\textit{谨以此书献给Heidi.} 
+	\end{center}
+\end{titlepage}
+\end{CJK}
+%\begin{titlingpage}
+%\maketitle
+%\end{titlingpage}
+%\includepdf{booktest (another copy).pdf}
+
+%\newpage
+
+%\maketitle
+
+%\ThisCenterWallPaper{0.5}{./fig/cover.png}
+
+
+\begin{CJK}{UTF8}{gbsn}
+\newpage
+\include{Preface}
+\tableofcontents
+
+\newpage
+\include{Introduction}
+\include{Number_Sets_and_Algebra}
+%\include{num_pro}
+%\include{mod_trans}
+
+
+
+\clearpage
+\end{CJK}
+\end{document}
