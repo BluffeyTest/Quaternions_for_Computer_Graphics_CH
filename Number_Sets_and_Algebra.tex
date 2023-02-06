@@ -129,33 +129,25 @@ $$
 
 \section{等式}
 接下来，我们来到方程，我们将表达式的值赋给变量。在大多数情况下，任务是直接的，并导致一个真实的结果，如
-
-
 $$
 x^{2}-16=0
 $$
-
-where $x=\pm 4$. But what is interesting is that just by reversing the sign to
-
+其中$x=\pm 4$。但有趣的是，只要把符号颠倒过来
 $$
 x^{2}+16=0
 $$
+我们创建了一个没有实解的方程。然而，有一个复杂的解决方案，这是第三章的主题。
 
-we create an equation for which there is no real solution. However, there is a complex solution, which is the subject of Chap. 3.
+\section{有序对}
+$(a, b)$是一个有两个坐标或投影项的对象，其中第一个或左边的项与第二个或右边的项是不同的。例如，$(a, b)$与$(b, a)$是不同的，除非$a=b$。也许有序对的最好例子是$(x, y)$，它表示平面上的一个点，其中元素的顺序总是$x$-坐标后面跟着$y$-坐标。
 
-\section{Ordered Pairs}
-An ordered pair or couple $(a, b)$ is an object having two entries, coordinates or projections, where the first or left entry, is distinguishable from the second or right entry. For example, $(a, b)$ is distinguishable from $(b, a)$ unless $a=b$. Perhaps the best example of an ordered pair is $(x, y)$ that represents a point on the plane, where the order of the entries is always the $x$-coordinate followed by the $y$-coordinate.
+在计算机图形学中，有序对和有序三元组被广泛用于表示平面上的点$(x, y)$，空间中的点$(x, y, z)$，以及诸如$(r, g, b)$和$(h, s, v)$等颜色值。在这些例子中，字段都是实值。没有什么可以阻止我们使用有序对来开发一个代数，它的行为就像另一个代数一样，我们将在第三章对复数和第五章对四元数这样做。现在，让我们探索一些可以操纵有序对的方法。
 
-Ordered pairs and ordered triples are widely used in computer graphics to represent points on the plane $(x, y)$, points in space $(x, y, z)$, and colour values such as $(r, g, b)$ and $(h, s, v)$. In these examples, the fields are all real values. There is nothing to stop us from developing an algebra using ordered pairs that behaves like another algebra, and we will do this for complex numbers in Chap. 3 and quaternions in Chap. 5. For the moment, let's explore some ways ordered pairs can be manipulated.
-
-Say we choose to describe a generic ordered pair as
-
+假设我们选择将一个通用的有序对描述为
 $$
 a=\left(a_{1}, a_{2}\right) \quad a_{1}, a_{2} \in \mathbb{R} .
 $$
-
-We will define the addition of two such objects as
-
+我们将定义两个对象的加法为
 $$
 \begin{aligned}
 a & =\left(a_{1}, a_{2}\right) \\
@@ -163,9 +155,7 @@ b & =\left(b_{1}, b_{2}\right) \\
 a+b & =\left(a_{1}+b_{1}, a_{2}+b_{2}\right) .
 \end{aligned}
 $$
-
-For example:
-
+举例:
 $$
 \begin{aligned}
 a & =(2,3) \\
@@ -173,147 +163,117 @@ b & =(4,5) \\
 a+b & =(6,8) .
 \end{aligned}
 $$
-
-We will define the product as
-
+我们将乘积定义为
 $$
 a b=\left(a_{1} b_{1}, a_{2} b_{2}\right)
 $$
-
-which, using the above values, results in
-
+使用上面的值，结果是什么
 $$
 a b=(8,15) .
 $$
+记住，我们说了算，规则是我们定的。
 
-Remember, we are in charge, and we define the rules.
-
-Another rule will control how an ordered pair responds to scalar multiplication. For example:
-
+另一个规则将控制有序对如何响应标量乘法。例如:
 $$
 \begin{aligned}
 \lambda\left(a_{1}, a_{2}\right) & =\left(\lambda a_{1}, \lambda a_{2}\right) \quad \lambda \in \mathbb{R} \\
 3(2,3) & =(6,9) .
 \end{aligned}
 $$
-
-With the above rules, we are in a position to write
-
+有了上面的规则，我们就可以写了
 $$
 \begin{aligned}
 \left(a_{1}, a_{2}\right) & =\left(a_{1}, 0\right)+\left(0, a_{2}\right) \\
 & =a_{1}(1,0)+a_{2}(0,1)
 \end{aligned}
 $$
-
-and if we square these unit ordered pairs $(1,0)$ and $(0,1)$ using the product rule, we obtain
-
+如果我们用乘法法则对$(1,0)$和$(0,1)$进行平方，我们得到
 $$
 \begin{aligned}
 & (1,0)^{2}=(1,0) \\
 & (0,1)^{2}=(0,1)
 \end{aligned}
 $$
+这表明它们表现得像实数，这并不出人意料。
 
-which suggests that they behave like real numbers, and is not unexpected.
+这似乎不是很有用，但是等着看在复数和四元数的上下文中会发生什么。
 
-This does not appear to be very useful, but wait and see what happens in the context of complex numbers and quaternions.
+\section{群，环，域}
+数学家们使用一系列令人眼花缭乱的名字来识别他们的发明，这些发明似乎每天都在出现。甚至“四元数”这个名字也不是原创的，在历史上经常出现在“士兵的四元数”的语境中:
 
-\section{Groups, Rings and Fields}
-Mathematicians employ a bewildering range of names to identify their inventions, which seemingly, appear on a daily basis. Even the name 'quaternion' is not original, and appears throughout history often in the context of "a quaternion of soldiers":
+“罗马人派出四人组或四人组成夜间警卫……”[19]。
 
-"The Romans detached a quaternion or four men for a night guard ..." [19].
+在不太正式的情况下，让我们探索更多与本书所包含的思想相关的数学结构。
 
-Without becoming too formal, let's explore some more mathematical structures that are relevant to the ideas contained in this book.
+\subsection{群}
+我们已经讨论了集合的概念，以及属于集合意味着什么。我们还发现，当我们对集合的成员应用某些算术运算时，我们可以确保闭包、非闭包或结果未定义。
 
-\subsubsection{Groups}
-We have already covered the idea of a set, and what it means to belong to a set. We have also discovered that when we apply certain arithmetic operations to members of a set we can secure closure, non-closure, or the result is undefined.
+当将集合与算术运算结合在一起时，可以方便地创建另一个实体:群，即集合，以及描述集合元素如何组合的公理。集合可能包含数字、矩阵、向量、四元数、多项式等，并在下面表示为$a,b$和$c$。
 
-When combining sets with arithmetic operations, it is convenient to create another entity: a group, which is a set, together with the axioms describing how elements of the set are combined. The set might contain numbers, matrices, vectors, quaternions, polynomials, etc., and are represented below as $a, b$ and $c$. The axioms employ the ' $o$ ' symbol to represent any binary operation such as $+,-, \times$. And a group is formed from a set and a binary operation. For example, we may wish to form a group of integers under addition: $(\mathbb{Z},+)$, or we may wish to examine whether quaternions form a group under the operation of multiplication: $(\mathbb{H}, \times)$
+公理使用'$o$'符号来表示任何二进制操作，如$+,-, \times$。一个群是由一个集合和一个二元运算组成的。例如，我们可能希望在加法下形成一组整数:$(\mathbb{Z},+)$，或者我们可能希望检查四元数是否在乘法操作下形成一组:$(\mathbb{H}, \times)$。
 
-To be a group, all the following axioms must hold for the set $S$. In particular, there must be a special identity element $e \in S$, and for each $a \in S$ there must exist an inverse element $a^{-1} \in S$, so that the following axioms are satisfied:
+要成为一个群，对于集合$S$，所有下列公理必须成立。特别地，在中必须存在一个特殊的单位元素$e \in S$，并且对于每一个$a \in S$，在中必须存在一个逆元素$a^{-1} \in S$，从而满足下列公理:
 
-Closure:
+\begin{align*}
+    \begin{aligned}
+        & \textbf{闭合: }        && a \circ b \in S && a,b \in S.\\
+        & \textbf{结合律: }  && (a \circ b) \circ c=a \circ(b \circ c) && a, b, c \in S.\\
+        & \textbf{单位元:}    && a \circ e=e \circ a=a && a, e \in S.\\
+        & \textbf{可逆元素: }    && a  \circ a^{-1}=a^{-1} \circ a=e && a, a^{-1}, e \in S.
+    \end{aligned}
+\end{align*}
+我们将一个组描述为$(S, \circ)$，其中$S$是集合，' 0 '是操作。例如$(\mathbb{Z},+)$是一组进行加法运算的整数，$(\mathbb{R}, \times)$是一组进行乘法运算的实数。
 
-Associativity:
+让我们通过三个例子将这些公理生动地展现出来。
 
-Identity element:
-
-Inverse element: $a \circ b \in S$
-
-$(a \circ b) \circ c=a \circ(b \circ c)$
-
-$a \circ e=e \circ a=a$
-
-$a \circ a^{-1}=a^{-1} \circ a=e$ $a, b \in S$
-
-$a, b, c \in S$
-
-$a, e \in S$.
-
-$a, a^{-1}, e \in S$
-
-We describe a group as $(S, \circ)$, where $S$ is the set and ' 0 ' the operation. For instance, $(\mathbb{Z},+)$ is the group of integers under the operation of addition, and $(\mathbb{R}, \times)$ is the group of reals under the operation of multiplication.
-
-Let's bring these axioms to life with three examples.
-
-$(\mathbb{Z},+)$ : The integers $\mathbb{Z}$ form a group under the operation of addition:
-
+$(\mathbb{Z},+)$:整数$\mathbb{Z}$在加法运算下形成一个组:
 $$
 \begin{aligned}
-\text { Closure: } & -23+24=1 \\
-\text { Associativity: } & (2+3)+4=2+(3+4)=9 \\
-\text { Identity: } & 2+0=0+2=2 \\
-\text { Inverse: } & 2+(-2)=(-2)+2=0 .
+\text { 闭合: } & -23+24=1 \\
+\text { 结合律: } & (2+3)+4=2+(3+4)=9 \\
+\text { 单位元: } & 2+0=0+2=2 \\
+\text { 可逆: } & 2+(-2)=(-2)+2=0 .
+\end{aligned}
+$$
+$(\mathbb{Z}, \times)$:整数$\mathbb{Z}$在乘法下不构成群:
+$$
+\begin{aligned}
+\text { 闭合: } & -2 \times 4=-8 \\
+\text { 结合律: } & (2 \times 3) \times 4=2 \times(3 \times 4)=24 \\
+\text { 单位元: } & 2 \times 1=1 \times 2=2 \\
+\text { 可逆性: } & 2^{-1}=0.5 \quad(0.5 \notin \mathbb{Z}) .
+\end{aligned}
+$$
+并且，整数0没有逆。
+
+$(\mathbb{Q}， \times)$:非零有理数在乘法下构成一个群:
+$$
+\begin{aligned}
+\text { 闭合: } & \frac{2}{5} \times \frac{2}{3}=\frac{4}{15} \\
+\text { 交换律: } & \left(\frac{2}{5} \times \frac{2}{3}\right) \times \frac{1}{2}=\frac{2}{5} \times\left(\frac{2}{3} \times \frac{1}{2}\right)=\frac{2}{15} \\
+\text { 单位元: } & \frac{2}{3} \times \frac{1}{1}=\frac{1}{1} \times \frac{2}{3}=\frac{2}{3} \\
+\text { 可逆性: } & \frac{2}{3} \times \frac{3}{2}=\frac{1}{1} \quad\left(\text { where } \frac{3}{2}=\left(\frac{2}{3}\right)^{-1}\right)
 \end{aligned}
 $$
 
-$(\mathbb{Z}, \times)$ : The integers $\mathbb{Z}$ do not form a group under multiplication:
-
+\subsection{阿贝尔群}
+最后，以挪威数学家Neils Henrik Abel(1802-1829)的名字命名的阿贝尔群，是一个元素的顺序不影响结果的群，即群是可交换的。因此有五个公理:闭合性、结合性、单位元、逆元和交换性:
 $$
-\begin{aligned}
-\text { Closure: } & -2 \times 4=-8 \\
-\text { Associativity: } & (2 \times 3) \times 4=2 \times(3 \times 4)=24 \\
-\text { Identity: } & 2 \times 1=1 \times 2=2 \\
-\text { Inverse: } & 2^{-1}=0.5 \quad(0.5 \notin \mathbb{Z}) .
-\end{aligned}
+\textbf{Commutativity:} \qquad a \circ b=b \circ a \qquad a, b \in S
 $$
+例如，整数集在普通加法$(\mathbb{Z},+)$下形成一个阿贝尔群。然而，由于三维旋转一般不交换，三维空间中所有旋转的集合形成了一个非交换群。
 
-Also, the integer 0 has no inverse.
-
-$(\mathbb{Q}, \times)$ : The group of non-zero rational numbers form a group under multiplication:
-
-$$
-\begin{aligned}
-\text { Closure: } & \frac{2}{5} \times \frac{2}{3}=\frac{4}{15} \\
-\text { Associativity: } & \left(\frac{2}{5} \times \frac{2}{3}\right) \times \frac{1}{2}=\frac{2}{5} \times\left(\frac{2}{3} \times \frac{1}{2}\right)=\frac{2}{15} \\
-\text { Identity: } & \frac{2}{3} \times \frac{1}{1}=\frac{1}{1} \times \frac{2}{3}=\frac{2}{3} \\
-\text { Inverse: } & \frac{2}{3} \times \frac{3}{2}=\frac{1}{1} \quad\left(\text { where } \frac{3}{2}=\left(\frac{2}{3}\right)^{-1}\right)
-\end{aligned}
-$$
-
-\subsubsection{Abelian Group}
-Lastly, an abelian group, named after the Norwegian mathematician, Neils Henrik Abel (1802-1829), is a group where the order of elements does not influence the result, i.e. the group is commutative. Thus there are five axioms: closure, associativity, identity element, inverse element, and commutativity:
-Commutativity:
-$a \circ b=b \circ a$
-$a, b \in S$.
-
-For example, the set of integers forms an abelian group under ordinary addition $(\mathbb{Z},+)$. However, because 3D rotations do not generally commute, the set of all rotations in 3D space forms a non-commutative group.
-
-\subsubsection{Rings}
-A ring is an extended group, where we have a set of objects which can be added and multiplied together, subject to some precise axioms. There are rings of real numbers, complex numbers, integers, matrices, equations, polynomials, etc. A ring is formally defined as a system where $(S,+)$ and $(S, \times)$ are abelian groups and the distributive axioms:
-
+\subsection{环}
+环是一个扩展的群，在这里我们有一组可以相加和相乘的对象，遵循一些精确的公理。有实数圈、复数圈、整数圈、矩阵圈、方程圈、多项式圈等。环被正式定义为一个系统，其中$(S,+)$和$(S, \times)$为阿贝尔群，分配公理如下:
 $$
 \begin{array}{lll}
-\text { Additive associativity: } & a+(b+c)=(a+b)+c & a, b, c \in S . \\
-\text { Multiplicative associativity: } & a \times(b \times c)=(a \times b) \times c & a, b, c \in S . \\
-\text { Distributivity: } & a \times(b+c)=(a \times b)+(a \times c) & \text { and } \\
+\textbf { 加法结合律: } & a+(b+c)=(a+b)+c & a, b, c \in S . \\
+\textbf { 乘法结合律: } & a \times(b \times c)=(a \times b) \times c & a, b, c \in S . \\
+\textbf { 分配律: } & a \times(b+c)=(a \times b)+(a \times c) & \text { 和 } \\
 & (a+b) \times c=(a \times c)+(b \times c) & a, b, c \in S .
 \end{array}
 $$
-
-For example, we already know that the integers $\mathbb{Z}$ form a group under the operation of addition, but they also form a ring, as the set satisfies the above axioms:
-
+例如，我们已经知道整数$\mathbb{Z}$在加法运算下形成了一个群，但它们也形成了一个环，因为集合满足上述公理:
 $$
 \begin{aligned}
 & 2 \times(3 \times 4)=(2 \times 3) \times 4 \\
@@ -322,13 +282,13 @@ $$
 \end{aligned}
 $$
 
-\subsubsection{Fields}
-Although rings support addition and multiplication, they do not necessarily support division. However, as division is such an important arithmetic operation, the field was created to support it, with one proviso: division by zero is not permitted. Thus we have fields of real numbers $\mathbb{R}$, rational numbers $\mathbb{Q}$, and as we shall see, the complex numbers $\mathbb{C}$. However, we will discover that quaternions do not form a field, but they do form what is called a division ring.
+\subsection{域}
+虽然环支持加法和乘法，但它们不一定支持除法。然而，由于除法是如此重要的算术运算，因此创建域是为了支持除法，但有一个限制条件:不允许除0。这样我们就有了实数$\mathbb{R}$、有理数$\mathbb{Q}$以及复数$\mathbb{C}$的域。然而，我们将发现四元数不构成域，但它们确实形成了所谓的除法环。
 
-It follows that every field is a ring, but not every ring is a field.
+因此，每个域都是一个环，但并不是每个环都是一个场。
 
-\subsubsection{Division Ring}
-A division ring or division algebra, is a ring in which every element has an inverse element, with the proviso that the element is non-zero. The algebra also supports non-commutative multiplication. Here is a formal description of the division ring $(S,+, \times)$ :
+\subsection{除法环}
+除法环或除法代数是一个环，其中每个元素都有一个逆元素，前提是该元素非零。代数也支持非交换乘法。下面是除法环$(S,+, \times)$的正式描述:
 
 Additive associativity: $\quad(a+b)+c=a+(b+c)$
 
