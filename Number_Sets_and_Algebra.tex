@@ -289,131 +289,85 @@ $$
 
 \subsection{除法环}
 除法环或除法代数是一个环，其中每个元素都有一个逆元素，前提是该元素非零。代数也支持非交换乘法。下面是除法环$(S,+, \times)$的正式描述:
+\begin{align*}
+    \begin{aligned}
+        &\textbf{加法结合律: } & (a+b)+c=a+(b+c) && a, b, c \in S \\
+        &\textbf{加法交换律: } & a+b=b+a && a, b \in S\\
+        &\textbf{加法单位元0 :}    & 0+a=a+0 && a, 0 \in S\\
+        &\textbf{加法可逆性: }       & a+(-a)=(-a)+a=0 && a,-a \in S\\
+        &\textbf{乘法结合律:} & (a \times b) \times c=a \times(b \times c) && a, b, c \in S\\
+        &\textbf{乘法单位元 1:} &1 \times a=a \times 1 && a, 1 \in S\\
+        &\textbf{乘法可逆性:} & a \times a^{-1}=a^{-1} \times a=1 && a, a^{-1} \in S, a \neq 0\\
+        &\textbf{分配律:} & a \times(b+c)=(a \times b)+(a \times c) && \text{和}\\
+        &&(b+c) \times a=(b \times a)+(c \times a) && a, b, c \in S
+    \end{aligned}
+\end{align*}
 
-Additive associativity: $\quad(a+b)+c=a+(b+c)$
+1878年，德国数学家费迪南·格奥尔格·弗罗本乌斯(Ferdinand Georg Frobenius, 1849-1917)证明了只有三个符合结合律的除法代数:实数$\mathbb{R}$、复数$\mathbb{C}$和四元数$\mathbb{H}$。
 
-$a, b, c \in S$
+\section{总结}
+本章的目的是提醒你代数基础上的公理化系统，以及算术运算的结果如何可以是开的、闭的或未定义的。也许有序对、集合、组、域和环的一些概念是新的，它们被包括在内，因为这种符号经常与四元数关联使用。
 
-Additive commutativity:
+当我们考虑复数的代数和后来的四元数时，所有这些想法都会再次出现。
 
-$a+b=b+a$
+\subsection{定义总结}
+\subsubsection*{有序对}
+一个具有两个可区分组件的对象:$(a, b)$使得$(a, b) \neq(b, a)$除非$a=b$。
 
-$a, b \in S$.
+\subsubsection*{集合}
+定义:集合是对象的集合。
 
-Additive identity 0 :
+符号:$k \in \mathbb{Z}$表示$k$属于集合$\mathbb{Z}$。
+\begin{align*}
+    \begin{aligned}
+        \mathbb{C} &\text{: 复数的集合}\\
+        \mathbb{H} &\text{: 四元数集合}\\
+        \mathbb{N} &\text{: 自然数集合}\\
+        \mathbb{Q} &\text{: 有理数集合}\\
+        \mathbb{R} &\text{: 实数集合}\\      
+        \mathbb{Z} &\text{: 整数集。}\\
+    \end{aligned}
+\end{align*}
 
-$0+a=a+0$
+\subsubsection*{群}
+定义：群$(S, \circ)$是一个集合$S$和一个二进制操作' $\circ$ '以及定义闭包、结合性、单位元和可逆元素的公理。
+\begin{align*}
+    \begin{aligned}
+        &\textbf{闭合性:   } && a \circ b \in S && a, b \in S.\\
+        &\textbf{交换律:   } && (a \circ b) \circ c=a \circ(b \circ c) && a, b, c \in S.\\
+        &\textbf{单位元:   } && a \circ e=e \circ a=a && a, e \in S.\\
+        &\textbf{可逆性:   } && a \circ a^{-1}=a^{-1} \circ a=e. && a, a^{-1}, e \in S.
+    \end{aligned}
+\end{align*}
 
-$a, 0 \in S$.
+\subsubsection*{环}
+定义:环是一组元素可以加/减或乘的组合，使用一些精确的公理:
+\begin{align*}
+    \begin{aligned}
+        & \textbf{加法结合律:} && a+(b+c)=(a+b)+c && a, b, c \in S.\\
+        & \textbf{乘法结合律:} && a \times(b \times c)=(a \times b) \times c && a, b, c \in S.\\
+        & \textbf{分配律:} && a \times(b+c)=(a \times b)+(a \times c) && \text{和}\\
+&&& (a+b) \times c=(a \times c)+(b \times c) && a, b, c \in S.
+    \end{aligned}
+\end{align*}
 
-Additive inverse:
 
-$a+(-a)=(-a)+a=0$
+\subsubsection*{域}
+定义:域是一个支持除法的环。
 
-$a,-a \in S$.
+\subsubsection*{除法环}
+除法环的每个元素都有一个逆元素，条件是该元素非零。代数也支持非交换乘法。
+\begin{align*}
+    \begin{aligned}
+        &\textbf{加法结合律:}    && (a+b)+c=a+(b+c) && a, b, c \in S . \\
+        &\textbf{加法交换律:}    && a+b=b+a && a, b \in S . \\
+        &\textbf{加法单位元0 :}  && 0+a=a+0 && a, 0 \in S . \\
+        &\textbf{加法可逆性:}    && a+(-a)=(-a)+a=0 && a,-a \in S . \\
+        &\textbf{乘法结合律:}    && (a \times b) \times c=a \times(b \times c) && a, b, c \in S . \\
+        &\textbf{乘法单位元1:}   && 1 \times a=a \times 1 && a, 1 \in S . \\
+        &\textbf{乘法可逆性:}    && a \times a^{-1}=a^{-1} \times a=1 && a, a^{-1} \in S, a \neq 0 . \\
+        &\textbf{分配律:}        && a \times(b+c)=(a \times b)+(a \times c) && \text {和 } \\
+        &                    &&(b+c) \times a=(b \times a)+(c \times a) && a, b, c \in S .
+    \end{aligned}
+\end{align*}
 
-Multiplicative associativity: $(a \times b) \times c=a \times(b \times c)$
-
-$a, b, c \in S$.
-
-Multiplicative identity 1:
-
-$1 \times a=a \times 1$
-
-$a, 1 \in S$.
-
-Multiplicative inverse:
-
-$a \times a^{-1}=a^{-1} \times a=1$
-
-$a, a^{-1} \in S, a \neq 0$.
-
-Distributivity:
-
-$a \times(b+c)=(a \times b)+(a \times c)$ and
-
-$(b+c) \times a=(b \times a)+(c \times a) \quad a, b, c \in S$.
-
-In 1878 the German mathematician, Ferdinand Georg Frobenius (1849-1917), proved that there are only three associative division algebras: real numbers $\mathbb{R}$, complex numbers $\mathbb{C}$, and quaternions $\mathbb{H}$.
-
-\section{Summary}
-The objective of this chapter was to remind you of the axiomatic systems underlying algebra, and how the results of arithmetic operations can be open, closed, or undefined. Perhaps some of the ideas of ordered pairs, sets, groups, fields and rings are new, and they have been included as this notation is often used in association with quaternions.
-
-All of these ideas emerge again when we consider the algebra of complex numbers and later on, quaternions.
-
-\subsubsection{Summary of Definitions}
-\section{Ordered pair}
-An object with two distinguishable components: $(a, b)$ such that $(a, b) \neq(b, a)$ unless $a=b$.
-
-\section{Set}
-Definition: A set is a collection of objects.
-
-Notation: $k \in \mathbb{Z}$ means $k$ belongs to the set $\mathbb{Z}$.
-$\mathbb{C}$ : Set of complex numbers
-$\mathbb{H}$ : Set of quaternions
-$\mathbb{N}$ : Set of natural numbers
-$\mathbb{Q}$ : Set of rational numbers
-$\mathbb{R}:$ Set of real numbers
-$\mathbb{Z}$ : Set of integers.
-
-\section{Group}
-Definition: A group $(S, \circ)$ is a set $S$ and a binary operation ' $\circ$ ' and the axioms defining closure, associativity, an identity element, and an inverse element.
-Closure:
-$a \circ b \in S$
-$a, b \in S$.
-Associativity:
-$(a \circ b) \circ c=a \circ(b \circ c)$
-$a, b, c \in S$.
-Identity element:
-$a \circ e=e \circ a=a$
-$a, e \in S$.
-Inverse element:
-$a \circ a^{-1}=a^{-1} \circ a=e$.
-$a, a^{-1}, e \in S$.
-
-\section{Ring}
-Definition: A ring is a group whose elements can be added/subtracted and multiplied, using some precise axioms:
-Additive associativity:
-$a+(b+c)=(a+b)+c$
-$a, b, c \in S$.
-Multiplicative associativity: $a \times(b \times c)=(a \times b) \times c$
-$a, b, c \in S$.
-Distributivity:
-$a \times(b+c)=(a \times b)+(a \times c)$ and
-$(a+b) \times c=(a \times c)+(b \times c) \quad a, b, c \in S$.
-
-\section{Field}
-Definition: A field is a ring that supports division.
-
-\section{Division ring}
-Every element of a division ring has an inverse element, with the proviso that the element is non-zero. The algebra also supports non-commutative multiplication.
-
-Additive associativity:
-
-Additive commutativity:
-
-Additive identity 0 :
-
-Additive inverse:
-
-Multiplicative associativity: $(a \times b) \times c=a \times(b \times c)$
-
-Multiplicative identity 1: $\quad 1 \times a=a \times 1$
-
-Multiplicative inverse:
-
-Distributivity:
-
-$$
-\begin{array}{ll}
-(a+b)+c=a+(b+c) & a, b, c \in S . \\
-a+b=b+a & a, b \in S . \\
-0+a=a+0 & a, 0 \in S . \\
-a+(-a)=(-a)+a=0 & a,-a \in S . \\
-(a \times b) \times c=a \times(b \times c) & a, b, c \in S . \\
-1 \times a=a \times 1 & a, 1 \in S . \\
-a \times a^{-1}=a^{-1} \times a=1 & a, a^{-1} \in S, a \neq 0 . \\
-a \times(b+c)=(a \times b)+(a \times c) & \text { and } \\
-(b+c) \times a=(b \times a)+(c \times a) & a, b, c \in S .
-\end{array}
-$$

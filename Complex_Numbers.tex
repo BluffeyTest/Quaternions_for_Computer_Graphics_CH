@@ -1,0 +1,998 @@
+\chap{复数}
+\section{介绍}
+在本章中，我们将发现没有实根的方程如何产生虚数$i$，其平方为$-1$。这反过来又把我们引向复数以及它们是如何被代数处理的。与四元数相关的许多性质都是在复数中发现的，这就是为什么它们值得仔细研究的原因。
+
+\section{虚数}
+虚数的发明是为了解决方程没有实根的问题，比如$x^{2}+16=0$。声明一个量$i$的存在，使得$i^{2}=-1$，允许我们将这个方程的解表示为
+$$
+x=\pm 4 i .
+$$
+试图发现$i$到底是什么是毫无意义的-我真的只是一个平方到$-1$的东西。尽管如此，它确实适合于图形化的解释，我们将在下一章进行研究。
+
+1637年，法国数学家René Descartes(1596-1650)发表了La Géométrie[11]，他在其中指出包含$\sqrt{-1}$的数字是“虚数”，几个世纪以来这个标签一直存在。不幸的是，这是一个贬义的评论，$i$并不是虚构的——它实际上只是一个平方到$-1$的东西，当嵌入代数时，会产生一些惊人的模型。
+
+虚数集由$\mathbb{I}$表示，它允许我们将虚数定义为
+$$
+i b \in \mathbb{I}, \quad b \in \mathbb{R}, \quad i^{2}=-1 .
+$$
+
+\section{$i$的幂}
+当$i^{2}=-1$时，应该可以将$i$提高到其他幂。例如,
+$$
+i^{4}=i^{2} i^{2}=1
+$$
+和
+$$
+i^{5}=i i^{4}=i .
+$$
+因此，我们有这样的序列:
+\begin{center}
+\begin{tabular}{lllllll}
+\hline
+$i^{0}$ & $i^{1}$ & $i^{2}$ & $i^{3}$ & $i^{4}$ & $i^{5}$ & $i^{6}$ \\
+\hline
+1 & $i$ & $-1$ & $-i$ & 1 & $i$ & $-1$ \\
+\hline
+\end{tabular}
+\end{center}
+循环模式$(1,i,-1,-i, 1, \ldots)$非常引人注目，并让我们想起类似的模式$(x, y,-x,-y, x, \ldots)$，它是通过逆时针方向绕笛卡尔轴旋转而产生的。这种相似性是不可忽视的，因为当实数轴与垂直虚轴结合时，就会产生所谓的复平面。稍后再讲。
+
+上述顺序总结为:
+$$
+\begin{gathered}
+i^{4 n}=1 \\
+i^{4 n+1}=i \\
+i^{4 n+2}=-1 \\
+i^{4 n+3}=-i
+\end{gathered}
+$$
+其中 $n \in \mathbb{N}$.
+
+那么负幂呢?当然，它们也是可能的。考虑$i^{-1}$，它的计算如下:
+$$
+i^{-1}=\frac{1}{i}=\frac{1(-i)}{i(-i)}=\frac{-i}{1}=-i
+$$
+类似的，
+$$
+i^{-2}=\frac{1}{i^{2}}=\frac{1}{-1}=-1
+$$
+和
+$$
+i^{-3}=i^{-1} i^{-2}=-i(-1)=i .
+$$
+与负幂增加相关的顺序是:
+\begin{center}
+\begin{tabular}{lcccccc}
+\hline
+$i^{0}$ & $i^{-1}$ & $i^{-2}$ & $i^{-3}$ & $i^{-4}$ & $i^{-5}$ & $i^{-6}$ \\
+\hline
+1 & $-i$ & $-1$ & $i$ & 1 & $-i$ & $-1$ \\
+\hline
+\end{tabular}
+\end{center}
+这一次循环模式被反转为$(1,-i,-1, i, 1, \ldots)$，并且类似于模式$(x,-y,-x, y, x, \ldots)$，后者是通过顺时针旋转笛卡尔轴而生成的。
+
+也许最奇怪的幂是它本身:$i^{i}$，它恰好等于$e^{-\pi / 2}=$ $0.207879576 \ldots$，这在第四章中有解释。回顾了虚数$i$的某些特性之后，让我们看看当它与实数结合时会发生什么。
+
+\section{复数}
+根据定义，复数是实数和虚数的和，其形式表示为
+$$
+z=a+c \quad a \in \mathbb{R}, \quad c \in \mathbb{I} .
+$$
+我们也可以写成
+$$
+z=a+b i \quad a, b \in \mathbb{R}, \quad i^{2}=-1
+$$
+这个复数集合被标记为$\mathbb{C}$，这允许我们写作$z \in\mathbb{C}$。例如，$3+ 4i $是一个复数，其中3是实部，$ 4i $是虚部。以下都是复数:
+$$
+3, \quad 3+4 i, \quad-4-6 i, \quad 7 i, \quad 5.5+6.7 i .
+$$
+实数也是复数——只是没有虚数部分。这就引出了实数和虚数是复数的子集的观点，具体表述如下:
+$$
+\begin{aligned}
+& \mathbb{R} \subset \mathbb{C} \\
+& \mathbb{I} \subset \mathbb{C}
+\end{aligned}
+$$
+其中$\subset$表示是子集。
+
+虽然一些数学家将$i$放在乘数之前：$ i4 $，但其他人将它放在乘数之后：$ 4i $，这是本书中使用的惯例。然而，当$i$与三角函数相关联时，最好将它放在函数的前面，以避免与函数的角度混淆。例如，$\sin \alpha i$可以表示这个角是虚数，而$i \sin \alpha$则表示$ sin \alpha$的值是虚数。
+
+因此，复数可以用各种方式来构造:
+$$
+\sin \alpha+i \cos \beta, \quad 2-i \tan \alpha, \quad 23+x^{2} i
+$$
+
+一般来说，我们把一个复数写成$a+ bi $，并使它服从真实代数的正常规则。我们需要记住的是，每当遇到$i^{2}$时，它都会被$-1$替换。例如:
+$$
+\begin{aligned}
+(2+3 i)(3+4 i) & =2 \times 3+2 \times 4 i+3 i \times 3+3 i \times 4 i \\
+& =6+8 i+9 i+12 i^{2} \\
+& =6+17 i-12 \\
+& =-6+17 i .
+\end{aligned}
+$$
+
+\section{复数的加减法}
+给出两个复数
+$$
+\begin{aligned}
+& z_{1}=a_{1}+b_{1} i \\
+& z_{2}=a_{2}+b_{2} i
+\end{aligned}
+$$
+然后
+$$
+z_{1} \pm z_{2}=\left(a_{1} \pm a_{2}\right)+\left(b_{1} \pm b_{2}\right) i
+$$
+实部和虚部分别加或减。只要$a_{1}, b_{1}, a_{2}, b_{2} \in \mathbb{R}$。
+
+示例:
+$$
+\begin{aligned}
+z_{1} & =2+3 i \\
+z_{2} & =4+2 i \\
+z_{1}+z_{2} & =6+5 i \\
+z_{1}-z_{2} & =-2+i .
+\end{aligned}
+$$
+
+\section{复数乘以标量}
+用普通代数规则将复数与标量相乘。例如，复数$a+ bi $乘以标量$\lambda$，如下所示:
+$$
+\lambda(a+b i)=\lambda a+\lambda b i
+$$
+一个具体的例子是
+$$
+3(2+5 i)=6+15 i .
+$$
+
+\section{复数乘积}
+给出两个复数
+$$
+\begin{aligned}
+& z_{1}=a_{1}+b_{1} i \\
+& z_{2}=a_{2}+b_{2} i
+\end{aligned}
+$$
+他们的乘积是
+$$
+\begin{aligned}
+z_{1} z_{2} & =\left(a_{1}+b_{1} i\right)\left(a_{2}+b_{2} i\right) \\
+& =a_{1} a_{2}+a_{1} b_{2} i+b_{1} a_{2} i+b_{1} b_{2} i^{2} \\
+& =\left(a_{1} a_{2}-b_{1} b_{2}\right)+\left(a_{1} b_{2}+b_{1} a_{2}\right) i
+\end{aligned}
+$$
+这是另一个复数，确认运算是闭合的。例如:
+$$
+\begin{aligned}
+z_{1} & =3+4 i \\
+z_{2} & =3-2 i \\
+z_{1} z_{2} & =(3+4 i)(3-2 i) \\
+& =9-6 i+12 i-8 i^{2} \\
+& =9+6 i+8 \\
+& =17+6 i .
+\end{aligned}
+$$
+请注意，复数的加法、减法和乘法遵循普通的代数公理。
+\subsection{复数的平方}
+给定一个复数$z$，它的平方$z^{2}$为:
+$$
+\begin{aligned}
+z & =a+b i \\
+z^{2} & =(a+b i)(a+b i) \\
+& =\left(a^{2}-b^{2}\right)+2 a b i
+\end{aligned}
+$$
+举例:
+$$
+\begin{aligned}
+z & =4+3 i \\
+z^{2} & =(4+3 i)(4+3 i) \\
+& =\left(4^{2}-3^{2}\right)+2 \times 4 \times 3 i \\
+& =7+24 i
+\end{aligned}
+$$
+
+\section{复数的范数}
+复数$z$的范数、模或绝对值被写成$|z|$，根据定义是
+$$
+\begin{aligned}
+z & =a+b i \\
+|z| & =\sqrt{a^{2}+b^{2}}
+\end{aligned}
+$$
+例如，$3+ 4i $的范数是5。当我们讨论复数的极坐标表示时，我们会看到为什么会这样。
+
+\section{复共轭}
+两个复数的乘积，它们之间唯一的区别是虚数部分的符号，会得到一个特殊的结果:
+$$
+\begin{aligned}
+(a+b i)(a-b i) & =a^{2}-a b i+a b i-b^{2} i^{2} \\
+& =a^{2}+b^{2} .
+\end{aligned}
+$$
+这种类型的乘积总是得到一个实数，并用于求解两个复数的商。因为这个实值是一个非常有趣的结果，$a-b i$被称为$z=a+ bi $的复共轭，它可以用一根横线如 $\bar{z}$ 来写，也可以用星号如 $z^{*}$ 来写，这意味着
+$$
+z z^{*}=a^{2}+b^{2}=|z|^{2} .
+$$
+举例:
+$$
+\begin{aligned}
+z & =3+4 i \\
+z^{*} & =3-4 i \\
+z z^{*} & =9+16=25
+\end{aligned}
+$$
+
+\section{两个复数的商}
+复共轭为我们提供了一种用一个复数除以另一个复数的机制。例如，除数
+$$
+\frac{a_{1}+b_{1} i}{a_{2}+b_{2} i}
+$$
+通过将分子和分母乘以分母的复共轭$a_{2}-b_{2} i$来得到实分母:
+$$
+\begin{aligned}
+\frac{a_{1}+b_{1} i}{a_{2}+b_{2} i} & =\frac{\left(a_{1}+b_{1} i\right)\left(a_{2}-b_{2} i\right)}{\left(a_{2}+b_{2} i\right)\left(a_{2}-b_{2} i\right)} \\
+& =\frac{a_{1} a_{2}-a_{1} b_{2} i+b_{1} a_{2} i-b_{1} b_{2} i^{2}}{a_{2}^{2}+b_{2}^{2}} \\
+& =\frac{a_{1} a_{2}+b_{1} b_{2}}{a_{2}^{2}+b_{2}^{2}}+\frac{b_{1} a_{2}-a_{1} b_{2}}{a_{2}^{2}+b_{2}^{2}} i
+\end{aligned}
+$$
+举例，求解
+$$
+\frac{4+3 i}{3+4 i}
+$$
+上下同时乘以复数共轭 $3-4 i$ :
+$$
+\begin{aligned}
+\frac{4+3 i}{3+4 i} & =\frac{(4+3 i)(3-4 i)}{(3+4 i)(3-4 i)} \\
+& =\frac{12-16 i+9 i-12 i^{2}}{25} \\
+& =\frac{24}{25}-\frac{7}{25} i
+\end{aligned}
+$$
+
+\section{复数的倒数}
+要计算$z=a+ bi $的倒数，我们从这里开始
+$$
+z^{-1}=\frac{1}{z} \text {. }
+$$
+上下同时乘以$z^{*}$，得到
+$$
+z^{-1}=\frac{z^{*}}{z z^{*}} .
+$$
+但我们之前已经证明了$z z^{*}=|z|^{2}$，因此，
+$$
+\begin{aligned}
+z^{-1} & =\frac{z^{*}}{|z|^{2}} \\
+& =\left(\frac{a}{a^{2}+b^{2}}\right)-\left(\frac{b}{a^{2}+b^{2}}\right) i .
+\end{aligned}
+$$
+举例来说，$3+ 4i $的倒数是
+$$
+(3+4 i)^{-1}=\frac{3}{25}-\frac{4}{25} i .
+$$
+让我们用$3+4 i$乘以它的倒数来测试这个结果:
+$$
+(3+4 i)\left(\frac{3}{25}-\frac{4}{25} i\right)=\frac{9}{25}-\frac{12}{25} i+\frac{12}{25} i+\frac{16}{25}=1
+$$
+这证实了结果的正确性。
+
+\section{$i$的平方根}
+为了找到$\sqrt{i}$，我们假设根是复根。因此，我们从
+$$
+\begin{aligned}
+i & =(a+b i)(a+b i) \\
+& =a^{2}+2 a b i-b^{2} \\
+& =a^{2}-b^{2}+2 a b i
+\end{aligned}
+$$
+将实部和虚部分别相等
+$$
+\begin{array}{r}
+a^{2}-b^{2}=0 \\
+2 a b=1 .
+\end{array}
+$$
+由此我们推导出
+$$
+a=b=\frac{\sqrt{2}}{2} \text {. }
+$$
+因此，根是
+$$
+\sqrt{i}=\pm \frac{\sqrt{2}}{2}(1+i) \text {. }
+$$
+让我们通过平方根来测试这个结果，以确保答案是$i$:
+$$
+\begin{aligned}
+\left(\frac{\sqrt{2}}{2}(1+i)\right)\left(\frac{\sqrt{2}}{2}(1+i)\right) & =\frac{1}{2} 2 i=i \\
+\left(-\frac{\sqrt{2}}{2}(1+i)\right)\left(-\frac{\sqrt{2}}{2}(1+i)\right) & =\frac{1}{2} 2 i=i .
+\end{aligned}
+$$
+为了完备起见，让我们计算$\sqrt{-i}$:
+$$
+\begin{aligned}
+-i & =(a+b i)(a+b i) \\
+& =a^{2}+2 a b i-b^{2} \\
+& =a^{2}-b^{2}+2 a b i
+\end{aligned}
+$$
+将实部和虚部分别相等
+$$
+\begin{aligned}
+a^{2}-b^{2} & =0 \\
+2 a b & =-1 .
+\end{aligned}
+$$
+由此我们推导出
+$$
+a=b=\frac{\sqrt{2}}{2} i .
+$$
+因此，根是
+$$
+\sqrt{-i}=\pm \frac{\sqrt{2}}{2}(1-i) .
+$$
+再次，让我们通过平方根来测试这个结果，以确保答案是$-i$:
+$$
+\begin{aligned}
+& \left(\frac{\sqrt{2}}{2}(1-i)\right)\left(\frac{\sqrt{2}}{2}(1-i)\right)=\frac{1}{2}(-2 i)=-i \\
+& \left(-\frac{\sqrt{2}}{2}(1-i)\right)\left(-\frac{\sqrt{2}}{2}(1-i)\right)=\frac{1}{2}(-2 i)=-i \text {. }
+\end{aligned}
+$$
+下一章我们将用这些根来研究复数的旋转性质。
+\section{域结构}
+复数$\mathbb{C}$是一个域，因为它们满足前面为域定义的规则。
+
+\section{有序对}
+到目前为止，我们选择用$a+ bi $来表示复数，这样我们可以区分实部和虚部。然而，有一件事我们不能假设是实部总是在前面，虚部在后，因为$b i+a$仍然是一个复数。因此，可以使用两个函数来提取实系数和虚系数，如下所示
+$$
+\begin{aligned}
+& \operatorname{Re}(a+b i)=a \\
+& \operatorname{Im}(a+b i)=b
+\end{aligned}
+$$
+这就引出了用有序对表示复数的想法，其中有序是有保证的。
+
+我们现在可以将复数集合$\mathbb{C}$定义为实数有序对$(a, b)$的集合$\mathbb{R}^{2}$，并将加法和乘法的公理重写为:
+\begin{align}
+z_{1} & =\left(a_{1}, b_{1}\right) \notag\\
+z_{2} & =\left(a_{2}, b_{2}\right) \notag\\
+z_{1}+z_{2} & =\left(a_{1}+a_{2}, b_{1}+b_{2}\right) \label{Z.1}\\
+z_{1} z_{2} & =\left(a_{1} a_{2}-b_{1} b_{2}, b_{1} a_{2}+a_{1} b_{2}\right) .\label{Z.2}
+\end{align}
+将复数写成有序对是一个伟大的贡献，最早由Hamilton在1833年提出。这种表示法非常简洁，没有任何虚构的术语，可以在任何需要的时候添加。
+
+现在我们将使用公式(3.1)和(3.2)将两个复数相乘。首先，我们将使用常规符号求积，然后使用有序对。
+$$
+\begin{aligned}
+z_{1} & =6+2 i \\
+z_{2} & =4+3 i \\
+z_{1} z_{2} & =(6+2 i)(4+3 i) \\
+& =24+18 i+8 i-6 \\
+& =18+26 i .
+\end{aligned}
+$$
+接下来，使用有序对和(3.1)和(3.2):
+$$
+\begin{aligned}
+z_{1} & =(6,2) \\
+z_{2} & =(4,3) \\
+z_{1} z_{2} & =(6,2)(4,3) \\
+& =(24-6,18+8) \\
+& =(18,26)
+\end{aligned}
+$$
+
+which is correct.
+
+Let's continue to develop an algebra based upon ordered pairs that is identical to the algebra of complex numbers. We start by writing
+
+$$
+\begin{aligned}
+z & =(a, b) \\
+& =(a, 0)+(0, b) \\
+& =a(1,0)+b(0,1)
+\end{aligned}
+$$
+
+which creates the unit ordered pairs $(1,0)$ and $(0,1)$.
+
+Now let's compute the product $(1,0)(1,0)$ :
+
+$$
+\begin{aligned}
+(1,0)(1,0) & =(1-0,0) \\
+& =(1,0)
+\end{aligned}
+$$
+
+which shows that $(1,0)$ behaves like the real number 1 , i.e. $(1,0)=1$.
+
+Next, let's compute the product $(0,1)(0,1)$ :
+
+$$
+\begin{aligned}
+(0,1)(0,1) & =(0-1,0) \\
+& =(-1,0)
+\end{aligned}
+$$
+
+which is the real number $-1$ :
+
+$$
+(0,1)^{2}=-1
+$$
+
+or
+
+$$
+(0,1)=\sqrt{-1} \quad \text { and is imaginary. }
+$$
+
+This means that the ordered pair $(a, b)$, together with its associated rules, represents a complex number, i.e. $(a, b) \equiv a+b i$.
+
+\subsection{Multiplying by a Scalar}
+We are already familiar with the rule
+
+$$
+\lambda(a, b)=(\lambda a, \lambda b)
+$$
+
+which is compatible with the algebra of complex numbers.
+
+\subsection{Complex Conjugate}
+The conjugate of $z=a+b i$ is defined as $z^{*}=a-b i$, which in terms of an ordered pair is $z^{*}=(a,-b)$. Using (3.2) we have
+
+$$
+\begin{aligned}
+z & =(a, b) \\
+z^{*} & =(a,-b) \\
+z z^{*} & =(a, b)(a,-b) \\
+& =\left(a^{2}+b^{2}, b a-a b\right) \\
+& =\left(a^{2}+b^{2}, 0\right) \\
+& =a^{2}+b^{2}
+\end{aligned}
+$$
+
+which is correct.
+
+\subsection{Quotient}
+The technique for resolving $z_{1} / z_{2}$ is to multiply the expression by $z_{2}^{*} / z_{2}^{*}$, which using ordered pairs is
+
+$$
+\begin{aligned}
+\frac{z_{1}}{z_{2}} & =\frac{\left(a_{1}, b_{1}\right)}{\left(a_{2}, b_{2}\right)} \\
+& =\frac{\left(a_{1}, b_{1}\right)}{\left(a_{2}, b_{2}\right)} \frac{\left(a_{2},-b_{2}\right)}{\left(a_{2},-b_{2}\right)} \\
+& =\frac{\left(a_{1} a_{2}+b_{1} b_{2}, b_{1} a_{2}-a_{1} b_{2}\right)}{\left(a_{2}^{2}+b_{2}^{2}, 0\right)} \\
+& =\left(\frac{a_{1} a_{2}+b_{1} b_{2}}{a_{2}^{2}+b_{2}^{2}}, \frac{b_{1} a_{2}-a_{1} b_{2}}{a_{2}^{2}+b_{2}^{2}}\right) .
+\end{aligned}
+$$
+
+\subsection{Inverse}
+We have previously shown that $z^{-1}$ is
+
+$$
+z^{-1}=\frac{z^{*}}{z z^{*}}
+$$
+
+which using ordered pairs is
+
+$$
+\begin{aligned}
+z & =(a, b) \\
+z^{-1} & =\frac{(a,-b)}{(a, b)(a,-b)}
+\end{aligned}
+$$
+
+$$
+\begin{aligned}
+& =\frac{(a,-b)}{\left(a^{2}+b^{2}, 0\right)} \\
+& =\left(\frac{a}{a^{2}+b^{2}}, \frac{-b}{a^{2}+b^{2}}\right)
+\end{aligned}
+$$
+
+It is obvious from the above definitions that ordered pairs provide an alternative notation for expressing complex numbers, where the imaginary feature is embedded within the product axiom. We will also use ordered pairs to define a quaternion with three imaginary terms, which when incorporated within the product axiom remain hidden.
+
+\section{Matrix Representation of a Complex Number}
+As quaternions have a matrix representation, perhaps we should investigate the matrix representation for a complex number. We can reason that the matrix $\mathbf{C}$ for a complex number is the sum of two other matrices representing the real $\mathbf{R}$, and imaginary I parts:
+
+$$
+\mathbf{C}=\mathbf{R}+\mathbf{I}
+$$
+
+which, in turn, can be written as
+
+$$
+\mathbf{C}=a \hat{\mathbf{R}}+b \hat{\mathbf{I}} \quad a, b \in \mathbb{R}
+$$
+
+where $\hat{\mathbf{R}} \equiv 1$ and $\hat{\mathbf{I}} \equiv i$
+
+The matrix equivalent of 1 is the $2 \times 2$ identity matrix:
+
+$$
+\left[\begin{array}{ll}
+1 & 0 \\
+0 & 1
+\end{array}\right] \text {. }
+$$
+
+Although I have only hinted that $i$ can be regarded as some sort of rotational operator, this is the perfect way of visualising it. In Chap. 4 we will discover that multiplying a complex number by $i$ effectively rotates the number $90^{\circ}$. So for the moment, it can be represented by a rotation matrix of $90^{\circ}$ :
+
+$$
+\left[\begin{array}{cc}
+\cos 90^{\circ} & -\sin 90^{\circ} \\
+\sin 90^{\circ} & \cos 90^{\circ}
+\end{array}\right]=\left[\begin{array}{cc}
+0 & -1 \\
+1 & 0
+\end{array}\right]
+$$
+
+which permits us to write:
+
+$$
+\left[\begin{array}{cc}
+a & -b \\
+b & a
+\end{array}\right]=a\left[\begin{array}{ll}
+1 & 0 \\
+0 & 1
+\end{array}\right]+b\left[\begin{array}{cc}
+0 & -1 \\
+1 & 0
+\end{array}\right]
+$$
+
+Note that the matrix representing $i$ squares to $-1$ :
+
+$$
+\left[\begin{array}{cc}
+0 & -1 \\
+1 & 0
+\end{array}\right]\left[\begin{array}{cc}
+0 & -1 \\
+1 & 0
+\end{array}\right]=-1\left[\begin{array}{ll}
+1 & 0 \\
+0 & 1
+\end{array}\right]
+$$
+
+Now let's employ matrix notation for all the arithmetic operations used for complex numbers.
+
+\subsection{Adding and Subtracting}
+Two complex numbers are added or subtracted as follows:
+
+$$
+\begin{aligned}
+z_{1} & =a_{1}+b_{1} i \\
+z_{2} & =a_{2}+b_{2} i \\
+z_{1} & =\left[\begin{array}{cc}
+a_{1} & -b_{1} \\
+b_{1} & a_{1}
+\end{array}\right] \\
+z_{2} & =\left[\begin{array}{ll}
+a_{2} & -b_{2} \\
+b_{2} & a_{2}
+\end{array}\right] \\
+z_{1} \pm z_{2} & =\left[\begin{array}{ll}
+a_{1} & -b_{1} \\
+b_{1} & a_{1}
+\end{array}\right] \pm\left[\begin{array}{ll}
+a_{2} & -b_{2} \\
+b_{2} & a_{2}
+\end{array}\right] \\
+& =\left[\begin{array}{ll}
+a_{1} \pm a_{2} & -\left(b_{1} \pm b_{2}\right) \\
+b_{1} \pm b_{2} & a_{1} \pm a_{2}
+\end{array}\right]
+\end{aligned}
+$$
+
+\subsection{The Product}
+The product of two complex numbers is computed as follows
+
+$$
+\begin{aligned}
+z_{1} & =a_{1}+b_{1} i \\
+z_{2} & =a_{2}+b_{2} i \\
+z_{1} z_{2} & =\left[\begin{array}{cc}
+a_{1} & -b_{1} \\
+b_{1} & a_{1}
+\end{array}\right]\left[\begin{array}{cc}
+a_{2} & -b_{2} \\
+b_{2} & a_{2}
+\end{array}\right] \\
+& =\left[\begin{array}{cc}
+a_{1} a_{2}-b_{1} b_{2} & -\left(a_{1} b_{2}+b_{1} a_{2}\right) \\
+a_{1} b_{2}+b_{1} a_{2} & a_{1} a_{2}-b_{1} b_{2}
+\end{array}\right]
+\end{aligned}
+$$
+
+\subsection{The Square of the Norm}
+The square of the norm emerges as the determinant of the matrix:
+
+$$
+\begin{aligned}
+z & =a+b i \\
+|z|^{2} & =\left|\begin{array}{cc}
+a & -b \\
+b & a
+\end{array}\right|=a^{2}+b^{2} .
+\end{aligned}
+$$
+
+\subsection{The Complex Conjugate}
+The complex conjugate of a complex number $z$ is represented by
+
+$$
+\begin{aligned}
+z & =a+b i \\
+z^{*} & =a-b i \\
+& =\left[\begin{array}{cc}
+a & b \\
+-b & a
+\end{array}\right]
+\end{aligned}
+$$
+
+and the product $z z^{*}=a^{2}+b^{2}$ :
+
+$$
+\begin{aligned}
+z z^{*} & =\left[\begin{array}{cc}
+a & -b \\
+b & a
+\end{array}\right]\left[\begin{array}{cc}
+a & b \\
+-b & a
+\end{array}\right] \\
+& =\left[\begin{array}{cc}
+a^{2}+b^{2} & 0 \\
+0 & a^{2}+b^{2}
+\end{array}\right] .
+\end{aligned}
+$$
+
+\subsection{The Inverse}
+The inverse of $2 \times 2$ matrix $\mathbf{A}$ is given by
+
+$$
+\begin{aligned}
+\mathbf{A} & =\left[\begin{array}{ll}
+a_{11} & a_{12} \\
+a_{21} & a_{22}
+\end{array}\right] \\
+\mathbf{A}^{-1} & =\frac{1}{a_{11} a_{22}-a_{12} a_{21}}\left[\begin{array}{cc}
+a_{22} & -a_{12} \\
+-a_{21} & a_{12}
+\end{array}\right]
+\end{aligned}
+$$
+
+therefore, the inverse of $z$ is given by
+
+$$
+\begin{aligned}
+z & =a+b i \\
+z & =\left[\begin{array}{cc}
+a & -b \\
+b & a
+\end{array}\right] \\
+z^{-1} & =\frac{1}{a^{2}+b^{2}}\left[\begin{array}{cc}
+a & b \\
+-b & a
+\end{array}\right] \\
+& =\frac{a}{a^{2}+b^{2}}-\frac{b}{a^{2}+b^{2}} i .
+\end{aligned}
+$$
+
+\subsection{Quotient}
+The quotient of two complex numbers is computed as follows:
+
+$$
+\begin{aligned}
+z_{1} & =a_{1}+b_{1} i \\
+z_{2} & =a_{2}+b_{2} i \\
+\frac{z_{1}}{z_{2}} & =z_{1} z_{2}^{-1} \\
+& =\left[\begin{array}{cc}
+a_{1} & -b_{1} \\
+b_{1} & a_{1}
+\end{array}\right] \frac{1}{a_{2}^{2}+b_{2}^{2}}\left[\begin{array}{cc}
+a_{2} & b_{2} \\
+-b_{2} & a_{2}
+\end{array}\right] \\
+& =\frac{1}{a_{2}^{2}+b_{2}^{2}}\left[\begin{array}{cc}
+a_{1} a_{2}+b_{1} b_{2} & -\left(b_{1} a_{2}-a_{1} b_{2}\right) \\
+b_{1} a_{2}-a_{1} b_{2} & a_{1} a_{2}+b_{1} b_{2}
+\end{array}\right] .
+\end{aligned}
+$$
+
+\section{Summary}
+We have shown in this chapter that the set of complex numbers is a field, as they satisfy the requirement for closure, associativity, distributivity, an identity element, and an inverse. We have also shown that there is a one-to-one correspondence between a complex number and an ordered pair, and that a complex number can be represented as a matrix, which permits us to compute all complex number operations as matrix operations.
+
+If this the first time you have come across complex numbers you probably will have found them strange on the one hand, and amazing on the other. Simply by declaring the existence of $i$ that squares to $-1$, opens up a new number system that unifies large areas of mathematics.
+
+\subsection{Summary of Operations}
+\subsubsection*{Definitions}
+$\mathbb{I}$ is the set of imaginary numbers: $b i \in \mathbb{I}, b \in \mathbb{R}, i^{2}=-1$. $\mathbb{C}$ is the set of complex numbers and is a field.
+
+$$
+\begin{aligned}
+z & =a+b i \quad a \in \mathbb{R}, \quad b i \in \mathbb{I}, \quad z \in \mathbb{C} \\
+& =\left[\begin{array}{cc}
+a & -b \\
+b & a
+\end{array}\right]
+\end{aligned}
+$$
+
+\subsubsection*{Ordered pair}
+$$
+a+b i \equiv(a, b)
+$$
+
+\subsubsection*{Addition and subtraction}
+$$
+\begin{aligned}
+z_{1} & =a_{1}+b_{1} i \\
+z_{2} & =a_{2}+b_{2} i \\
+z_{1} \pm z_{2} & =a_{1} \pm a_{2}+\left(b_{1} \pm b_{2}\right) i \\
+& =\left[\begin{array}{lc}
+a_{1} \pm a_{2} & -\left(b_{1} \pm b_{2}\right) \\
+b_{1} \pm b_{2} & a_{1} \pm a_{2}
+\end{array}\right]
+\end{aligned}
+$$
+
+\subsubsection*{Product}
+$$
+\begin{aligned}
+z_{1} z_{2} & =\left(a_{1}+b_{1} i\right)\left(a_{2}+b_{2} i\right) \\
+& =\left(a_{1} a_{2}-b_{1} b_{2}\right)+\left(a_{1} b_{2}+b_{1} a_{2}\right) i \\
+& =\left[\begin{array}{cc}
+a_{1} a_{2}-b_{1} b_{2} & -\left(a_{1} b_{2}+b_{1} a_{2}\right) \\
+a_{1} b_{2}+b_{1} a_{2} & a_{1} a_{2}-b_{1} b_{2}
+\end{array}\right]
+\end{aligned}
+$$
+
+\subsubsection*{Square}
+$$
+\begin{aligned}
+z^{2} & =(a+b i)^{2} \\
+& =\left(a^{2}-b^{2}\right)+2 a b i \\
+& =\left[\begin{array}{cc}
+a^{2}-b^{2} & -2 a b \\
+2 a b & a^{2}-b^{2}
+\end{array}\right]
+\end{aligned}
+$$
+
+\subsubsection*{Norm}
+
+$$
+\begin{aligned}
+z & =a+b i \\
+|z| & =\sqrt{a^{2}+b^{2}} \\
+|z|^{2} & =\left|\begin{array}{cc}
+a & -b \\
+b & a
+\end{array}\right|
+\end{aligned}
+$$
+
+\subsubsection*{Complex conjugate}
+$$
+\begin{aligned}
+z & =a+b i \\
+z^{*} & =a-b i \\
+& =\left[\begin{array}{cc}
+a & b \\
+-b & a
+\end{array}\right]
+\end{aligned}
+$$
+
+\subsubsection*{Quotient}
+
+$$
+\begin{aligned}
+\frac{z_{1}}{z_{2}} & =\frac{a_{1}+b_{1} i}{a_{2}+b_{2} i} \\
+& =\frac{a_{1} a_{2}+b_{1} b_{2}}{a_{2}^{2}+b_{2}^{2}}+\frac{b_{1} a_{2}-a_{1} b_{2}}{a_{2}^{2}+b_{2}^{2}} i \\
+& =z_{1} z_{2}^{-1} \\
+& =\left[\begin{array}{cc}
+a_{1} & -b_{1} \\
+b_{1} & a_{1}
+\end{array}\right] \frac{1}{a_{2}^{2}+b_{2}^{2}}\left[\begin{array}{cc}
+a_{2} & b_{2} \\
+-b_{2} & a_{2}
+\end{array}\right] \\
+& =\frac{1}{a_{2}^{2}+b_{2}^{2}}\left[\begin{array}{cc}
+a_{1} a_{2}+b_{1} b_{2} & -\left(b_{1} a_{2}-a_{1} b_{2}\right) \\
+b_{1} a_{2}-a_{1} b_{2} & a_{1} a_{2}+b_{1} b_{2}
+\end{array}\right]
+\end{aligned}
+$$
+
+\subsubsection*{Inverse}
+$$
+\begin{aligned}
+z & =a+b i \\
+\frac{1}{z} & =\frac{z^{*}}{|z|^{2}} \\
+& =\left(\frac{a}{a^{2}+b^{2}}\right)-\left(\frac{b}{a^{2}+b^{2}}\right) i \\
+& =\frac{1}{a^{2}+b^{2}}\left[\begin{array}{cc}
+a & b \\
+-b & a
+\end{array}\right]
+\end{aligned}
+$$
+
+\subsubsection*{Square root of $\pm i$}
+$$
+\begin{aligned}
+\sqrt{i} & =\pm \frac{\sqrt{2}}{2}(1+i) \\
+& =\pm \frac{\sqrt{2}}{2}\left[\begin{array}{cc}
+1 & -1 \\
+1 & 1
+\end{array}\right] \\
+\sqrt{-i} & =\pm \frac{\sqrt{2}}{2}(1-i) \\
+& =\pm \frac{\sqrt{2}}{2}\left[\begin{array}{cc}
+1 & 1 \\
+-1 & 1
+\end{array}\right]
+\end{aligned}
+$$
+
+\section{Worked Examples}
+Here are some further worked examples that employ the ideas described above. In some cases, a test is included to confirm the result.
+
+Example 1 Add and subtract $z_{1}$ and $z_{2}$ :
+
+$$
+\begin{aligned}
+z_{1} & =12+6 i \\
+z_{2} & =10-4 i \\
+z_{1}+z_{2} & =22+2 i \\
+z_{1}-z_{2} & =2+10 i .
+\end{aligned}
+$$
+
+Example 2 Compute the product $z_{1} z_{2}$ :
+
+$$
+\begin{aligned}
+z_{1} z_{2} & =(12+6 i)(10-4 i) \\
+& =144+12 i .
+\end{aligned}
+$$
+
+Example 3 Multiply $z_{1}$ by $i$ :
+
+$$
+\begin{aligned}
+z_{1} i & =(12+6 i) i \\
+& =-6+12 i
+\end{aligned}
+$$
+
+Example 4 Compute the norms of the following:
+
+$$
+\begin{aligned}
+|5+12 i| & =\sqrt{5^{2}+12^{2}}=13 \\
+|\pm 1| & =1 \\
+|\pm i| & =1 \\
+|1 \pm i| & =\sqrt{2} .
+\end{aligned}
+$$
+
+Example 5 Compute the complex conjugates of the following:
+
+$$
+\begin{aligned}
+(2+3 i)^{*} & =2-3 i \\
+1^{*} & =1 \\
+i^{*} & =-i \\
+(-i)^{*} & =i .
+\end{aligned}
+$$
+
+Example 6 Compute the quotient $(2+3 i) /(3+4 i)$.
+
+$$
+\begin{aligned}
+\frac{2+3 i}{3+4 i} & =\frac{(2+3 i)}{(3+4 i)} \frac{(3-4 i)}{(3-4 i)} \\
+& =\frac{6-8 i+9 i+12}{25} \\
+& =\frac{18}{25}+\frac{1}{25} i
+\end{aligned}
+$$
+
+Test:
+
+$$
+\begin{aligned}
+(3+4 i)\left(\frac{18}{25}+\frac{1}{25} i\right) & =\frac{54}{25}+\frac{3}{25} i+\frac{72}{25} i-\frac{4}{25} \\
+& =2+3 i .
+\end{aligned}
+$$
+
+Example 7 Divide $2+3 i$ by $i$.
+
+$$
+\begin{aligned}
+\frac{2+3 i}{i} & =\frac{(2+3 i)}{i} \frac{(-i)}{(-i)} \\
+& =\frac{-2 i+3}{1} \\
+& =3-2 i .
+\end{aligned}
+$$
+
+Test:
+
+$$
+i(3-2 i)=2+3 i
+$$
+
+Example 8 Divide $2+3 i$ by $-i$.
+
+$$
+\begin{aligned}
+\frac{2+3 i}{-i} & =\frac{(2+3 i)}{-i} \frac{(i)}{(i)} \\
+& =\frac{2 i-3}{1} \\
+& =-3+2 i .
+\end{aligned}
+$$
+
+Test:
+
+$$
+-i(-3+2 i)=2+3 i
+$$
+
+Example 9 Compute the inverse of $2+3 i$.
+
+$$
+\begin{aligned}
+\frac{1}{2+3 i} & =\frac{1}{(2+3 i)} \frac{(2-3 i)}{(2-3 i)} \\
+& =\frac{2-3 i}{13} \\
+& =\frac{2}{13}-\frac{3}{13} i
+\end{aligned}
+$$
+
+Test:
+
+$$
+(2+3 i)\left(\frac{2}{13}-\frac{3}{13} i\right)=\frac{4}{13}-\frac{6}{13} i+\frac{6}{13} i+\frac{9}{13}=1
+$$
+
+Example 10 Compute the inverse of $i$.
+
+$$
+\begin{aligned}
+\frac{1}{i} & =\frac{1}{i} \frac{(-i)}{(-i)} \\
+& =\frac{-i}{1}=-i .
+\end{aligned}
+$$
+
+Test:
+
+$$
+i(-i)=1
+$$
+
+Example 11 Compute the inverse of $-i$.
+
+$$
+\begin{aligned}
+\frac{1}{-i} & =\frac{1}{-i} \frac{(i)}{(i)} \\
+& =\frac{i}{1}=i
+\end{aligned}
+$$
+
+Test:
+
+$$
+-i i=1 .
+$$
