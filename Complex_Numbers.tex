@@ -381,11 +381,9 @@ z_{1} z_{2} & =(6,2)(4,3) \\
 & =(18,26)
 \end{aligned}
 $$
+这是正确的。
 
-which is correct.
-
-Let's continue to develop an algebra based upon ordered pairs that is identical to the algebra of complex numbers. We start by writing
-
+让我们继续发展一个基于有序对的代数，它和复数的代数是一样的。我们从以下写法开始
 $$
 \begin{aligned}
 z & =(a, b) \\
@@ -393,55 +391,43 @@ z & =(a, b) \\
 & =a(1,0)+b(0,1)
 \end{aligned}
 $$
+它创建了单位有序对$(1,0)$和$(0,1)$。
 
-which creates the unit ordered pairs $(1,0)$ and $(0,1)$.
-
-Now let's compute the product $(1,0)(1,0)$ :
-
+现在让我们计算乘积$(1,0)(1,0)$:
 $$
 \begin{aligned}
 (1,0)(1,0) & =(1-0,0) \\
 & =(1,0)
 \end{aligned}
 $$
+这表明$(1,0)$的行为类似于实数1，即$(1,0)=1$。
 
-which shows that $(1,0)$ behaves like the real number 1 , i.e. $(1,0)=1$.
-
-Next, let's compute the product $(0,1)(0,1)$ :
-
+接下来，让我们计算乘积$(0,1)(0,1)$:
 $$
 \begin{aligned}
 (0,1)(0,1) & =(0-1,0) \\
 & =(-1,0)
 \end{aligned}
 $$
-
-which is the real number $-1$ :
-
+也就是实数$-1$:
 $$
 (0,1)^{2}=-1
 $$
-
-or
-
+或
 $$
-(0,1)=\sqrt{-1} \quad \text { and is imaginary. }
+(0,1)=\sqrt{-1} \quad \text { 且是一个虚数 }
 $$
+这意味着有序对$(a, b)$及其相关规则表示一个复数，即$(a, b) \equiv a+ bi $。
 
-This means that the ordered pair $(a, b)$, together with its associated rules, represents a complex number, i.e. $(a, b) \equiv a+b i$.
-
-\subsection{Multiplying by a Scalar}
-We are already familiar with the rule
-
+\subsection{乘以标量}
+我们已经熟悉了这个规则
 $$
 \lambda(a, b)=(\lambda a, \lambda b)
 $$
+这和复数代数是一致的。
 
-which is compatible with the algebra of complex numbers.
-
-\subsection{Complex Conjugate}
-The conjugate of $z=a+b i$ is defined as $z^{*}=a-b i$, which in terms of an ordered pair is $z^{*}=(a,-b)$. Using (3.2) we have
-
+\subsection{复共轭}
+$z=a+ bi $的共轭定义为$z^{*}=a- bi $，以有序对的形式表示为$z^{*}=(a,-b)$。使用(3.2)，我们有
 $$
 \begin{aligned}
 z & =(a, b) \\
@@ -452,12 +438,10 @@ z z^{*} & =(a, b)(a,-b) \\
 & =a^{2}+b^{2}
 \end{aligned}
 $$
+这是正确的。
 
-which is correct.
-
-\subsection{Quotient}
-The technique for resolving $z_{1} / z_{2}$ is to multiply the expression by $z_{2}^{*} / z_{2}^{*}$, which using ordered pairs is
-
+\subsection{商}
+解析$z_{1} / z_{2}$的技巧是将表达式乘以$z_{2}^{*} / z_{2}^{*}$，使用有序对就是
 $$
 \begin{aligned}
 \frac{z_{1}}{z_{2}} & =\frac{\left(a_{1}, b_{1}\right)}{\left(a_{2}, b_{2}\right)} \\
@@ -467,57 +451,41 @@ $$
 \end{aligned}
 $$
 
-\subsection{Inverse}
-We have previously shown that $z^{-1}$ is
-
+\subsection{逆}
+我们之前已经证明了$z^{-1}$是
 $$
 z^{-1}=\frac{z^{*}}{z z^{*}}
 $$
-
-which using ordered pairs is
-
+使用有序对是
 $$
 \begin{aligned}
 z & =(a, b) \\
-z^{-1} & =\frac{(a,-b)}{(a, b)(a,-b)}
-\end{aligned}
-$$
-
-$$
-\begin{aligned}
+z^{-1} & =\frac{(a,-b)}{(a, b)(a,-b)}\\
 & =\frac{(a,-b)}{\left(a^{2}+b^{2}, 0\right)} \\
 & =\left(\frac{a}{a^{2}+b^{2}}, \frac{-b}{a^{2}+b^{2}}\right)
 \end{aligned}
 $$
+从上面的定义可以明显看出，有序对为表示复数提供了另一种表示法，其中虚数特征嵌入在乘积公理中。我们还将使用有序对定义具有三个虚数的四元数，这些虚数在乘积公理中仍然是隐藏的。
 
-It is obvious from the above definitions that ordered pairs provide an alternative notation for expressing complex numbers, where the imaginary feature is embedded within the product axiom. We will also use ordered pairs to define a quaternion with three imaginary terms, which when incorporated within the product axiom remain hidden.
-
-\section{Matrix Representation of a Complex Number}
-As quaternions have a matrix representation, perhaps we should investigate the matrix representation for a complex number. We can reason that the matrix $\mathbf{C}$ for a complex number is the sum of two other matrices representing the real $\mathbf{R}$, and imaginary I parts:
-
+\section{复数的矩阵表示}
+由于四元数有矩阵表示，也许我们应该研究复数的矩阵表示。我们可以推断，复数的矩阵$\mathbf{C}$是另外两个矩阵的和，分别表示实的$\mathbf{R}$和虚的$\mathbf{I}$部分:
 $$
 \mathbf{C}=\mathbf{R}+\mathbf{I}
 $$
-
-which, in turn, can be written as
-
+它又可以写成
 $$
 \mathbf{C}=a \hat{\mathbf{R}}+b \hat{\mathbf{I}} \quad a, b \in \mathbb{R}
 $$
+其中 $\hat{\mathbf{R}} \equiv 1$ 且 $\hat{\mathbf{I}} \equiv i$。
 
-where $\hat{\mathbf{R}} \equiv 1$ and $\hat{\mathbf{I}} \equiv i$
-
-The matrix equivalent of 1 is the $2 \times 2$ identity matrix:
-
+与1等价的矩阵是$2 \times 2$ 单位矩阵:
 $$
 \left[\begin{array}{ll}
 1 & 0 \\
 0 & 1
 \end{array}\right] \text {. }
 $$
-
-Although I have only hinted that $i$ can be regarded as some sort of rotational operator, this is the perfect way of visualising it. In Chap. 4 we will discover that multiplying a complex number by $i$ effectively rotates the number $90^{\circ}$. So for the moment, it can be represented by a rotation matrix of $90^{\circ}$ :
-
+虽然我只是暗示$ i $可以被视为某种旋转算子，但这是一种完美的可视化方法。在第四章中，我们将发现复数乘以$i$可以有效地旋转$90^{\circ}$。所以目前，它可以用$90^{\circ}$的旋转矩阵表示:
 $$
 \left[\begin{array}{cc}
 \cos 90^{\circ} & -\sin 90^{\circ} \\
@@ -527,9 +495,7 @@ $$
 1 & 0
 \end{array}\right]
 $$
-
-which permits us to write:
-
+我们可以这样写:
 $$
 \left[\begin{array}{cc}
 a & -b \\
@@ -542,9 +508,7 @@ b & a
 1 & 0
 \end{array}\right]
 $$
-
-Note that the matrix representing $i$ squares to $-1$ :
-
+注意，表示 $i$ 平方到$-1$的矩阵:
 $$
 \left[\begin{array}{cc}
 0 & -1 \\
@@ -557,12 +521,9 @@ $$
 0 & 1
 \end{array}\right]
 $$
-
-Now let's employ matrix notation for all the arithmetic operations used for complex numbers.
-
-\subsection{Adding and Subtracting}
-Two complex numbers are added or subtracted as follows:
-
+现在让我们用矩阵表示法来表示用于复数的所有算术运算。
+\subsection{加减法}
+两个复数相加或相减写作如下：
 $$
 \begin{aligned}
 z_{1} & =a_{1}+b_{1} i \\
@@ -589,9 +550,8 @@ b_{1} \pm b_{2} & a_{1} \pm a_{2}
 \end{aligned}
 $$
 
-\subsection{The Product}
-The product of two complex numbers is computed as follows
-
+\subsection{乘积}
+两个复数的乘积计算如下：
 $$
 \begin{aligned}
 z_{1} & =a_{1}+b_{1} i \\
@@ -610,9 +570,8 @@ a_{1} b_{2}+b_{1} a_{2} & a_{1} a_{2}-b_{1} b_{2}
 \end{aligned}
 $$
 
-\subsection{The Square of the Norm}
-The square of the norm emerges as the determinant of the matrix:
-
+\subsection{范数的平方}
+范数的平方就是矩阵的行列式:
 $$
 \begin{aligned}
 z & =a+b i \\
@@ -623,9 +582,8 @@ b & a
 \end{aligned}
 $$
 
-\subsection{The Complex Conjugate}
-The complex conjugate of a complex number $z$ is represented by
-
+\subsection{复数共轭}
+复数z的复共轭表示为
 $$
 \begin{aligned}
 z & =a+b i \\
@@ -637,7 +595,7 @@ a & b \\
 \end{aligned}
 $$
 
-and the product $z z^{*}=a^{2}+b^{2}$ :
+并且乘积 $z z^{*}=a^{2}+b^{2}$ :
 
 $$
 \begin{aligned}
@@ -655,9 +613,8 @@ a^{2}+b^{2} & 0 \\
 \end{aligned}
 $$
 
-\subsection{The Inverse}
-The inverse of $2 \times 2$ matrix $\mathbf{A}$ is given by
-
+\subsection{逆}
+$2 \times 2$矩阵$\mathbf{A}$的逆由如下给出
 $$
 \begin{aligned}
 \mathbf{A} & =\left[\begin{array}{ll}
@@ -671,8 +628,7 @@ a_{22} & -a_{12} \\
 \end{aligned}
 $$
 
-therefore, the inverse of $z$ is given by
-
+因此，$z$ 的逆由如下给出
 $$
 \begin{aligned}
 z & =a+b i \\
@@ -688,9 +644,8 @@ a & b \\
 \end{aligned}
 $$
 
-\subsection{Quotient}
-The quotient of two complex numbers is computed as follows:
-
+\subsection{商}
+两个复数的商计算如下:
 $$
 \begin{aligned}
 z_{1} & =a_{1}+b_{1} i \\
@@ -710,15 +665,14 @@ b_{1} a_{2}-a_{1} b_{2} & a_{1} a_{2}+b_{1} b_{2}
 \end{aligned}
 $$
 
-\section{Summary}
-We have shown in this chapter that the set of complex numbers is a field, as they satisfy the requirement for closure, associativity, distributivity, an identity element, and an inverse. We have also shown that there is a one-to-one correspondence between a complex number and an ordered pair, and that a complex number can be represented as a matrix, which permits us to compute all complex number operations as matrix operations.
+\section{总结}
+在本章中，我们证明了复数的集合是一个域，因为它们满足闭合性、结合律、分配性、单位元和逆的要求。我们还证明了复数与有序对之间存在一一对应关系，复数可以表示为矩阵，这使得我们可以用矩阵运算来计算所有的复数运算。
 
-If this the first time you have come across complex numbers you probably will have found them strange on the one hand, and amazing on the other. Simply by declaring the existence of $i$ that squares to $-1$, opens up a new number system that unifies large areas of mathematics.
+如果这是你第一次遇到复数，你可能会发现它们一方面很奇怪，另一方面又很神奇。仅仅通过声明$i$的平方等于$-1$的存在，就开辟了一个统一数学领域的新数字系统。
 
-\subsection{Summary of Operations}
-\subsubsection*{Definitions}
-$\mathbb{I}$ is the set of imaginary numbers: $b i \in \mathbb{I}, b \in \mathbb{R}, i^{2}=-1$. $\mathbb{C}$ is the set of complex numbers and is a field.
-
+\subsection{运算符总结}
+\subsubsection*{定义}
+$\mathbb{I}$是虚数的集合:$b i \in \mathbb{I}, b \in \mathbb{R}, i ^{2}=-1$。$\mathbb{C}$是复数的集合，是一个域。
 $$
 \begin{aligned}
 z & =a+b i \quad a \in \mathbb{R}, \quad b i \in \mathbb{I}, \quad z \in \mathbb{C} \\
@@ -729,12 +683,12 @@ b & a
 \end{aligned}
 $$
 
-\subsubsection*{Ordered pair}
+\subsubsection*{有序对}
 $$
 a+b i \equiv(a, b)
 $$
 
-\subsubsection*{Addition and subtraction}
+\subsubsection*{加减法}
 $$
 \begin{aligned}
 z_{1} & =a_{1}+b_{1} i \\
@@ -747,7 +701,7 @@ b_{1} \pm b_{2} & a_{1} \pm a_{2}
 \end{aligned}
 $$
 
-\subsubsection*{Product}
+\subsubsection*{乘积}
 $$
 \begin{aligned}
 z_{1} z_{2} & =\left(a_{1}+b_{1} i\right)\left(a_{2}+b_{2} i\right) \\
@@ -759,7 +713,7 @@ a_{1} b_{2}+b_{1} a_{2} & a_{1} a_{2}-b_{1} b_{2}
 \end{aligned}
 $$
 
-\subsubsection*{Square}
+\subsubsection*{平方}
 $$
 \begin{aligned}
 z^{2} & =(a+b i)^{2} \\
@@ -771,7 +725,7 @@ a^{2}-b^{2} & -2 a b \\
 \end{aligned}
 $$
 
-\subsubsection*{Norm}
+\subsubsection*{范数}
 
 $$
 \begin{aligned}
@@ -784,7 +738,8 @@ b & a
 \end{aligned}
 $$
 
-\subsubsection*{Complex conjugate}
+\subsubsection*{复共轭}
+
 $$
 \begin{aligned}
 z & =a+b i \\
@@ -796,7 +751,7 @@ a & b \\
 \end{aligned}
 $$
 
-\subsubsection*{Quotient}
+\subsubsection*{商}
 
 $$
 \begin{aligned}
@@ -817,7 +772,7 @@ b_{1} a_{2}-a_{1} b_{2} & a_{1} a_{2}+b_{1} b_{2}
 \end{aligned}
 $$
 
-\subsubsection*{Inverse}
+\subsubsection*{逆}
 $$
 \begin{aligned}
 z & =a+b i \\
@@ -830,7 +785,7 @@ a & b \\
 \end{aligned}
 $$
 
-\subsubsection*{Square root of $\pm i$}
+\subsubsection*{$\pm i$ 的平方根}
 $$
 \begin{aligned}
 \sqrt{i} & =\pm \frac{\sqrt{2}}{2}(1+i) \\
@@ -846,11 +801,10 @@ $$
 \end{aligned}
 $$
 
-\section{Worked Examples}
-Here are some further worked examples that employ the ideas described above. In some cases, a test is included to confirm the result.
+\section{样例}
+下面是一些进一步使用上述思想的示例。在某些情况下，包括测试来确认结果。
 
-Example 1 Add and subtract $z_{1}$ and $z_{2}$ :
-
+例1 $z_{1}$ 和 $z_{2}$ 的加减:
 $$
 \begin{aligned}
 z_{1} & =12+6 i \\
@@ -860,8 +814,7 @@ z_{1}-z_{2} & =2+10 i .
 \end{aligned}
 $$
 
-Example 2 Compute the product $z_{1} z_{2}$ :
-
+例2  计算乘积 $z_{1} z_{2}$ :
 $$
 \begin{aligned}
 z_{1} z_{2} & =(12+6 i)(10-4 i) \\
@@ -869,8 +822,7 @@ z_{1} z_{2} & =(12+6 i)(10-4 i) \\
 \end{aligned}
 $$
 
-Example 3 Multiply $z_{1}$ by $i$ :
-
+例3 $z_{1}$乘以 $i$ :
 $$
 \begin{aligned}
 z_{1} i & =(12+6 i) i \\
@@ -878,7 +830,7 @@ z_{1} i & =(12+6 i) i \\
 \end{aligned}
 $$
 
-Example 4 Compute the norms of the following:
+例4 计算如下的范数：
 
 $$
 \begin{aligned}
@@ -889,8 +841,7 @@ $$
 \end{aligned}
 $$
 
-Example 5 Compute the complex conjugates of the following:
-
+例5 计算下列数的共轭复数:
 $$
 \begin{aligned}
 (2+3 i)^{*} & =2-3 i \\
@@ -900,7 +851,7 @@ i^{*} & =-i \\
 \end{aligned}
 $$
 
-Example 6 Compute the quotient $(2+3 i) /(3+4 i)$.
+例6 计算商$(2+ 3i) /(3+ 4i)$。
 
 $$
 \begin{aligned}
@@ -910,8 +861,7 @@ $$
 \end{aligned}
 $$
 
-Test:
-
+测试:
 $$
 \begin{aligned}
 (3+4 i)\left(\frac{18}{25}+\frac{1}{25} i\right) & =\frac{54}{25}+\frac{3}{25} i+\frac{72}{25} i-\frac{4}{25} \\
@@ -919,8 +869,7 @@ $$
 \end{aligned}
 $$
 
-Example 7 Divide $2+3 i$ by $i$.
-
+例7 $2+3 i$除以$i$。
 $$
 \begin{aligned}
 \frac{2+3 i}{i} & =\frac{(2+3 i)}{i} \frac{(-i)}{(-i)} \\
@@ -929,14 +878,12 @@ $$
 \end{aligned}
 $$
 
-Test:
-
+测试:
 $$
 i(3-2 i)=2+3 i
 $$
 
-Example 8 Divide $2+3 i$ by $-i$.
-
+例8 $2+3 i$除以$-i$。
 $$
 \begin{aligned}
 \frac{2+3 i}{-i} & =\frac{(2+3 i)}{-i} \frac{(i)}{(i)} \\
@@ -945,14 +892,12 @@ $$
 \end{aligned}
 $$
 
-Test:
-
+测试:
 $$
 -i(-3+2 i)=2+3 i
 $$
 
-Example 9 Compute the inverse of $2+3 i$.
-
+例9 计算 $2+3 i$ 的逆。
 $$
 \begin{aligned}
 \frac{1}{2+3 i} & =\frac{1}{(2+3 i)} \frac{(2-3 i)}{(2-3 i)} \\
@@ -961,14 +906,12 @@ $$
 \end{aligned}
 $$
 
-Test:
-
+测试:
 $$
 (2+3 i)\left(\frac{2}{13}-\frac{3}{13} i\right)=\frac{4}{13}-\frac{6}{13} i+\frac{6}{13} i+\frac{9}{13}=1
 $$
 
-Example 10 Compute the inverse of $i$.
-
+例10 计算 $i$ 的逆。
 $$
 \begin{aligned}
 \frac{1}{i} & =\frac{1}{i} \frac{(-i)}{(-i)} \\
@@ -976,14 +919,12 @@ $$
 \end{aligned}
 $$
 
-Test:
-
+测试:
 $$
 i(-i)=1
 $$
 
-Example 11 Compute the inverse of $-i$.
-
+例11 计算 $-i$ 的逆。
 $$
 \begin{aligned}
 \frac{1}{-i} & =\frac{1}{-i} \frac{(i)}{(i)} \\
@@ -991,8 +932,7 @@ $$
 \end{aligned}
 $$
 
-Test:
-
+测试:
 $$
 -i i=1 .
 $$
