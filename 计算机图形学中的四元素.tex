@@ -85,6 +85,11 @@
 \hypersetup{unicode}
 \hypersetup{colorlinks=true, linkcolor=blue, filecolor=magenta, urlcolor=cyan,}
 \urlstyle{same}
+
+% 使序和译序以及目录有书签
+%\usepackage{lipsum}
+%\usepackage{tocbibind}%为目录、参考文献和索引生成目录项
+%\usepackage{bookmark}
 %\hypersetup{CJKbookmarks=true}%让设置超链接后章节里面能写中文
 
 %更改目录
@@ -118,13 +123,16 @@
   		%{\Large\raggedleft Institute\par}
 	\end{center}
 \end{titlepage} 
+
 \thispagestyle{empty}
-\begin{titlepage}
+\mbox{}
+\newpage
+\thispagestyle{empty}
 	\vspace*{5cm}
 	\begin{center}
 		\textit{谨以此书献给Heidi.} 
 	\end{center}
-\end{titlepage}
+\newpage
 \thispagestyle{empty}
 \clearpage
 \mbox{}
@@ -142,9 +150,14 @@
 
 
 \begin{CJK}{UTF8}{gbsn}
+%\bookmark[page=1,level=0]{标题}
 \newpage
 \include{Preface}
+\pdfbookmark{\contentsname}{Contents}
 \tableofcontents
+% \bookmark[dest=\HyperLocalCurrentHref, level=0]{目录}
+%\pdfbookmark{目录}{contentsname}
+%\bookmark[page=9,level=0]{目录}
 
 \newpage
 \setcounter{page}{0}

@@ -300,23 +300,17 @@ $$
 \arg (z / w) & =45^{\circ}-135^{\circ}=-90^{\circ}
 \end{aligned}
 $$
+这编码复数$-2 i$。这些结果如图4.5所示。
 
-which encode the complex number $-2 i$. These results are shown in Fig. 4.5.
-
-We can also use Euler's formula to compute $\sqrt{i}$ as follows
-
+我们还可以使用欧拉公式计算$\sqrt{i}$ ，如下所示
 $$
 e^{i \theta}=\cos \theta+i \sin \theta
 $$
-
-substituting $\theta=\pi / 2$ we have
-
+将$\theta=\pi / 2$代入
 $$
 e^{i \pi / 2}=\cos \frac{\pi}{2}+i \sin \frac{\pi}{2}=i
 $$
-
-taking the square root of both sides, we have
-
+两边同时开根号，得到
 $$
 \begin{aligned}
 e^{i \pi / 4} & =\pm \sqrt{i} \\
@@ -324,18 +318,14 @@ e^{i \pi / 4} & =\pm \sqrt{i} \\
 \pm \frac{\sqrt{2}}{2}(1+i) & =\pm \sqrt{i}
 \end{aligned}
 $$
-
-To find $\sqrt{-i}$ we substitute $\theta=-\pi / 2$ :
-
+为了找到$\sqrt{-i}$，我们代入$\theta=-\pi / 2$:
 $$
 \begin{aligned}
 e^{-i \pi / 2} & =\cos \left(-\frac{\pi}{2}\right)+i \sin \left(-\frac{\pi}{2}\right)=-i \\
 & =\cos \left(\frac{\pi}{2}\right)-i \sin \left(\frac{\pi}{2}\right)=-i
 \end{aligned}
 $$
-
-taking the square root of both sides, we have
-
+两边同时开根号，得到
 $$
 \begin{aligned}
 e^{-i \pi / 4} & =\pm \sqrt{-i} \\
@@ -343,14 +333,12 @@ e^{-i \pi / 4} & =\pm \sqrt{-i} \\
 \pm \frac{\sqrt{2}}{2}(1-i) & =\pm \sqrt{-i}
 \end{aligned}
 $$
+用类似的方法可以找到更高次的根。
 
-Higher roots can be found using a similar technique.
+\section{转子}
+极坐标形式说明了这样一个事实:范数为$r$的复数$z=r e^{i \theta}$与范数为$s$的复数$w=s e^{i \phi}$相乘，就得到了第三个范数为$r s$的复数。因此，为了避免缩放$z, w$必须有一个范数单位$1$。在这种情况下，$w$充当转子。例如，用$4+5 i$乘以$1+0 i$，它就没有缩放和旋转。然而，用$4+5 i$乘以$0+i$将它旋转$90^{\circ}$而不进行任何缩放。
 
-\subsection{转子}
-The polar form brings home the fact that multiplying $z=r e^{i \theta}$ with norm $r$, by $w=s e^{i \phi}$ with norm $s$, creates a third complex number with norm $r s$. Therefore, to avoid scaling $z, w$ must have a norm of unity. Under such conditions, $w$ acts as a rotor. For example, multiplying $4+5 i$ by $1+0 i$ leaves it unscaled and unrotated. However, multiplying $4+5 i$ by $0+i$ rotates it by $90^{\circ}$ without any scaling.
-
-Therefore, to rotate $2+2 i$ by $45^{\circ}$, we must multiply it by $e^{i \pi / 4}$ :
-
+因此，要将$2+2 i$旋转$45^{\circ}$，我们必须将它乘以$e^{i \pi / 4}$:
 $$
 \begin{aligned}
 e^{i \pi / 4} & =\cos 45^{\circ}+i \sin 45^{\circ}=\frac{\sqrt{2}}{2}(1+i) \\
@@ -358,20 +346,16 @@ e^{i \pi / 4} & =\cos 45^{\circ}+i \sin 45^{\circ}=\frac{\sqrt{2}}{2}(1+i) \\
 & =2 \sqrt{2} i .
 \end{aligned}
 $$
+因此$e^{i \theta}$将任何复数旋转一个角度$\theta$。
 
-So $e^{i \theta}$ rotates any complex number through an angle $\theta$.
-
-To rotate a complex number $x+y i$ through an angle $\theta$ we can multiply it by the rotor $\cos \theta+i \sin \theta$ :
-
+要使复数$x+y i$旋转一个角度$\theta$，我们可以将它乘以转子$\cos \theta+i \sin \theta$:
 $$
 \begin{aligned}
 x^{\prime}+y^{\prime} i & =(\cos \theta+i \sin \theta)(x+y i) \\
 & =x \cos \theta-y \sin \theta+i(x \sin \theta+y \cos \theta)
 \end{aligned}
 $$
-
-which in matrix form is:
-
+矩阵形式是:
 $$
 \left[\begin{array}{cc}
 x^{\prime} & -y^{\prime} \\
@@ -384,18 +368,14 @@ x & -y \\
 y & x
 \end{array}\right] .
 $$
-
-Before moving on let's consider the effect the complex conjugate of a rotor has on rotational direction, and we can do this by multiplying $x+y i$ by the rotor $\cos \theta-i \sin \theta$
-
+在继续之前，让我们考虑转子的复共轭对旋转方向的影响，我们可以通过将$x+y i$乘以转子$\cos \theta -i \sin \theta$来实现
 $$
 \begin{aligned}
 x^{\prime}+y^{\prime} i & =(\cos \theta-i \sin \theta)(x+y i) \\
 & =x \cos \theta+y \sin \theta-i(x \sin \theta+y \cos \theta)
 \end{aligned}
 $$
-
-and in matrix form is
-
+矩阵形式是
 $$
 \left[\begin{array}{cc}
 x^{\prime} & -y^{\prime} \\
@@ -408,24 +388,21 @@ x & -y \\
 y & x
 \end{array}\right]
 $$
+也就是绕原点旋转$-\theta$。
 
-which is a rotation of $-\theta$ about the origin.
-
-Therefore, we define a rotor $\mathbf{R}_{\theta}$ and its conjugate $\mathbf{R}_{\theta}^{\dagger}$ as
-
+因此，我们定义一个转子$\mathbf{R}_{\theta}$和它的共轭$\mathbf{R}_{\theta}^{\dagger}$为
 $$
 \begin{aligned}
 & \mathbf{R}_{\theta}=\cos \theta+i \sin \theta \\
 & \mathbf{R}_{\theta}^{\dagger}=\cos \theta-i \sin \theta
 \end{aligned}
 $$
-
-where $\mathbf{R}_{\theta}$ rotates $+\theta$, and $\mathbf{R}_{\theta}^{\dagger}$ rotates $-\theta$. Note, the use of the dagger $\dagger$ symbol.
+其中$\mathbf {R} _{\theta}$旋转$+ \theta$，和$\mathbf{R}_{\theta}^{\dagger}$旋转$- \theta$。注意，使用了匕首$\dagger$符号。
 
 \section{总结}
-In this chapter we have discovered a graphical interpretation for complex numbers using the complex plane. Euler's formula $e^{i \theta}=\cos \theta+i \sin \theta$ permits us to express a complex number as an imaginary power of $e$, which in turn allows us to compute products and quotients easily. Collectively, these ideas have lead us towards the idea of a rotor, which will be developed using quaternions.
+在本章中，我们发现了用复平面来表示复数的图形化解释。欧拉公式$e^{i \theta}=\cos \theta+i \sin \theta$允许我们将复数表示为$e$的虚数次幂，从而使我们可以轻松地计算乘积和商。总的来说，这些想法把我们引向了转子的想法，它将使用四元数来开发。
 
-\subsubsection{运算符总结}
+\subsection{运算符总结}
 \subsubsection*{复数}
 $$
 \begin{aligned}
@@ -446,11 +423,14 @@ r & =|z| \\
 \end{aligned}
 $$
 
-1st quadrant $a>0, b>0 \quad \theta=\arctan (b / a)$
+\begin{align*}
+    \begin{aligned}
+        &\text{第一象限  } a>0, b>0 && \theta=\arctan (b / a)\\
+        &\text{第二和第三象限  } a<0 && \theta=\arctan (b / a)+\pi\\
+        &\text{第四象限  } a>0, b<0 && \theta=\arctan (b / a)+2 \pi.
+    \end{aligned}
+\end{align*}
 
-2nd and 3rd quadrant $a<0 \quad \theta=\arctan (b / a)+\pi$
-
-4th quadrant $a>0, b<0 \quad \theta=\arctan (b / a)+2 \pi$
 
 \subsubsection*{乘积}
 $$
@@ -479,12 +459,11 @@ $$
 $$
 
 \section{样例}
-Here are some further worked examples that employ the ideas described above. In some cases, a test is included to confirm the result.
+下面是一些进一步使用上述思想的示例。在某些情况下，包括测试来确认结果。
 
-Example 1 Starting with $1+2 i$, multiply the resulting complex number by $i$ four times, and plot the result on the complex plane.
+例1 从$1+2 i$开始，将得到的复数乘以$i$四次，并将结果绘制在复平面上。
 
-The point $p$ is rotated $90^{\circ}$ to $q$ by multiplying it by $i$ :
-
+点$p$通过乘以$i$旋转$90^{\circ}$到$q$:
 $$
 \begin{aligned}
 i(1+2 i) & =i+2 i^{2} \\
@@ -492,8 +471,7 @@ i(1+2 i) & =i+2 i^{2} \\
 \end{aligned}
 $$
 
-The point $q$ is rotated another $90^{\circ}$ to $r$ by multiplying it by $i$ :
-
+点$q$通过乘以$i$旋转$90^{\circ}$到$r$:
 $$
 \begin{aligned}
 i(-2+i) & =-2 i+i^{2} \\
@@ -501,8 +479,7 @@ i(-2+i) & =-2 i+i^{2} \\
 \end{aligned}
 $$
 
-The point $r$ is rotated another $90^{\circ}$ to $s$ by multiplying it by $i$ :
-
+点$r$再乘以$i$旋转$90^{\circ}$到$s$:
 $$
 \begin{aligned}
 i(-1-2 i) & =-i-2 i^{2} \\
@@ -510,8 +487,7 @@ i(-1-2 i) & =-i-2 i^{2} \\
 \end{aligned}
 $$
 
-Finally, the point $s$ is rotated $90^{\circ}$ back to $p$ by multiplying it by $i$ :
-
+最后，点$s$乘以$i$被旋转$90^{\circ}$为$p$:
 $$
 \begin{aligned}
 i(2-i) & =2 i-i^{2} \\
@@ -519,13 +495,14 @@ i(2-i) & =2 i-i^{2} \\
 \end{aligned}
 $$
 
-Figure $4.6$ shows the four complex numbers separated by $90^{\circ}$. Fig. 4.6 The complex plane with four complex numbers
+图$4.6$显示了四个被$90^{\circ}$隔开的复数。
+\begin{figure}[h!]
+    \centering
+    \includegraphics[max width=0.6\textwidth]{2023_01_16_a848224efad29cd66460g-059}
+    \caption{有四个复数的复平面}
+\end{figure}
 
-\begin{center}
-\includegraphics[max width=\textwidth]{2023_01_16_a848224efad29cd66460g-059}
-\end{center}
-
-Example 2 Compute the product $z w$ and quotient $z / w$ using polar form.
+例2  用极坐标形式计算乘积$ zw $和商$z / w$。
 
 $$
 \begin{gathered}
@@ -534,8 +511,7 @@ w=-1-i
 \end{gathered}
 $$
 
-Product:
-
+乘积:
 $$
 \begin{aligned}
 z & =3 \sqrt{2}\left(\cos 45^{\circ}+i \sin 45^{\circ}\right)=3 \sqrt{2} e^{i \pi / 4} \\
@@ -544,17 +520,14 @@ w & =\sqrt{2}\left(\cos 225^{\circ}+i \sin 225^{\circ}\right)=\sqrt{2} e^{i 5 \p
 \arg (z w) & =45^{\circ}+225^{\circ}=270^{\circ}
 \end{aligned}
 $$
+这编码复数$-6 i$。
 
-which encode the complex number $-6 i$.
-
-Test: Using normal complex algebra, the product $z w$ is
-
+测试:使用普通的复代数，乘积$ zw $为
 $$
 z w=(3+3 i)(-1-i)=-6 i .
 $$
 
-Quotient:
-
+商:
 $$
 \begin{aligned}
 |z| & =3 \sqrt{2} \\
@@ -563,11 +536,9 @@ $$
 \arg (z / w) & =45^{\circ}-225^{\circ}=180^{\circ}
 \end{aligned}
 $$
+这编码复数$-3$.
 
-which encode the complex number $-3$.
-
-Test: Using normal complex algebra, the quotient $z / w$ is
-
+测试:使用普通的复代数，乘积$ z/w $为
 $$
 \begin{aligned}
 \frac{z}{w} & =\frac{(3+3 i)}{(-1-i)} \frac{(-1+i)}{(-1+i)} \\
@@ -576,16 +547,17 @@ $$
 \end{aligned}
 $$
 
-and agrees with the polar form. Example 3 Design a rotor to rotate a complex number through $30^{\circ}$ without scaling.
+并且符合极坐标形式。
 
-Starting with
+例3 设计一个转子，将一个复数旋转$30^{\circ}$而不缩放。
 
+
+这样开始
 $$
 e^{i \theta}=\cos \theta+i \sin \theta
 $$
 
-let $\theta=30^{\circ}=\pi / 6$
-
+令 $\theta=30^{\circ}=\pi / 6$
 $$
 \begin{aligned}
 e^{i \pi / 6} & =\cos 30^{\circ}+i \sin 30^{\circ} \\
@@ -594,8 +566,7 @@ e^{i \pi / 6} & =\cos 30^{\circ}+i \sin 30^{\circ} \\
 \end{aligned}
 $$
 
-Test: Let's rotate $1+0 i$ three times by this rotor to $i$.
-
+测试:让我们用这个转子将$1+0 i$旋转三次到$i$。
 $$
 \begin{aligned}
 \frac{1}{2}(\sqrt{3}+i) \frac{1}{2}(\sqrt{3}+i) \frac{1}{2}(\sqrt{3}+i) 1 & =\frac{1}{8}(\sqrt{3}+i)(\sqrt{3}+i)(\sqrt{3}+i) \\
@@ -605,15 +576,14 @@ $$
 \end{aligned}
 $$
 
-Example 4 Design a rotor to rotate a complex number through $-60^{\circ}$ without scaling.
+例4 设计一个转子，将一个复数旋转$-60^{\circ}$而不缩放。
 
-Starting with
-
+这样开始
 $$
 e^{i \theta}=\cos \theta+i \sin \theta
 $$
 
-let $\theta=-60^{\circ}=-\pi / 3$
+令 $\theta=-60^{\circ}=-\pi / 3$
 
 $$
 \begin{aligned}
