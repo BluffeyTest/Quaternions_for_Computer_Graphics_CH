@@ -1,4 +1,4 @@
-\documentclass[11pt,b5paper,twoside]{book}
+\documentclass[10pt,b5paper,twoside]{book}
 
 %\usepackage{algorithm}  
 %\usepackage{algorithmic}  
@@ -17,7 +17,8 @@
 \usepackage{grffile}
 \usepackage{epstopdf}%支持eps格式图
 \usepackage[centerlast]{caption}
-\counterwithin{figure}{section} %图按照章节编号
+% \counterwithin{figure}{section} %图按照章节编号
+\counterwithin{figure}{chapter} %图按照章节编号
 % \counterwithin{equation}{section} %公式按照章节编号
 \counterwithin{equation}{chapter} %公式按照章节编号
 \counterwithin{table}{section} %表按照章节编号
@@ -151,6 +152,7 @@
 \include{Introduction}
 \include{Number_Sets_and_Algebra}
 \include{Complex_Numbers}
+\include{Complex_Plane}
 %\include{num_pro}
 %\include{mod_trans}
 
