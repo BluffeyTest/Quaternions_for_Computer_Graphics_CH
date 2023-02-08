@@ -55,6 +55,7 @@
 \titlecontents{chapter}[0pt]{\addvspace{1.5pt}\filright\bf}%
                {\contentspush{第\,\thecontentslabel\,章\quad}}%
                {}{\titlerule*[8pt]{.}\contentspage}
+\setcounter{tocdepth}{1} %设置目录深度为只显示到section一级
 
 % 更改页眉页脚为第几章形式
 %\usepackage{fancyhdr}%导入fancyhdr包
@@ -150,6 +151,7 @@
 
 
 \begin{CJK}{UTF8}{gbsn}
+	
 %\bookmark[page=1,level=0]{标题}
 \newpage
 \include{Preface}
