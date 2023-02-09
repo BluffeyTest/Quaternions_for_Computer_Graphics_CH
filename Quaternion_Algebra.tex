@@ -182,7 +182,8 @@ q= & {[s, \mathbf{v}] } \\
 虽然我在其他出版物中使用了(5.1)和(5.2)中的符号，但在本书中我使用的是有序对。因此，我们需要证明的是， Hamilton 对四元数的原始定义(5.1)，包括它的标量和三个虚数项，可以被一个由标量和一个“现代”向量组成的有序对(5.3)所取代。
 
 \section{定义四元数}
-Let's start with two quaternions $q_{a}$ and $q_{b}$ à la Hamilton:
+让我们从两个四元数$q_{a}$和$q_{b}$ à la Hamilton开始:\footnote{译注，原句是：Let's start with two quaternions $q_{a}$ and $q_{b}$ à la Hamilton:，感觉原句有错误排过来的字符。 }
+
 
 $$
 \begin{aligned}
@@ -191,8 +192,8 @@ $$
 \end{aligned}
 $$
 
-and the obligatory rules:
-
+强制性的规则是:
+% and the obligatory rules:
 $$
 \begin{gathered}
 i^{2}=j^{2}=k^{2}=i j k=-1 \\
@@ -201,8 +202,7 @@ j i=-k, \quad k j=-i, \quad i k=-j .
 \end{gathered}
 $$
 
-Our objective is to show that $q_{a}$ and $q_{b}$ can also be represented by the ordered pairs
-
+我们的目标是证明$q_{a}$和$q_{b}$也可以用有序对表示
 $$
 \begin{aligned}
 q_{a} & =\left[s_{a}, \mathbf{a}\right] \\
@@ -210,74 +210,70 @@ q_{b} & =\left[s_{b}, \mathbf{b}\right] \quad s_{a}, s_{b} \in \mathbb{R}, \quad
 \end{aligned}
 $$
 
-I have employed square brackets as part of the definition as parentheses are often used to delimit expressions within a quaternion.
+我使用方括号作为定义的一部分，因为括号经常用于在四元数中分隔表达式。
+% I have employed square brackets as part of the definition as parentheses are often used to delimit expressions within a quaternion.
 
-The quaternion product $q_{a} q_{b}$ expands to
+四元数乘积$q_{a} q_{b}$展开为
+\begin{align}
+    \begin{aligned}
+        q_{a} q_{b}=\left[s_{a}, \mathbf{a}\right]\left[s_{b}, \mathbf{b}\right]= & \left(s_{a}+x_{a} i+y_{a} j+z_{a} k\right)\left(s_{b}+x_{b} i+y_{b} j+z_{b} k\right) \\
+        = & \left(s_{a} s_{b}-x_{a} x_{b}-y_{a} y_{b}-z_{a} z_{b}\right) \\
+        & +\left(s_{a} x_{b}+s_{b} x_{a}+y_{a} z_{b}-y_{b} z_{a}\right) i \\
+        & +\left(s_{a} y_{b}+s_{b} y_{a}+z_{a} x_{b}-z_{b} x_{a}\right) j \\
+        & +\left(s_{a} z_{b}+s_{b} z_{a}+x_{a} y_{b}-x_{b} y_{a}\right) k
+        \end{aligned}
+\end{align}
 
-$$
-\begin{aligned}
-q_{a} q_{b}=\left[s_{a}, \mathbf{a}\right]\left[s_{b}, \mathbf{b}\right]= & \left(s_{a}+x_{a} i+y_{a} j+z_{a} k\right)\left(s_{b}+x_{b} i+y_{b} j+z_{b} k\right) \\
-= & \left(s_{a} s_{b}-x_{a} x_{b}-y_{a} y_{b}-z_{a} z_{b}\right) \\
-& +\left(s_{a} x_{b}+s_{b} x_{a}+y_{a} z_{b}-y_{b} z_{a}\right) i \\
-& +\left(s_{a} y_{b}+s_{b} y_{a}+z_{a} x_{b}-z_{b} x_{a}\right) j \\
-& +\left(s_{a} z_{b}+s_{b} z_{a}+x_{a} y_{b}-x_{b} y_{a}\right) k
-\end{aligned}
-$$
+式(5.4)采用另一个四元数的形式，证实四元数乘积是封闭的。
 
-Equation (5.4) takes the form of another quaternion, and confirms that the quaternion product is closed.
-
-At this stage, Hamilton turned the imaginary terms $i, j, k$ into unit Cartesian vectors $\mathbf{i}, \mathbf{j}, \mathbf{k}$ and transformed (5.4) into a vector form. The problem with this approach is that the vectors retain their imaginary roots. Simon Altmann's suggestion is to replace the imaginaries by the ordered pairs:
-
+在此阶段，Hamilton将虚数$i, j, k$转换为单位笛卡尔向量$\mathbf{i}, \mathbf{j}, \mathbf{k}$，并将(5.4)转换为向量形式。这种方法的问题是向量保留了它们的虚根。Simon Altmann的建议是将虚数替换为有序对:
 $$
 i=[0, \mathbf{i}] \quad j=[0, \mathbf{j}] \quad k=[0, \mathbf{k}]
 $$
 
-which are themselves quaternions, and called quaternion units. The idea of defining a quaternion in terms of quaternion units is exactly the same as defining a vector in terms of its unit Cartesian vectors. Furthermore, it permits vectors to exist without any imaginary associations.
+它们本身就是四元数，叫做四元数单位。用四元数单位定义四元数的思想与用单位笛卡尔向量定义向量的思想完全相同。此外，它允许向量在没有任何虚数关联的情况下存在。
 
-Let's substitute these quaternion units in (5.4) together with $[1, \mathbf{0}]=1$ :
+让我们用(5.4)中的这些四元数单位和$[1,\mathbf{0}]=1$替换:
+\begin{align}
+    \begin{aligned}
+        {\left[s_{a}, \mathbf{a}\right]\left[s_{b}, \mathbf{b}\right]=} & \left(s_{a} s_{b}-x_{a} x_{b}-y_{a} y_{b}-z_{a} z_{b}\right)[1, \mathbf{0}] \\
+        & +\left(s_{a} x_{b}+s_{b} x_{a}+y_{a} z_{b}-y_{b} z_{a}\right)[0, \mathbf{i}] \\
+        & +\left(s_{a} y_{b}+s_{b} y_{a}+z_{a} x_{b}-z_{b} x_{a}\right)[0, \mathbf{j}] \\
+        & +\left(s_{a} z_{b}+s_{b} z_{a}+x_{a} y_{b}-x_{b} y_{a}\right)[0, \mathbf{k}] .
+    \end{aligned}
+\end{align}
 
-$$
-\begin{aligned}
-{\left[s_{a}, \mathbf{a}\right]\left[s_{b}, \mathbf{b}\right]=} & \left(s_{a} s_{b}-x_{a} x_{b}-y_{a} y_{b}-z_{a} z_{b}\right)[1, \mathbf{0}] \\
-& +\left(s_{a} x_{b}+s_{b} x_{a}+y_{a} z_{b}-y_{b} z_{a}\right)[0, \mathbf{i}] \\
-& +\left(s_{a} y_{b}+s_{b} y_{a}+z_{a} x_{b}-z_{b} x_{a}\right)[0, \mathbf{j}] \\
-& +\left(s_{a} z_{b}+s_{b} z_{a}+x_{a} y_{b}-x_{b} y_{a}\right)[0, \mathbf{k}] .
-\end{aligned}
-$$
 
-Next, we expand (5.5) using previously defined rules:
 
-$$
-\begin{aligned}
-{\left[s_{a}, \mathbf{a}\right]\left[s_{b}, \mathbf{b}\right]=} & {\left[s_{a} s_{b}-x_{a} x_{b}-y_{a} y_{b}-z_{a} z_{b}, \mathbf{0}\right] } \\
-& +\left[0,\left(s_{a} x_{b}+s_{b} x_{a}+y_{a} z_{b}-y_{b} z_{a}\right) \mathbf{i}\right] \\
-& +\left[0,\left(s_{a} y_{b}+s_{b} y_{a}+z_{a} x_{b}-z_{b} x_{a}\right) \mathbf{j}\right] \\
-& +\left[0,\left(s_{a} z_{b}+s_{b} z_{a}+x_{a} y_{b}-x_{b} y_{a}\right) \mathbf{k}\right] .
-\end{aligned}
-$$
+接下来，我们使用之前定义的规则展开(5.5):
+\begin{align}
+    \begin{aligned}
+        {\left[s_{a}, \mathbf{a}\right]\left[s_{b}, \mathbf{b}\right]=} & {\left[s_{a} s_{b}-x_{a} x_{b}-y_{a} y_{b}-z_{a} z_{b}, \mathbf{0}\right] } \\
+        & +\left[0,\left(s_{a} x_{b}+s_{b} x_{a}+y_{a} z_{b}-y_{b} z_{a}\right) \mathbf{i}\right] \\
+        & +\left[0,\left(s_{a} y_{b}+s_{b} y_{a}+z_{a} x_{b}-z_{b} x_{a}\right) \mathbf{j}\right] \\
+        & +\left[0,\left(s_{a} z_{b}+s_{b} z_{a}+x_{a} y_{b}-x_{b} y_{a}\right) \mathbf{k}\right] .
+    \end{aligned} 
+\end{align}
 
-A vertical scan of (5.6) reveals some hidden vectors:
+(5.6)的垂直扫描显示了一些隐藏的向量:
+\begin{align}
+    \begin{aligned}
+        {\left[s_{a}, \mathbf{a}\right]\left[s_{b}, \mathbf{b}\right]=} & {\left[s_{a} s_{b}-x_{a} x_{b}-y_{a} y_{b}-z_{a} z_{b}, \mathbf{0}\right] } \\
+        & +\left[0, s_{a}\left(x_{b} \mathbf{i}+y_{b} \mathbf{j}+z_{b} \mathbf{k}\right)+s_{b}\left(x_{a} \mathbf{i}+y_{a} \mathbf{j}+z_{a} \mathbf{k}\right)\right. \\
+        & \left.+\left(y_{a} z_{b}-y_{b} z_{a}\right) \mathbf{i}+\left(z_{a} x_{b}-z_{b} x_{a}\right) \mathbf{j}+\left(x_{a} y_{b}-x_{b} y_{a}\right) \mathbf{k}\right] .
+    \end{aligned}
+\end{align}
 
-$$
-\begin{aligned}
-{\left[s_{a}, \mathbf{a}\right]\left[s_{b}, \mathbf{b}\right]=} & {\left[s_{a} s_{b}-x_{a} x_{b}-y_{a} y_{b}-z_{a} z_{b}, \mathbf{0}\right] } \\
-& +\left[0, s_{a}\left(x_{b} \mathbf{i}+y_{b} \mathbf{j}+z_{b} \mathbf{k}\right)+s_{b}\left(x_{a} \mathbf{i}+y_{a} \mathbf{j}+z_{a} \mathbf{k}\right)\right. \\
-& \left.+\left(y_{a} z_{b}-y_{b} z_{a}\right) \mathbf{i}+\left(z_{a} x_{b}-z_{b} x_{a}\right) \mathbf{j}+\left(x_{a} y_{b}-x_{b} y_{a}\right) \mathbf{k}\right] .
-\end{aligned}
-$$
+式(5.7)包含两个有序对，现在可以组合:
+\begin{align}
+    \begin{aligned}
+        {\left[s_{a}, \mathbf{a}\right]\left[s_{b}, \mathbf{b}\right]=} & {\left[s_{a} s_{b}-x_{a} x_{b}-y_{a} y_{b}-z_{a} z_{b},\right.} \\
+        & s_{a}\left(x_{b} \mathbf{i}+y_{b} \mathbf{j}+z_{b} \mathbf{k}\right)+s_{b}\left(x_{a} \mathbf{i}+y_{a} \mathbf{j}+z_{a} \mathbf{k}\right) \\
+        & \left.+\left(y_{a} z_{b}-y_{b} z_{a}\right) \mathbf{i}+\left(z_{a} x_{b}-z_{b} x_{a}\right) \mathbf{j}+\left(x_{a} y_{b}-x_{b} y_{a}\right) \mathbf{k}\right] .
+    \end{aligned}
+\end{align}
 
-Equation (5.7) contains two ordered pairs which can now be combined:
-
-$$
-\begin{aligned}
-{\left[s_{a}, \mathbf{a}\right]\left[s_{b}, \mathbf{b}\right]=} & {\left[s_{a} s_{b}-x_{a} x_{b}-y_{a} y_{b}-z_{a} z_{b},\right.} \\
-& s_{a}\left(x_{b} \mathbf{i}+y_{b} \mathbf{j}+z_{b} \mathbf{k}\right)+s_{b}\left(x_{a} \mathbf{i}+y_{a} \mathbf{j}+z_{a} \mathbf{k}\right) \\
-& \left.+\left(y_{a} z_{b}-y_{b} z_{a}\right) \mathbf{i}+\left(z_{a} x_{b}-z_{b} x_{a}\right) \mathbf{j}+\left(x_{a} y_{b}-x_{b} y_{a}\right) \mathbf{k}\right] .
-\end{aligned}
-$$
-
-If we make
-
+如果我们令
 $$
 \begin{aligned}
 & \mathbf{a}=x_{a} \mathbf{i}+y_{a} \mathbf{j}+z_{a} \mathbf{k} \\
@@ -285,21 +281,19 @@ $$
 \end{aligned}
 $$
 
-and substitute them in (5.8) we get:
+代入(5.8)得到:
+\begin{align}
+    \left[s_{a}, \mathbf{a}\right]\left[s_{b}, \mathbf{b}\right]=\left[s_{a} s_{b}-\mathbf{a} \cdot \mathbf{b}, s_{a} \mathbf{b}+s_{b} \mathbf{a}+\mathbf{a} \times \mathbf{b}\right]
+\end{align}
 
-$$
-\left[s_{a}, \mathbf{a}\right]\left[s_{b}, \mathbf{b}\right]=\left[s_{a} s_{b}-\mathbf{a} \cdot \mathbf{b}, s_{a} \mathbf{b}+s_{b} \mathbf{a}+\mathbf{a} \times \mathbf{b}\right]
-$$
+它定义了四元数乘积。
 
-which defines the quaternion product.
+从现在开始，我们不必担心 Hamilton 的规则，因为它们嵌入在(5.9)中。此外，我们的向量没有虚数的关联。
 
-From now on, we don't have to worry about Hamilton's rules as they are embedded within (5.9). Furthermore, our vectors have no imaginary associations.
-
-Although Rodrigues did not have access to Gibbs' vector notation used in (5.9), he managed to calculate the equivalent algebraic expression, which was some achievement.
+虽然Rodrigues没有使用(5.9)中使用的Gibbs向量符号，但他设法计算出等效的代数表达式，这是一项成就。
 
 \subsection{四元数单位}
-Using (5.9) we can check to see if the quaternion units are imaginary by squaring them:
-
+使用(5.9)，我们可以通过对四元数单位进行平方来检查四元数单位是否为虚数:
 $$
 \begin{aligned}
 i & =[0, \mathbf{i}] \\
