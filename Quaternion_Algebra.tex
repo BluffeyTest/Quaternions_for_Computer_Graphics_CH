@@ -303,10 +303,9 @@ i^{2} & =[0, \mathbf{i}][0, \mathbf{i}] \\
 \end{aligned}
 $$
 
-which is a real quaternion and equivalent to $-1$, confirming that $[0, \mathbf{i}]$ is imaginary. Using a similar expansion we can shown that $[0, \mathbf{j}]$ and $[0, \mathbf{k}]$ have the same property.
+这是一个实数四元数，等价于$-1$，确认$[0,\mathbf{i}]$是虚数。使用类似的展开，我们可以显示$[0,\mathbf{j}]$和$[0,\mathbf{k}]$具有相同的属性。
 
-Now let's compute the products $i j, j k$ and $k i$ :
-
+现在让我们计算$i j, jk $和$k i$的乘积:
 $$
 \begin{aligned}
 i j & =[0, \mathbf{i}][0, \mathbf{j}] \\
@@ -315,8 +314,7 @@ i j & =[0, \mathbf{i}][0, \mathbf{j}] \\
 \end{aligned}
 $$
 
-which is the quaternion unit $k$.
-
+就是四元数单位$k$。
 $$
 \begin{aligned}
 j k & =[0, \mathbf{j}][0, \mathbf{k}] \\
@@ -325,8 +323,7 @@ j k & =[0, \mathbf{j}][0, \mathbf{k}] \\
 \end{aligned}
 $$
 
-which is the quaternion unit $i$.
-
+就是四元数单位$i$。
 $$
 \begin{aligned}
 k i & =[0, \mathbf{k}][0, \mathbf{i}] \\
@@ -335,10 +332,9 @@ k i & =[0, \mathbf{k}][0, \mathbf{i}] \\
 \end{aligned}
 $$
 
-which is the quaternion unit $j$.
+就是四元数单位$j$。
 
-Next, let's confirm that $i j k=-1$ :
-
+接下来，让我们确认$i j k=-1$:
 $$
 \begin{aligned}
 i j k & =[0, \mathbf{i}][0, \mathbf{j}][0, \mathbf{k}] \\
@@ -348,10 +344,9 @@ i j k & =[0, \mathbf{i}][0, \mathbf{j}][0, \mathbf{k}] \\
 \end{aligned}
 $$
 
-which is a real quaternion equivalent to $-1$, confirming that $i j k=-1$.
+这是一个四元数，相当于$-1$，确认$ ij k=-1$。
 
-Thus the notation of ordered pairs upholds all of Hamilton's rules. However, the last double product assumes that quaternions are associative. So let's double check to show that $(i j) k=i(j k)$ :
-
+因此，有序对的表示法符合 Hamilton 的所有规则。然而，最后一个双积假设四元数是结合的。因此，让我们再次检查，以显示$(i j) k=i(j k)$:
 $$
 \begin{aligned}
 i(j k) & =[0, \mathbf{i}][0, \mathbf{j}][0, \mathbf{k}] \\
@@ -361,11 +356,10 @@ i(j k) & =[0, \mathbf{i}][0, \mathbf{j}][0, \mathbf{k}] \\
 \end{aligned}
 $$
 
-which is correct.
+这是正确的。
 
 \subsection{四元数乘积的例子}
-Although we have yet to discover how quaternions are used to rotate vectors, let's concentrate on their algebraic traits by evaluating an example.
-
+尽管我们还没有发现四元数是如何用于旋转向量的，让我们通过评估一个例子来集中讨论它们的代数特征。
 $$
 \begin{aligned}
 & q_{a}=[1,2 \mathbf{i}+3 \mathbf{j}+4 \mathbf{k}] \\
@@ -373,8 +367,7 @@ $$
 \end{aligned}
 $$
 
-the product $q_{a} q_{b}$ is
-
+$q_{a} q_{b}$的乘积是
 $$
 \begin{aligned}
 q_{a} q_{b}= & {[1,2 \mathbf{i}+3 \mathbf{j}+4 \mathbf{k}][2,3 \mathbf{i}+4 \mathbf{j}+5 \mathbf{k}] } \\
@@ -386,26 +379,23 @@ q_{a} q_{b}= & {[1,2 \mathbf{i}+3 \mathbf{j}+4 \mathbf{k}][2,3 \mathbf{i}+4 \mat
 \end{aligned}
 $$
 
-which is another ordered pair representing a quaternion.
+这是另一个表示四元数的有序对。
 
-Having shown that Hamilton's imaginary notation has a vector equivalent, and can be represented as an ordered pair, we continue with this notation and describe other features of quaternions. Note that we can abandon Hamilton's rules as they are embedded within the definition of the quaternion product, and will surface in the following definitions.
+在证明了Hamilton的虚数表示法有一个向量等价，并且可以表示为一个有序对之后，我们继续使用这个表示法并描述四元数的其他特征。请注意，我们可以放弃Hamilton规则，因为它们嵌入在四元数乘积的定义中，并将在以下定义中出现。
 
 \section{代数的定义}
-A quaternion is the ordered pair:
-
+四元数是有序对:
 $$
 q=[s, \mathbf{v}] \quad s \in \mathbb{R}, \mathbf{v} \in \mathbb{R}^{3} .
 $$
 
-If we express $\mathbf{v}$ in terms of its components, we have
-
+如果我们用$\mathbf{v}$的分量来表示它，我们有
 $$
 q=[s, x \mathbf{i}+y \mathbf{j}+z \mathbf{k}] \quad s, x, y, z \in \mathbb{R} .
 $$
 
 \section{四元数加减法}
-Addition and subtraction employ the following rule:
-
+加减法使用以下法则:
 $$
 \begin{aligned}
 q_{a} & =\left[s_{a}, \mathbf{a}\right] \\
@@ -414,8 +404,7 @@ q_{a} \pm q_{b} & =\left[s_{a} \pm s_{b}, \mathbf{a} \pm \mathbf{b}\right]
 \end{aligned}
 $$
 
-For example:
-
+示例:
 $$
 \begin{aligned}
 q_{a} & =[0.5,2 \mathbf{i}+3 \mathbf{j}-4 \mathbf{k}] \\
@@ -426,14 +415,12 @@ q_{a}-q_{b} & =[0.4,-2 \mathbf{i}-2 \mathbf{j}-10 \mathbf{k}] .
 $$
 
 \section{实四元数}
-A real quaternion has a zero vector term:
-
+实四元数有一个零向量项:
 $$
 q=[s, \mathbf{0}]
 $$
 
-The product of two real quaternions is
-
+两个实四元数的乘积是
 $$
 \begin{aligned}
 q_{a} & =\left[s_{a}, \mathbf{0}\right] \\
@@ -443,21 +430,18 @@ q_{a} q_{b} & =\left[s_{a}, \mathbf{0}\right]\left[s_{b}, \mathbf{0}\right] \\
 \end{aligned}
 $$
 
-which is another real quaternion, and shows that they behave just like real numbers:
-
+这是另一个实数四元数，表明它们的行为就像实数一样:
 $$
 [s, \mathbf{0}] \equiv s .
 $$
 
-We have already come across this with complex numbers containing a zero imaginary term:
-
+我们已经遇到过包含零虚数项的复数:
 $$
-a+b i=a \quad \text { when } b=0 .
+a+b i=a \quad \text { 当 } b=0 .
 $$
 
 \section{四元数乘以标量}
-Intuition suggests that multiplying a quaternion by a scalar should obey the rule:
-
+直觉表明，四元数乘以一个标量应该遵循以下规则:
 $$
 \begin{aligned}
 q & =[s, \mathbf{v}] \\
@@ -466,8 +450,7 @@ q & =[s, \mathbf{v}] \\
 \end{aligned}
 $$
 
-We can confirm our intuition by multiplying a quaternion by a scalar in the form of a real quaternion:
-
+我们可以用一个四元数乘以一个实四元数形式的标量来证实我们的直觉:
 $$
 \begin{aligned}
 q & =[s, \mathbf{v}] \\
@@ -477,29 +460,26 @@ q & =[s, \mathbf{v}] \\
 \end{aligned}
 $$
 
-which is excellent confirmation.
+这是很好的证明。
 
 \section{纯四元数}
-Hamilton defined a pure quaternion as one having a zero scalar term:
-
+Hamilton将纯四元数定义为具有零标量项的四元数:
 $$
 q=x i+y j+z k
 $$
 
-and was just a 'vector', with all its imaginary qualities. However, Simon Altmann and others, believe that this was a serious mistake on Hamilton's part to call a quaternion with a zero real term, a vector.
+它只是一个“矢量”，有它所有虚数的特性。然而，Simon Altmann和其他人认为，Hamilton把实数为零的四元数称为向量，这是一个严重的错误。
 
-The main issue is that there are two types of vectors: polar and axial, also called a pseudovector. Richard Feynman describes polar vectors as 'honest' vectors [12] and represent the every-day vectors of directed lines. Whereas, axial vectors are computed from polar vectors, such as in a vector product. However, these two types of vector do not behave in the same way when transformed. For example, given two 'honest', polar vectors $\mathbf{a}$ and $\mathbf{b}$, we can compute the axial vector: $\mathbf{c}=\mathbf{a} \times \mathbf{b}$. Next, if we subject $\mathbf{a}$ and $\mathbf{b}$ to an inversion transform through the origin, such that $\mathbf{a}$ becomes $-\mathbf{a}$, and $\mathbf{b}$ becomes $-\mathbf{b}$, and compute their cross product $(-\mathbf{a}) \times(-\mathbf{b})$, we still get $\mathbf{c}$ ! Which implies that the axial vector $\mathbf{c}$ must not be transformed along with $\mathbf{a}$ and $\mathbf{b}$.
+主要问题是有两种类型的向量:极坐标和轴坐标，也称为伪向量。理查德·费曼(Richard Feynman)将极向量描述为“诚实的”向量[12]，并表示有向线的日常向量。然而，轴向量是从极向量计算出来的，例如在向量积中。然而，这两种类型的向量在变换时行为并不相同。例如，给定两个“诚实的”极坐标向量$\mathbf{a}$和$\mathbf{b}$，我们可以计算轴向量:$\mathbf{c}=\mathbf{a} \times\mathbf{b}$。接下来，如果我们将$\mathbf{a}$和$\mathbf{b}$赋值到原点的反转变换，使$\mathbf{a}$变为$-\mathbf{a}$， $\mathbf{b}$变为$-\mathbf{b}$，并计算它们的叉乘$(-\mathbf{a}) \times(-\mathbf{b})$，我们仍然得到$\mathbf{c}$ !这意味着轴向量$\mathbf{c}$不能与$\mathbf{a}$和$\mathbf{b}$一起转换。
 
-It could be argued that the inversion transform is not a 'proper' transform as it turns a right-handed set of axes into a left-handed set. But in physics, laws of nature are expected to work in either system. Unfortunately, Hamilton was not aware of this distinction, as he had only just invented vectors. However, in the intervening years, it has become evident that Hamilton's quaternion vector is an axial vector, and not a polar vector.
+可以认为，逆变换不是一个“适当的”变换，因为它把一个右手轴集变成了一个左手轴集。但在物理学中，自然定律在这两种系统中都适用。不幸的是，Hamilton并没有意识到这种区别，因为他刚刚发明了向量。然而，在过去的几年里，Hamilton的四元数向量显然是一个轴向量，而不是一个极向量。
 
-As we will see, in 3D rotations quaternions take the form
-
+正如我们将看到的，在三维旋转中，四元数采用这种形式
 $$
 q=\left[\cos \frac{1}{2} \theta, \sin \frac{1}{2} \theta \mathbf{v}\right]
 $$
 
-where $\theta$ is the angle of rotation and $\mathbf{v}$ is the axis of rotation, and when we set $\theta=180^{\circ}$, we get
-
+其中$\theta$是旋转角度，$\mathbf{v}$是旋转轴，当我们设置$\theta=180^{\circ}$时，我们得到
 $$
 q=[0, \mathbf{v}]
 $$
