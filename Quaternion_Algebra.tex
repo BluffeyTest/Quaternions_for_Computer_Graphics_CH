@@ -484,14 +484,12 @@ $$
 q=[0, \mathbf{v}]
 $$
 
-which remains a quaternion, even though it only contains a vector part. Consequently, we define a pure quaternion as
-
+它仍然是四元数，即使它只包含一个向量部分。因此，我们将纯四元数定义为
 $$
 q=[0, \mathbf{v}]
 $$
 
-The product of two pure quaternions is
-
+两个纯四元数的乘积是
 $$
 \begin{aligned}
 q_{a} & =[0, \mathbf{a}] \\
@@ -501,19 +499,17 @@ q_{a} q_{b} & =[0, \mathbf{a}][0, \mathbf{b}] \\
 \end{aligned}
 $$
 
-which is no longer 'pure', as some of the original vector information has 'tunnelled' across into the real part via the dot product.
+这不再是“纯粹的”，因为一些原始向量信息已经通过点积“隧穿”到实部。
 
 \section{单位四元数}
-Let's pursue this analysis further by introducing some familiar vector notation.
+让我们通过介绍一些熟悉的向量符号来进一步进行分析。
 
-Give vector $\mathbf{v}$, then
-
+给出向量$\mathbf{v}$，然后
 $$
-\mathbf{v}=v \hat{\mathbf{v}} \quad \text { where } v=|\mathbf{v}|, \text { and }|\hat{\mathbf{v}}|=1 .
+\mathbf{v}=v \hat{\mathbf{v}} \quad \text { 其中 } v=|\mathbf{v}|, \text { 且 }|\hat{\mathbf{v}}|=1 .
 $$
 
-Combining this with the definition of a pure quaternion we get:
-
+将此与纯四元数的定义结合起来，我们得到:
 $$
 \begin{aligned}
 q & =[0, \mathbf{v}] \\
@@ -522,26 +518,22 @@ q & =[0, \mathbf{v}] \\
 \end{aligned}
 $$
 
-and reveals the object $[0, \hat{\mathbf{v}}]$ which is called the unit quaternion and comprises a zero scalar and a unit vector. It is convenient to identify this unit quaternion as $\hat{q}$ :
-
+并揭示对象$[0,\hat{\mathbf{v}}]$，它被称为单位四元数，由一个零标量和一个单位向量组成。将这个单位四元数标识为 $\hat{q}$ 是很方便的:
 $$
 \hat{q}=[0, \hat{\mathbf{v}}]
 $$
 
-So now we have a notation similar to that of vectors where a vector $\mathbf{v}$ is described in terms of its unit form:
-
+现在我们有了一个类似于向量的符号，其中向量$\mathbf{v}$是用它的单位形式来描述的:
 $$
 \mathbf{v}=v \hat{\mathbf{v}}
 $$
 
-and a quaternion $q$ is also described in terms of its unit form:
-
+四元数$q$也可以用它的单位形式来描述:
 $$
 q=v \hat{q} .
 $$
 
-Note that $\hat{q}$ is an imaginary object as it squares to $-1$ :
-
+注意$\hat{q}$是一个虚对象，因为它平方到$-1$:
 $$
 \begin{aligned}
 \hat{q}^{2} & =[0, \hat{\mathbf{v}}][0, \hat{\mathbf{v}}] \\
@@ -551,11 +543,10 @@ $$
 \end{aligned}
 $$
 
-which is not too surprising, bearing in mind Hamilton's original invention!
+考虑到 Hamilton 最初的发明，这并不太令人惊讶!
 
 \section{四元数的加法形式}
-We now come to the idea of splitting a quaternion into its constituent parts: a real quaternion and a pure quaternion. Again, intuition suggests that we can write a quaternion as
-
+现在我们来谈谈把四元数分成它的组成部分:实四元数和纯四元数。直觉告诉我们四元数可以写成
 $$
 \begin{aligned}
 q & =[s, \mathbf{v}] \\
@@ -563,8 +554,7 @@ q & =[s, \mathbf{v}] \\
 \end{aligned}
 $$
 
-and we can test this by forming the algebraic product of two quaternions represented in this way:
-
+我们可以通过形成两个四元数的代数乘积来检验这一点，用这种方式表示:
 $$
 \begin{aligned}
 q_{a} & =\left[s_{a}, \mathbf{0}\right]+[0, \mathbf{a}] \\
@@ -576,11 +566,10 @@ q_{a} q_{b} & =\left(\left[s_{a}, \mathbf{0}\right]+[0, \mathbf{a}]\right)\left(
 \end{aligned}
 $$
 
-which is correct, and confirms that the additive form works.
+这是正确的，并证实了加法形式是有效的。
 
 \section{四元数的二进制形式}
-Having shown that the additive form of a quaternion works, and discovered the unit quaternion, we can join the two objects together as follows:
-
+在证明了四元数的加法形式是可行的，并发现了单位四元数之后，我们可以将两个对象按如下方式连接在一起:
 $$
 \begin{aligned}
 q & =[s, \mathbf{v}] \\
@@ -590,10 +579,9 @@ q & =[s, \mathbf{v}] \\
 \end{aligned}
 $$
 
-Just to recap, $s$ is a scalar, $v$ is the length of the vector term, and $\hat{q}$ is the unit quaternion $[0, \hat{\mathbf{v}}]$.
+简单回顾一下，$s$是一个标量，$v$是向量项的长度，$\hat{q}$是单位四元数$[0,\hat{\mathbf{v}}]$。
 
-Look how similar this notation is to a complex number:
-
+看看这个符号和复数有多相似:
 $$
 \begin{aligned}
 & z=a+b i \\
@@ -601,29 +589,25 @@ $$
 \end{aligned}
 $$
 
-where $a, b, s, v$ are scalars, $i$ is the unit imaginary and $\hat{q}$ is the unit quaternion.
+其中$a, b, s, v$是标量，$i$是单位虚数，$\hat{q}$是单位四元数。
 
 \section{共轭}
-We have already discovered that the conjugate of a complex number $z=a+b \mathrm{i}$ is given by
-
+我们已经发现复数$z=a+b \mathrm{i}$的共轭为
 $$
 z^{*}=a-b \mathrm{i}
 $$
 
-and is very useful in computing the inverse of $z$. The quaternion conjugate plays a similar role in computing the inverse of a quaternion. Therefore, given
-
+在计算z的逆时非常有用。四元数共轭在计算四元数的逆时起着类似的作用。因此,鉴于
 $$
 q=[s, \mathbf{v}]
 $$
 
-the quaternion conjugate is defined as
-
+四元数共轭定义为
 $$
 q^{*}=[s,-\mathbf{v}] .
 $$
 
-If we compute the product $q q^{*}$ we obtain
-
+如果我们计算乘积$q q^{*}$，我们得到
 $$
 \begin{aligned}
 q q^{*} & =[s, \mathbf{v}][s,-\mathbf{v}] \\
@@ -633,52 +617,47 @@ q q^{*} & =[s, \mathbf{v}][s,-\mathbf{v}] \\
 \end{aligned}
 $$
 
-Let's show that $q q^{*}=q^{*} q$ :
+我们来展示$q q^{*}=q^{*} q$:
+\begin{align*}
+    \begin{aligned}
+        q^{*} q & =[s,-\mathbf{v}][s, \mathbf{v}] \\
+        & =\left[s^{2}-(-\mathbf{v}) \cdot \mathbf{v}, s \mathbf{v}-s \mathbf{v}+(-\mathbf{v}) \times \mathbf{v}\right] \\
+        & =\left[s^{2}+\mathbf{v} \cdot \mathbf{v}, \mathbf{0}\right] \\
+        & =\left[s^{2}+v^{2}, \mathbf{0}\right] \\
+        & =q q^{*} .
+    \end{aligned}
+\end{align*}
 
-$$
-\begin{aligned}
-q^{*} q & =[s,-\mathbf{v}][s, \mathbf{v}] \\
-& =\left[s^{2}-(-\mathbf{v}) \cdot \mathbf{v}, s \mathbf{v}-s \mathbf{v}+(-\mathbf{v}) \times \mathbf{v}\right] \\
-& =\left[s^{2}+\mathbf{v} \cdot \mathbf{v}, \mathbf{0}\right] \\
-& =\left[s^{2}+v^{2}, \mathbf{0}\right] \\
-& =q q^{*} .
-\end{aligned}
-$$
+现在让我们展示$\left(q_{a} q_{b}\right)^{*}=q_{b}^{*} q_{a}^{*}$。
+\begin{align}
+    \begin{aligned}
+        q_{a} & =\left[s_{a}, \mathbf{a}\right] \\
+        q_{b} & =\left[s_{b}, \mathbf{b}\right] \\
+        q_{a} q_{b} & =\left[s_{a}, \mathbf{a}\right]\left[s_{b}, \mathbf{b}\right] \\
+        & =\left[s_{a} s_{b}-\mathbf{a} \cdot \mathbf{b}, s_{a} \mathbf{b}+s_{b} \mathbf{a}+\mathbf{a} \times \mathbf{b}\right] \\
+        \left(q_{a} q_{b}\right)^{*} & =\left[s_{a} s_{b}-\mathbf{a} \cdot \mathbf{b},-s_{a} \mathbf{b}-s_{b} \mathbf{a}-\mathbf{a} \times \mathbf{b}\right] .
+    \end{aligned}
+\end{align}
 
-Now let's show that $\left(q_{a} q_{b}\right)^{*}=q_{b}^{*} q_{a}^{*}$.
+接下来，我们计算$q_{b}^{*} q_{a}^{*}$
+\begin{align}
+    \begin{aligned}
+        q_{a}^{*} & =\left[s_{a},-\mathbf{a}\right] \\
+        q_{b}^{*} & =\left[s_{b},-\mathbf{b}\right] \\
+        q_{b}^{*} q_{a}^{*} & =\left[s_{b},-\mathbf{b}\right]\left[s_{a},-\mathbf{a}\right] \\
+        & =\left[s_{a} s_{b}-\mathbf{a} \cdot \mathbf{b},-s_{a} \mathbf{b}-s_{b} \mathbf{a}-\mathbf{a} \times \mathbf{b}\right] .
+    \end{aligned}
+\end{align}
 
-$$
-\begin{aligned}
-q_{a} & =\left[s_{a}, \mathbf{a}\right] \\
-q_{b} & =\left[s_{b}, \mathbf{b}\right] \\
-q_{a} q_{b} & =\left[s_{a}, \mathbf{a}\right]\left[s_{b}, \mathbf{b}\right] \\
-& =\left[s_{a} s_{b}-\mathbf{a} \cdot \mathbf{b}, s_{a} \mathbf{b}+s_{b} \mathbf{a}+\mathbf{a} \times \mathbf{b}\right] \\
-\left(q_{a} q_{b}\right)^{*} & =\left[s_{a} s_{b}-\mathbf{a} \cdot \mathbf{b},-s_{a} \mathbf{b}-s_{b} \mathbf{a}-\mathbf{a} \times \mathbf{b}\right] .
-\end{aligned}
-$$
-
-Next, we compute $q_{b}^{*} q_{a}^{*}$
-
-$$
-\begin{aligned}
-q_{a}^{*} & =\left[s_{a},-\mathbf{a}\right] \\
-q_{b}^{*} & =\left[s_{b},-\mathbf{b}\right] \\
-q_{b}^{*} q_{a}^{*} & =\left[s_{b},-\mathbf{b}\right]\left[s_{a},-\mathbf{a}\right] \\
-& =\left[s_{a} s_{b}-\mathbf{a} \cdot \mathbf{b},-s_{a} \mathbf{b}-s_{b} \mathbf{a}-\mathbf{a} \times \mathbf{b}\right] .
-\end{aligned}
-$$
-
-And as (5.10) equals $(5.11),\left(q_{a} q_{b}\right)^{*}=q_{b}^{*} q_{a}^{*}$.
+且(5.10)与(5.11)相等，$\left(q_{a} q_{b}\right)^{*}=q_{b}^{*} q_{a}^{*}$。
 
 \section{四元数范数}
-The norm of a complex number $z=a+b i$ is defined as
-
+复数$z=a+ bi $的范数定义为
 $$
 |z|=\sqrt{a^{2}+b^{2}}
 $$
 
-which allows us to write
-
+这允许我们写作
 $$
 z z^{*}=|z|^{2} \text {. }
 $$
