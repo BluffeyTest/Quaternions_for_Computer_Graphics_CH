@@ -662,20 +662,18 @@ $$
 z z^{*}=|z|^{2} \text {. }
 $$
 
-Similarly, the norm of a quaternion $q=[s, \mathbf{v}]$ is defined as
+类似地，四元数$q=[s, \mathbf{v}]$的范数定义为
 
 $$
 |q|=\sqrt{s^{2}+v^{2}}
 $$
 
-where $v=|\mathbf{v}|$ which allows us to write
-
+这里$v=|\mathbf{v}|$允许我们写
 $$
 q q^{*}=|q|^{2} .
 $$
 
-For example, given
-
+举个例子，给出
 $$
 \begin{aligned}
 q & =[1,4 \mathbf{i}+4 \mathbf{j}-4 \mathbf{k}] \\
@@ -685,38 +683,33 @@ q & =[1,4 \mathbf{i}+4 \mathbf{j}-4 \mathbf{k}] \\
 \end{aligned}
 $$
 
-\section{归一化四元数}
-A quaternion with a unit norm is called a normalised quaternion. For example, the quaternion $q=[s, \mathbf{v}]$ is normalised by dividing it by $|q|$ :
-
+\section{单位范数四元数}
+具有单位范数的四元数称为归一化四元数。例如，四元数$q=[s, \mathbf{v}]$通过除以$|q|$进行归一化:
 $$
 q^{\prime}=\frac{q}{\sqrt{s^{2}+v^{2}}} .
 $$
 
-We must be careful not to confuse the unit quaternion with a unit-norm quaternion. The unit quaternion is $[0, \hat{\mathbf{v}}]$ with a unit-vector part, whereas a unit-norm quaternion is normalised such that $s^{2}+v^{2}=1$.
+我们必须注意不要将单位四元数与单位范数四元数混淆。单位四元数是$[0,\hat{\mathbf{v}}]$，其中包含一个单位向量部分，而单位范数四元数则规范化为$s^{2}+v^{2}=1$。
 
-I will be careful to distinguish between these two terms as many authorsincluding myself-use the term unit quaternion to describe a quaternion with a unit norm. For example
-
+我将小心区分这两个术语，因为许多作者(包括我自己)使用术语单位四元数来描述具有单位范数的四元数。例如
 $$
 q=[1,4 \mathbf{i}+4 \mathbf{j}-4 \mathbf{k}]
 $$
 
-has a norm of 7 , and $q$ is normalised by dividing by 7 :
-
+有7的范数，$q$通过除以7来归一化:
 $$
 q^{\prime}=\frac{1}{7}[1,4 \mathbf{i}+4 \mathbf{j}-4 \mathbf{k}] .
 $$
 
-The type of unit-norm quaternion we will be using takes the form:
-
+我们将使用的单位范数四元数的类型为:
 $$
 q=\left[\cos \frac{1}{2} \theta, \sin \frac{1}{2} \theta \hat{\mathbf{v}}\right]
 $$
 
-because $\cos ^{2} \theta+\sin ^{2} \theta=1$
+因为 $\cos ^{2} \theta+\sin ^{2} \theta=1$
 
 \section{四元数乘积}
-Having shown that ordered pairs can represent a quaternion and its various manifestations, let's summarise the products we will eventually encounter. To start, we have the product of two normal quaternions:
-
+在证明了有序对可以表示四元数及其各种表现之后，让我们总结一下我们最终会遇到的乘积。首先，我们有两个普通四元数的乘积:
 $$
 \begin{aligned}
 q_{a} q_{b} & =\left[s_{a}, \mathbf{a}\right]\left[s_{b}, \mathbf{b}\right] \\
@@ -725,8 +718,7 @@ q_{a} q_{b} & =\left[s_{a}, \mathbf{a}\right]\left[s_{b}, \mathbf{b}\right] \\
 $$
 
 \subsection{纯四元数的乘积}
-Given two pure quaternions:
-
+给出两个纯四元数
 $$
 \begin{aligned}
 & q_{a}=[0, \mathbf{a}] \\
@@ -734,8 +726,7 @@ $$
 \end{aligned}
 $$
 
-their product is
-
+他们的乘积是
 $$
 \begin{aligned}
 q_{a} q_{b} & =[0, \mathbf{a}][0, \mathbf{b}] \\
@@ -744,8 +735,7 @@ q_{a} q_{b} & =[0, \mathbf{a}][0, \mathbf{b}] \\
 $$
 
 \subsection{两个单位范数四元数的乘积}
-Given two unit-norm quaternions:
-
+给出两个单位范数四元数：
 $$
 \begin{aligned}
 q_{a} & =\left[s_{a}, \mathbf{a}\right] \\
@@ -753,10 +743,9 @@ q_{b} & =\left[s_{b}, \mathbf{b}\right]
 \end{aligned}
 $$
 
-where $\left|q_{a}\right|=\left|q_{b}\right|=1$. Their product is another unit-norm quaternion, which is proved as follows.
+其中$\left|q_{a}\right|=\left|q_{b}\right|=1$。它们的乘积是另一个单位范数四元数，证明如下。
 
-We assume $q_{c}=\left[s_{c}, \mathbf{c}\right]$ and show that $\left|q_{c}\right|=s_{c}^{2}+c^{2}=1$ where
-
+假设$q_{c}=\left[s_{c}, \mathbf{c}\right]$，并得到$\left|q_{c}\right|=s_{c}^{2}+c^{2}=1$，其中
 $$
 \begin{aligned}
 {\left[s_{c}, \mathbf{c}\right] } & =\left[s_{a}, \mathbf{a}\right]\left[s_{b}, \mathbf{b}\right] \\
@@ -764,8 +753,7 @@ $$
 \end{aligned}
 $$
 
-Let's assume the angle between $\mathbf{a}$ and $\mathbf{b}$ is $\theta$, which permits us to write
-
+让我们假设$\mathbf{a}$和$\mathbf{b}$之间的夹角是$\theta$，这允许我们写
 $$
 \begin{aligned}
 s_{c} & =s_{a} s_{b}-a b \cos \theta \\
@@ -773,8 +761,7 @@ s_{c} & =s_{a} s_{b}-a b \cos \theta \\
 \end{aligned}
 $$
 
-Therefore,
-
+因此,
 $$
 \begin{aligned}
 s_{c}^{2} & =\left(s_{a} s_{b}-a b \cos \theta\right)\left(s_{a} s_{b}-a b \cos \theta\right) \\
@@ -782,14 +769,13 @@ s_{c}^{2} & =\left(s_{a} s_{b}-a b \cos \theta\right)\left(s_{a} s_{b}-a b \cos 
 \end{aligned}
 $$
 
-Fig. 5.2 Geometry for $s_{a} b \hat{\mathbf{b}}+s_{b} a \hat{\mathbf{a}}+a b \sin \theta(\hat{\mathbf{a}} \times \hat{\mathbf{b}})$
+\begin{figure}[h!]
+    \centering
+    \includegraphics[max width=0.7\textwidth]{2023_01_16_a848224efad29cd66460g-079}
+    \caption[short]{$s_{a} b \hat{\mathbf{b}}+s_{b} a \hat{\mathbf{a}}+a b \sin \theta(\hat{\mathbf{a}} \times \hat{\mathbf{b}})$几何表示}
+\end{figure}
 
-\begin{center}
-\includegraphics[max width=\textwidth]{2023_01_16_a848224efad29cd66460g-079}
-\end{center}
-
-Figure $5.2$ shows the geometry representing c.
-
+图$5.2$展示了c的几何图形表示。
 $$
 \begin{aligned}
 d^{2}= & s_{b}^{2} a^{2}+s_{a}^{2} b^{2}-2 s_{a} s_{b} a b \cos (\pi-\theta) \\
@@ -805,8 +791,7 @@ s_{c}^{2}+c^{2}= & s_{a}^{2} s_{b}^{2}-2 s_{a} s_{b} a b \cos \theta+a^{2} b^{2}
 \end{aligned}
 $$
 
-Therefore, the product of two unit-norm quaternions is another unit-norm quaternion. Consequently, multiplying a quaternion by a unit-norm quaternion, does not change its norm:
-
+因此，两个单位范数四元数的乘积是另一个单位范数四元数。因此，用一个四元数乘以一个单位范数四元数并不改变它的范数:
 $$
 \begin{aligned}
 q_{a} & =\left[s_{a}, \mathbf{a}\right] \\
@@ -817,8 +802,7 @@ q_{b} & =\left[s_{b}, \mathbf{b}\right] \\
 $$
 
 \subsection{四元数平方}
-The square of a quaternion is given by
-
+四元数的平方由
 $$
 \begin{aligned}
 q & =[s, \mathbf{v}] \\
