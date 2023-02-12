@@ -813,8 +813,7 @@ q^{2} & =[s, \mathbf{v}][s, \mathbf{v}] \\
 \end{aligned}
 $$
 
-For example:
-
+例如:
 $$
 \begin{aligned}
 q & =[7,2 \mathbf{i}+3 \mathbf{j}+4 \mathbf{k}] \\
@@ -823,8 +822,7 @@ q^{2} & =\left[7^{2}-2^{2}-3^{2}-4^{2}, 14(2 \mathbf{i}+3 \mathbf{j}+4 \mathbf{k
 \end{aligned}
 $$
 
-The square of a pure quaternion is
-
+纯四元数的平方是
 $$
 \begin{aligned}
 q & =[0, \mathbf{v}] \\
@@ -835,11 +833,10 @@ q^{2} & =[0, \mathbf{v}][0, \mathbf{v}] \\
 \end{aligned}
 $$
 
-which makes the square of a pure, unit-norm quaternion equal to $-1$, and was one of the results, to which some 19 th-century mathematicians objected.
+这使得一个纯粹的单位范数四元数的平方等于$-1$，这是19世纪一些数学家反对的结果之一。
 
 \subsection{四元数乘积的范数}
-In proving that the product of two unit-norm quaternions is another unit-norm quaternion we saw that
-
+在证明两个单位范数四元数的乘积是另一个单位范数四元数时，我们看到了这一点
 $$
 \begin{aligned}
 q_{a} & =\left[s_{a}, \mathbf{a}\right] \\
@@ -850,8 +847,7 @@ q_{c} & =q_{a} q_{b} \\
 \end{aligned}
 $$
 
-which, if we ignore the constraint of unit-norm quaternions, shows that the norm of a quaternion product equals the product of the individual norms:
-
+如果我们忽略单位范数四元数的约束，则表明四元数乘积的范数等于各个范数的乘积:
 $$
 \begin{aligned}
 \left|q_{a} q_{b}\right|^{2} & =\left|q_{a}\right|^{2}\left|q_{b}\right|^{2} \\
@@ -860,51 +856,44 @@ $$
 $$
 
 \section{逆四元数}
-An important feature of quaternion algebra is the ability to divide two quaternions $q_{b} / q_{a}$, as long as $q_{a}$ does not vanish.
+四元数代数的一个重要特征是能够两个四元数$q_{b} / q_{a}$相除，只要$q_{a}$不为$[0,\bf{0}]$。
 
-By definition, the inverse $q^{-1}$ of $q$ satisfies
+根据定义，$q$的逆$q^{-1}$满足
+\begin{align}
+    q q^{-1}=[1, \mathbf{0}]=1
+\end{align}
 
-$$
-q q^{-1}=[1, \mathbf{0}]=1
-$$
+为了分离$q^{-1}$，我们将(5.12)乘以$q^{*}$
+\begin{align}
+    \begin{aligned}
+        & q^{*} q q^{-1}=q^{*} \\
+        & |q|^{2} q^{-1}=q^{*}
+    \end{aligned}
+\end{align}
 
-To isolate $q^{-1}$, we multiply (5.12) by $q^{*}$
-
-$$
-\begin{aligned}
-& q^{*} q q^{-1}=q^{*} \\
-& |q|^{2} q^{-1}=q^{*}
-\end{aligned}
-$$
-
-and from (5.13) we can write
-
+从(5.13)我们可以写出
 $$
 q^{-1}=\frac{q^{*}}{|q|^{2}}
 $$
 
-If $q$ is a unit-norm quaternion, then
-
+如果$q$是单位范数四元数，则
 $$
 q^{-1}=q^{*}
 $$
 
-which is useful in the context of rotations.
+这在旋转的情况下很有用。
 
-Furthermore, as
-
+此外,由于
 $$
 \left(q_{a} q_{b}\right)^{*}=q_{b}^{*} q_{a}^{*}
 $$
 
-then
-
+然后
 $$
 \left(q_{a} q_{b}\right)^{-1}=q_{b}^{-1} q_{a}^{-1}
 $$
 
-Note that $q q^{-1}=q^{-1} q$
-
+注意$q q^{-1}=q^{-1} q$
 $$
 \begin{aligned}
 & q q^{-1}=\frac{q q^{*}}{|q|^{2}}=1 \\
@@ -912,8 +901,7 @@ $$
 \end{aligned}
 $$
 
-Thus, we represent the quotient $q_{b} / q_{a}$ as
-
+因此，我们将商$q_{b} / q_{a}$表示为
 $$
 \begin{aligned}
 q_{c} & =\frac{q_{b}}{q_{a}} \\
@@ -922,8 +910,7 @@ q_{c} & =\frac{q_{b}}{q_{a}} \\
 \end{aligned}
 $$
 
-For completeness let's evaluate the inverse of $q$ where
-
+为了完整，我们求$q$的逆
 $$
 \begin{aligned}
 q & =\left[1, \frac{1}{\sqrt{3}} \mathbf{i}+\frac{1}{\sqrt{3}} \mathbf{j}+\frac{1}{\sqrt{3}} \mathbf{k}\right] \\
@@ -933,8 +920,7 @@ q^{-1}=\frac{q^{*}}{|q|^{2}} & =\frac{1}{2}\left[1,-\frac{1}{\sqrt{3}} \mathbf{i
 \end{aligned}
 $$
 
-It should be clear that $q^{-1} q=1$ :
-
+显然$q^{-1} q=1$:
 $$
 \begin{aligned}
 q^{-1} q & =\frac{1}{2}\left[1,-\frac{1}{\sqrt{3}} \mathbf{i}-\frac{1}{\sqrt{3}} \mathbf{j}-\frac{1}{\sqrt{3}} \mathbf{k}\right]\left[1, \frac{1}{\sqrt{3}} \mathbf{i}+\frac{1}{\sqrt{3}} \mathbf{j}+\frac{1}{\sqrt{3}} \mathbf{k}\right] \\
@@ -944,8 +930,7 @@ q^{-1} q & =\frac{1}{2}\left[1,-\frac{1}{\sqrt{3}} \mathbf{i}-\frac{1}{\sqrt{3}}
 $$
 
 \section{矩阵}
-Matrices provide another way to express a quaternion product. For convenience, let's repeat (5.8) again and show it in matrix form:
-
+矩阵提供了另一种表示四元数积的方法。为方便起见，让我们再次重复式(5.8)，并以矩阵形式表示:
 $$
 \begin{aligned}
 {\left[s_{a}, \mathbf{a}\right]\left[s_{b}, \mathbf{b}\right]=} & {\left[s_{a} s_{b}-x_{a} x_{b}-y_{a} y_{b}-z_{a} z_{b},\right.} \\
@@ -965,8 +950,7 @@ z_{b}
 \end{aligned}
 $$
 
-Let's recompute the product $q_{a} q_{b}$ using the above matrix:
-
+让我们用上面的矩阵重新计算乘积$q_{a} q_{b}$:
 $$
 \begin{aligned}
 q_{a} & =[1,2 \mathbf{i}+3 \mathbf{j}+4 \mathbf{k}] \\
@@ -993,7 +977,7 @@ q_{a} q_{b} & =\left[\begin{array}{cccc}
 $$
 
 \subsection{正交矩阵}
-We can demonstrate that the unit-norm quaternion matrix is orthogonal by showing that the product with its transpose equals the identity matrix. As we are dealing with matrices, $\mathbf{Q}$ will represent the matrix for $q$ :
+我们可以证明单位范数四元数矩阵是正交的，通过证明其转置的乘积等于单位矩阵。当我们处理矩阵时，$\mathbf{Q}$将表示 $ q $ 的矩阵:
 
 $$
 \begin{aligned}
@@ -1005,17 +989,17 @@ $$
 \end{aligned}
 $$
 
-For this to occur, $\mathbf{Q}^{\mathrm{T}}=\mathbf{Q}^{-1}$.
+会发生这样的情况, $\mathbf{Q}^{\mathrm{T}}=\mathbf{Q}^{-1}$。
 
 \section{四元数代数}
-Ordered pairs provide a simple notation for representing quaternions, and allow us to represent the real unit 1 as $[1, \mathbf{0}]$, and the imaginaries $i, j, k$ as $[0, \mathbf{i}],[0, \mathbf{j}],[0, \mathbf{k}]$ respectively. A quaternion then becomes a linear combination of these elements with associated real coefficients. Under such conditions, the elements form the basis for an algebra over the field of reals.
+有序对提供了一种简单的表示四元数的表示法，并允许我们将实单位1表示为$[1,\mathbf{0}]$，将虚数$i, j, k$分别表示为$[0, \mathbf{i}],[0, \mathbf{j}],[0, \mathbf{k}]$。四元数就变成了这些元素的线性组合，并带有相关的实系数。在这种情况下，这些元素构成了实数域代数的基础。
 
-Furthermore, because quaternion algebra supports division, and obeys the normal axioms of algebra, except that multiplication is non-commutative, it is called a division algebra. Ferdinand Georg Frobenius proved in 1878 that only three such real associative division algebras exist: real numbers, complex numbers and quaternions [1].
+此外，由于四元数代数支持除法，并且遵循代数的正常公理，除了乘法是非交换的，所以它被称为除法代数。Ferdinand Georg Frobenius在1878年证明了只有三种实数结合律除法代数存在:实数，复数和四元数[1]。
 
-The "Cayley numbers" $\mathbb{O}$, constitute a real division algebra, but the Cayley numbers are 8-dimensional and are not associative, i.e. $a(b c) \neq(a b) c$ for all $a, b, c \in \mathbb{O}$.
+“Cayley数”$\mathbb{O}$，构成了一个实除法代数，但Cayley数是8维的，并且是不符合结合律的，即$a(b c) \neq(a b) c$对于所有$a, b, c \in \mathbb{O}$。
 
 \section{总结}
-Quaternions are very similar to complex numbers, apart from the fact that they have three imaginary terms, rather than one. Consequently, they inherit some of the properties associated with complex numbers, such as norm, conjugate, unit norm and inverse. They can also be added, subtracted, multiplied and divided. However, unlike complex numbers, they anti-commute when multiplied.
+四元数与复数非常相似，除了它们有三个虚数项，而不是一个。因此，它们继承了与复数相关的一些性质，如模、共轭、单位模和逆。它们还可以加、减、乘、除。然而，与复数不同的是，它们在相乘时是不符合交换律的。
 
 \subsection{操作符总结}
 \subsubsection*{四元数}
@@ -1093,10 +1077,9 @@ q^{-1} & =\frac{q^{*}}{|q|^{2}} \\
 $$
 
 \section{样例}
-Here are some further worked examples that employ the ideas described above. In some cases, a test is included to confirm the result.
+下面是一些进一步使用上述思想的示例。在某些情况下，包括测试来确认结果。
 
-Example 1 Add and subtract the following quaternions:
-
+例1 加减以下四元数:
 $$
 \begin{aligned}
 q_{a} & =[2,-2 \mathbf{i}+3 \mathbf{j}-4 \mathbf{k}] \\
@@ -1106,8 +1089,7 @@ q_{a}-q_{b} & =[1,-2 \mathbf{j}+2 \mathbf{k}] .
 \end{aligned}
 $$
 
-Example 2 Find the norm of the following quaternions:
-
+例2 求下列四元数的范数:
 $$
 \begin{aligned}
 q_{a} & =[2,-2 \mathbf{i}+3 \mathbf{j}-4 \mathbf{k}] \\
@@ -1117,8 +1099,7 @@ q_{b} & =[1,-2 \mathbf{i}+5 \mathbf{j}-6 \mathbf{k}] \\
 \end{aligned}
 $$
 
-Example 3 Convert these quaternions to their unit-norm form:
-
+例3 将这些四元数转换为它们的单位范数形式:
 $$
 \begin{aligned}
 q_{a} & =[2,-2 \mathbf{i}+3 \mathbf{j}-4 \mathbf{k}] \\
@@ -1130,8 +1111,7 @@ q_{b}^{\prime} & =\frac{1}{\sqrt{66}}[1,-2 \mathbf{i}+5 \mathbf{j}-6 \mathbf{k}]
 \end{aligned}
 $$
 
-Example 4 Compute the product and reverse product of the following quaternions.
-
+例4 计算以下四元数的乘积和反向乘积。
 $$
 \begin{aligned}
 q_{a}= & {[2,-2 \mathbf{i}+3 \mathbf{j}-4 \mathbf{k}] } \\
@@ -1142,12 +1122,7 @@ q_{a} q_{b}= & {[2,-2 \mathbf{i}+3 \mathbf{j}-4 \mathbf{k}][1,-2 \mathbf{i}+5 \m
 & +(3 \times(-6)-(-4) \times 5) \mathbf{i}-((-2) \times(-6)-(-4) \times(-2)) \mathbf{j} \\
 & +((-2) \times 5-3 \times(-2)) \mathbf{k}] \\
 = & {[-41,-6 \mathbf{i}+13 \mathbf{j}-16 \mathbf{k}+2 \mathbf{i}-4 \mathbf{j}-4 \mathbf{k}] } \\
-= & {[-41,-4 \mathbf{i}+9 \mathbf{j}-20 \mathbf{k}] }
-\end{aligned}
-$$
-
-$$
-\begin{aligned}
+= & {[-41,-4 \mathbf{i}+9 \mathbf{j}-20 \mathbf{k}] }\\
 q_{b} q_{a}= & {[1,-2 \mathbf{i}+5 \mathbf{j}-6 \mathbf{k}][2-2 \mathbf{i}+3 \mathbf{j}-4 \mathbf{k}] } \\
 = & {[1 \times 2-((-2) \times(-2)+5 \times 3+(-6) \times(-4)),} \\
 & 1(-2 \mathbf{i}+3 \mathbf{j}-4 \mathbf{k})+2(-2 \mathbf{i}+5 \mathbf{j}-6 \mathbf{k}) \\
@@ -1158,10 +1133,9 @@ q_{b} q_{a}= & {[1,-2 \mathbf{i}+5 \mathbf{j}-6 \mathbf{k}][2-2 \mathbf{i}+3 \ma
 \end{aligned}
 $$
 
-Note: The only thing that has changed in this computation is the sign of the crossproduct axial vector.
+注意:在这个计算中唯一改变的是轴向量叉乘的符号。
 
-Example 5 Compute the square of this quaternion:
-
+例5 计算这个四元数的平方:
 $$
 \begin{aligned}
 q= & {[2,-2 \mathbf{i}+3 \mathbf{j}-4 \mathbf{k}] } \\
@@ -1172,7 +1146,7 @@ q^{2}= & {[2,-2 \mathbf{i}+3 \mathbf{j}-4 \mathbf{k}][2,-2 \mathbf{i}+3 \mathbf{
 \end{aligned}
 $$
 
-Example 6 Compute the inverse of this quaternion:
+例6 计算这个四元数的逆:
 
 $$
 \begin{aligned}
