@@ -1,56 +1,52 @@
 \chap{空间中的四元数}
 \section{介绍}
-In this chapter we show how quaternions are used to rotate vectors about an arbitrary axis. We begin by reviewing some of the history associated with quaternions, in particular, the role of Benjamin Olinde Rodrigues, who discovered the importance of half-angles in rotation transforms.
+在本章中，我们将展示如何使用四元数来围绕任意轴旋转向量。我们首先回顾了一些与四元数相关的历史，特别是本杰明·奥林德·罗德里格斯(Benjamin Olinde Rodrigues)的作用，他发现了旋转变换中半角的重要性。
 
-For a particular quaternion product, when a quaternion is expressed as
-
+对于特定的四元数积，当四元数表示为
 $$
 q=[\cos \theta, \sin \theta \mathbf{v}]
 $$
 
-a vector is rotated about the axis $\mathbf{v}$ by an angle $\theta$. But, as we will discover, for a triple quaternion product, when a quaternion is expressed as
-
+一个向量围绕轴$\mathbf{v}$旋转一个角度$\theta$。但是，我们会发现，对于三重四元数的乘积，当四元数表示为
 $$
 q=\left[\cos \frac{1}{2} \theta, \sin \frac{1}{2} \theta \mathbf{v}\right]
 $$
 
-a vector is rotated about the axis $\mathbf{v}$ by an angle $\theta$. This half-angle representation was discovered by Rodrigues.
+一个向量围绕轴$\mathbf{v}$旋转一个角度$\theta$。这种半角表示是罗德里格斯发现的。
 
-The short section on composition algebras reveals that quaternions are rather special, and informs us why Hamilton could not identify an algebra based upon the hyper-complex number $z=s+a i+b j$.
+关于组合代数的简短部分揭示了四元数是相当特殊的，并告诉我们为什么 Hamilton 不能识别基于超复数$z=s+ i+ bj $的代数。
 
-We then examine various quaternion products to discover their rotational properties. This begins with two orthogonal quaternions, and moves towards the general case of using the triple $q p q^{-1}$ where $q$ is a unit-norm quaternion, and $p$ is a pure quaternion.
+然后，我们检查了各种四元数乘积，以发现它们的旋转性质。这从两个正交四元数开始，然后转向使用三重$q p q^{-1}$的一般情况，其中$q$是一个单位范数四元数，$p$是一个纯四元数。
 
-Two techniques are covered to express a quaternion product as a matrix, which in turn encode the eigenvector and eigenvalue. Finally, we examine how quaternions can be interpolated.
+本章介绍了两种将四元数乘积表示为矩阵的方法，这两种方法依次编码特征向量和特征值。最后，我们研究如何插值四元数。
 
-We continue to represent a quaternion as an ordered pair, with italic, lower-case letters to represent quaternions, and bold lower-case letters to represent vectors. Fig. 7.1 Rodrigues' spherical triangle showing $\mathbf{l}$, $\mathbf{m}$ and $\mathbf{n}$
-
-\begin{center}
-\includegraphics[max width=\textwidth]{2023_01_16_a848224efad29cd66460g-105}
-\end{center}
+我们继续将四元数表示为有序对，用斜体小写字母表示四元数，用粗体小写字母表示向量。
 
 \section{一点历史}
-Benjamin Olinde Rodrigues (1795-1851) was born in Bordeaux, France. He studied in Paris, and in 1816 was awarded his doctorate at the age of 21 . The subject of his thesis was solving Legendre polynomials, and Rodrigues proposed a solution which is still known as the Rodrigues formula.
+本杰明·罗德里格斯(Benjamin Olinde Rodrigues, 1795-1851)出生于法国波尔多。他在巴黎学习，并于1816年获得博士学位，时年21岁。他论文的主题是求解 Legendre 多项式， Rodrigues 提出了一个解，这个解至今仍被称为 Rodrigues 公式。
 
-Although he pursued a career in politics and banking, his doctoral research confirms that he was more than just a 'recreational' mathematician, for in 1840 he published a mathematical paper in the Annales de Mathématiques Pures et Appliquées on transformation groups [20]. The paper contains a formula describing a geometric construction equating two successive rotations about different axes, with a third rotation about another axis. Today, we know this correspondence as the Euler-Rodrigues Parameterisation. Euler had already shown in 1775 that a single rotation could represent two successive rotations about different axes, but did not provide an algebraic solution.
+虽然他从事政治和银行业，但他的博士研究证实他不仅仅是一个“娱乐”数学家，因为在1840年，他在《纯数学年鉴》(Annales de Mathématiques Pures et Appliquées)上发表了一篇关于变换群[20]的数学论文。该文包含了一个公式，其描述了一个几何结构，即两个连续的围绕不同的轴的旋转，等价于第三个围绕另一个轴的旋转。今天，我们知道这种对应称为Euler-Rodrigues参数化。欧拉在1775年已经证明了一次旋转可以表示围绕不同轴的两次连续旋转，但没有提供代数解。
 
-If we represent a rotation $\alpha$ about an axial vector $\mathbf{a}$ as $\mathbf{R}_{\alpha, \mathbf{a}}$, then Rodrigues provided a solution to
-
+如果我们将一个关于轴向量$\mathbf{a}$的旋转$\alpha$表示为$\mathbf{R}_{\alpha, \mathbf{a}}$，那么Rodrigues提供了一个解决方案
 $$
 \mathbf{R}_{\gamma, \mathbf{n}}=\mathbf{R}_{\alpha, \mathbf{l}} \mathbf{R}_{\beta, \mathbf{m}}
 $$
 
-in the form of
-
-$$
-\begin{aligned}
+形式为
+\begin{align}
 & \cos \frac{1}{2} \gamma=\cos \frac{1}{2} \alpha \cos \frac{1}{2} \beta-\sin \frac{1}{2} \alpha \sin \frac{1}{2} \beta \mathbf{l} \cdot \mathbf{m} \\
 & \sin \frac{1}{2} \gamma \mathbf{n}=\sin \frac{1}{2} \alpha \cos \frac{1}{2} \beta \mathbf{l}+\cos \frac{1}{2} \alpha \sin \frac{1}{2} \beta \mathbf{m}+\sin \frac{1}{2} \alpha \sin \frac{1}{2} \beta \mathbf{l} \times \mathbf{m} .
-\end{aligned}
-$$
+\end{align}
 
-Rodrigues did not use the vector notation employed in (7.1) and (7.2), as this was yet to be defined by Hamilton, but he did employ the algebraic equivalent of these vector products. Figure $7.1$ shows the spherical triangle formed by the axes and angles of rotation used by Rodrigues.
+Rodrigues没有使用(7.1)和(7.2)中使用的向量符号，因为这还没有被Hamilton定义，但他确实使用了这些向量积的代数等价物。图$7.1$显示了罗德里格斯使用的由轴和旋转角组成的球形三角形。
 
-Equations (7.1) and (7.2) contain some features familiar to the quaternion product, which become obvious with the following analysis. We start by defining the quaternions
+\begin{figure}[h!]
+    \centering
+    \includegraphics[max width=0.5\textwidth]{2023_01_16_a848224efad29cd66460g-105}
+    \caption[short]{显示$\mathbf{l}$、$\mathbf{m}$和$\mathbf{n}$的Rodrigues球面三角形}
+\end{figure}
+
+式(7.1)和式(7.2)包含了一些四元数乘积所熟悉的特征，这些特征在下面的分析中变得很明显。我们从定义四元数开始
 
 $$
 \begin{aligned}
@@ -60,89 +56,70 @@ q_{n} & =\left[\cos \frac{1}{2} \gamma, \sin \frac{1}{2} \gamma \mathbf{n}\right
 \end{aligned}
 $$
 
-and form the product
+且乘积形式为
+\begin{align}
+q_{n}  =& q_{l} q_{m} \notag\\
+=& \left[\cos \frac{1}{2} \alpha, \sin \frac{1}{2} \alpha \mathbf{l}\right]\left[\cos \frac{1}{2} \beta, \sin \frac{1}{2} \beta \mathbf{m}\right] \notag\\
+=& \left[\cos \frac{1}{2} \alpha \cos \frac{1}{2} \beta-\sin \frac{1}{2} \alpha \sin \frac{1}{2} \beta \mathbf{l} \cdot \mathbf{m},\right. \notag\\
+& \left.\sin \frac{1}{2} \alpha \cos \frac{1}{2} \beta \mathbf{l}+\cos \frac{1}{2} \alpha \sin \frac{1}{2} \beta \mathbf{m}+\sin \frac{1}{2} \alpha \sin \frac{1}{2} \beta \mathbf{l} \times \mathbf{m}\right] \notag\\
+\cos \frac{1}{2} \gamma = & \cos \frac{1}{2} \alpha \cos \frac{1}{2} \beta-\sin \frac{1}{2} \alpha \sin \frac{1}{2} \beta \mathbf{l} \cdot \mathbf{m} \\
+\sin \frac{1}{2} \gamma \mathbf{n} =& \sin \frac{1}{2} \alpha \cos \frac{1}{2} \beta \mathbf{l}+\cos \frac{1}{2} \alpha \sin \frac{1}{2} \beta \mathbf{m}+\sin \frac{1}{2} \alpha \sin \frac{1}{2} \beta \mathbf{l} \times \mathbf{m}
+\end{align}
 
-$$
-\begin{aligned}
-q_{n} & =q_{l} q_{m} \\
-& =\left[\cos \frac{1}{2} \alpha, \sin \frac{1}{2} \alpha \mathbf{l}\right]\left[\cos \frac{1}{2} \beta, \sin \frac{1}{2} \beta \mathbf{m}\right] \\
-& =\left[\cos \frac{1}{2} \alpha \cos \frac{1}{2} \beta-\sin \frac{1}{2} \alpha \sin \frac{1}{2} \beta \mathbf{l} \cdot \mathbf{m},\right. \\
-& \left.\sin \frac{1}{2} \alpha \cos \frac{1}{2} \beta \mathbf{l}+\cos \frac{1}{2} \alpha \sin \frac{1}{2} \beta \mathbf{m}+\sin \frac{1}{2} \alpha \sin \frac{1}{2} \beta \mathbf{l} \times \mathbf{m}\right] \\
-\cos \frac{1}{2} \gamma= & \cos \frac{1}{2} \alpha \cos \frac{1}{2} \beta-\sin \frac{1}{2} \alpha \sin \frac{1}{2} \beta \mathbf{l} \cdot \mathbf{m} \\
-\sin \frac{1}{2} \gamma \mathbf{n} & =\sin \frac{1}{2} \alpha \cos \frac{1}{2} \beta \mathbf{l}+\cos \frac{1}{2} \alpha \sin \frac{1}{2} \beta \mathbf{m}+\sin \frac{1}{2} \alpha \sin \frac{1}{2} \beta \mathbf{l} \times \mathbf{m}
-\end{aligned}
-$$
-
-where (7.3) and (7.4) are identical to (7.1) and (7.2) respectively. Although Rodrigues had not invented quaternions in the form of
-
+其中(7.3)和(7.4)分别与(7.1)和(7.2)相同。虽然Rodrigues没有发明四元数的形式
 $$
 q=s+a i+b j+c k,
 $$
 
-he had discovered the coefficients of a quaternion product before Hamilton. C'est la vie!
+他在 Hamilton 之前就发现了四元数积的系数。这就是生活!\footnote{译注，法语：C'est la vie!}
 
-Hamilton invented quaternions in October 1843, and by December of the same year, his friend, Irish mathematician, John Thomas Graves (1806-1870), had invented octaves, which would eventually be called octonions. The British mathematician, Arthur Cayley (1821-1895), had also been intrigued by Hamilton's quaternions, and independently invented octonions in 1845 . Octonions eventually became known as Cayley numbers rather than octaves, simply because Graves did not publish his results until 1848–three years after Cayley!
+Hamilton 在1843年10月发明了四元数，同年12月，他的朋友、爱尔兰数学家约翰·托马斯·格雷夫斯(John Thomas Graves, 1806-1870)发明了八度音阶，最终被称为八元数。英国数学家亚瑟·凯利(Arthur Cayley, 1821-1895)也对 Hamilton 的四元数很感兴趣，并于1845年独立发明了八元数。八元数最终被称为Cayley数而不是八元数，只是因为Graves直到1848年才发表了他的结果——比Cayley晚了3年!
 
-Just as quaternions can be defined in terms of ordered pairs of complex numbers, the octaves, or octonions, can be defined as ordered pairs of quaternions.
+正如四元数可以用复数的有序对来定义一样，八度或八元数也可以用四元数的有序对来定义。
 
 \subsection{组合代数}
-When a specific law forms the basis of an algebra, it is called a composition algebra. For example, we know that in ordinary arithmetic
-
+当一个特定的定律构成一个代数的基础时，它被称为组合代数。例如，我们知道在普通算术中
 $$
-a^{2} b^{2}=(a b)^{2} \quad a, b \in \mathbb{R}
+a^{2} b^{2}=(a b)^{2} \qquad a, b \in \mathbb{R}
 $$
-
-e.g.
-
+比如
 $$
 3^{2} 4^{2}=12^{2}
 $$
+其中平方定律就是组合定律。
 
-where a square law is the composition law.
-
-We discovered in Chap. 4 that for two complex numbers:
-
+我们在第四章中发现，对于两个复数:
 $$
 \begin{aligned}
-\left|z_{1}\right|\left|z_{2}\right| & =\left|z_{1} z_{2}\right| \quad z_{1}, z_{2} \in \mathbb{C} \\
+\left|z_{1}\right|\left|z_{2}\right| & =\left|z_{1} z_{2}\right| \qquad z_{1}, z_{2} \in \mathbb{C} \\
 \left|z_{1}\right|^{2}\left|z_{2}\right|^{2} & =\left|z_{1} z_{2}\right|^{2} .
 \end{aligned}
 $$
-
-For example, given
-
+举个例子, 给出
 $$
 \begin{aligned}
 & z_{1}=a_{1}+b_{1} i \\
 & z_{2}=a_{2}+b_{2} i
 \end{aligned}
 $$
-
-then
-
+然后
 $$
 \left(a_{1}^{2}+b_{1}^{2}\right)\left(a_{2}^{2}+b_{2}^{2}\right)=\left(a_{1} a_{2}-b_{1} b_{2}\right)^{2}+\left(a_{1} b_{2}+a_{2} b_{1}\right)^{2}
 $$
+这是一个2平方定律。
 
-which is a two-square law.
-
-In Chap. 5 we noted that for two quaternions:
-
+在第5章中，我们注意到对于两个四元数:
 $$
 \left|q_{a}\right|^{2}\left|q_{b}\right|^{2}=\left|q_{a} q_{b}\right|^{2} \quad q_{a}, q_{b} \in \mathbb{H} .
 $$
-
-For example, given
-
+举个例子, 给出
 $$
 \begin{aligned}
 q_{a} & =\left[s_{a}, x_{a} \mathbf{i}+y_{a} \mathbf{j}+z_{a} \mathbf{k}\right] \\
 q_{b} & =\left[s_{b}, x_{b} \mathbf{i}+y_{b} \mathbf{j}+z_{b} \mathbf{k}\right]
 \end{aligned}
 $$
-
-then
-
+然后
 $$
 \begin{aligned}
 \left(s_{a}^{2}+x_{a}^{2}+y_{a}^{2}+z_{a}^{2}\right)\left(s_{b}^{2}+x_{b}^{2}+y_{b}^{2}+z_{b}^{2}\right)= & \left(s_{a} s_{b}-x_{a} x_{b}-y_{a} y_{b}-z_{a} z_{b}\right)^{2} \\
@@ -151,28 +128,24 @@ $$
 & +\left(s_{a} z_{b}+s_{b} z_{a}+x_{a} y_{b}-x_{b} y_{a}\right)^{2}
 \end{aligned}
 $$
+这是四方定律。
 
-which is a four-square law.
+除了复数，四元数在数学系统中占据着中心位置，今天有四个这样的组合代数:实$\mathbb{R}$、复$\mathbb{C}$、四元数$\mathbb{H}$和八元数$\mathbb{O}$，它们遵循$n$-平方的恒等式来计算它们的规范。1898年，德国数学家阿道夫·赫维茨(Adolf Hurwitz, 1859-1919)证明，只有当$n$等于1、2、4和8时，$n$的平方和与$n$的平方和的乘积才等于$n$的平方和，其中$n$用实数、复数、四元数和八元数表示。这就是所谓的“赫维茨定理”或“1,2,4,8定理”。没有其他系统是可能的，这表明四元数在数学领域是多么重要。因此，Hamilton对三元体系的探索是徒劳的，因为不存在三平方恒等式。
 
-In addition to complex numbers, quaternions occupy a central place in mathematical systems, and today there are four such composition algebras: real $\mathbb{R}$, complex $\mathbb{C}$, quaternion $\mathbb{H}$, and octonion $\mathbb{O}$ that obey an $n$-square identity used to compute their norms. In 1898 the German mathematician, Adolf Hurwitz (1859-1919), proved that the product of the sum of $n$ squares by the sum of $n$ squares is the sum of $n$ squares only when $n$ is equal to 1, 2, 4 and 8, which are represented by the reals, complex numbers, quaternions and octonions. This is known as 'Hurwitz's Theorem' or the ' 1,2 , 4, 8 Theorem'. No other system is possible, which shows how important quaternions are within the realm of mathematics. Consequently, Hamilton's search for a system of triples was futile, because there is no three-square identity.
-
-Now let's investigate how quaternions are used to rotate vectors about an arbitrary axis.
+现在让我们研究如何使用四元数来围绕任意轴旋转向量。
 
 \section{四元数乘积}
-A quaternion $q$ is the union of a scalar $s$ and a vector $\mathbf{v}$ :
-
+四元数$q$是标量$s$和向量$\mathbf{v}$的并集:
 $$
 q=[s, \mathbf{v}] \quad s \in \mathbb{R}, \mathbf{v} \in \mathbb{R}^{3}
 $$
 
-If we express $\mathbf{v}$ in terms of its components, we have
-
+如果我们用$\mathbf{v}$的分量来表示它，我们有
 $$
 q=[s, x \mathbf{i}+y \mathbf{j}+z \mathbf{k}] \quad s, x, y, z \in \mathbb{R} .
 $$
 
-Hamilton had hoped that a quaternion could be used like a complex rotor, where we saw in Chap. 2 that
-
+Hamilton曾希望四元数可以像复数转子一样使用，后者我们在第二章中看到了
 $$
 \mathbf{R}_{\theta}=\cos \theta+i \sin \theta
 $$
