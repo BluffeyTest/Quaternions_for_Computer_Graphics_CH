@@ -75,7 +75,7 @@ $$
 $$
 \begin{aligned}
 & \mathbf{T}_{-t_{x},-t_{y}, 0} && \text { 创建临时原点 } \\
-& \mathbf{R}_{\beta, z} && \beta \text { 围绕临时的 } z \text {轴旋转 } \\
+& \mathbf{R}_{\beta, z} && \text { 围绕临时的 } z \text {轴旋转 }\beta \text{角度} \\
 & \mathbf{T}_{t_{x}, t_{y}, 0} && \text { 回到原来的坐标系中的位置 }
 \end{aligned}
 $$
@@ -121,15 +121,16 @@ $$
 为了说明万向节锁的问题，我们将使用一个立方体，其顶点编号为0到7，如图6.3所示。
 \begin{figure}[h!]
     \centering
-    \includegraphics[max width=0.5\textwidth]{2023_01_16_a848224efad29cd66460g-091}
+    \includegraphics[max width=0.4\textwidth]{2023_01_16_a848224efad29cd66460g-091}
     \caption[short]{位于原点的单位立方体}
 \end{figure}
+
 \begin{figure}[h!]
     \centering
-    \subfigure[]{\includegraphics[max width=0.4\textwidth]{2023_01_16_a848224efad29cd66460g-091(1)}}
-    \subfigure[]{\includegraphics[max width=0.4\textwidth]{2023_01_16_a848224efad29cd66460g-091(3)}}\\
-    \subfigure[]{\includegraphics[max width=0.4\textwidth]{2023_01_16_a848224efad29cd66460g-091(2)}}
-    \subfigure[]{\includegraphics[max width=0.4\textwidth]{2023_01_16_a848224efad29cd66460g-091(4)}}
+    \subfigure[]{\includegraphics[max width=0.35\textwidth]{2023_01_16_a848224efad29cd66460g-091(1)}}
+    \subfigure[]{\includegraphics[max width=0.35\textwidth]{2023_01_16_a848224efad29cd66460g-091(3)}}\\
+    \subfigure[]{\includegraphics[max width=0.35\textwidth]{2023_01_16_a848224efad29cd66460g-091(2)}}
+    \subfigure[]{\includegraphics[max width=0.35\textwidth]{2023_01_16_a848224efad29cd66460g-091(4)}}
     \caption[short]{单位立方体在三次旋转之前和期间的四个视图}
 \end{figure}
 
@@ -137,21 +138,28 @@ $$
 
 \begin{figure}[h!]
     \centering
-    \subfigure[]{\includegraphics[max width=0.4\textwidth]{2023_01_16_a848224efad29cd66460g-092}}
-    \subfigure[]{\includegraphics[max width=0.4\textwidth]{2023_01_16_a848224efad29cd66460g-092(2)}}\\
-    \subfigure[]{\includegraphics[max width=0.4\textwidth]{2023_01_16_a848224efad29cd66460g-092(1)}}
-    \subfigure[]{\includegraphics[max width=0.4\textwidth]{2023_01_16_a848224efad29cd66460g-092(3)}}
+    \subfigure[]{\includegraphics[max width=0.35\textwidth]{2023_01_16_a848224efad29cd66460g-092}}
+    \subfigure[]{\includegraphics[max width=0.35\textwidth]{2023_01_16_a848224efad29cd66460g-092(2)}}\\
+    \subfigure[]{\includegraphics[max width=0.35\textwidth]{2023_01_16_a848224efad29cd66460g-092(1)}}
+    \subfigure[]{\includegraphics[max width=0.35\textwidth]{2023_01_16_a848224efad29cd66460g-092(3)}}
     \caption[short]{使用旋转序列$\mathbf{R}_{\alpha, x} \mathbf{R}_{\beta, y} \mathbf{R}_{\gamma, z}$的单位立方体的四个视图}
 \end{figure}
 
+图$6.4$ (a)显示了立方体的起始位置;(b)在绕$x$轴旋转$90^{\circ}$后显示其位置;(c)在绕$y$轴进一步旋转$90^{\circ}$后显示其位置;(d)立方体绕z轴旋转$90^{\circ}$后的静止位置。
 
-Figure $6.4$ (a) shows the starting position of the cube; (b) shows its position after a $90^{\circ}$ rotation about the $x$-axis; (c) shows its position after a further rotation of $90^{\circ}$ about the $y$-axis; and (d) the cube's resting position after a rotation of $90^{\circ}$ about the z-axis.
+然而，尽管采用了围绕不同轴的三次旋转，立方体实际上只围绕$y$轴旋转了$90^{\circ}$!立方体绕着穿过顶点0和4的轴旋转了两次，绕着穿过顶点0和1的轴旋转了一次，但是穿过顶点0和2的轴被忽略了。这被称为万向节锁定，并通过一个不幸的旋转序列组合和角度而产生。
 
-However, in spite of employing three rotations about different axes, the cube has effectively only been rotated $90^{\circ}$ about the $y$-axis! The cube has been rotated twice about the axis passing through vertices 0 and 4 and once about the axis passing through vertices 0 and 1 , but the axis passing through vertices 0 and 2 has been ignored. This is known as gimbal lock, and arises through an unfortunate rotation sequence combination and angles.
+将复合旋转反转到$\mathbf{R}_{\alpha, x} \mathbf{R}_{\beta, y} \mathbf{R}_{\gamma, z}$并不能改善问题。这个复合变换等价于围绕固定的z轴旋转一个点$90^{\circ}$，然后围绕固定的$y$-轴旋转$90^{\circ}$，然后围绕固定的$x$-轴旋转$90^{\circ}$。该旋转序列如图6.5所示。
 
-Reversing the composite rotation to $\mathbf{R}_{\alpha, x} \mathbf{R}_{\beta, y} \mathbf{R}_{\gamma, z}$ does not improve matters. This composite transform is equivalent to rotating a point $90^{\circ}$ about the fixed zaxis, followed by a rotation of $90^{\circ}$ about the fixed $y$-axis, followed by a rotation of $90^{\circ}$ about the fixed $x$-axis. This rotation sequence is illustrated in Fig. 6.5.
+对图$6.5$ (d)的检查显示，单位立方体已经围绕向量$\left[\begin{array}{lll}1 & 0 & 1\end{array}\right]^{\mathrm{T}}$旋转了$180^{\circ}$，即一个与顶点0和5相交的轴。这一次，立方体围绕与顶点0和1相交的轴旋转了两次，围绕与顶点0和4相交的轴旋转了一次，同样，与顶点0和2相交的轴被忽略了。不难看出为什么欧拉旋转会引起这么多问题。让我们继续，看看如何绕任意轴旋转。
 
-Inspection of Fig. $6.5$ (d) shows that the unit cube has been rotated $180^{\circ}$ about the vector $\left[\begin{array}{lll}1 & 0 & 1\end{array}\right]^{\mathrm{T}}$, i.e. an axis intersecting vertices 0 and 5. This time, the cube is rotated twice about an axis intersecting vertices 0 and 1 , once about an axis intersecting vertices 0 and 4 , and once again, the axis intersecting vertices 0 and 2 has 
+
+
+\section{绕任意轴旋转}
+单个欧拉变换并没有本质上的问题，问题是它们组合在一起产生旋转的方式有缺陷。理想情况下，我们需要一个旋转变换，允许我们指定轴和旋转角度，这是我们要计算的。第一种方法使用矩阵和三角函数，相当费力。第二种方法采用矢量分析，非常简洁。
+
+\subsection{矩阵}
+我们首先使用单位向量$\hat{\mathbf{n}}$定义一个轴，其中一个点$P$被旋转到$P^{\prime}$，如图6.6所示。由于我们只能使用围绕笛卡尔轴旋转点的矩阵，所以这个单位向量必须暂时与笛卡尔轴对齐。在下面的例子中，我们选择$x$-轴。在对齐过程中，点$P$进行必要的转换，以使单位向量与$x$-轴对齐。然后我们绕$x$轴旋转$P$。为了完成该操作，旋转后的点进行变换，使单位向量返回到其原始坐标系位置。
 
 \begin{figure}[h!]
     \centering
@@ -159,24 +167,14 @@ Inspection of Fig. $6.5$ (d) shows that the unit cube has been rotated $180^{\ci
     \caption[short]{绕任意轴旋转的几何图形}
 \end{figure}
 
-been ignored. It is not difficult to see why Euler rotations cause so many problems. So let's continue and see how we can rotate about an arbitrary axis.
+虽然矩阵为这类工作提供了强大的工具，但它非常乏味，但却是提高一个人代数技能的好练习!
 
-\section{绕任意轴旋转}
-There is nothing fundamentally wrong with individual Euler transforms-it is the way they are combined to effect a rotation that is flawed. Ideally, we require a rotation transform that permits us to specify the axis and angle of rotation, which is what we will compute. The first technique uses matrices and trigonometry and is rather laborious. The second approach employs vector analysis and is quite succinct.
-
-\subsection{矩阵}
-We begin by defining an axis using a unit vector $\hat{\mathbf{n}}$ about which a point $P$ is rotated $\alpha$ to $P^{\prime}$ as shown in Fig. 6.6. And as we only have access to matrices that rotate points about the Cartesian axes, this unit vector has to be temporarily aligned with a Cartesian axis. In the following example we choose the $x$-axis. During the alignment process, the point $P$ is subjected to the transforms necessary to align the unit vector with the $x$-axis. We then rotate $P, \alpha$ about the $x$-axis. To complete the operation, the rotated point is subjected to the transforms that return the unit vector to its original position.
-
-Although matrices provide a powerful tool for undertaking this sort of work, it is, nevertheless, extremely tedious, but a good exercise for improving one's algebraic skills!
-
-Figure $6.6$ shows a point $P(x, y, z)$ to be rotated through an angle $\alpha$ to $P^{\prime}\left(x^{\prime}, y^{\prime}, z^{\prime}\right)$ about an axis defined by
-
+图$6.6$显示了一个点$P(x, y, z)$围绕如下定义的轴旋转一个角度$\alpha$到$\alpha$ to $P^{\prime}\left(x^{\prime}, y^{\prime}, z^{\prime}\right)$ 
 $$
 \hat{\mathbf{n}}=a \mathbf{i}+b \mathbf{j}+c \mathbf{k} .
 $$
 
-The transforms to achieve this operation is expressed as follows:
-
+实现该操作的转换表达式如下:
 $$
 \left[\begin{array}{c}
 x^{\prime} \\
@@ -189,7 +187,7 @@ z
 \end{array}\right]
 $$
 
-which aligns the axis of rotation with the $x$-axis, performs the rotation of $P$ through an angle $\alpha$ about the $x$-axis, and returns the axis of rotation back to its original position. Therefore,
+它将旋转轴与$x$-轴对齐，执行$P$的旋转，通过一个角度$\alpha$关于$x$-轴，并将旋转轴返回到其原始坐标系位置。因此,
 
 $$
 \begin{aligned}
@@ -215,8 +213,7 @@ $$
 \end{aligned}
 $$
 
-Let
-
+令
 $$
 \mathbf{R}_{-\phi, y} \mathbf{R}_{\theta, z} \mathbf{R}_{\alpha, x} \mathbf{R}_{-\theta, z} \mathbf{R}_{\phi, y}=\left[\begin{array}{lll}
 a_{11} & a_{12} & a_{13} \\
@@ -225,8 +222,7 @@ a_{31} & a_{32} & a_{33}
 \end{array}\right]
 $$
 
-where by multiplying the matrices together we find that:
-
+其中，通过将矩阵相乘，我们发现:
 $$
 \begin{aligned}
 a_{11}= & \cos ^{2} \phi \cos ^{2} \theta+\cos ^{2} \phi \sin ^{2} \theta \cos \alpha+\sin ^{2} \phi \cos \alpha \\
@@ -244,8 +240,7 @@ a_{33}= & \sin ^{2} \phi \cos \theta+\sin ^{2} \phi \sin ^{2} \theta \cos ^{2} \
 \end{aligned}
 $$
 
-After much trigonometric substitution we arrive at the transform
-
+经过大量的三角替换，我们得到了变换
 $$
 \left[\begin{array}{c}
 x_{p}^{\prime} \\
@@ -262,142 +257,131 @@ z_{p}
 \end{array}\right]
 $$
 
-Fig. 6.7 A view of the geometry associated with rotating a point about an arbitrary axis
-
-Fig. 6.8 A cross-section and plan view of the geometry associated with rotating a point about an arbitrary axis
-\includegraphics[max width=\textwidth, center]{2023_01_16_a848224efad29cd66460g-095}
-
-where
-
+其中
 $$
 K=1-\cos \alpha .
 $$
 
+
+
+
+
+
 \subsection{向量}
-Now let's solve the same problem using vectors. Figure $6.7$ shows a view of the geometry associated with the task at hand. For clarification, Fig. $6.8$ shows a crosssection and a plan view of the geometry.
+现在我们用向量来解决同样的问题。图$6.7$显示了与手头任务相关的几何视图。为了说明，图6.8显示了几何图形的横截面和平面图。
 
-The axis of rotation is given by the unit vector
-
+旋转轴由单位向量给出
 $$
 \hat{\mathbf{n}}=a \mathbf{i}+b \mathbf{j}+c \mathbf{k} .
 $$
+$P\left(x_{p}, y_{p}, z_{p}\right)$是将旋转$\alpha$角度到$P^{\prime}\left(x_{P}^{\prime}, y_{P}^{\prime}, z_{P}^{\prime}\right)$的点。
 
-$P\left(x_{p}, y_{p} z_{p}\right)$ is the point to be rotated by angle $\alpha$ to $P^{\prime}\left(x_{p}^{\prime}, y_{p}^{\prime}, z_{p}^{\prime}\right)$.
+$O$是原点，$\mathbf{p}$和$\mathbf{p}^{\prime}$分别是$ P $和$ P ^{\prime}$的位置向量。
+\begin{figure}[h!]
+    \centering
+    \includegraphics[max width=0.5\textwidth, center]{2023_01_16_a848224efad29cd66460g-095}
+    \caption[short]{围绕任意轴旋转一点的几何学视图}
+\end{figure}
+\begin{figure}[h!]
+    \centering
+    \includegraphics[max width=0.5\textwidth, center]{2023_01_16_a848224efad29cd66460g-095(1)}
+    \caption[short]{绕任意轴旋转一点的几何学的横截面和平面视图}
+\end{figure}
 
-$O$ is the origin, whilst $\mathbf{p}$ and $\mathbf{p}^{\prime}$ are position vectors for $P$ and $P^{\prime}$ respectively.
-
-From Figs. $6.7$ and 6.8:
-
+由图$6.7$和$6.8$:
 $$
 \mathbf{p}^{\prime}=\overrightarrow{O N}+\overrightarrow{N Q}+\overrightarrow{Q P^{\prime}}
 $$
 
-To find $\overrightarrow{O N}$
-
+求 $\overrightarrow{O N}$
 $$
 |\mathbf{n}|=|\mathbf{p}| \cos \theta=\hat{\mathbf{n}} \cdot \mathbf{p}
 $$
 
-therefore,
-
+因此,
 $$
 \overrightarrow{O N}=\mathbf{n}=\hat{\mathbf{n}}(\hat{\mathbf{n}} \cdot \mathbf{p})
 $$
 
-To find $\overrightarrow{N Q}$ :
-
+求$\overrightarrow{N Q}$ :
 $$
 \overrightarrow{N Q}=\frac{N Q}{N P} \mathbf{r}=\frac{N Q}{N P^{\prime}} \mathbf{r}=\cos \alpha \mathbf{r}
 $$
 
-but
-
+但
 $$
 \mathbf{p}=\mathbf{n}+\mathbf{r}=\hat{\mathbf{n}}(\hat{\mathbf{n}} \cdot \mathbf{p})+\mathbf{r}
 $$
 
-therefore,
-
+因此,
 $$
 \mathbf{r}=\mathbf{p}-\hat{\mathbf{n}}(\hat{\mathbf{n}} \cdot \mathbf{p})
 $$
 
-and
-
+且
 $$
 \overrightarrow{N Q}=[\mathbf{p}-\hat{\mathbf{n}}(\hat{\mathbf{n}} \cdot \mathbf{p})] \cos \alpha
 $$
 
-To find $\overrightarrow{Q P^{\prime}}$ :
+求 $\overrightarrow{Q P^{\prime}}$ :
 
-Let
-
+令
 $$
 \hat{\mathbf{n}} \times \mathbf{p}=\mathbf{w}
 $$
 
-where
-
+其中
 $$
 |\mathbf{w}|=|\hat{\mathbf{n}}| \cdot|\mathbf{p}| \sin \theta=|\mathbf{p}| \sin \theta
 $$
 
-but
-
+但
 $$
 |\mathbf{r}|=|\mathbf{p}| \sin \theta
 $$
 
-therefore,
-
+因此,
 $$
 |\mathbf{w}|=|\mathbf{r}| .
 $$
 
-Now
-
+现在
 $$
 \frac{Q P^{\prime}}{N P^{\prime}}=\frac{Q P^{\prime}}{|\mathbf{r}|}=\frac{Q P^{\prime}}{|\mathbf{w}|}=\sin \alpha
 $$
 
-therefore,
-
+因此,
 $$
 \overrightarrow{Q P^{\prime}}=\mathbf{w} \sin \alpha=(\hat{\mathbf{n}} \times \mathbf{p}) \sin \alpha
 $$
 
-then
-
+接下来
 $$
 \mathbf{p}^{\prime}=\hat{\mathbf{n}}(\hat{\mathbf{n}} \cdot \mathbf{p})+(\mathbf{p}-\hat{\mathbf{n}}(\hat{\mathbf{n}} \cdot \mathbf{p})) \cos \alpha+(\hat{\mathbf{n}} \times \mathbf{p}) \sin \alpha
 $$
 
-and
-
+且
 $$
 \mathbf{p}^{\prime}=\mathbf{p} \cos \alpha+\hat{\mathbf{n}}(\hat{\mathbf{n}} \cdot \mathbf{p})(1-\cos \alpha)+(\hat{\mathbf{n}} \times \mathbf{p}) \sin \alpha .
 $$
 
-Let
-
+令
 $$
 K=1-\cos \alpha
 $$
 
-Fig. 6.9 Rotating the point $P$ through $180^{\circ}$ to $P^{\prime}$
+\begin{figure}
+    \centering
+    \includegraphics[max width=0.6\textwidth]{2023_01_16_a848224efad29cd66460g-097}
+    \caption[short]{将点$P$从$180^{\circ}$旋转到$P^{\prime}$}
+\end{figure}
 
-\begin{center}
-\includegraphics[max width=\textwidth]{2023_01_16_a848224efad29cd66460g-097}
-\end{center}
-
-then
-
+接下来
 $$
 \mathbf{p}^{\prime}=\mathbf{p} \cos \alpha+\hat{\mathbf{n}}(\hat{\mathbf{n}} \cdot \mathbf{p}) K+(\hat{\mathbf{n}} \times \mathbf{p}) \sin \alpha
 $$
 
-and
-
+且
 $$
 \begin{aligned}
 \mathbf{p}^{\prime}= & \left(x_{p} \mathbf{i}+y_{p} \mathbf{j}+z_{p} \mathbf{k}\right) \cos \alpha+(a \mathbf{i}+b \mathbf{j}+c \mathbf{k})\left(a x_{p}+b y_{p}+c z_{p}\right) K \\
@@ -411,8 +395,7 @@ $$
 \end{aligned}
 $$
 
-which unpacks into the transform:
-
+它将解包到转换中:
 $$
 \left[\begin{array}{c}
 x_{p}^{\prime} \\
@@ -429,16 +412,14 @@ z_{p}
 \end{array}\right]
 $$
 
-where
-
+其中
 $$
 K=1-\cos \alpha
 $$
 
-and is identical to the transform derived using matrices.
+和用矩阵导出的变换是一样的。
 
-Let's test the transform with a simple example that can be easily verified. If we rotate the point $P(10,0,0), 180^{\circ}$ about an axis defined by $\hat{\mathbf{n}}=(1 / \sqrt{2}) \mathbf{i}+(1 / \sqrt{2}) \mathbf{k}$, it should be rotated to $P^{\prime}(0,0,10)$ as shown in Fig. 6.9. Therefore,
-
+让我们用一个容易验证的简单示例来测试转换。如果我们围绕$\hat{\mathbf{n}}=(1 / \sqrt{2}) \mathbf{i}+(1 / \sqrt{2}) \mathbf{k}$定义的轴旋转点$P(10,0,0), 180^{\circ}$，它应该被旋转到$P^{\prime}(0,0,10)$，如图6.9所示。因此,
 $$
 \begin{gathered}
 \alpha=180^{\circ}, \quad \cos \alpha=-1, \quad \sin \alpha=0, \quad K=2, \\
@@ -446,8 +427,7 @@ a=\frac{1}{\sqrt{2}}, \quad b=0, \quad c=\frac{1}{\sqrt{2}}
 \end{gathered}
 $$
 
-and
-
+且
 $$
 \left[\begin{array}{c}
 0 \\
@@ -464,17 +444,17 @@ $$
 \end{array}\right]
 $$
 
-which confirms our prediction.
+这证实了我们的预测。
 
 \section{总结}
-In this chapter we have reviewed the matrix rotation transforms for rotating a point about one of the three Cartesian axes. By employing homogeneous coordinates, the translation transform can be integrated to rotate points about an off-set axis parallel with one of the Cartesian axes.
+在本章中，我们回顾了围绕三个笛卡尔轴之一旋转一个点的矩阵旋转变换。通过使用齐次坐标，可以将平移变换积分到围绕平行于一个笛卡尔轴的偏移轴旋转点。
 
-Composite rotations are created by combining the matrices representing the individual rotations about three successive axes. Such rotations are known as Euler rotations, and there are twelve ways of combining these matrices. Unfortunately, one of the problems with such transforms is that they suffer from gimbal lock, where one degree of freedom is lost under certain angle combinations. Another problem, is that it is difficult to predict how a point moves in space when animated by a composite transform, although they are widely used for positioning objects in world space.
+复合旋转是通过组合表示围绕三个连续轴的单个旋转的矩阵来创建的。这样的旋转被称为欧拉旋转，有12种组合这些矩阵的方法。不幸的是，这种转换的问题之一是它们会受到万向节锁定的影响，在某些角度组合下会损失一个自由度。另一个问题是，虽然复合变换被广泛用于在世界空间中定位物体，但很难预测点在空间中如何移动。
 
-Finally, matrices and vectors were used to develop a transform for rotating a point about an arbitrary axis.
+最后，利用矩阵和向量建立了一个使一个点绕任意轴旋转的变换。
 
 \subsection{变换总结}
-\subsubsection*{Translate a point}
+\textbf{平移一个点}
 $$
 \mathbf{T}_{t_{x}, t_{y}, t_{z}}=\left[\begin{array}{cccc}
 1 & 0 & 0 & t_{x} \\
@@ -484,7 +464,7 @@ $$
 \end{array}\right]
 $$
 
-\subsubsection*{Rotate a point about the $x-, y-, z$-axes}
+\textbf{围绕$x-, y-, z$-轴旋转一个点}
 $$
 \begin{aligned}
 \mathbf{R}_{\beta, x}= & {\left[\begin{array}{ccc}
@@ -505,7 +485,7 @@ $$
 \end{aligned}
 $$
 
-\subsubsection*{Rotate a point about off-set $x-, y-, z$-axes}
+\textbf{围绕偏移$x-, y-, z$-坐标轴旋转一个点}
 $$
 \begin{aligned}
 \mathbf{R}_{\beta, x,\left(0, t_{y}, t_{z}\right)} & =\left[\begin{array}{cccc}
@@ -529,7 +509,7 @@ $$
 \end{aligned}
 $$
 
-\subsubsection*{Rotate a point about an arbitrary axis}
+\textbf{绕任意轴旋转一点}
 $$
 \begin{aligned}
 \mathbf{R}_{\alpha, \hat{\mathbf{n}}} & =\left[\begin{array}{ccc}
@@ -543,12 +523,11 @@ K & =1-\cos \alpha \\
 $$
 
 \section{样例}
-Here are some further worked examples that employ the ideas described above. In some cases, a test is included to confirm the result.
+下面是一些进一步使用上述思想的示例。在某些情况下，包括测试来确认结果。
 
-Example 1 Develop a rotation transform to rotate a point about an axis off-set to the $y$-axis.
+例1:建立一个旋转变换，使一个点围绕偏移于$y$-轴的轴旋转。
 
-Let the off-set axis intersect the point $\left(t_{x}, 0, t_{z}\right)$. Therefore, the homogeneous transform for this rotation is
-
+设偏移轴与点$\left(t_{x}， 0, t_{z}\right)$相交。因此，这个旋转的齐次变换是
 $$
 \left[\begin{array}{c}
 x^{\prime} \\
@@ -563,18 +542,16 @@ z \\
 \end{array}\right]
 $$
 
-where
-
+其中
 $$
 \begin{aligned}
-& \mathbf{T}_{-t_{x}, 0,-t_{z}} \quad \text { creates a temporary origin } \\
-& \mathbf{R}_{\beta, y} \quad \text { rotates } \beta \text { about the temporary } y \text {-axis } \\
-& \mathbf{T}_{t_{x}, 0, t_{z}} \quad \text { returns to the original position }
+& \mathbf{T}_{-t_{x}, 0,-t_{z}} && \text { 创建临时原点 } \\
+& \mathbf{R}_{\beta, y} && \text { 围绕临时的 } y \text {轴旋转 }\beta \text{角度} \\
+& \mathbf{T}_{t_{x}, 0, t_{z}} && \text { 返回原来的坐标原点位置 }
 \end{aligned}
 $$
 
-and
-
+且
 $$
 \begin{aligned}
 \mathbf{T}_{t_{x}, 0, t_{z}} & =\left[\begin{array}{llll}
@@ -598,8 +575,7 @@ $$
 \end{aligned}
 $$
 
-Therefore,
-
+因此,
 $$
 \begin{aligned}
 & \mathbf{T}_{t_{x}, 0, t_{z}} \mathbf{R}_{\beta, y} \mathbf{T}_{-t_{x}, 0,-t_{z}} \\
@@ -639,10 +615,9 @@ $$
 \end{aligned}
 $$
 
-Example 2 Compute the rotation transform for $\mathbf{R}_{\gamma, x} \mathbf{R}_{\beta, y} \mathbf{R}_{\alpha, x}$ and see if it suffers from gimbal lock when $\alpha=\beta=\gamma=90^{\circ}$. What is the axis and angle of rotation?
+例2 计算$\mathbf{R}_{\gamma, x} \mathbf{R}_{\beta, y} \mathbf{R}_{\alpha, x}$的旋转变换，看看当$\alpha=\beta=\gamma=90^{\circ}$时，它是否会出现万向锁。旋转轴和角度是多少?
 
-Using the notation $c_{\beta}=\cos \beta$ and $s_{\beta}=\sin \beta$, the composite transform is
-
+使用符号$c_{\beta}=\cos \beta$和$s_{\beta}=\sin \beta$，复合转换为
 $$
 \begin{aligned}
 \mathbf{R}_{\gamma, x} \mathbf{R}_{\beta, y} \mathbf{R}_{\alpha, x} & =\left[\begin{array}{ccc}
@@ -671,37 +646,20 @@ s_{\gamma} s_{\beta} & \left(c_{\gamma} c_{\alpha}-s_{\gamma} c_{\beta} s_{\alph
 \end{aligned}
 $$
 
-Figure $6.10$ shows a cube at each stage of rotation, and it is clear that gimbal lock is not present as the cube is rotated through each of its orthogonal axes. The axis (a)
+图$6.10$显示了立方体在旋转的每个阶段，很明显，万向节锁不存在，因为立方体通过其每个正交轴旋转。旋转轴是通过顶点0和6，即$\left[\begin{array}{lll}1 & 1 & 0\end{array}\right]^{\mathrm{T}}$，旋转角度为$180^{\circ}$。
 
-\begin{center}
-\includegraphics[max width=\textwidth]{2023_01_16_a848224efad29cd66460g-101}
-\end{center}
+\begin{figure}[h!]
+    \centering
+    \subfigure[caption]{\includegraphics[max width=0.35\textwidth]{2023_01_16_a848224efad29cd66460g-101}}
+    \subfigure[caption]{\includegraphics[max width=0.35\textwidth]{2023_01_16_a848224efad29cd66460g-101(2)}}\\
+    \subfigure[caption]{\includegraphics[max width=0.35\textwidth]{2023_01_16_a848224efad29cd66460g-101(1)}}
+    \subfigure[caption]{\includegraphics[max width=0.35\textwidth]{2023_01_16_a848224efad29cd66460g-101(3)}}
+    \caption[short]{单元立方体在三次旋转之前和过程中的四个视图$\mathbf{R}_{90^{\circ}, x} \mathbf{R}_{90^{\circ}, y} \mathbf{R}_{90^{\circ}, x}$}
+\end{figure}
 
-(c)
+例3 证明任意轴上旋转点的旋转矩阵适用于三个笛卡尔轴。
 
-\begin{center}
-\includegraphics[max width=\textwidth]{2023_01_16_a848224efad29cd66460g-101(1)}
-\end{center}
-
-(b)
-
-\begin{center}
-\includegraphics[max width=\textwidth]{2023_01_16_a848224efad29cd66460g-101(2)}
-\end{center}
-
-(d)
-
-\begin{center}
-\includegraphics[max width=\textwidth]{2023_01_16_a848224efad29cd66460g-101(3)}
-\end{center}
-
-Fig. 6.10 Four views of the unit cube before and during the three rotations $\mathbf{R}_{90^{\circ}, x} \mathbf{R}_{90^{\circ}, y} \mathbf{R}_{90^{\circ}, x}$
-
-of rotation is through the vertices 0 and 6, i.e. $\left[\begin{array}{lll}1 & 1 & 0\end{array}\right]^{\mathrm{T}}$ and the angle of rotation is $180^{\circ}$.
-
-Example 3 Show that the rotation matrix for rotating points about an arbitrary axis works for the three Cartesian axes.
-
-Starting with the matrix:
+从这个矩阵开始:
 
 $$
 \begin{aligned}
@@ -715,14 +673,12 @@ K & =1-\cos \alpha \\
 \end{aligned}
 $$
 
-Rotating about the $x$-axis:
-
+绕$x$轴旋转:
 $$
 \hat{\mathbf{n}}=a \mathbf{i}
 $$
 
-therefore, $a=1$ and $b=c=0$ :
-
+因此，$a=1$， $b=c=0$:
 $$
 \mathbf{R}_{\alpha, x}=\left[\begin{array}{ccc}
 1 & 0 & 0 \\
@@ -731,14 +687,12 @@ $$
 \end{array}\right] .
 $$
 
-Rotating about the $y$-axis:
-
+绕$y$轴旋转:
 $$
 \hat{\mathbf{n}}=b \mathbf{j}
 $$
 
-therefore, $b=1$ and $a=c=0$ :
-
+因此， $b=1$， $a=c=0$ :
 $$
 \mathbf{R}_{\alpha, y}=\left[\begin{array}{ccc}
 \cos \alpha & 0 & \sin \alpha \\
@@ -747,13 +701,12 @@ $$
 \end{array}\right]
 $$
 
-Rotating about the $z$-axis:
-
+绕$z$轴旋转:
 $$
 \hat{\mathbf{n}}=c \mathbf{k}
 $$
 
-therefore, $c=1$ and $a=b=0$ :
+因此，$c=1$，$a=b=0$ :
 
 $$
 \mathbf{R}_{\alpha, z}=\left[\begin{array}{ccc}
@@ -763,12 +716,11 @@ $$
 \end{array}\right]
 $$
 
-which are correct.
+这是正确的。
 
-Example 4 Compute the rotation transform to rotate a point $180^{\circ}$ about an axis aligned with $\left[\begin{array}{lll}1 & 1 & 1\end{array}\right]^{\mathrm{T}}$. Show by example, that rotating a point twice by this transform returns it to its original position.
+例4 计算旋转变换，使一个点围绕一个与$\left[\begin{array}{lll}1 & 1 & 1\end{array}\right]^{\mathrm {T}}$对齐的轴旋转$180^{\circ}$。举个例子，通过这个变换将一个点旋转两次将其返回到它原来的位置。
 
-Starting with the matrix:
-
+从矩阵开始:
 $$
 \begin{aligned}
 \mathbf{R}_{\alpha, \hat{\mathbf{n}}} & =\left[\begin{array}{ccc}
@@ -781,13 +733,13 @@ K & =1-\cos \alpha \\
 \end{aligned}
 $$
 
-Therefore, given $\mathbf{n}=\mathbf{i}+\mathbf{j}+\mathbf{k}$
+因此，给出 $\mathbf{n}=\mathbf{i}+\mathbf{j}+\mathbf{k}$
 
 $$
 \hat{\mathbf{n}}=\frac{1}{\sqrt{3}} \mathbf{i}+\frac{1}{\sqrt{3}} \mathbf{j}+\frac{1}{\sqrt{3}} \mathbf{k}
 $$
 
-and
+且
 
 $$
 a=b=c=\frac{1}{\sqrt{3}} \text {. }
