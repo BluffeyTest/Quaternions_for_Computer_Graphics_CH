@@ -150,47 +150,51 @@ $$
 \mathbf{R}_{\theta}=\cos \theta+i \sin \theta
 $$
 
-rotates a complex number by $\theta$. Could a unit-norm quaternion $q$ be used to rotate a vector stored as a pure quaternion $p$ ? Well yes, but only in a restricted sense. To understand this, let's construct the product of a unit-norm quaternion $q$ and a pure quaternion $p$. The unit-norm quaternion $q$ is defined as
-
-$$
+将一个复数旋转$\theta$。单位范数四元数$q$可以用来旋转存储为纯四元数$p$的向量吗?是的，但只是在有限的意义上。为了理解这一点，让我们构造一个单位范数四元数$q$和一个纯四元数$p$的乘积。单位范数四元数$q$定义为
+\begin{align}
 \begin{aligned}
 q & =[s, \lambda \hat{\mathbf{v}}] \quad s, \lambda \in \mathbb{R}, \hat{\mathbf{v}} \in \mathbb{R}^{3} \\
 |\hat{\mathbf{v}}| & =1 \\
 s^{2}+\lambda^{2} & =1
 \end{aligned}
-$$
-
-and the pure quaternion $p$ stores the vector $\mathbf{p}$ to be rotated:
-
+\end{align}
+纯四元数$p$存储要旋转的向量$\mathbf{p}$:
 $$
 p=[0, \mathbf{p}] \quad \mathbf{p} \in \mathbb{R}^{3} .
 $$
 
-Let's compute the product $p^{\prime}=q p$ and examine the vector part of $p^{\prime}$ to see if $\mathbf{p}$ is rotated:
-
-$$
+让我们计算乘积$p^{\prime}=q p$，并检查$p^{\prime}$的向量部分，看看$ \mathbf{p}$是否被旋转:
+\begin{align}
 \begin{aligned}
 p^{\prime} & =q p \\
 & =[s, \lambda \hat{\mathbf{v}}][0, \mathbf{p}] \\
 & =[-\lambda \hat{\mathbf{v}} \cdot \mathbf{p}, s \mathbf{p}+\lambda \hat{\mathbf{v}} \times \mathbf{p}] .
 \end{aligned}
-$$
+\end{align}
 
-We can see from (7.6) that the result is a general quaternion with a scalar and a vector component.
+我们可以从(7.6)中看到，结果是一个具有标量和向量分量的一般四元数。
 
 \subsection{特殊情况}
+上面提到的“狭义”是$\hat{\mathbf{v}}$必须垂直于$\mathbf{p}$，这使得点积项$-\lambda \hat{\mathbf{v}} \cdot \mathbf{p}$在(7.6)中消失，我们只剩下纯四元数
+
 The 'restricted sense' referred to above is that $\hat{\mathbf{v}}$ must be perpendicular to $\mathbf{p}$, which makes the dot product term $-\lambda \hat{\mathbf{v}} \cdot \mathbf{p}$ in (7.6) vanish, and we are left with the pure quaternion
 
 $$
 p^{\prime}=[0, s \mathbf{p}+\lambda \hat{\mathbf{v}} \times \mathbf{p}] .
 $$
 
-Figure $7.2$ illustrates this scenario, where $\mathbf{p}$ is perpendicular to $\hat{\mathbf{v}}$, and $\hat{\mathbf{v}} \times \mathbf{p}$ is perpendicular to the plane containing $\mathbf{p}$ and $\hat{\mathbf{v}}$. Now because $\hat{\mathbf{v}}$ is a unit vector, Fig. 7.2 Three orthogonal vectors $\mathbf{p}, \hat{\mathbf{v}}$ and $\hat{\mathbf{v}} \times \mathbf{p}$
+Figure $7.2$ illustrates this scenario, where $\mathbf{p}$ is perpendicular to $\hat{\mathbf{v}}$, and $\hat{\mathbf{v}} \times \mathbf{p}$ is perpendicular to the plane containing $\mathbf{p}$ and $\hat{\mathbf{v}}$. Now because $\hat{\mathbf{v}}$ is a unit vector, $|\mathbf{p}|=|\hat{\mathbf{v}} \times \mathbf{p}|$, which means that we have two orthogonal vectors, i.e. $\mathbf{p}$ and $\hat{\mathbf{v}} \times \mathbf{p}$, with the same length. Therefore, to rotate $\mathbf{p}$ about $\hat{\mathbf{v}}$, all that we have to do is make $s=\cos \theta$ and $\lambda=\sin \theta$ in (7.7):
+
+Fig. 7.2 Three orthogonal vectors $\mathbf{p}, \hat{\mathbf{v}}$ and $\hat{\mathbf{v}} \times \mathbf{p}$
 
 Fig. 7.3 The vector $2 \mathbf{i}$ is rotated $45^{\circ}$ by the quaternion $q=\left[\frac{\sqrt{2}}{2}, \frac{\sqrt{2}}{2} \mathbf{k}\right]$
-\includegraphics[max width=\textwidth, center]{2023_01_16_a848224efad29cd66460g-109}
+\begin{figure}
+    \includegraphics[max width=0.5\textwidth, center]{2023_01_16_a848224efad29cd66460g-109}
+    \caption[short]{title}
+\end{figure}
 
-$|\mathbf{p}|=|\hat{\mathbf{v}} \times \mathbf{p}|$, which means that we have two orthogonal vectors, i.e. $\mathbf{p}$ and $\hat{\mathbf{v}} \times \mathbf{p}$, with the same length. Therefore, to rotate $\mathbf{p}$ about $\hat{\mathbf{v}}$, all that we have to do is make $s=\cos \theta$ and $\lambda=\sin \theta$ in (7.7):
+
+
 
 $$
 \begin{aligned}
