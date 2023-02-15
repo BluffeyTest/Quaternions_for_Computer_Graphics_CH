@@ -176,26 +176,11 @@ p^{\prime} & =q p \\
 
 \subsection{特殊情况}
 上面提到的“狭义”是$\hat{\mathbf{v}}$必须垂直于$\mathbf{p}$，这使得点积项$-\lambda \hat{\mathbf{v}} \cdot \mathbf{p}$在(7.6)中消失，我们只剩下纯四元数
+\begin{align}
+    p^{\prime}=[0, s \mathbf{p}+\lambda \hat{\mathbf{v}} \times \mathbf{p}] .
+\end{align}
 
-The 'restricted sense' referred to above is that $\hat{\mathbf{v}}$ must be perpendicular to $\mathbf{p}$, which makes the dot product term $-\lambda \hat{\mathbf{v}} \cdot \mathbf{p}$ in (7.6) vanish, and we are left with the pure quaternion
-
-$$
-p^{\prime}=[0, s \mathbf{p}+\lambda \hat{\mathbf{v}} \times \mathbf{p}] .
-$$
-
-Figure $7.2$ illustrates this scenario, where $\mathbf{p}$ is perpendicular to $\hat{\mathbf{v}}$, and $\hat{\mathbf{v}} \times \mathbf{p}$ is perpendicular to the plane containing $\mathbf{p}$ and $\hat{\mathbf{v}}$. Now because $\hat{\mathbf{v}}$ is a unit vector, $|\mathbf{p}|=|\hat{\mathbf{v}} \times \mathbf{p}|$, which means that we have two orthogonal vectors, i.e. $\mathbf{p}$ and $\hat{\mathbf{v}} \times \mathbf{p}$, with the same length. Therefore, to rotate $\mathbf{p}$ about $\hat{\mathbf{v}}$, all that we have to do is make $s=\cos \theta$ and $\lambda=\sin \theta$ in (7.7):
-
-Fig. 7.2 Three orthogonal vectors $\mathbf{p}, \hat{\mathbf{v}}$ and $\hat{\mathbf{v}} \times \mathbf{p}$
-
-Fig. 7.3 The vector $2 \mathbf{i}$ is rotated $45^{\circ}$ by the quaternion $q=\left[\frac{\sqrt{2}}{2}, \frac{\sqrt{2}}{2} \mathbf{k}\right]$
-\begin{figure}
-    \includegraphics[max width=0.5\textwidth, center]{2023_01_16_a848224efad29cd66460g-109}
-    \caption[short]{title}
-\end{figure}
-
-
-
-
+图$7.2$说明了这种情况，其中$\mathbf{p}$垂直于$\hat{\mathbf{v}}$，而$\hat{\mathbf{v}} \times \mathbf{p}$垂直于包含$\mathbf{p}$和$\hat{\mathbf{v}}$的平面。现在因为$\hat{\mathbf{v}}$是一个单位向量，$|\mathbf{p}|=|\hat{\mathbf{v}} \times\mathbf{p}|$，这意味着我们有两个正交向量，即$\mathbf{p}$和$\hat{\mathbf{v}} \times\mathbf{p}$，它们的长度相同。因此，要绕$\hat{\mathbf{v}}$旋转$\mathbf{p}$，我们所要做的就是在(7.7)中使$s=\cos \theta$和$ \lambda=\sin \theta$:
 $$
 \begin{aligned}
 p^{\prime} & =\left[0, \mathbf{p}^{\prime}\right] \\
@@ -203,8 +188,16 @@ p^{\prime} & =\left[0, \mathbf{p}^{\prime}\right] \\
 \end{aligned}
 $$
 
-For example, to rotate a vector about the $z$-axis, $q$ 's vector $\hat{\mathbf{v}}$ must be aligned with the $z$-axis as shown in Fig. 7.3. If we make the angle of rotation $\theta=45^{\circ}$ then
+\begin{figure}[h!]
+    \includegraphics[max width=0.5\textwidth, center]{2023_01_16_a848224efad29cd66460g-109}
+    \caption[short]{三个正交向量$\mathbf{p}, \hat{\mathbf{v}}$和$\hat{\mathbf{v}} \times \mathbf{p}$}
+\end{figure}
+\begin{figure}[h!]
+    \includegraphics[max width=0.5\textwidth, center]{2023_01_16_a848224efad29cd66460g-109(1)}
+    \caption[short]{向量$2 \mathbf{i}$被四元数$q=\left[\frac{\sqrt{2}}{2}, \frac{\sqrt{2}}{2} \mathbf{k}\right]$旋转$45^{\circ}$}
+\end{figure}
 
+例如，要绕$z$-轴旋转一个向量，$q$的向量$\hat{\mathbf{v}}$必须与$z$-轴对齐，如图7.3所示。如果我们使旋转角度$\theta=45^{\circ}$，那么
 $$
 \begin{aligned}
 q & =[s, \lambda \hat{\mathbf{v}}] \\
@@ -212,9 +205,7 @@ q & =[s, \lambda \hat{\mathbf{v}}] \\
 & =\left[\frac{\sqrt{2}}{2}, \frac{\sqrt{2}}{2} \mathbf{k}\right]
 \end{aligned}
 $$
-
-and if the vector to be rotated is $\mathbf{p}=2 \mathbf{i}$, then
-
+如果要旋转的向量是$\mathbf{p}=2 \mathbf{i}$，则
 $$
 \begin{aligned}
 p & =[0, \mathbf{p}] \\
@@ -222,8 +213,7 @@ p & =[0, \mathbf{p}] \\
 \end{aligned}
 $$
 
-There are now four product combinations worth exploring: $q p, p q, q^{-1} p$ and $p q^{-1}$. It's not worth considering $q p^{-1}$ and $p^{-1} q$ as $p^{-1}$ simply reverses the direction of $\mathbf{p}$. Let's start with $q p$ :
-
+现在有四个值得探索的乘积组合:$q p, pq, q^{-1} p$和$p q^{-1}$。不值得考虑$q p^{-1}$和$p^{-1} q$，因为$p^{-1}$只是颠倒了$\mathbf{p}$的方向。让我们从$q p$开始:
 $$
 \begin{aligned}
 p^{\prime} & =q p \\
@@ -232,11 +222,9 @@ p^{\prime} & =q p \\
 & =[0, \sqrt{2} \mathbf{i}+\sqrt{2} \mathbf{j}]
 \end{aligned}
 $$
+即$\mathbf{p}$已经被旋转$45^{\circ}$为$\mathbf{p}^{\prime}=\sqrt{2} \mathbf{i}+\sqrt{2} \mathbf{j}$。
 
-and $\mathbf{p}$ has been rotated $45^{\circ}$ to $\mathbf{p}^{\prime}=\sqrt{2} \mathbf{i}+\sqrt{2} \mathbf{j}$.
-
-Next, $p q$ :
-
+接下来, $p q$ :
 $$
 \begin{aligned}
 p^{\prime} & =p q \\
@@ -246,10 +234,9 @@ p^{\prime} & =p q \\
 \end{aligned}
 $$
 
-and $\mathbf{p}$ has been rotated $-45^{\circ}$ to $\mathbf{p}^{\prime}=\sqrt{2} \mathbf{i}-\sqrt{2} \mathbf{j}$.
+即 $\mathbf{p}$ 已经被旋转 $-45^{\circ}$ 到 $\mathbf{p}^{\prime}=\sqrt{2} \mathbf{i}-\sqrt{2} \mathbf{j}$.
 
-Next, $q^{-1} p$, and as $q$ is a unit-norm quaternion, $q^{-1}=q^{*}$ :
-
+接下来，$q^{-1} p$，由于$q$是单位范数四元数，$q^{-1}=q^{*}$:
 $$
 \begin{aligned}
 p^{\prime} & =q^{-1} p \\
@@ -258,11 +245,9 @@ p^{\prime} & =q^{-1} p \\
 & =[0, \sqrt{2} \mathbf{i}-\sqrt{2} \mathbf{j}]
 \end{aligned}
 $$
+即 $\mathbf{p}$ 已经被旋转 $-45^{\circ}$ 到 $\mathbf{p}^{\prime}=\sqrt{2} \mathbf{i}-\sqrt{2} \mathbf{j}$.
 
-and $\mathbf{p}$ has been rotated $-45^{\circ}$ to $\mathbf{p}^{\prime}=\sqrt{2} \mathbf{i}-\sqrt{2} \mathbf{j}$.
-
-Finally, $p q^{-1}$ :
-
+最后, $p q^{-1}$ :
 $$
 \begin{aligned}
 p^{\prime} & =p q^{-1} \\
@@ -272,8 +257,7 @@ p^{\prime} & =p q^{-1} \\
 \end{aligned}
 $$
 
-and $\mathbf{p}$ has been rotated $45^{\circ}$ to $\mathbf{p}^{\prime}=\sqrt{2} \mathbf{i}+\sqrt{2} \mathbf{j}$. Thus, for orthogonal quaternions, $\theta$ is the angle of rotation, then
-
+即 $\mathbf{p}$ 已经被旋转 $45^{\circ}$ 到 $\mathbf{p}^{\prime}=\sqrt{2} \mathbf{i}+\sqrt{2} \mathbf{j}$. 因此，对于正交四元数，$\theta$是旋转角度，则
 $$
 \begin{aligned}
 & q p=p q^{-1} \\
@@ -281,14 +265,13 @@ $$
 \end{aligned}
 $$
 
-Fig. 7.4 Rotating the vector $\mathbf{p}=2 \mathbf{i}$ by the quaternion $q=[\cos \theta, \sin \theta \hat{\mathbf{v}}]$
+\begin{figure}[h!]
+    \centering
+    \includegraphics[max width=0.5\textwidth]{2023_01_16_a848224efad29cd66460g-111}
+    \caption[short]{将向量$\mathbf{p}=2 \mathbf{i}$按四元数$q=[\cos \theta, \sin \theta \hat{\mathbf{v}}]$旋转}
+\end{figure}
 
-\begin{center}
-\includegraphics[max width=\textwidth]{2023_01_16_a848224efad29cd66460g-111}
-\end{center}
-
-Before moving on, let's see what happens to the product $q p$ when $\theta=180^{\circ}$ :
-
+在继续之前，让我们看看当$\theta=180^{\circ}$时，乘积$q p$会发生什么变化:
 $$
 \begin{aligned}
 p^{\prime} & =q p \\
@@ -296,11 +279,9 @@ p^{\prime} & =q p \\
 & =[0,-2 \mathbf{i}]
 \end{aligned}
 $$
+即$\mathbf{p}$已被旋转$180^{\circ}$到$\mathbf{p}^{\prime}=-2 \mathbf{i}$。
 
-and $\mathbf{p}$ has been rotated $180^{\circ}$ to $\mathbf{p}^{\prime}=-2 \mathbf{i}$.
-
-Note that in all the above products, the vector has not been scaled during the rotation. This is because $q$ is a unit-norm quaternion. Now let's see what happens if we change the angle between $\hat{\mathbf{v}}$ and $\mathbf{p}$. Let's reduce the angle to $45^{\circ}$ and retain $q$ 's unit vector, as shown in Fig. 7.4. Therefore,
-
+注意，在上述所有乘积中，矢量在旋转过程中都没有缩放。这是因为$q$是一个单位范数四元数。现在让我们看看如果我们改变$\hat{\mathbf{v}}$和$\mathbf{p}$之间的角度会发生什么。让我们将角度减小到$45^{\circ}$，并保留$q$的单位向量，如图7.4所示。因此,
 $$
 \begin{aligned}
 \hat{\mathbf{v}} & =\frac{1}{\sqrt{2}} \mathbf{i}+\frac{1}{\sqrt{2}} \mathbf{k} \\
@@ -308,43 +289,41 @@ q & =[\cos \theta, \sin \theta \hat{\mathbf{v}}] \\
 p & =[0, \mathbf{p}] .
 \end{aligned}
 $$
+这一次我们必须包含点积项$-\sin \theta \hat{\mathbf{v}} \cdot \mathbf{p}$，因为它不再是零:
+\begin{align}
+    \begin{aligned}
+        p^{\prime} & =q p \\
+        & =[\cos \theta, \sin \theta \hat{\mathbf{v}}][0, \mathbf{p}] \\
+        & =[-\sin \theta \hat{\mathbf{v}} \cdot \mathbf{p}, \cos \theta \mathbf{p}+\sin \theta \hat{\mathbf{v}} \times \mathbf{p}] .
+    \end{aligned}
+\end{align}
 
-This time we must include the dot product term $-\sin \theta \hat{\mathbf{v}} \cdot \mathbf{p}$, as it is no longer zero:
 
-$$
-\begin{aligned}
-p^{\prime} & =q p \\
-& =[\cos \theta, \sin \theta \hat{\mathbf{v}}][0, \mathbf{p}] \\
-& =[-\sin \theta \hat{\mathbf{v}} \cdot \mathbf{p}, \cos \theta \mathbf{p}+\sin \theta \hat{\mathbf{v}} \times \mathbf{p}] .
-\end{aligned}
-$$
+将$\hat{\mathbf{v}}, \mathbf{p}$和$\theta=45^{\circ}$代入$(7.8)$，我们有
+\begin{align}
+    \begin{aligned}
+        p^{\prime} & =\left[-\frac{\sqrt{2}}{2}\left(\frac{1}{\sqrt{2}} \mathbf{i}+\frac{1}{\sqrt{2}} \mathbf{k}\right) \cdot(2 \mathbf{i}), \frac{\sqrt{2}}{2} 2 \mathbf{i}+\frac{\sqrt{2}}{2}\left(\frac{1}{\sqrt{2}} \mathbf{i}+\frac{1}{\sqrt{2}} \mathbf{k}\right) \times 2 \mathbf{i}\right] \\
+        & =[-1, \sqrt{2} \mathbf{i}+\mathbf{j}]
+        \end{aligned}
+\end{align}
 
-Substituting $\hat{\mathbf{v}}, \mathbf{p}$ and $\theta=45^{\circ}$ in $(7.8)$, we have
 
-$$
-\begin{aligned}
-p^{\prime} & =\left[-\frac{\sqrt{2}}{2}\left(\frac{1}{\sqrt{2}} \mathbf{i}+\frac{1}{\sqrt{2}} \mathbf{k}\right) \cdot(2 \mathbf{i}), \frac{\sqrt{2}}{2} 2 \mathbf{i}+\frac{\sqrt{2}}{2}\left(\frac{1}{\sqrt{2}} \mathbf{i}+\frac{1}{\sqrt{2}} \mathbf{k}\right) \times 2 \mathbf{i}\right] \\
-& =[-1, \sqrt{2} \mathbf{i}+\mathbf{j}]
-\end{aligned}
-$$
+不幸的是，它不再是纯四元数了。它没有被旋转$45^{\circ}$，并且向量的范数减少为$\sqrt{3}$ ！向量乘以一个非正交四元数已将一些向量信息转换为四元数的标量分量。
 
-which, unfortunately, is no longer a pure quaternion. It has not been rotated $45^{\circ}$, and the vector's norm is reduced to $\sqrt{3}$ ! Multiplying the vector by a non-orthogonal quaternion has converted some of the vector information into the quaternion's scalar component. Fig. 7.5 The vector $2 \mathbf{i}$ is rotated $90^{\circ}$ to $\mathbf{i}+\sqrt{2} \mathbf{j}+\mathbf{k}$
-
-\begin{center}
-\includegraphics[max width=\textwidth]{2023_01_16_a848224efad29cd66460g-112}
-\end{center}
+\begin{figure}[h!]
+    \centering
+    \includegraphics[max width=0.5\textwidth]{2023_01_16_a848224efad29cd66460g-112}
+    \caption[short]{向量$2 \mathbf{i}$被旋转$90^{\circ}$为$\mathbf{i}+\sqrt{2} \mathbf{j}+\mathbf{k}$}
+\end{figure}
 
 \subsection{一般情况}
-Not to worry. Could it be that an inverse quaternion reverses the operation? Let's see what happens if we post-multiply $q p$ by $q^{-1}$.
+别担心。会不会是四元数逆运算用反了?让我们看看如果用$q^{-1}$后乘$q p$会发生什么。
 
-Given
-
+给出
 $$
 q=\left[\cos \theta, \sin \theta\left(\frac{1}{\sqrt{2}} \mathbf{i}+\frac{1}{\sqrt{2}} \mathbf{k}\right)\right]
 $$
-
-then
-
+接着
 $$
 \begin{aligned}
 q^{-1} & =\left[\cos \theta,-\sin \theta\left(\frac{1}{\sqrt{2}} \mathbf{i}+\frac{1}{\sqrt{2}} \mathbf{k}\right)\right] \\
@@ -352,31 +331,27 @@ q^{-1} & =\left[\cos \theta,-\sin \theta\left(\frac{1}{\sqrt{2}} \mathbf{i}+\fra
 & =\frac{1}{2}[\sqrt{2},-\mathbf{i}-\mathbf{k}] .
 \end{aligned}
 $$
+因此，将(7.9)乘以$q^{-1}$，得到
+\begin{align}
+    \begin{aligned}
+        q p q^{-1} & =[-1, \sqrt{2} \mathbf{i}+\mathbf{j}] \frac{1}{2}[\sqrt{2},-\mathbf{i}-\mathbf{k}] \\
+        & =\frac{1}{2}[-\sqrt{2}-(\sqrt{2} \mathbf{i}+\mathbf{j}) \cdot(-\mathbf{i}-\mathbf{k}), \mathbf{i}+\mathbf{k}+\sqrt{2}(\sqrt{2} \mathbf{i}+\mathbf{j})-\mathbf{i}+\sqrt{2} \mathbf{j}+\mathbf{k}] \\
+        & =\frac{1}{2}[-\sqrt{2}+\sqrt{2}, \mathbf{i}+\mathbf{k}+2 \mathbf{i}+\sqrt{2} \mathbf{j}-\mathbf{i}+\sqrt{2} \mathbf{j}+\mathbf{k}] \\
+        & =[0, \mathbf{i}+\sqrt{2} \mathbf{j}+\mathbf{k}]
+    \end{aligned}
+\end{align}
+这是一个纯四元数。此外，没有缩放，因为它的范数仍然是2，但向量已经旋转了$90^{\circ}$，而不是$45^{\circ}$，是所需角度的两倍，如图7.5所示。
 
-Therefore, post-multiplying (7.9) by $q^{-1}$ we have
+如果以$q$和$q^{-1}$的纯四元数形式“夹”向量是正确的，那么将$\theta$增加到$90^{\circ}$应该将$ \mathbf{p}=2 \mathbf{i}$旋转$180^{\circ}$到$2 \mathbf{k}$。让我们试试这个。
 
-$$
-\begin{aligned}
-q p q^{-1} & =[-1, \sqrt{2} \mathbf{i}+\mathbf{j}] \frac{1}{2}[\sqrt{2},-\mathbf{i}-\mathbf{k}] \\
-& =\frac{1}{2}[-\sqrt{2}-(\sqrt{2} \mathbf{i}+\mathbf{j}) \cdot(-\mathbf{i}-\mathbf{k}), \mathbf{i}+\mathbf{k}+\sqrt{2}(\sqrt{2} \mathbf{i}+\mathbf{j})-\mathbf{i}+\sqrt{2} \mathbf{j}+\mathbf{k}] \\
-& =\frac{1}{2}[-\sqrt{2}+\sqrt{2}, \mathbf{i}+\mathbf{k}+2 \mathbf{i}+\sqrt{2} \mathbf{j}-\mathbf{i}+\sqrt{2} \mathbf{j}+\mathbf{k}] \\
-& =[0, \mathbf{i}+\sqrt{2} \mathbf{j}+\mathbf{k}]
-\end{aligned}
-$$
-
-which is a pure quaternion. Furthermore, there's no scaling as its norm is still 2, but the vector has been rotated $90^{\circ}$ rather than $45^{\circ}$, twice the desired angle, as shown in Fig. 7.5.
-
-If this 'sandwiching' of the vector in the form of a pure quaternion by $q$ and $q^{-1}$ is correct, it suggests that increasing $\theta$ to $90^{\circ}$ should rotate $\mathbf{p}=2 \mathbf{i}$ by $180^{\circ}$ to $2 \mathbf{k}$. Let's try this. Let $\theta=90^{\circ}$, therefore,
-
+令$\theta=90^{\circ}$，因此，
 $$
 \begin{aligned}
 q p & =\left[0, \frac{1}{\sqrt{2}} \mathbf{i}+\frac{1}{\sqrt{2}} \mathbf{k}\right][0,2 \mathbf{i}] \\
 & =\left[-\frac{2}{\sqrt{2}}, \frac{2}{\sqrt{2}} \mathbf{j}\right]
 \end{aligned}
 $$
-
-Next, we post-multiply $q p$ by $q^{-1}$ :
-
+接下来，我们将$q p$后乘$q^{-1}$:
 $$
 \begin{aligned}
 q u p q^{-1} & =\left[-\frac{2}{\sqrt{2}}, \frac{2}{\sqrt{2}} \mathbf{j}\right]\left[0,-\frac{1}{\sqrt{2}} \mathbf{i}-\frac{1}{\sqrt{2}} \mathbf{k}\right] \\
@@ -384,27 +359,19 @@ q u p q^{-1} & =\left[-\frac{2}{\sqrt{2}}, \frac{2}{\sqrt{2}} \mathbf{j}\right]\
 & =[0,2 \mathbf{k}]
 \end{aligned}
 $$
-
-which confirms our prediction and suggests that $q p q^{-1}$ works. Now let's show how this double angle arises. We begin by defining a unit-norm quaternion $q$ :
-
+这证实了我们的预测，并表明$q p q^{-1}$可行。现在我们来看看这个两倍角是如何产生的。首先定义一个单位范数四元数$q$:
 $$
 q=[s, \lambda \hat{\mathbf{v}}]
 $$
-
-where $s^{2}+\lambda^{2}=1$. The vector $\mathbf{p}$ to be rotated is encoded as a pure quaternion:
-
+其中$s^{2}+\lambda^{2}=1$。要旋转的向量$\mathbf{p}$被编码为纯四元数:
 $$
 p=[0, \mathbf{p}]
 $$
-
-and the inverse quaternion $q^{-1}$ is
-
+且这个四元数的逆$q^{-1}$是
 $$
 q^{-1}=[s,-\lambda \hat{\mathbf{v}}]
 $$
-
-Therefore, the product $q p q^{-1}$ is
-
+因此，积$q p q^{-1}$为
 $$
 \begin{aligned}
 q p q^{-1}= & {[s, \lambda \hat{\mathbf{v}}][0, \mathbf{p}][s,-\lambda \hat{\mathbf{v}}] } \\
@@ -415,53 +382,39 @@ q p q^{-1}= & {[s, \lambda \hat{\mathbf{v}}][0, \mathbf{p}][s,-\lambda \hat{\mat
 = & {\left[\lambda^{2}(\hat{\mathbf{v}} \times \mathbf{p}) \cdot \hat{\mathbf{v}}, \lambda^{2}(\hat{\mathbf{v}} \cdot \mathbf{p}) \hat{\mathbf{v}}+s^{2} \mathbf{p}+2 \lambda s \hat{\mathbf{v}} \times \mathbf{p}-\lambda^{2}(\hat{\mathbf{v}} \times \mathbf{p}) \times \hat{\mathbf{v}}\right] }
 \end{aligned}
 $$
-
-Note that
-
+请注意,
 $$
 (\hat{\mathbf{v}} \times \mathbf{p}) \cdot \hat{\mathbf{v}}=0
 $$
-
-and
-
+且
 $$
 (\hat{\mathbf{v}} \times \mathbf{p}) \times \hat{\mathbf{v}}=(\hat{\mathbf{v}} \cdot \hat{\mathbf{v}}) \mathbf{p}-(\mathbf{p} \cdot \hat{\mathbf{v}}) \hat{\mathbf{v}}=\mathbf{p}-(\mathbf{p} \cdot \hat{\mathbf{v}}) \hat{\mathbf{v}}
 $$
-
-Therefore,
-
-$$
+因此，
+\begin{align}
 \begin{aligned}
 q p q^{-1} & =\left[0, \lambda^{2}(\hat{\mathbf{v}} \cdot \mathbf{p}) \hat{\mathbf{v}}+s^{2} \mathbf{p}+2 \lambda s \hat{\mathbf{v}} \times \mathbf{p}-\lambda^{2} \mathbf{p}+\lambda^{2}(\mathbf{p} \cdot \hat{\mathbf{v}}) \hat{\mathbf{v}}\right] \\
 & =\left[0,2 \lambda^{2}(\hat{\mathbf{v}} \cdot \mathbf{p}) \hat{\mathbf{v}}+\left(s^{2}-\lambda^{2}\right) \mathbf{p}+2 \lambda s \hat{\mathbf{v}} \times \mathbf{p}\right]
 \end{aligned}
-$$
-
-Obviously, this is a pure quaternion as the scalar component is zero. However, it is not obvious where the angle doubling comes from. But look what happens when we make $s=\cos \theta$ and $\lambda=\sin \theta$ :
-
+\end{align}
+显然，这是一个纯四元数，因为标量分量为零。然而，角度翻倍的来源并不明显。但是看看当我们令$s=\cos \theta$和$\lambda=\sin \theta$时，会发生什么:
 $$
 \begin{aligned}
 q p q^{-1} & =\left[0,2 \sin ^{2} \theta(\hat{\mathbf{v}} \cdot \mathbf{p}) \hat{\mathbf{v}}+\left(\cos ^{2} \theta-\sin ^{2} \theta\right) \mathbf{p}+2 \sin \theta \cos \theta \hat{\mathbf{v}} \times \mathbf{p}\right] \\
 & =[0,(1-\cos 2 \theta)(\hat{\mathbf{v}} \cdot \mathbf{p}) \hat{\mathbf{v}}+\cos 2 \theta \mathbf{p}+\sin 2 \theta \hat{\mathbf{v}} \times \mathbf{p}] .
 \end{aligned}
 $$
-
-The double-angle trigonometric terms emerge! Now, if we want this product to actually rotate the vector by $\theta$, then we must build this in from the outset by halving $\theta$ in $q$ :
-
-$$
-q=\left[\cos \frac{1}{2} \theta, \sin \frac{1}{2} \theta \hat{\mathbf{v}}\right]
-$$
-
-which makes
-
-$$
+双倍角度项出现了!现在，如果我们想让这个乘积实际旋转向量$\theta$，那么我们必须从一开始就把$\theta$减半到$q$:
+\begin{align}
+    q=\left[\cos \frac{1}{2} \theta, \sin \frac{1}{2} \theta \hat{\mathbf{v}}\right]
+\end{align}
+这使得
+\begin{align}
 q p q^{-1}=[0,(1-\cos \theta)(\hat{\mathbf{v}} \cdot \mathbf{p}) \hat{\mathbf{v}}+\cos \theta \mathbf{p}+\sin \theta \hat{\mathbf{v}} \times \mathbf{p}]
-$$
+\end{align}
+积$q p q^{-1}$是Hamilton发现的，但他没有发表结果。Cayley也发现了这种乘积，并于1845年发表了结果。然而，Altmann指出，“在Cayley的文集中，他承认Hamilton优先”[2]，这是一个很好的姿态。然而，在Hamilton和Cayley之前认识到半角参数重要性的人是rodrigues，他发表了一个Hamilton没有看到的解决方案，但显然是Cayley看到的。
 
-The product $q p q^{-1}$ was discovered by Hamilton who failed to publish the result. Cayley, also discovered the product and published the result in 1845 [8]. However, Altmann notes that "in Cayley's collected papers he concedes priority to Hamilton" [2], which was a nice gesture. However, the person who had recognised the importance of the half-angle parameters in (7.12) before Hamilton and Cayley was Rodrigues-who published a solution that was not seen by Hamilton, but apparently, was seen by Cayley.
-
-Let's test (7.13) using the previous example where we rotated a vector $\mathbf{p}=2 \mathbf{i}$, $\theta=90^{\circ}$ about the quaternion's vector $\hat{\mathbf{v}}=(1 / \sqrt{2}) \mathbf{i}+(1 / \sqrt{2}) \mathbf{k}$.
-
+让我们使用前面的例子来测试(7.13)，其中我们围绕四元数$\hat{\mathbf{v}}=(1 / \sqrt{2}) \mathbf{i}+(1 / \sqrt{2}) \mathbf{k}$旋转一个向量$\mathbf{p}=2 \mathbf{i}$， $\theta=90^{\circ}$
 $$
 \begin{aligned}
 q u p q^{-1} & =[0,(1-\cos \theta)(\hat{\mathbf{v}} \cdot \mathbf{p}) \hat{\mathbf{v}}+\cos \theta \mathbf{p}+\sin \theta \hat{\mathbf{v}} \times \mathbf{p}] \\
@@ -470,27 +423,19 @@ q u p q^{-1} & =[0,(1-\cos \theta)(\hat{\mathbf{v}} \cdot \mathbf{p}) \hat{\math
 & =[0, \mathbf{i}+\sqrt{2} \mathbf{j}+\mathbf{k}]
 \end{aligned}
 $$
-
-which agrees with (7.10). Thus, when a unit-norm quaternion takes the form
-
+这与(7.10)一致。因此，当单位范数四元数采用如下形式时
 $$
 q=\left[\cos \frac{1}{2} \theta, \sin \frac{1}{2} \theta \hat{\mathbf{v}}\right]
 $$
-
-and a pure quaternion storing a vector to be rotated takes the form
-
+存储待旋转向量的纯四元数采用这种形式
 $$
 p=[0, \mathbf{p}]
 $$
-
-the pure quaternion
-
+纯四元数
 $$
 p^{\prime}=q p q^{-1}
 $$
-
-stores the rotated vector $\mathbf{p}^{\prime}$. Let's show why this product preserves the magnitude of the rotated vector.
-
+存储旋转后的向量$\mathbf{p}^{\prime}$。我们来看看为什么这个乘积保留了旋转矢量的大小。
 $$
 \begin{aligned}
 \left|p^{\prime}\right| & =|q p|\left|q^{-1}\right| \\
@@ -498,11 +443,9 @@ $$
 & =|q|^{2}|p|
 \end{aligned}
 $$
+且如果$q$是一个单位范数四元数，$|q|=1$，则$\left|p^{\prime}\right|=|p|$。
 
-and if $q$ is a unit-norm quaternion, $|q|=1$, then $\left|p^{\prime}\right|=|p|$.
-
-You may be wondering what happens if the product is reversed to $q^{-1} p q$ ? A guess would suggest that the rotation sequence is reversed, but let's see what an algebraic analysis confirms.
-
+你可能想知道，如果乘积颠倒到$q^{-1} p q$会发生什么?一种猜测是旋转顺序颠倒了，但让我们看看代数分析证实了什么。
 $$
 \begin{aligned}
 q^{-1} p q= & {[s,-\lambda \hat{\mathbf{v}}][0, \mathbf{p}][s, \lambda \hat{\mathbf{v}}] } \\
@@ -512,63 +455,53 @@ q^{-1} p q= & {[s,-\lambda \hat{\mathbf{v}}][0, \mathbf{p}][s, \lambda \hat{\mat
 = & {\left[\lambda^{2}(\hat{\mathbf{v}} \times \mathbf{p}) \cdot \hat{\mathbf{v}}, \lambda^{2}(\hat{\mathbf{v}} \cdot \mathbf{p}) \hat{\mathbf{v}}+s^{2} \mathbf{p}-2 \lambda s \hat{\mathbf{v}} \times \mathbf{p}-\lambda^{2}(\hat{\mathbf{v}} \times \mathbf{p}) \times \hat{\mathbf{v}}\right] }
 \end{aligned}
 $$
-
-Once again
-
+又一次
 $$
 (\hat{\mathbf{v}} \times \mathbf{p}) \cdot \hat{\mathbf{v}}=0
 $$
-
-and
-
+且
 $$
 (\hat{\mathbf{v}} \times \mathbf{p}) \times \hat{\mathbf{v}}=\mathbf{p}-(\mathbf{p} \cdot \hat{\mathbf{v}}) \hat{\mathbf{v}}
 $$
-
-Therefore,
-
+因此，
 $$
 \begin{aligned}
 q^{-1} p q & =\left[0, \lambda^{2}(\hat{\mathbf{v}} \cdot \mathbf{p}) \hat{\mathbf{v}}+s^{2} \mathbf{p}-2 \lambda s \hat{\mathbf{v}} \times \mathbf{p}-\lambda^{2} \mathbf{p}+\lambda^{2}(\mathbf{p} \cdot \hat{\mathbf{v}}) \hat{\mathbf{v}}\right] \\
 & =\left[0,2 \lambda^{2}(\hat{\mathbf{v}} \cdot \mathbf{p}) \hat{\mathbf{v}}+\left(s^{2}-\lambda^{2}\right) \mathbf{p}-2 \lambda s \hat{\mathbf{v}} \times \mathbf{p}\right]
 \end{aligned}
 $$
-
-Again, let's make $s=\cos \theta$ and $\lambda=\sin \theta$ :
-
+再次，让我们令$s=\cos \theta$和$\lambda=\sin \theta$:
 $$
 q^{-1} p q=[0,(1-\cos 2 \theta)(\hat{\mathbf{v}} \cdot \mathbf{p}) \hat{\mathbf{v}}+\cos 2 \theta \mathbf{p}-\sin 2 \theta \hat{\mathbf{v}} \times \mathbf{p}]
 $$
-
-and the only thing that has changed from $q p q^{-1}$ is the sign of the cross-product term, which reverses the direction of its vector. However, we must remember to compensate for the angle-doubling by halving $\theta$ :
-
-$$
+则唯一改变$q p q^{-1}$的是叉乘项的符号，叉乘项的方向是相反的。但是，我们必须记住通过将$\theta$减半来补偿角度加倍:
+\begin{align}
 q^{-1} p q=[0,(1-\cos \theta)(\hat{\mathbf{v}} \cdot \mathbf{p}) \hat{\mathbf{v}}+\cos \theta \mathbf{p}-\sin \theta \hat{\mathbf{v}} \times \mathbf{p}]
-$$
-
-Let's see what happens when we employ (7.14) to rotate $\mathbf{p}=2 \mathbf{i}, 90^{\circ}$ about the quaternion's vector $\hat{\mathbf{v}}=(1 / \sqrt{2}) \mathbf{i}+(1 / \sqrt{2}) \mathbf{k}$ :
-
+\end{align}
+让我们看看当我们使用(7.14)绕四元数的向量$\hat{\mathbf{v}}=(1 / \sqrt{2}) \mathbf{i}+(1 / \sqrt{2}) \mathbf{k}$旋转$\mathbf{p}=2 \mathbf{i}, 90^{\circ}$会发生什么:
 $$
 \begin{aligned}
 q^{-1} p q & =\left[0, \frac{2}{\sqrt{2}}\left(\frac{1}{\sqrt{2}} \mathbf{i}+\frac{1}{\sqrt{2}} \mathbf{k}\right)-\sqrt{2} \mathbf{j}\right] \\
 & =[0, \mathbf{i}-\sqrt{2} \mathbf{j}+\mathbf{k}]
 \end{aligned}
 $$
-
-which has rotated $\mathbf{p}$ clockwise $90^{\circ}$ about the quaternion's vector. Therefore, the rotor $q p q^{-1}$ rotates a vector counter-clockwise, and $q^{-1} p q$ rotates a vector Fig. 7.6 The point $P(0,1,1)$ is rotated $90^{\circ}$ to $P^{\prime}(1,1,0)$ about the $y$-axis
-
-\begin{center}
-\includegraphics[max width=\textwidth]{2023_01_16_a848224efad29cd66460g-116}
-\end{center}
-
-clockwise:
-
+它将$\mathbf{p}$绕四元数的向量顺时针旋转$90^{\circ}$。因此，转子$q p q^{-1}$逆时针旋转一个向量，$q^{-1} p q$顺时针旋转一个向量:
 $$
 \begin{aligned}
 q p q^{-1} & =[0,(1-\cos \theta)(\hat{\mathbf{v}} \cdot \mathbf{p}) \hat{\mathbf{v}}+\cos \theta \mathbf{p}+\sin \theta \hat{\mathbf{v}} \times \mathbf{p}] \\
 q^{-1} p q & =[0,(1-\cos \theta)(\hat{\mathbf{v}} \cdot \mathbf{p}) \hat{\mathbf{v}}+\cos \theta \mathbf{p}-\sin \theta \hat{\mathbf{v}} \times \mathbf{p}]
 \end{aligned}
 $$
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[max width=0.5\textwidth]{2023_01_16_a848224efad29cd66460g-116}
+    \caption[short]{点$P(0,1,1)$围绕$y$轴旋转$90^{\circ}$到$P^{\prime}(1,1,0)$}
+\end{figure}
+
+
+
+
 
 Let's compute another example. Consider the point $P(0,1,1)$ in Fig. $7.6$ which is to be rotated $90^{\circ}$ about the $y$-axis. We can see that the rotated point $P^{\prime}$ has the coordinates $(1,1,0)$ which we will confirm algebraically. The point $P$ is represented by its position vector $\mathbf{p}$ in the pure quaternion
 
