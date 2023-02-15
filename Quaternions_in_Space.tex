@@ -499,18 +499,11 @@ $$
     \caption[short]{点$P(0,1,1)$围绕$y$轴旋转$90^{\circ}$到$P^{\prime}(1,1,0)$}
 \end{figure}
 
-
-
-
-
-Let's compute another example. Consider the point $P(0,1,1)$ in Fig. $7.6$ which is to be rotated $90^{\circ}$ about the $y$-axis. We can see that the rotated point $P^{\prime}$ has the coordinates $(1,1,0)$ which we will confirm algebraically. The point $P$ is represented by its position vector $\mathbf{p}$ in the pure quaternion
-
+让我们计算另一个例子。考虑图$7.6$中的点$P(0,1,1)$，它将围绕$y$轴旋转$90^{\circ}$。我们可以看到旋转后的点$P^{\prime}$的坐标为$(1,1,0)$，我们将用代数方法确认。点$P$在纯四元数中由它的位置向量$\mathbf{P}$表示
 $$
 p=[0, \mathbf{p}] \text {. }
 $$
-
-The axis of rotation is $\hat{\mathbf{v}}=\mathbf{j}$, and the vector to be rotated is $\mathbf{p}=\mathbf{j}+\mathbf{k}$. Therefore,
-
+旋转轴为$\hat{\mathbf{v}}=\mathbf{j}$，要旋转的向量为$\mathbf{p}=\mathbf{j}+\mathbf{k}$。因此,
 $$
 \begin{aligned}
 \operatorname{qpq}^{-1} & =[0,(1-\cos \theta)(\hat{\mathbf{v}} \cdot \mathbf{p}) \hat{\mathbf{v}}+\cos \theta \mathbf{p}+\sin \theta \hat{\mathbf{v}} \times \mathbf{p}] \\
@@ -518,74 +511,56 @@ $$
 & =[0, \mathbf{i}+\mathbf{j}]
 \end{aligned}
 $$
+且确认$P$确实被旋转到$(1,1,0)$。
 
-and confirms that $P$ is indeed rotated to $(1,1,0)$.
-
-Now let's explore how this product is represented in matrix form.
+现在我们来研究一下这个乘积是如何用矩阵形式表示的。
 
 \section{矩阵形式的四元数}
-Having discovered a vector equation to represent the triple $q p q^{-1}$, let's continue and convert it into a matrix. We will explore two methods: the first is a simple vectorial method which translates the vector equation representing $q p q^{-1}$ directly into matrix form. The second method uses matrix algebra to develop a rather cunning solution.
+在发现了一个向量方程来表示三重$q p q^{-1}$之后，让我们继续把它转换成一个矩阵。我们将探讨两种方法:第一种是简单的向量方法，它将表示$q p q^{-1}$的向量方程直接转换为矩阵形式。第二种方法使用矩阵代数来开发一个相当巧妙的解决方案。
 
 \subsection{向量方法}
-For the vector method it is convenient to describe the unit-norm quaternion as
-
+对于向量法，将单位范数四元数描述为
 $$
 \begin{aligned}
 q & =[s, \mathbf{v}] \\
 & =[s, x \mathbf{i}+y \mathbf{j}+z \mathbf{k}]
 \end{aligned}
 $$
-
-where
-
+其中
 $$
 s^{2}+|\mathbf{v}|^{2}=1
 $$
-
-and the pure quaternion as
-
+而纯四元数为
 $$
 \begin{aligned}
 p & =[0, \mathbf{p}] \\
 & =\left[0, x_{p} \mathbf{i}+y_{p} \mathbf{j}+z_{p} \mathbf{k}\right] .
 \end{aligned}
 $$
-
-A simple way to compute $q p q^{-1}$ is to use (7.11) and substitute $|\mathbf{v}|$ for $\lambda$ :
-
+计算$q p q^{-1}$的简单方法是使用(7.11)并将$|\mathbf{v}|$替换为$\lambda$:
 $$
 \begin{aligned}
 q p q^{-1} & =\left[0,2 \lambda^{2}(\hat{\mathbf{v}} \cdot \mathbf{p}) \hat{\mathbf{v}}+\left(s^{2}-\lambda^{2}\right) \mathbf{p}+2 \lambda s \hat{\mathbf{v}} \times \mathbf{p}\right] \\
 & =\left[0,2|\mathbf{v}|^{2}(\hat{\mathbf{v}} \cdot \mathbf{p}) \hat{\mathbf{v}}+\left(s^{2}-|\mathbf{v}|^{2}\right) \mathbf{p}+2|\mathbf{v}| s \hat{\mathbf{v}} \times \mathbf{p}\right]
 \end{aligned}
 $$
-
-Next, we substitute $\mathbf{v}$ for $|\mathbf{v}| \hat{\mathbf{v}}$ :
-
+接下来，我们用$\mathbf{v}$替换$|\mathbf{v}| \hat{\mathbf{v}}$:
 $$
 q p q^{-1}=\left[0,2(\mathbf{v} \cdot \mathbf{p}) \mathbf{v}+\left(s^{2}-|\mathbf{v}|^{2}\right) \mathbf{p}+2 s \mathbf{v} \times \mathbf{p}\right]
 $$
-
-Finally, as we are working with unit-norm quaternions to prevent scaling
-
+最后，由于我们在工作中使用的是单位规范的四元数，以防止缩放。
 $$
 s^{2}+|\mathbf{v}|^{2}=1
 $$
-
-and
-
+且
 $$
 s^{2}-|\mathbf{v}|^{2}=2 s^{2}-1
 $$
-
-therefore,
-
+因此，
 $$
 q p q^{-1}=\left[0,2(\mathbf{v} \cdot \mathbf{p}) \mathbf{v}+\left(2 s^{2}-1\right) \mathbf{p}+2 s \mathbf{v} \times \mathbf{p}\right]
 $$
-
-If we let $p^{\prime}=q p q^{-1}$, which is a pure quaternion, we have
-
+如果我们令$p^{\prime}=q p q^{-1}$，这是一个纯四元数，我们有
 $$
 \begin{aligned}
 p^{\prime} & =q p q^{-1} \\
@@ -594,9 +569,7 @@ p^{\prime} & =q p q^{-1} \\
 \mathbf{p}^{\prime} & =2(\mathbf{v} \cdot \mathbf{p}) \mathbf{v}+\left(2 s^{2}-1\right) \mathbf{p}+2 s \mathbf{v} \times \mathbf{p} .
 \end{aligned}
 $$
-
-We are only interested in the rotated vector $\mathbf{p}^{\prime}$ comprising the three terms $2(\mathbf{v} \cdot \mathbf{p}) \mathbf{v}$, $\left(2 s^{2}-1\right) \mathbf{p}$ and $2 s \mathbf{v} \times \mathbf{p}$, which can be represented by three individual matrices and summed together.
-
+我们只对旋转向量$\mathbf{p}^{\prime}$感兴趣，它由三个项$2(\mathbf{v} \cdot \mathbf{p}) \mathbf{v}$， $\left(2s ^{2}-1\right) \mathbf{p}$和$ 2s \mathbf{v} \times \mathbf{p}$组成，它们可以由三个单独的矩阵表示并求和。
 $$
 \begin{aligned}
 2(\mathbf{v} \cdot \mathbf{p}) \mathbf{v} & =2\left(x x_{p}+y y_{p}+z z_{p}\right)(x \mathbf{i}+y \mathbf{j}+z \mathbf{k}) \\
@@ -609,6 +582,11 @@ x_{p} \\
 y_{p} \\
 z_{p}
 \end{array}\right] \\
+\end{aligned}
+$$
+
+$$
+\begin{aligned}
 \left(2 s^{2}-1\right) \mathbf{p} & =\left(2 s^{2}-1\right) x_{p} \mathbf{i}+\left(2 s^{2}-1\right) y_{p} \mathbf{j}+\left(2 s^{2}-1\right) z_{p} \mathbf{k} \\
 & =\left[\begin{array}{ccc}
 2 s^{2}-1 & 0 & 0 \\
@@ -618,12 +596,7 @@ z_{p}
 x_{p} \\
 y_{p} \\
 z_{p}
-\end{array}\right]
-\end{aligned}
-$$
-
-$$
-\begin{aligned}
+\end{array}\right]\\
 2 s \mathbf{v} \times \mathbf{p} & =2 s\left(\left(y z_{p}-z y_{p}\right) \mathbf{i}+\left(z x_{p}-x z_{p}\right) \mathbf{j}+\left(x y_{p}-y x_{p}\right) \mathbf{k}\right) \\
 & =\left[\begin{array}{ccc}
 0 & -2 s z & 2 s y \\
@@ -636,10 +609,8 @@ z_{p}
 \end{array}\right] .
 \end{aligned}
 $$
-
-Adding these matrices together:
-
-$$
+把这些矩阵加起来:
+\begin{align}
 \mathbf{p}^{\prime}=\left[\begin{array}{ccc}
 2\left(s^{2}+x^{2}\right)-1 & 2(x y-s z) & 2(x z+s y) \\
 2(x y+s z) & 2\left(s^{2}+y^{2}\right)-1 & 2(y z-s x) \\
@@ -649,11 +620,9 @@ x_{p} \\
 y_{p} \\
 z_{p}
 \end{array}\right]
-$$
-
-or
-
-$$
+\end{align}
+或
+\begin{align}
 \mathbf{p}^{\prime}=\left[\begin{array}{ccc}
 1-2\left(y^{2}+z^{2}\right) & 2(x y-s z) & 2(x z+s y) \\
 2(x y+s z) & 1-2\left(x^{2}+z^{2}\right) & 2(y z-s x) \\
@@ -663,17 +632,13 @@ x_{p} \\
 y_{p} \\
 z_{p}
 \end{array}\right]
-$$
-
-where
-
+\end{align}
+其中
 $$
 \left[0, \mathbf{p}^{\prime}\right]=q p q^{-1}
 $$
-
-Now let's reverse the product. To compute the vector part of $q^{-1} p q$ all that we have to do is reverse the sign of $2 s \mathbf{v} \times \mathbf{p}$ :
-
-$$
+现在让我们反转乘积。要计算$q^{-1} p q$的向量部分，我们所要做的就是将$2s \mathbf{v} \times\mathbf{p}$的符号颠倒:
+\begin{align}
 \mathbf{p}^{\prime}=\left[\begin{array}{ccc}
 2\left(s^{2}+x^{2}\right)-1 & 2(x y+s z) & 2(x z-s y) \\
 2(x y-s z) & 2\left(s^{2}+y^{2}\right)-1 & 2(y z+s x) \\
@@ -683,11 +648,9 @@ x_{p} \\
 y_{p} \\
 z_{p}
 \end{array}\right]
-$$
-
-or
-
-$$
+\end{align}
+或
+\begin{align}
 \mathbf{p}^{\prime}=\left[\begin{array}{ccc}
 1-2\left(y^{2}+z^{2}\right) & 2(x y+s z) & 2(x z-s y) \\
 2(x y-s z) & 1-2\left(x^{2}+z^{2}\right) & 2(y z+s x) \\
@@ -697,61 +660,50 @@ x_{p} \\
 y_{p} \\
 z_{p}
 \end{array}\right]
-$$
-
-where
-
+\end{align}
+其中
 $$
 \left[0, \mathbf{p}^{\prime}\right]=q^{-1} p q .
 $$
-
-Observe that (7.17) is the transpose of (7.15), and (7.18) is the transpose of (7.16).
+观察出(7.17)是(7.15)的转置，(7.18)是(7.16)的转置。
 
 \subsection{矩阵方法}
-The second method to derive (7.13) employs the matrix representing a quaternion product $(5.14)$ :
-
 $$
 \begin{aligned}
 q_{a} & =\left[s_{a}, x_{a} \mathbf{i}+y_{a} \mathbf{j}+z_{a} \mathbf{k}\right] \\
 q_{b} & =\left[s_{b}, x_{b} \mathbf{i}+y_{b} \mathbf{j}+z_{b} \mathbf{k}\right]
 \end{aligned}
 $$
-
-and their product is
-
+它们的乘积是
 $$
 \begin{aligned}
-& q_{a} q_{b}=\left[s_{a}, x_{a} \mathbf{i}+y_{a} \mathbf{j}+z_{a} \mathbf{k}\right]\left[s_{b}, x_{b} \mathbf{i}+y_{b} \mathbf{j}+z_{b} \mathbf{k}\right] \\
-& =\left[s_{a} s_{b}-x_{a} x_{b}-y_{a} y_{b}-z_{a} z_{b},\right. \\
+q_{a} q_{b}=&\left[s_{a}, x_{a} \mathbf{i}+y_{a} \mathbf{j}+z_{a} \mathbf{k}\right]\left[s_{b}, x_{b} \mathbf{i}+y_{b} \mathbf{j}+z_{b} \mathbf{k}\right] \\
+=&\left[s_{a} s_{b}-x_{a} x_{b}-y_{a} y_{b}-z_{a} z_{b},\right. \\
 & s_{a}\left(x_{b} \mathbf{i}+y_{b} \mathbf{j}+z_{b} \mathbf{k}\right) \\
 & +s_{b}\left(x_{a} \mathbf{i}+y_{a} \mathbf{j}+z_{a} \mathbf{k}\right) \\
 & \left.+\left(y_{a} z_{b}-y_{b} z_{a}\right) \mathbf{i}+\left(x_{b} z_{a}-x_{a} z_{b}\right) \mathbf{j}+\left(x_{a} y_{b}-x_{b} y_{a}\right) \mathbf{k}\right] \\
-& =\left[s_{a} s_{b}-x_{a} x_{b}-y_{a} y_{b}-z_{a} z_{b}\right. \text {, } \\
+=&\left[s_{a} s_{b}-x_{a} x_{b}-y_{a} y_{b}-z_{a} z_{b}\right. \text {, } \\
 & \left(s_{a} x_{b}+s_{b} x_{a}+y_{a} z_{b}-y_{b} z_{a}\right) \mathbf{i} \\
 & +\left(s_{a} y_{b}+s_{b} y_{a}+x_{b} z_{a}-x_{a} z_{b}\right) \mathbf{j} \\
 & \left.+\left(s_{a} z_{b}+s_{b} z_{a}+x_{a} y_{b}-x_{b} y_{a}\right) \mathbf{k}\right] \\
-& =\left[\begin{array}{cccc}s_{a} & -x_{a} & -y_{a} & -z_{a} \\x_{a} & s_{a} & -z_{a} & y_{a} \\y_{a} & z_{a} & s_{a} & -x_{a} \\z_{a} & -y_{a} & x_{a} & s_{a}\end{array}\right]\left[\begin{array}{c}s_{b} \\x_{b} \\y_{b} \\z_{b}\end{array}\right]=\mathbf{A} q_{b} .
+=&\begin{bmatrix}s_{a} & -x_{a} & -y_{a} & -z_{a} \\x_{a} & s_{a} & -z_{a} & y_{a} \\y_{a} & z_{a} & s_{a} & -x_{a} \\z_{a} & -y_{a} & x_{a} & s_{a}\end{bmatrix}\begin{bmatrix}s_{b} \\x_{b} \\y_{b} \\z_{b}\end{bmatrix}=\mathbf{A} q_{b} .
 \end{aligned}
 $$
-
-At this stage we have quaternion $q_{a}$ represented by matrix $\mathbf{A}$, and quaternion $q_{b}$ represented as a column vector. Now let's reverse the scenario without altering the result by making $q_{b}$ the matrix and $q_{a}$ the column vector:
-
+在这个阶段，我们有四元数$q_{a}$表示为矩阵$\mathbf{A}$，四元数$q_{b}$表示为列向量。现在让我们在不改变结果的情况下，将$q_{b}$设为矩阵，$q_{a}$设为列向量:
 $$
-q_{a} q_{b}=\left[\begin{array}{cccc}
+q_{a} q_{b}=\begin{bmatrix}
 s_{b} & -x_{b} & -y_{b} & -z_{b} \\
 x_{b} & s_{b} & z_{b} & -y_{b} \\
 y_{b} & -z_{b} & s_{b} & x_{b} \\
 z_{b} & y_{b} & -x_{b} & s_{b}
-\end{array}\right]\left[\begin{array}{c}
+\end{bmatrix}\begin{bmatrix}
 s_{a} \\
 x_{a} \\
 y_{a} \\
 z_{a}
-\end{array}\right]=\mathbf{B} q_{a}
+\end{bmatrix}=\mathbf{B} q_{a}
 $$
-
-So now we have two ways of computing $q_{a} q_{b}$ and we need a way of distinguishing between the two matrices. Let $\mathbf{L}$ be the matrix that preserves the left-to-right quaternion sequence, and $\mathbf{R}$ be the matrix that reverses the sequence to right-to-left:
-
+现在我们有两种方法来计算$q_{a} q_{b}$，我们需要一种方法来区分这两个矩阵。设$\mathbf{L}$是保留从左到右四元数序列的矩阵，$\mathbf{R}$是将序列从右到左反转的矩阵:
 $$
 \begin{aligned}
 & q_{a} q_{b}=\mathbf{L}\left(q_{a}\right) q_{b}= {\left[\begin{array}{cccc}
@@ -765,6 +717,10 @@ x_{b} \\
 y_{b} \\
 z_{b}
 \end{array}\right] } \\
+\end{aligned}
+$$
+$$
+\begin{aligned}
 & q_{a} q_{b}=\mathbf{R}\left(q_{b}\right) q_{a}=\left[\begin{array}{cccc}
 s_{b} & -x_{b} & -y_{b} & -z_{b} \\
 x_{b} & s_{b} & z_{b} & -y_{b} \\
@@ -778,55 +734,41 @@ z_{a}
 \end{array}\right] .
 \end{aligned}
 $$
+请记住$\mathbf{L}\left(q_{a}\right) q_{b}=\mathbf{R}\left(q_{b}\right) q_{a}$，因为这是理解下一阶段的核心。此外，如果你不能理解第一篇阅读中的论点，也不要感到惊讶。作者花了很多小时痛苦地试图破译原始算法，这个解释已经扩展，以确保您不会遭受同样的经历!
 
-Remember that $\mathbf{L}\left(q_{a}\right) q_{b}=\mathbf{R}\left(q_{b}\right) q_{a}$, as this is central to understanding the next stage. Furthermore, don't be surprised if you can't follow the argument in the first reading. It took the author many hours of anguish trying to decipher the original algorithm, and this explanation has been expanded to ensure that you do not suffer the same experience!
-
-First, let's employ the matrices $\mathbf{L}$ and $\mathbf{R}$ to rearrange the quaternion product $q_{a} q_{c} q_{b}$ to $q_{a} q_{b} q_{c}$, i.e. move $q_{c}$ from the middle to the right-hand-side. We start with the quaternion product $q_{a} q_{c} q_{b}$ and divide it into two parts, $q_{a} q_{c}$ and $q_{b}$. We can do this because quaternion algebra is associative:
-
+首先，让我们使用矩阵$\mathbf{L}$和$\mathbf{R}$将四元数积$q_{a} q_{c} q_{b}$重新排列到$q_{a} q_{b} q_{c}$，即将$q_{c}$从中间移到右边。我们从四元数积$q_{a} q_{c} q_{b}$开始，并将其分为$q_{a} q_{c}$和$q_{b}$两部分。我们可以这样做，因为四元数代数是符合结合律的:
 $$
 q_{a} q_{c} q_{b}=\left(q_{a} q_{c}\right) q_{b}
 $$
-
-We have already demonstrated above that the product $q_{a} q_{c}$ can be replaced by $\mathbf{L}\left(q_{a}\right) q_{c}$
-
+前面已经演示过，可以用$\mathbf{L}\left(q_{a}\right) q_{c}$替换乘积$q_{a} q_{c}$
 $$
 q_{a} q_{c} q_{b}=\mathbf{L}\left(q_{a}\right) q_{c} q_{b}
 $$
-
-We now have another two parts: $\mathbf{L}\left(q_{a}\right) q_{c}$ and $q_{b}$ which can be reversed using $\mathbf{R}$ without disturbing the result:
-
+我们现在有另外两个部分:$\mathbf{L}\left(q_{a}\right) q_{c}$和$q_{b}$，它们可以使用$\mathbf{R}$来反转，而不会影响结果:
 $$
 q_{a} q_{c} q_{b}=\mathbf{L}\left(q_{a}\right) q_{c} q_{b}=\mathbf{R}\left(q_{b}\right) \mathbf{L}\left(q_{a}\right) q_{c}
 $$
+这样就实现了将$q_{c}$移到右边的目标。但最重要的结果是，矩阵$\mathbf{R}\left(q_{b}\right)$和$\mathbf{L}\left(q_{a}\right)$可以相乘，形成一个对$q_{c}$操作的矩阵。
 
-which has achieved our objective to move $q_{c}$ to the right-hand-side. But the most important result is that the matrices $\mathbf{R}\left(q_{b}\right)$ and $\mathbf{L}\left(q_{a}\right)$ can be multiplied together to form a single matrix, which operates on $q_{c}$.
+现在让我们重复相同的过程来重新排列乘积$q p q^{-1}$。目标是将$p$从$q$和$q^{-1}$的中间移到右边。这样做的原因是将$q$和$q^{-1}$以两个矩阵的形式放在一起，它们可以相乘成一个矩阵。
 
-Now let's repeat the same process to rearrange the product $q p q^{-1}$. The objective is to move $p$ from the middle of $q$ and $q^{-1}$, to the right-hand-side. The reason for doing this is to bring together $q$ and $q^{-1}$ in the form of two matrices, which can be multiplied together into a single matrix.
-
-We start with the quaternion product $q p q^{-1}$ and divide it into two parts, $q p$ and $q^{-1}$
-
+我们从四元数积$q p q^{-1}$开始，并将其分为$q p$和$q^{-1}$两部分
 $$
 q p q^{-1}=(q p) q^{-1}
 $$
-
-The product $q p$ can be replaced by $\mathbf{L}(q) p$ :
-
+乘积$ qp $可以替换为$\mathbf{L}(q) p$:
 $$
 q p q^{-1}=\mathbf{L}(q) p q^{-1}
 $$
-
-We now have another two parts: $\mathbf{L}(q) p$ and $q^{-1}$ which can be reversed using $\mathbf{R}$ without disturbing the result:
-
+我们现在有另外两个部分:$\mathbf{L}(q) p$和$q^{-1}$，可以使用$\mathbf{R}$反转而不影响结果:
 $$
 q p q^{-1}=\mathbf{L}(q) p q^{-1}=\mathbf{R}\left(q^{-1}\right) \mathbf{L}(q) p
 $$
+这就实现了把p移到右边的目标。
 
-which has achieved our objective to move $p$ to the right-hand-side.
+下一步是计算$\mathbf{L}(q)$和$\mathbf{R}\left(q^{-1}\right)$使用$q=[s, x \mathbf{i}+y \mathbf{j}+z \mathbf{k}]$。
 
-The next step is to compute $\mathbf{L}(q)$ and $\mathbf{R}\left(q^{-1}\right)$ using $q=[s, x \mathbf{i}+y \mathbf{j}+z \mathbf{k}]$.
-
-$\mathbf{L}(q)$ is easy as it is the same as $\mathbf{L}\left(q_{a}\right)$ :
-
+$\mathbf{L}(q)$很简单，因为它与$\mathbf{L}\left(q_{a}\right)$相同:
 $$
 \mathbf{L}(q)=\left[\begin{array}{cccc}
 s & -x & -y & -z \\
@@ -835,9 +777,7 @@ y & z & s & -x \\
 z & -y & x & s
 \end{array}\right]
 $$
-
-$\mathbf{R}\left(q^{-1}\right)$ is also easy, but requires converting $q_{b}$ in the original definition into $q^{-1}$ which is effected by reversing the signs of the vector components:
-
+$\mathbf{R}\left(q^{-1}\right)$也很简单，但需要将原始定义中的$q_{b}$转换为$q^{-1}$，这是通过反转向量分量的符号来实现的:
 $$
 \mathbf{R}\left(q^{-1}\right)=\left[\begin{array}{cccc}
 s & x & y & z \\
@@ -847,14 +787,13 @@ s & x & y & z \\
 \end{array}\right]
 $$
 
-Fig. 7.7 The point $P(0,1,1)$ is rotated $90^{\circ}$ to $P^{\prime}(1,1,0)$ about the $y$-axis
+\begin{figure}[h!]
+    \centering
+    \includegraphics[max width=0.5\textwidth]{2023_01_16_a848224efad29cd66460g-121}
+    \caption[short]{ti点$P(0,1,1)$围绕$y$轴旋转$90^{\circ}$到$P^{\prime}(1,1,0)$tle}
+\end{figure}
 
-\begin{center}
-\includegraphics[max width=\textwidth]{2023_01_16_a848224efad29cd66460g-121}
-\end{center}
-
-So now we can write
-
+现在我们可以写出
 $$
 \begin{aligned}
 q p q^{-1} & =\mathbf{R}\left(q^{-1}\right) \mathbf{L}(q) p \\
@@ -887,9 +826,7 @@ z_{p}
 \end{array}\right] .
 \end{aligned}
 $$
-
-If we ignore the first row and column, the matrix computes $\mathbf{p}^{\prime}$ :
-
+如果忽略第一行和第一列，矩阵将计算$\mathbf{p}^{\prime}$:
 $$
 \mathbf{p}^{\prime}=\left[\begin{array}{ccc}
 1-2\left(y^{2}+z^{2}\right) & 2(x y-s z) & 2(x z+s y) \\
@@ -901,30 +838,22 @@ y_{p} \\
 z_{p}
 \end{array}\right]
 $$
-
-which is identical to (7.16)!
+这和(7.16)是一样的!
 
 \subsection{几何验证}
-Let's illustrate the action of (7.15) by rotating the point $(0,1,1), 90^{\circ}$ about the $y$ axis, as shown in Fig. 7.7. The quaternion takes the form
-
+让我们通过围绕$y$轴旋转点$(0,1,1), 90^{\circ}$来说明(7.15)的作用，如图7.7所示。四元数采用这种形式
 $$
 q=\left[\cos \frac{1}{2} \theta, \sin \frac{1}{2} \theta \hat{\mathbf{v}}\right]
 $$
-
-which means that $\theta=90^{\circ}$ and $\hat{\mathbf{v}}=\mathbf{j}$, therefore,
-
+这意味着$\theta=90^{\circ}$和$\hat{\mathbf{v}}=\mathbf{j}$，因此，
 $$
 q=\left[\cos 45^{\circ}, \sin 45^{\circ} \hat{\mathbf{j}}\right]
 $$
-
-Consequently,
-
+因此
 $$
 s=\frac{\sqrt{2}}{2}, \quad x=0, \quad y=\frac{\sqrt{2}}{2}, \quad z=0 .
 $$
-
-Substituting these values in (7.15) gives
-
+在(7.15)中代入这些值给出
 $$
 \begin{aligned}
 \mathbf{p}^{\prime} & =\left[\begin{array}{ccc}
@@ -951,25 +880,19 @@ z_{p}
 \end{array}\right]
 \end{aligned}
 $$
+其中$(0,1,1)$被旋转为$(1,1,0)$，这是正确的。
 
-where $(0,1,1)$ is rotated to $(1,1,0)$, which is correct.
+现在我们有了一个变换，可以让一个点绕任意轴旋转，这个轴与原点相交而没有欧拉变换带来的万向节锁定问题。
 
-So now we have a transform that rotates a point about an arbitrary axis intersecting the origin without the problems of gimbal lock associated with Euler transforms.
-
-Before moving on, let's evaluate one more example. Let's perform a $180^{\circ}$ rotation about a vector $\mathbf{v}=\mathbf{i}+\mathbf{k}$ passing through the origin. To begin with, we will deliberately forget to convert the vector into a unit vector, just to see what happens to the final matrix. The quaternion takes the form
-
+在继续之前，让我们再看一个例子。让我们对一个向量$\mathbf{v}=\mathbf{i}+\mathbf{k}$通过原点执行$180^{\circ}$旋转。首先，我们会故意忘记把这个向量转换成单位向量，只是为了看看最终矩阵会发生什么。四元数采用这种形式
 $$
 q=\left[\cos \frac{1}{2} \theta, \sin \frac{1}{2} \theta \hat{\mathbf{v}}\right]
 $$
-
-but we will use $\mathbf{v}$ as specified. Therefore, with $\theta=180^{\circ}$
-
+但是我们将使用指定的$\mathbf{v}$。因此，当使用$\theta=180^{\circ}$
 $$
 s=0, \quad x=1, \quad y=0, \quad z=1 .
 $$
-
-Substituting these values in (7.15) gives
-
+在(7.15)中代入这些值给出
 $$
 \begin{aligned}
 \mathbf{p}^{\prime} & =\left[\begin{array}{ccc}
@@ -992,15 +915,11 @@ z_{p}
 \end{array}\right]
 \end{aligned}
 $$
-
-which looks nothing like a rotation matrix, and reminds us how important it is to have a unit vector to represent the axis. Let's repeat these calculations normalising the vector to $\hat{\mathbf{v}}=\frac{1}{\sqrt{2}} \mathbf{i}+\frac{1}{\sqrt{2}} \mathbf{k}$ :
-
+它看起来一点也不像旋转矩阵，这提醒我们用单位向量来表示轴是多么重要。让我们重复这些计算，将向量归一化为$\hat{\mathbf{v}}=\frac{1}{\sqrt{2}} \mathbf{i}+\frac{1}{\sqrt{2}} \mathbf{k}$:
 $$
 s=0, \quad x=\frac{1}{\sqrt{2}}, \quad y=0, \quad z=\frac{1}{\sqrt{2}} .
 $$
-
-Substituting these values in (7.15) gives
-
+在(7.15)中代入这些值给出
 $$
 \begin{aligned}
 \mathbf{p}^{\prime} & =\left[\begin{array}{ccc}
@@ -1027,52 +946,40 @@ z_{p}
 \end{array}\right]
 \end{aligned}
 $$
+它不仅看起来像一个旋转矩阵，而且行列式为1，并将点$(1,0,0)$旋转到$(0,0,1)$，如图7.8所示。
 
-Fig. 7.8 The point $(1,0,0)$ is rotated $180^{\circ}$ about the vector $\hat{\mathbf{v}}$ to $(0,0,1)$
-
-\begin{center}
-\includegraphics[max width=\textwidth]{2023_01_16_a848224efad29cd66460g-123}
-\end{center}
-
-which not only looks like a rotation matrix, but has a determinant of 1 and rotates the point $(1,0,0)$ to $(0,0,1)$ as shown in Fig. 7.8.
+\begin{figure}[h!]
+    \centering
+    \includegraphics[max width=0.5\textwidth]{2023_01_16_a848224efad29cd66460g-123}
+    \caption[short]{点$(1,0,0)$围绕向量$\hat{\mathbf{v}}$旋转$180^{\circ}$到$(0,0,1)$}
+\end{figure}
 
 \section{多个旋转}
-Say a vector or frame of reference is subjected to two rotations specified by $q_{1}$ followed by $q_{2}$. There is a temptation to convert both quaternions to their respective matrix and multiply the matrices together. However, this not the most efficient way of combining the rotations. It is best to accumulate the rotations as quaternions and then convert to matrix notation, if required.
+假设一个向量或参考系受到$q_{1}$和$q_{2}$指定的两次旋转。有一种诱惑是将两个四元数转换为各自的矩阵并将矩阵相乘。然而，这并不是结合旋转的最有效的方法。最好将旋转累积为四元数，然后在需要时转换为矩阵符号。
 
-To illustrate this, consider the pure quaternion $p$ subjected to the first quaternion $q_{1}$ :
-
+为了说明这一点，考虑纯四元数$p$受到第一个四元数$q_{1}$的影响:
 $$
 q_{1} p q_{1}^{-1}
 $$
-
-followed by a second quaternion $q_{2}$
-
+后面跟着第二个四元数$q_{2}$
 $$
 q_{2}\left(q_{1} p q_{1}^{-1}\right) q_{2}^{-1}
 $$
-
-which can be expressed as
-
+这可以表示为
 $$
 \left(q_{2} q_{1}\right) p\left(q_{2} q_{1}\right)^{-1} .
 $$
+可以相应地添加额外的四元数。让我们用两个例子来说明这一点。
 
-Extra quaternions can be added accordingly. Let's illustrate this with two examples.
-
-To keep things simple, the first quaternion $q_{1}$ rotates $30^{\circ}$ about the $y$-axis:
-
+为了简单起见，第一个四元数$q_{1}$围绕$y$-轴旋转$30^{\circ}$:
 $$
 q_{1}=\left[\cos 15^{\circ}, \sin 15^{\circ} \mathbf{j}\right] .
 $$
-
-The second quaternion $q_{2}$ rotates $60^{\circ}$ also about the $y$-axis:
-
+第二个四元数$q_{2}$也围绕$y$轴旋转$60^{\circ}$:
 $$
 q_{2}=\left[\cos 30^{\circ}, \sin 30^{\circ} \mathbf{j}\right] .
 $$
-
-Together, the two quaternions rotate $90^{\circ}$ about the $y$-axis. To accumulate these rotations, we multiply them together:
-
+两个四元数一起围绕$y$轴旋转$90^{\circ}$。为了累积这些旋转，我们将它们相乘:
 $$
 \begin{aligned}
 q_{1} q_{2} & =\left[\cos 15^{\circ}, \sin 15^{\circ} \mathbf{j}\right]\left[\cos 30^{\circ}, \sin 30^{\circ} \mathbf{j}\right] \\
@@ -1080,9 +987,7 @@ q_{1} q_{2} & =\left[\cos 15^{\circ}, \sin 15^{\circ} \mathbf{j}\right]\left[\co
 & =\left[\frac{\sqrt{2}}{2}, \frac{\sqrt{2}}{2} \mathbf{j}\right]
 \end{aligned}
 $$
-
-which is a quaternion that rotates $90^{\circ}$ about the $y$-axis. Using the matrix (7.15) we have
-
+它是一个四元数，围绕y轴旋转。使用矩阵(7.15)我们有
 $$
 \begin{aligned}
 \mathbf{p}^{\prime} & =\left[\begin{array}{ccc}
@@ -1105,10 +1010,9 @@ z_{p}
 \end{array}\right]
 \end{aligned}
 $$
+它围绕y轴旋转$90^{\circ}$。
 
-which rotates points about the $y$-axis by $90^{\circ}$.
-
-For a second example, let's just evaluate the quaternions. The first quaternion $q_{1}$ rotates $90^{\circ}$ about the $x$-axis, and $q_{2}$ rotates $90^{\circ}$ about the $y$-axis:
+第二个例子，让我们求四元数的值。第一个四元数$q_{1}$围绕$x$-轴旋转$90^{\circ}$， $q_{2}$围绕$y$-轴旋转$90^{\circ}$:
 
 $$
 \begin{aligned}
@@ -1117,9 +1021,7 @@ q_{2} & =\left[\frac{\sqrt{2}}{2}, \frac{\sqrt{2}}{2} \mathbf{j}\right] \\
 p & =[0, \mathbf{i}+\mathbf{j}]
 \end{aligned}
 $$
-
-therefore,
-
+因此，
 $$
 \begin{aligned}
 q_{2} q_{1} & =\left[\frac{\sqrt{2}}{2}, \frac{\sqrt{2}}{2} \mathbf{j}\right]\left[\frac{\sqrt{2}}{2}, \frac{\sqrt{2}}{2} \mathbf{i}\right] \\
@@ -1134,8 +1036,7 @@ q_{2} q_{1} & =\left[\frac{\sqrt{2}}{2}, \frac{\sqrt{2}}{2} \mathbf{j}\right]\le
 & =[0, \mathbf{i}-\mathbf{k}] .
 \end{aligned}
 $$
-
-Thus the point $(1,1,0)$ is rotated to $(1,0,-1)$, which is correct.
+因此，点$(1,1,0)$被旋转到$(1,0,-1)$，这是正确的。
 
 \section{特征值和特征向量}
 Although there is no doubt that (7.15) is a rotation matrix, we can secure further evidence by calculating its eigenvalue and eigenvector. The eigenvalue should be $\theta$ where
