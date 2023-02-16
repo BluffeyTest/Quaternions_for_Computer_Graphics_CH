@@ -1039,16 +1039,13 @@ $$
 因此，点$(1,1,0)$被旋转到$(1,0,-1)$，这是正确的。
 
 \section{特征值和特征向量}
-Although there is no doubt that (7.15) is a rotation matrix, we can secure further evidence by calculating its eigenvalue and eigenvector. The eigenvalue should be $\theta$ where
-
+虽然(7.15)无疑是一个旋转矩阵，但我们可以通过计算它的特征值和特征向量来获得进一步的证据。特征值应该是$\theta$，其中
 $$
 \operatorname{Tr}\left(q p q^{-1}\right)=1+2 \cos \theta
 $$
+$\operatorname{Tr}$是迹(trace)函数，它是矩阵中对角线元素的和。
 
-and $\operatorname{Tr}$ is the trace function, which is the sum of the diagonal elements of a matrix.
-
-The trace of $(7.15)$ is
-
+$(7.15)$的迹是
 $$
 \begin{aligned}
 \operatorname{Tr}\left(q p q^{-1}\right) & =2\left(s^{2}+x^{2}\right)-1+2\left(s^{2}+y^{2}\right)-1+2\left(s^{2}+z^{2}\right)-1 \\
@@ -1060,15 +1057,11 @@ $$
 & =1+2 \cos \theta
 \end{aligned}
 $$
-
-and
-
+且
 $$
 \cos \theta=\frac{1}{2}\left(\operatorname{Tr}\left(q p q^{-1}\right)-1\right) .
 $$
-
-To compute the eigenvector of (7.15) we use the three equations derived in Appendix:
-
+为了计算(7.15)的特征向量，我们使用附录中导出的三个方程:
 $$
 \begin{aligned}
 & x_{v}=\left(a_{22}-1\right)\left(a_{33}-1\right)-a_{23} a_{32} \\
@@ -1076,9 +1069,7 @@ $$
 & z_{v}=\left(a_{11}-1\right)\left(a_{22}-1\right)-a_{12} a_{21} .
 \end{aligned}
 $$
-
-Therefore,
-
+因此，
 $$
 \begin{aligned}
 x_{v} & =\left(2\left(s^{2}+y^{2}\right)-2\right)\left(2\left(s^{2}+z^{2}\right)-2\right)-2(y z-s x) 2(y z+s x) \\
@@ -1089,9 +1080,7 @@ x_{v} & =\left(2\left(s^{2}+y^{2}\right)-2\right)\left(2\left(s^{2}+z^{2}\right)
 & =4 x^{2} .
 \end{aligned}
 $$
-
-Similarly, $y_{v}=4 y^{2}$ and $z_{v}=4 z^{2}$, which confirm that the eigenvector has components associated with the quaternion's vector. The square terms should be no surprise, as the triple $q p q^{-1}$ includes the product of three quaternions. Let's test these formulae with the matrix associated with Fig. 7.8, which rotates a point $180^{\circ}$ about the vector $\hat{\mathbf{v}}=\frac{1}{\sqrt{2}} \mathbf{i}+\frac{1}{\sqrt{2}} \mathbf{k}$ :
-
+类似地，$y_{v}= 4y ^{2}$和$z_{v}= 4z ^{2}$，它们确认特征向量具有与四元数向量相关的分量。平方项应该不奇怪，因为三元$q p q^{-1}$包括三个四元数的乘积。让我们用与图7.8相关的矩阵来测试这些公式，它围绕向量$\hat{\mathbf{v}}=\frac{1}{\sqrt{2}} \mathbf{i}+\frac{1}{\sqrt{2}} \mathbf{k}$旋转一个点$180^{\circ}$:
 $$
 \mathbf{M}=\left[\begin{array}{lll}
 a_{11} & a_{12} & a_{13} \\
@@ -1103,9 +1092,7 @@ a_{31} & a_{32} & a_{33}
 1 & 0 & 0
 \end{array}\right]
 $$
-
-therefore,
-
+因此，
 $$
 \begin{aligned}
 & x_{v}=-2 \times-1-0=2 \\
@@ -1113,11 +1100,9 @@ $$
 & z_{v}=-1 \times-2-0=2
 \end{aligned}
 $$
+这证实了特征向量是$2 \mathbf{i}+2 \mathbf{k}$。
 
-which confirms that the eigenvector is $2 \mathbf{i}+2 \mathbf{k}$.
-
-Next, $\operatorname{Tr}(\mathbf{M})=-1$, therefore
-
+接下来，$\operatorname{Tr}(\mathbf{M})=-1$，因此
 $$
 \begin{aligned}
 \cos \theta & =\frac{1}{2}\left(\operatorname{Tr}\left(q p q^{-1}\right)-1\right) \\
@@ -1126,12 +1111,10 @@ $$
 \theta & =\pm 180^{\circ}
 \end{aligned}
 $$
-
-which agrees with the previous results.
+这与之前的结果一致。
 
 \section{绕偏移轴旋转}
-Now that we have a matrix to represent a quaternion rotor, we can employ it to resolve problems such as rotating a point about an off-set axis using the same techniques associated with normal rotation transforms. For example, in Chap. 6 we used the following notation
-
+现在我们有了一个表示四元数转子的矩阵，我们可以使用它来解决一些问题，例如使用与常规旋转变换相关的相同技术围绕偏轴旋转一个点。例如，在第六章中，我们使用了下面的符号
 $$
 \left[\begin{array}{c}
 x^{\prime} \\
@@ -1145,9 +1128,7 @@ z \\
 1
 \end{array}\right]
 $$
-
-to rotate a point about a fixed axis parallel with the $y$-axis. Therefore, by substituting the matrix $q p q^{-1}$ for $\mathbf{R}_{\beta, y}$ we have
-
+来绕与$y$-轴平行的固定轴旋转一点。因此，通过将矩阵$q p q^{-1}$替换为$\mathbf{R}_{\beta, y}$，我们有
 $$
 \left[\begin{array}{c}
 x^{\prime} \\
@@ -1161,41 +1142,28 @@ z \\
 1
 \end{array}\right] .
 $$
+让我们通过旋转我们的单位立方体$90^{\circ}$来测试这一点，围绕与顶点4和6相交的垂直轴，如图7.9所示。
 
-Let's test this by rotating our unit cube $90^{\circ}$ about the vertical axis intersecting vertices 4 and 6 as shown in Fig. 7.9. (a)
+\begin{figure}[h!]
+    \centering
+    \subfigure[]{\includegraphics[max width=0.45\textwidth]{2023_01_16_a848224efad29cd66460g-127}}
+    \subfigure[]{\includegraphics[max width=0.45\textwidth]{2023_01_16_a848224efad29cd66460g-127(1)}}
+    \caption[short]{立方体围绕与顶点4和6相交的轴旋转$90^{\circ}$}
+\end{figure}
 
-\begin{center}
-\includegraphics[max width=\textwidth]{2023_01_16_a848224efad29cd66460g-127}
-\end{center}
-
-(b)
-
-\begin{center}
-\includegraphics[max width=\textwidth]{2023_01_16_a848224efad29cd66460g-127(1)}
-\end{center}
-
-Fig. 7.9 The cube is rotated $90^{\circ}$ about the axis intersecting vertices 4 and 6
-
-The unit-norm quaternion to achieve this is
-
+实现这一点的单位范数四元数是
 $$
 q=\left[\cos 45^{\circ}, \sin 45^{\circ} \mathbf{j}\right]
 $$
-
-with the pure quaternion
-
+用纯四元数
 $$
 p=[0, \mathbf{p}]
 $$
-
-Consequently,
-
+因此,
 $$
 s=\frac{\sqrt{2}}{2}, \quad x=0, \quad y=\frac{\sqrt{2}}{2}, \quad z=0
 $$
-
-and using (7.15) in a homogeneous form we have
-
+用(7.15)的齐次形式
 $$
 \begin{aligned}
 \mathbf{p}^{\prime} & =\left[\begin{array}{cccc}
@@ -1222,9 +1190,7 @@ z_{p} \\
 \end{array}\right]
 \end{aligned}
 $$
-
-The other two matrices are
-
+另外两个矩阵是
 $$
 \begin{aligned}
 \mathbf{T}_{-t_{x}, 0,0} & =\left[\begin{array}{cccc}
@@ -1241,20 +1207,16 @@ $$
 \end{array}\right] .
 \end{aligned}
 $$
-
-Multiplying these three matrices together creates
-
-$$
+将这三个矩阵相乘会得到
+\begin{align}
 \left[\begin{array}{cccc}
 0 & 0 & 1 & 1 \\
 0 & 1 & 0 & 0 \\
 -1 & 0 & 0 & 1 \\
 0 & 0 & 0 & 1
 \end{array}\right]
-$$
-
-Although not mathematically correct, the following statement shows the matrix (7.19) and the array of coordinates representing a unit cube, followed by the rotated cube's coordinates.
-
+\end{align}
+虽然在数学上不正确，但下面的语句显示了矩阵(7.19)和表示单位立方体的坐标数组，后面是旋转后的立方体的坐标。
 $$
 \begin{gathered}
 {\left[\begin{array}{cccc}
@@ -1276,27 +1238,21 @@ $$
 \end{array}\right]
 \end{gathered}
 $$
-
-These coordinates are confirmed by Fig. 7.9.
+这些坐标由图7.9确认。
 
 \section{参考系}
-The product $q p q^{-1}$ is used for rotating points about the vector associated with the quaternion $q$, whereas the triple $q^{-1} p q$ can be used for rotating points about the same vector in the opposite direction. But this reverse rotation is also equivalent to a change of frame of reference. To demonstrate this, consider the problem of rotating the frame of reference $180^{\circ}$ about $\mathbf{i}+\mathbf{k}$ as shown in Fig. 7.10. The unitnorm quaternion for such a rotation is
-
+乘积$q p q^{-1}$用于旋转与四元数$q$相关的向量的点，而三元$q^{-1} p q$可用于旋转与同一向量相关的相反方向的点。但这种反向旋转也相当于改变了参照系。为了证明这一点，考虑绕$\mathbf{i}+\mathbf{k}$旋转参考系$180^{\circ}$的问题，如图7.10所示。这种旋转的单位范四元数是
 $$
 \begin{aligned}
 q & =\left[\cos 90^{\circ}, \sin 90^{\circ}\left(\frac{1}{\sqrt{2}} \mathbf{i}+\frac{1}{\sqrt{2}} \mathbf{k}\right)\right] \\
 & =\left[0, \frac{\sqrt{2}}{2} \mathbf{i}+\frac{\sqrt{2}}{2} \mathbf{k}\right] .
 \end{aligned}
 $$
-
-Consequently,
-
+因此
 $$
 s=0, \quad x=\frac{\sqrt{2}}{2}, \quad y=0, \quad z=\frac{\sqrt{2}}{2} .
 $$
-
-Substituting these values in (7.17) we obtain
-
+将这些值代入(7.17)得到
 $$
 \begin{aligned}
 q^{-1} p q & =\left[\begin{array}{ccc}
@@ -1319,23 +1275,7 @@ z_{p}
 \end{array}\right]
 \end{aligned}
 $$
-
-(a)
-
-\begin{center}
-\includegraphics[max width=\textwidth]{2023_01_16_a848224efad29cd66460g-129}
-\end{center}
-
-(b)
-
-\begin{center}
-\includegraphics[max width=\textwidth]{2023_01_16_a848224efad29cd66460g-129(1)}
-\end{center}
-
-Fig. 7.10 The frame is rotated $180^{\circ}$ about the vector $\mathbf{i}+\mathbf{k}$
-
-which, if used to process the coordinates of our unit cube, produces
-
+如果用它来处理单位立方体的坐标，会产生什么
 $$
 \begin{gathered}
 {\left[\begin{array}{ccc}
@@ -1354,54 +1294,58 @@ $$
 \end{array}\right] .
 \end{gathered}
 $$
+此场景如图$7.10$所示。
+\begin{figure}[h!]
+    \centering
+    \subfigure[]{\includegraphics[max width=0.4\textwidth]{2023_01_16_a848224efad29cd66460g-129}}
+    \subfigure[]{\includegraphics[max width=0.45\textwidth]{2023_01_16_a848224efad29cd66460g-129(1)}}
+    \caption[short]{帧围绕向量$\mathbf{i}+\mathbf{k}$旋转$180^{\circ}$}
+\end{figure}
 
-This scenario is shown in Fig. $7.10$.
+\section{四元数插值}
+像向量一样，四元数可以被插值以计算中间的四元数。然而，两个插值向量会产生第三个很容易可视化的向量，而两个插值四元数会产生第三个四元数，它充当转子，不能立即可视化。
 
-\section{插值四元数}
-Like vectors, quaternions can be interpolated to compute an in-between quaternion. However, whereas two interpolated vectors results in a third vector that is readily visualised, two interpolated quaternions results in a third quaternion that acts as a rotor, and is not immediately visualised.
-
-The spherical interpolant for vectors is
-
+向量的球面插值是
 $$
 \mathbf{v}=\frac{\sin (1-t) \theta}{\sin \theta} \mathbf{v}_{1}+\frac{\sin t \theta}{\sin \theta} \mathbf{v}_{2}
 $$
-
-where $\theta$ is the angle between the vectors, and requires no modification for quaternions:
-
-$$
+其中$\theta$是向量之间的夹角，对于四元数不需要修改:
+\begin{align}
 q=\frac{\sin (1-t) \theta}{\sin \theta} q_{1}+\frac{\sin t \theta}{\sin \theta} q_{2}
-$$
-
-So, given
-
+\end{align}
+因此，给出
 $$
 \begin{aligned}
 & q_{1}=\left[s_{1}, x_{1} \mathbf{i}+y_{1} \mathbf{j}+z_{1} \mathbf{k}\right] \\
 & q_{2}=\left[s_{2}, x_{2} \mathbf{i}+y_{2} \mathbf{j}+z_{2} \mathbf{k}\right]
 \end{aligned}
 $$
-
-$\theta$ is obtained by taking the 4D dot product of $q_{1}$ and $q_{2}$ : Fig. 7.11 The point $(0,1,1)$ is rotated $90^{\circ}$ about the vector $\mathbf{v}_{1}$ to $(1,1,0)$
-\includegraphics[max width=\textwidth, center]{2023_01_16_a848224efad29cd66460g-130}
-
-Fig. 7.12 The point $(0,1,1)$ is rotated $90^{\circ}$ about the vector $\mathbf{v}_{2}$ to $(0,-1,1)$
-
+$\theta$由$q_{1}$和$q_{2}$的4D点积得到:
 $$
 \begin{aligned}
 \cos \theta & =\frac{q_{1} \cdot q_{2}}{\left|q_{1}\right|\left|q_{2}\right|} \\
 & =\frac{s_{1} s_{2}+x_{1} x_{2}+y_{1} y_{2}+z_{1} z_{2}}{\left|q_{1}\right|\left|q_{2}\right|}
 \end{aligned}
 $$
+如果我们用的是单位范数四元数，那么
+\begin{align}
+    \cos \theta=s_{1} s_{2}+x_{1} x_{2}+y_{1} y_{2}+z_{1} z_{2} .
+\end{align}
+让我们在具有两个简单单位范数四元数的场景中使用(7.20)。
 
-and if we are working with unit-norm quaternions, then
+\begin{figure}[h!]
+    \centering
+    \includegraphics[max width=0.5\textwidth]{2023_01_16_a848224efad29cd66460g-130}
+    \caption[short]{点$(0,1,1)$围绕向量$\mathbf{v}_{1}$旋转$90^{\circ}$到$(1,1,0)$}
+\end{figure}
 
-$$
-\cos \theta=s_{1} s_{2}+x_{1} x_{2}+y_{1} y_{2}+z_{1} z_{2} .
-$$
+\begin{figure}[h!]
+    \centering
+    \includegraphics[max width=0.5\textwidth]{2023_01_16_a848224efad29cd66460g-130(1)}
+    \caption[short]{点$(0,1,1)$围绕向量$\mathbf{v}_{2}$旋转$90^{\circ}$到$(0,-1,1)$}
+\end{figure}
 
-Let's use (7.20) in a scenario with two simple unit-norm quaternions.
-
-Figure $7.11$ shows one such scenario where the point $(0,1,1)$ is rotated $90^{\circ}$ about $\mathbf{v}_{1}$, the axis of $q_{1}$. Figure $7.12$ shows another scenario where the same point $(0,1,1)$ is rotated $90^{\circ}$ about $\mathbf{v}_{2}$, the axis of $q_{2}$. The quaternions are
+图$7.11$显示了一个这样的场景，其中点$(0,1,1)$绕 $q_{1}$的轴$\mathbf{v}_{1}$旋转$90^{\circ}$。图$7.12$显示了另一种场景，其中相同的点$(0,1,1)$绕 $q_{2}$的轴$\mathbf{v}_{2}$旋转$90^{\circ}$。四元数是
 
 $$
 \begin{aligned}
@@ -1409,25 +1353,19 @@ $$
 & q_{2}=\left[\cos 45^{\circ}, \sin 45^{\circ} \mathbf{i}\right]=\left[\frac{\sqrt{2}}{2}, \frac{\sqrt{2}}{2} \mathbf{i}\right] .
 \end{aligned}
 $$
-
-Therefore, using (7.21)
-
+因此，使用(7.21)
 $$
 \begin{aligned}
 \cos \theta & =\frac{\sqrt{2}}{2} \frac{\sqrt{2}}{2}=0.5 \\
 \theta & =60^{\circ} .
 \end{aligned}
 $$
-
-Before proceeding, let's compute the matrices for the two quaternion products. For $q_{1}$ :
-
+在继续之前，让我们计算两个四元数乘积的矩阵。对于$q_{1}$:
 $$
 s=\frac{\sqrt{2}}{2}, \quad x=0, \quad y=\frac{\sqrt{2}}{2}, \quad z=0
 $$
-
-which when substituted in (7.15) gives
-
-$$
+当代入(7.15)得到
+\begin{align}
 \begin{aligned}
 \mathbf{p}_{1}^{\prime} & =\left[\begin{array}{ccc}
 2\left(s^{2}+x^{2}\right)-1 & 2(x y-s z) & 2(x z+s y) \\
@@ -1448,10 +1386,8 @@ y_{p} \\
 z_{p}
 \end{array}\right] .
 \end{aligned}
-$$
-
-Substituting the coordinates $(0,1,1)$ in $(7.22)$ gives
-
+\end{align}
+将坐标$(0,1,1)$代入$(7.22)$
 $$
 \left[\begin{array}{l}
 1 \\
@@ -1467,18 +1403,14 @@ $$
 1
 \end{array}\right]
 $$
+这是正确的。
 
-which is correct.
-
-For $q_{2}$ :
-
+对于 $q_{2}$ :
 $$
 s=\frac{\sqrt{2}}{2}, \quad x=\frac{\sqrt{2}}{2}, \quad y=0, \quad z=0
 $$
-
-which when substituted in $(7.15)$ gives
-
-$$
+当代入$(7.15)$时，会得到
+\begin{align}
 \begin{aligned}
 \mathbf{p}_{2}^{\prime} & =\left[\begin{array}{ccc}
 2\left(s^{2}+x^{2}\right)-1 & 2(x y-s z) & 2(x z+s y) \\
@@ -1499,10 +1431,8 @@ y_{p} \\
 z_{p}
 \end{array}\right] .
 \end{aligned}
-$$
-
-Substituting the coordinates $(0,1,1)$ in $(7.23)$ gives
-
+\end{align}
+将坐标$(0,1,1)$代入$(7.23)$
 $$
 \left[\begin{array}{c}
 0 \\
@@ -1518,41 +1448,30 @@ $$
 1
 \end{array}\right]
 $$
+这是正确的。
 
-which is also correct.
+\begin{figure}[h!]
+    \centering
+    \includegraphics[max width=0.5\textwidth]{2023_01_16_a848224efad29cd66460g-132}
+    \caption[short]{点$(0,1,1)$围绕向量$\mathbf{v}$旋转$90^{\circ}$到$(1,0,1)$}
+\end{figure}
 
-Using (7.20) with $t=0.5$ computes a mid-way position for an interpolated quaternion, with its vector at $45^{\circ}$ between the $x$ - and $y$-axes, as shown in Fig. 7.13. We already know that $\theta=60^{\circ}$, therefore $\sin \theta=\sqrt{3} / 2$ :
-
+使用(7.20)和$t=0.5$计算插值四元数的中间位置，其向量在$x$ -和$y$-轴之间的$45^{\circ}$，如图7.13所示。我们已经知道$\theta=60^{\circ}$，因此$\sin \theta=\sqrt{3}/ 2$:
 $$
 \begin{aligned}
 q & =\frac{\sin (1-t) \theta}{\sin \theta} q_{1}+\frac{\sin t \theta}{\sin \theta} q_{2} \\
-& =\frac{\sin \frac{1}{2} 60^{\circ}}{\sin 60^{\circ}}\left[\frac{\sqrt{2}}{2}, \frac{\sqrt{2}}{2} \mathbf{j}\right]+\frac{\sin \frac{1}{2} 60^{\circ}}{\sin 60^{\circ}}\left[\frac{\sqrt{2}}{2}, \frac{\sqrt{2}}{2} \mathbf{i}\right]
-\end{aligned}
-$$
-
-Fig. 7.13 The point $(0,1,1)$ is rotated $90^{\circ}$ about the vector $\mathbf{v}$ to $(1,0,1)$
-
-\begin{center}
-\includegraphics[max width=\textwidth]{2023_01_16_a848224efad29cd66460g-132}
-\end{center}
-
-$$
-\begin{aligned}
+& =\frac{\sin \frac{1}{2} 60^{\circ}}{\sin 60^{\circ}}\left[\frac{\sqrt{2}}{2}, \frac{\sqrt{2}}{2} \mathbf{j}\right]+\frac{\sin \frac{1}{2} 60^{\circ}}{\sin 60^{\circ}}\left[\frac{\sqrt{2}}{2}, \frac{\sqrt{2}}{2} \mathbf{i}\right]\\
 & =\frac{1}{\sqrt{3}}\left[\frac{\sqrt{2}}{2}, \frac{\sqrt{2}}{2} \mathbf{j}\right]+\frac{1}{\sqrt{3}}\left[\frac{\sqrt{2}}{2}, \frac{\sqrt{2}}{2} \mathbf{i}\right] \\
 & =\left[\frac{\sqrt{2}}{\sqrt{3}}, \frac{1}{\sqrt{6}} \mathbf{i}+\frac{1}{\sqrt{6}} \mathbf{j}\right]
 \end{aligned}
 $$
-
-where
-
+其中
 $$
 s=\frac{\sqrt{2}}{\sqrt{3}}, \quad x=\frac{1}{\sqrt{6}}, \quad y=\frac{1}{\sqrt{6}}, \quad z=0
 $$
-
-which when substituted in $(7.15)$ gives
-
-$$
-\begin{aligned}
+当代入$(7.15)$时，会得到
+\begin{align}
+    \begin{aligned}
 \mathbf{p}^{\prime} & =\left[\begin{array}{ccc}
 2\left(s^{2}+x^{2}\right)-1 & 2(x y-s z) & 2(x z+s y) \\
 2(x y+s z) & 2\left(s^{2}+y^{2}\right)-1 & 2(y z-s x) \\
@@ -1572,40 +1491,43 @@ y_{p} \\
 z_{p}
 \end{array}\right] .
 \end{aligned}
-$$
+\end{align}
+将坐标$(0,1,1)$代入$(7.24)$
+\begin{align}
+    \left[\begin{array}{l}
+        1 \\
+        0 \\
+        1
+        \end{array}\right]=\left[\begin{array}{ccc}
+        \frac{2}{3} & \frac{1}{3} & \frac{2}{3} \\
+        \frac{1}{3} & \frac{2}{3} & -\frac{2}{3} \\
+        -\frac{2}{3} & \frac{2}{3} & \frac{1}{3}
+        \end{array}\right]\left[\begin{array}{l}
+        0 \\
+        1 \\
+        1
+        \end{array}\right]
+\end{align}
+这得到点$(1,0,1)$。
 
-Substituting the coordinates $(0,1,1)$ in $(7.24)$ gives
+使用球面插补器的原因之一是它线性插补两个单位范数四元数之间的角度，这在它们之间创建了一个恒定的角速度。然而，可视化四元数的一个问题是，它们驻留在一个四维空间中，并创建了一个半径等于四元数范数的超球面。对于我们的3D大脑来说，这是很难想象的。然而，我们可以让自己相信，我们可以通过一个简单的草图来了解正在发生的事情，如图7.14所示，在那里我们看到了超球面的一部分和两个四元数$q_{1}$和$q_{2}$。在这个例子中，角度$\phi$是插值值$t$之间的常数角。球面插值器还确保插值四元数的范数保持不变，防止任何不必要的缩放。
 
-$$
-\left[\begin{array}{l}
-1 \\
-0 \\
-1
-\end{array}\right]=\left[\begin{array}{ccc}
-\frac{2}{3} & \frac{1}{3} & \frac{2}{3} \\
-\frac{1}{3} & \frac{2}{3} & -\frac{2}{3} \\
--\frac{2}{3} & \frac{2}{3} & \frac{1}{3}
-\end{array}\right]\left[\begin{array}{l}
-0 \\
-1 \\
-1
-\end{array}\right]
-$$
+\begin{figure}[h!]
+    \includegraphics[max width=0.5\textwidth, center]{2023_01_16_a848224efad29cd66460g-133}
+    \caption[short]{$q_{1}$和$q_{2}$之间的球面插值}
+\end{figure}
 
-which gives the point $(1,0,1)$.
+\begin{figure}[h!]
+    \includegraphics[max width=0.5\textwidth, center]{2023_01_16_a848224efad29cd66460g-133(1)}
+    \caption[short]{显示插值四元数动作的草图}
+\end{figure}
 
-One of the reasons for using a spherical interpolant is that it linearly interpolates the angle between the two unit-norm quaternions, which creates a constant-angular velocity between them. However, one of the problems with visualising quaternions is that they reside in a four-dimensional space and create a hyper-sphere with a radius equal to the quaternion's norm. With our 3D brains, this is difficult to visualise. Nevertheless, we can convince ourselves into thinking we see what is going on with a simple sketch, as shown in Fig. 7.14, where we see part of the hyper-sphere and two quaternions $q_{1}$ and $q_{2}$. In this example, the angle $\phi$ is a constant angle between two values of the interpolant $t$. The spherical interpolant also ensures that the norm Fig. 7.14 Spherical interpolation between $q_{1}$ and $q_{2}$
-\includegraphics[max width=\textwidth, center]{2023_01_16_a848224efad29cd66460g-133}
+图$7.15$提供了另一个草图，以帮助可视化发生了什么。例如，当$t=0$时，插值的四元数是$q_{1}$，它将点$(0,1,1)$旋转到$(1,1,0)$;当$t=1$时，插值的四元数是$q_{2}$，它将点$(0,1,1)$旋转到$(0,1,1)$。当$t=0.5$时，插值四元数将点$(0,1,1)$旋转到如上计算的$(1,0,1)$。另外两条曲线显示了$t=0.25$和$t=0.75$时的情况。
 
-Fig. 7.15 Sketch showing the actions of the interpolated quaternions of the interpolated quaternion remains constant at unity, preventing any unwanted scaling.
-
-Figure $7.15$ provides another sketch to help visualise what is going on. For example, when $t=0$, the interpolated quaternion is $q_{1}$ which rotates the point $(0,1,1)$ to $(1,1,0)$, and when $t=1$, the interpolated quaternion is $q_{2}$ which rotates the point $(0,1,1)$ to $(0,-1,1)$. When $t=0.5$, the interpolated quaternion rotates the point $(0,1,1)$ to $(1,0,1)$ as computed above. Two other curves show what happens for $t=0.25$ and $t=0.75$.
-
-A natural consequence of the interpolant is that the angle of rotation is $90^{\circ}$ for $t=0$ and $t=1$, but for $t=0.5$ the angle of rotation (eigenvalue) is approximately $70.5^{\circ}$. Corresponding angles arise for other values of $t$.
+插值的一个自然结果是，对于$t=0$和$t=1$，旋转角度为$90^{\circ}$，但是对于$t=0.5$，旋转角度(特征值)大约为$70.5^{\circ}$。对于$t$的其他值产生相应的角度。
 
 \section{将旋转矩阵转换为四元数}
-The matrix transform equivalent to $q p q^{-1}$ is
-
+矩阵变换等价于$q p q^{-1}$为
 $$
 \begin{aligned}
 q p q^{-1} & =\left[\begin{array}{ccc}
@@ -1628,9 +1550,7 @@ z_{p}
 \end{array}\right] .
 \end{aligned}
 $$
-
-Inspection of the matrix shows that by combining various elements we can isolate the terms of a quaternion $s, x, y, z$. For example, by adding the terms $a_{11}+a_{22}+a_{33}$ we obtain
-
+对矩阵的检查表明，通过组合各种元素，我们可以分离出四元数$s, x, y, z$的项。例如，通过将项$a_{11}+a_{22}+a_{33}$相加，我们得到
 $$
 \begin{aligned}
 a_{11}+a_{22}+a_{33} & =\left(2\left(s^{2}+x^{2}\right)-1\right)+\left(2\left(s^{2}+y^{2}\right)-1\right)+\left(2\left(s^{2}+z^{2}\right)-1\right) \\
@@ -1638,15 +1558,11 @@ a_{11}+a_{22}+a_{33} & =\left(2\left(s^{2}+x^{2}\right)-1\right)+\left(2\left(s^
 & =4 s^{2}-1
 \end{aligned}
 $$
-
-therefore,
-
+因此，
 $$
 s=\pm \frac{1}{2} \sqrt{1+a_{11}+a_{22}+a_{33}} .
 $$
-
-To isolate $x, y$ and $z$ we employ
-
+为了分离出$x, y$和$z$
 $$
 \begin{aligned}
 & x=\frac{1}{4 s}\left(a_{32}-a_{23}\right) \\
@@ -1654,9 +1570,7 @@ $$
 & z=\frac{1}{4 s}\left(a_{21}-a_{12}\right) .
 \end{aligned}
 $$
-
-We can confirm their correctness using the matrix (7.25):
-
+我们可以用矩阵(7.25)确认它们的正确性:
 $$
 \begin{aligned}
 & \left[\begin{array}{lll}a_{11} & a_{12} & a_{13} \\a_{21} & a_{22} & a_{23} \\a_{31} & a_{32} & a_{33}\end{array}\right]=\left[\begin{array}{ccc}\frac{2}{3} & \frac{1}{3} & \frac{2}{3} \\\frac{1}{3} & \frac{2}{3} & -\frac{2}{3} \\-\frac{2}{3} & \frac{2}{3} & \frac{1}{3}\end{array}\right] \\
@@ -1666,21 +1580,14 @@ $$
 & z=\frac{1}{4 s}\left(a_{21}-a_{12}\right)=\frac{\sqrt{3}}{4 \sqrt{2}}\left(\frac{1}{3}-\frac{1}{3}\right)=0
 \end{aligned}
 $$
+与原始值一致。
 
-which agree with the original values.
-
-Say, for example, the value of $s$ had been close to zero, this could have made the values of $x, y, z$ unreliable. Consequently, other combinations are available:
-
+例如，$s$的值接近于零，这可能会使$x, y, z$的值不可靠。因此，其他组合是可用的:
 $$
 \begin{aligned}
-& x=\pm \frac{1}{2} \sqrt{1+a_{11}-a_{22}-a_{33}} \\
-& y=\frac{1}{4 x}\left(a_{12}+a_{21}\right) \\
-& z=\frac{1}{4 x}\left(a_{13}+a_{31}\right)
-\end{aligned}
-$$
-
-$$
-\begin{aligned}
+x & =\pm \frac{1}{2} \sqrt{1+a_{11}-a_{22}-a_{33}} \\
+y & =\frac{1}{4 x}\left(a_{12}+a_{21}\right) \\
+z & =\frac{1}{4 x}\left(a_{13}+a_{31}\right)\\
 s & =\frac{1}{4 x}\left(a_{32}-a_{23}\right) \\
 y & =\pm \frac{1}{2} \sqrt{1-a_{11}+a_{22}-a_{33}} \\
 x & =\frac{1}{4 y}\left(a_{12}+a_{21}\right) \\
@@ -1693,11 +1600,16 @@ s & =\frac{1}{4 z}\left(a_{21}-a_{12}\right) .
 \end{aligned}
 $$
 
+% $$
+% \begin{aligned}
+
+% \end{aligned}
+% $$
+
 \section{欧拉角转换到四元数}
-In Chap. 6 we discovered that the rotation transforms $\mathbf{R}_{\alpha, x}, \mathbf{R}_{\beta, y}$ and $\mathbf{R}_{\gamma, z}$ can be combined to create twelve triple combinations to represent a composite rotation. Now let's see how such a transform is represented by a quaternion.
+在第6章中，我们发现旋转变换$\mathbf{R}_{\alpha, x}, \mathbf{R}_{\beta, y}$和$\mathbf{R}_{\gamma, z}$可以组合起来创建12个三重组合来表示一个复合旋转。现在让我们看看这样的变换是如何用四元数表示的。
 
-To demonstrate the technique we must choose one of the twelve combinations, then the same technique can be used to convert other combinations. For example, let's choose the sequence $\mathbf{R}_{\gamma, z} \mathbf{R}_{\beta, y} \mathbf{R}_{\alpha, x}$ where the equivalent quaternions are
-
+为了演示该技术，我们必须从12种组合中选择一种，然后可以使用相同的技术转换其他组合。例如，让我们选择序列$\mathbf{R}_{\gamma, z} \mathbf{R}_{\beta, y} \mathbf{R}_{\alpha, x}$，其中等价的四元数是
 $$
 \begin{aligned}
 & q_{x}=\left[\cos \frac{1}{2} \alpha, \sin \frac{1}{2} \alpha \mathbf{i}\right] \\
@@ -1705,32 +1617,26 @@ $$
 & q_{z}=\left[\cos \frac{1}{2} \gamma, \sin \frac{1}{2} \gamma \mathbf{k}\right]
 \end{aligned}
 $$
-
-and
-
-$$
-q=q_{z} q_{y} q_{x}
-$$
-
-Expanding (7.26):
-
+和
+\begin{align}
+    q=q_{z} q_{y} q_{x}
+\end{align}
+展开(7.26):
 $$
 \begin{aligned}
-& q=\left[\cos \frac{1}{2} \gamma, \sin \frac{1}{2} \gamma \mathbf{k}\right]\left[\cos \frac{1}{2} \beta, \sin \frac{1}{2} \beta \mathbf{j}\right]\left[\cos \frac{1}{2} \alpha, \sin \frac{1}{2} \alpha \mathbf{i}\right] \\
-& =\left[\cos \frac{1}{2} \gamma \cos \frac{1}{2} \beta,\right. \\
+q=& \left[\cos \frac{1}{2} \gamma, \sin \frac{1}{2} \gamma \mathbf{k}\right]\left[\cos \frac{1}{2} \beta, \sin \frac{1}{2} \beta \mathbf{j}\right]\left[\cos \frac{1}{2} \alpha, \sin \frac{1}{2} \alpha \mathbf{i}\right] \\
+=& \left[\cos \frac{1}{2} \gamma \cos \frac{1}{2} \beta,\right. \\
 & \left.\cos \frac{1}{2} \gamma \sin \frac{1}{2} \beta \mathbf{j}+\cos \frac{1}{2} \beta \sin \frac{1}{2} \gamma \mathbf{k}-\sin \frac{1}{2} \gamma \sin \frac{1}{2} \beta \mathbf{i}\right]\left[\cos \frac{1}{2} \alpha, \sin \frac{1}{2} \alpha \mathbf{i}\right] \\
-& =\left[\cos \frac{1}{2} \gamma \cos \frac{1}{2} \beta \cos \frac{1}{2} \alpha+\sin \frac{1}{2} \gamma \sin \frac{1}{2} \beta \sin \frac{1}{2} \alpha\right. \text {, } \\
+=& \left[\cos \frac{1}{2} \gamma \cos \frac{1}{2} \beta \cos \frac{1}{2} \alpha+\sin \frac{1}{2} \gamma \sin \frac{1}{2} \beta \sin \frac{1}{2} \alpha\right. \text {, } \\
 & \cos \frac{1}{2} \gamma \cos \frac{1}{2} \beta \sin \frac{1}{2} \alpha \mathbf{i}+\cos \frac{1}{2} \alpha \cos \frac{1}{2} \gamma \sin \frac{1}{2} \beta \mathbf{j}+\cos \frac{1}{2} \alpha \cos \frac{1}{2} \beta \sin \frac{1}{2} \gamma \mathbf{k} \\
 & \left.-\cos \frac{1}{2} \alpha \sin \frac{1}{2} \gamma \sin \frac{1}{2} \beta \mathbf{i}-\cos \frac{1}{2} \gamma \sin \frac{1}{2} \beta \sin \frac{1}{2} \alpha \mathbf{k}+\cos \frac{1}{2} \beta \sin \frac{1}{2} \gamma \sin \frac{1}{2} \alpha \mathbf{j}\right] \\
-& =\left[\cos \frac{1}{2} \gamma \cos \frac{1}{2} \beta \cos \frac{1}{2} \alpha+\sin \frac{1}{2} \gamma \sin \frac{1}{2} \beta \sin \frac{1}{2} \alpha\right. \text {, } \\
+=& \left[\cos \frac{1}{2} \gamma \cos \frac{1}{2} \beta \cos \frac{1}{2} \alpha+\sin \frac{1}{2} \gamma \sin \frac{1}{2} \beta \sin \frac{1}{2} \alpha\right. \text {, } \\
 & \left(\cos \frac{1}{2} \gamma \cos \frac{1}{2} \beta \sin \frac{1}{2} \alpha-\cos \frac{1}{2} \alpha \sin \frac{1}{2} \gamma \sin \frac{1}{2} \beta\right) \mathbf{i} \\
 & \left(\cos \frac{1}{2} \alpha \cos \frac{1}{2} \gamma \sin \frac{1}{2} \beta+\cos \frac{1}{2} \beta \sin \frac{1}{2} \gamma \sin \frac{1}{2} \alpha\right) \mathbf{j} \\
 & \left.\left(\cos \frac{1}{2} \alpha \cos \frac{1}{2} \beta \sin \frac{1}{2} \gamma-\cos \frac{1}{2} \gamma \sin \frac{1}{2} \beta \sin \frac{1}{2} \alpha\right) \mathbf{k}\right] \text {. }
 \end{aligned}
 $$
-
-Now let's place the angles in a consistent sequence:
-
+现在让我们以一致的顺序放置角度:
 $$
 \begin{aligned}
 s & =\cos \frac{1}{2} \gamma \cos \frac{1}{2} \beta \cos \frac{1}{2} \alpha+\sin \frac{1}{2} \gamma \sin \frac{1}{2} \beta \sin \frac{1}{2} \alpha \\
@@ -1739,15 +1645,11 @@ y_{q} & =\cos \frac{1}{2} \gamma \sin \frac{1}{2} \beta \cos \frac{1}{2} \alpha+
 z_{q} & =\sin \frac{1}{2} \gamma \cos \frac{1}{2} \beta \cos \frac{1}{2} \alpha-\cos \frac{1}{2} \gamma \sin \frac{1}{2} \beta \sin \frac{1}{2} \alpha
 \end{aligned}
 $$
-
-where
-
-$$
-q=\left[s, x_{q} \mathbf{i}+y_{q} \mathbf{j}+z_{q} \mathbf{k}\right] .
-$$
-
-Let's test (7.27). We start with the three rotation transforms
-
+其中
+\begin{align}
+    q=\left[s, x_{q} \mathbf{i}+y_{q} \mathbf{j}+z_{q} \mathbf{k}\right] .
+\end{align}
+让我们测试(7.27)。我们从三个旋转变换开始
 $$
 \begin{aligned}
 \mathbf{R}_{\alpha, x} & =\left[\begin{array}{ccc}
@@ -1759,20 +1661,15 @@ $$
 \cos \beta & 0 & \sin \beta \\
 0 & 1 & 0 \\
 -\sin \beta & 0 & \cos \beta
-\end{array}\right]
+\end{array}\right]\\
+\mathbf{R}_{\gamma, z}& =\left[\begin{array}{ccc}
+    \cos \gamma & -\sin \gamma & 0 \\
+    \sin \gamma & \cos \gamma & 0 \\
+    0 & 0 & 1
+    \end{array}\right]
 \end{aligned}
 $$
-
-$$
-\mathbf{R}_{\gamma, z}=\left[\begin{array}{ccc}
-\cos \gamma & -\sin \gamma & 0 \\
-\sin \gamma & \cos \gamma & 0 \\
-0 & 0 & 1
-\end{array}\right]
-$$
-
-Then
-
+然后
 $$
 \begin{aligned}
 & \mathbf{R}_{\gamma, z} \mathbf{R}_{\beta, y} \mathbf{R}_{\alpha, x} \\
@@ -1783,9 +1680,7 @@ $$
 \end{array}\right] . }
 \end{aligned}
 $$
-
-Let's make $\alpha=\beta=\gamma=90^{\circ}$, then
-
+令$\alpha=\beta=\gamma=90^{\circ}$，那么
 $$
 \mathbf{R}_{90^{\circ}, z} \mathbf{R}_{90^{\circ}, y} \mathbf{R}_{90^{\circ}, x}=\left[\begin{array}{ccc}
 0 & 0 & 1 \\
@@ -1793,9 +1688,7 @@ $$
 -1 & 0 & 0
 \end{array}\right]
 $$
-
-which rotates points $90^{\circ}$ about the $y$-axis:
-
+它将围绕$y$-轴旋转$90^{\circ}$:
 $$
 \left[\begin{array}{l}
 1 \\
@@ -1811,9 +1704,7 @@ $$
 1
 \end{array}\right]
 $$
-
-Now let's evaluate (7.27):
-
+现在让我们计算(7.27):
 $$
 \begin{aligned}
 s & =\cos \frac{1}{2} \gamma \cos \frac{1}{2} \beta \cos \frac{1}{2} \alpha+\sin \frac{1}{2} \gamma \sin \frac{1}{2} \beta \sin \frac{1}{2} \alpha \\
@@ -1828,26 +1719,23 @@ z_{q} & =\sin \frac{1}{2} \gamma \cos \frac{1}{2} \beta \cos \frac{1}{2} \alpha-
 & =0
 \end{aligned}
 $$
-
-and
-
+且
 $$
 q=\left[\frac{\sqrt{2}}{2}, \frac{\sqrt{2}}{2} \mathbf{j}\right]
 $$
-
-which is a quaternion that also rotates points $90^{\circ}$ about the $y$-axis.
+这是一个四元数，它也围绕y轴旋转点。
 
 \section{总结}
-This chapter has been the focal point of the book where unit-norm quaternions have been used to rotate a vector about a quaternion's vector. It would have been useful if this could have been achieved by the simple product $q p$, like complex numbers. But as we saw, this only works when the quaternion is orthogonal to the vector. The product $q p q^{-1}$ —discovered by Hamilton and Cayley-works for all orientations between a quaternion and a vector. It is also relatively easy to compute. We also saw that the product can be represented as a matrix, which can be integrated with other matrices.
+本章是本书的重点，其中单位范数四元数用于围绕四元数的向量旋转一个向量。如果这能像复数一样，由简单积$q p$来实现，那就很有用了。但正如我们看到的，这只适用于四元数与向量正交的情况。积$q p q^{-1}$——由Hamilton和cayley发现——适用于四元数和向量之间的所有方向。它也相对容易计算。我们还看到，乘积可以表示为一个矩阵，这个矩阵可以与其他矩阵相乘。
 
-Perhaps one of the most interesting features of quaternions that has emerged in this chapter, is that their imaginary qualities are not required in any calculations, because they are embedded within the algebra.
+也许本章中出现的四元数最有趣的特征之一，是它们的虚数性质在任何计算中都不需要，因为它们嵌入在代数中。
 
-The spherical interpolant provides a clever way to dynamically change a quaternion's axis and angle of rotation, but can be difficult to visualise as an animated sequence without access to a real-time display system.
+球面插补提供了一种动态改变四元数轴和旋转角度的聪明方法，但如果没有实时显示系统，则很难将其可视化为动画序列。
 
-The reverse product $q^{-1} p q$ reverses the angle of rotation, and is equivalent to changing the sign of the rotation angle in $q p q^{-1}$. Consequently, it can be used to rotate a frame of reference in the same direction as $q p q^{-1}$.
+反向乘积$q^{-1} p q$反转了旋转角度，等价于改变$q p q^{-1}$中旋转角度的符号。因此，它可以用来旋转一个参照系，旋转方向与$q p q^{-1}$相同。
 
 \subsection{操作符总结}
-\subsubsection*{Rotating a point about a vector}
+\textbf{围绕向量旋转一点}
 $$
 \begin{aligned}
 q & =[s, \mathbf{v}] \\
@@ -1860,12 +1748,12 @@ q p q^{-1} & =[0,(1-\cos \theta)(\hat{\mathbf{v}} \cdot \mathbf{p}) \hat{\mathbf
 \end{aligned}
 $$
 
-\subsubsection*{Rotating a frame about a vector}
+\textbf{围绕一个向量旋转一个坐标系}
 $$
 q^{-1} p q=[0,(1-\cos \theta)(\hat{\mathbf{v}} \cdot \mathbf{p}) \hat{\mathbf{v}}+\cos \theta \mathbf{p}-\sin \theta \hat{\mathbf{v}} \times \mathbf{p}]
 $$
 
-\subsubsection*{Matrix for rotating a point about a vector}
+\textbf{矩阵，用于围绕一个向量旋转一个点}
 $$
 \mathbf{p}^{\prime}=\left[\begin{array}{ccc}
 1-2\left(y^{2}+z^{2}\right) & 2(x y-s z) & 2(x z+s y) \\
@@ -1878,7 +1766,7 @@ z_{p}
 \end{array}\right]
 $$
 
-\subsubsection*{Matrix for rotating a frame about a vector}
+\textbf{矩阵用于围绕一个向量旋转一个坐标系}
 $$
 \mathbf{p}^{\prime}=\left[\begin{array}{ccc}
 1-2\left(y^{2}+z^{2}\right) & 2(x y+s z) & 2(x z-s y) \\
@@ -1891,7 +1779,7 @@ z_{p}
 \end{array}\right]
 $$
 
-\subsubsection*{Matrix for a quaternion product}
+\textbf{四元数乘积的矩阵}
 $$
 \begin{aligned}
 & q_{1} q_{2}=\mathbf{L}\left(q_{1}\right) q_{2}= {\left[\begin{array}{cccc}
@@ -1919,13 +1807,11 @@ z_{1}
 \end{aligned}
 $$
 
-\subsubsection*{Interpolating two quaternions}
+\textbf{在两个四元数中插值}
 $$
 q=\frac{\sin (1-t) \theta}{\sin \theta} q_{1}+\frac{\sin t \theta}{\sin \theta} q_{2}
 $$
-
-where
-
+其中
 $$
 \begin{aligned}
 \cos \theta & =\frac{q_{1} \cdot q_{2}}{\left|q_{1}\right|\left|q_{2}\right|} \\
@@ -1933,23 +1819,18 @@ $$
 \end{aligned}
 $$
 
-\subsubsection*{Quaternion from a rotation matrix}
+\textbf{旋转矩阵转换为四元数}
 $$
 \begin{aligned}
-& s=\pm \frac{1}{2} \sqrt{1+a_{11}+a_{22}+a_{33}} \\
-& x=\frac{1}{4 s}\left(a_{32}-a_{23}\right) \\
-& y=\frac{1}{4 s}\left(a_{13}-a_{31}\right) \\
-& z=\frac{1}{4 s}\left(a_{21}-a_{12}\right) \\
-& x=\pm \frac{1}{2} \sqrt{1+a_{11}-a_{22}-a_{33}} \\
-& y=\frac{1}{4 x}\left(a_{12}+a_{21}\right) \\
-& z=\frac{1}{4 x}\left(a_{13}+a_{31}\right) \\
-& s=\frac{1}{4 x}\left(a_{32}-a_{23}\right) \\
-& y=\pm \frac{1}{2} \sqrt{1-a_{11}+a_{22}-a_{33}}
-\end{aligned}
-$$
-
-$$
-\begin{aligned}
+s & =\pm \frac{1}{2} \sqrt{1+a_{11}+a_{22}+a_{33}} \\
+x & =\frac{1}{4 s}\left(a_{32}-a_{23}\right) \\
+y & =\frac{1}{4 s}\left(a_{13}-a_{31}\right) \\
+z & =\frac{1}{4 s}\left(a_{21}-a_{12}\right) \\
+x & =\pm \frac{1}{2} \sqrt{1+a_{11}-a_{22}-a_{33}} \\
+y & =\frac{1}{4 x}\left(a_{12}+a_{21}\right) \\
+z & =\frac{1}{4 x}\left(a_{13}+a_{31}\right) \\
+s & =\frac{1}{4 x}\left(a_{32}-a_{23}\right) \\
+y & =\pm \frac{1}{2} \sqrt{1-a_{11}+a_{22}-a_{33}}\\
 x & =\frac{1}{4 y}\left(a_{12}+a_{21}\right) \\
 z & =\frac{1}{4 y}\left(a_{23}+a_{32}\right) \\
 s & =\frac{1}{4 y}\left(a_{13}-a_{31}\right) \\
@@ -1960,7 +1841,7 @@ s & =\frac{1}{4 z}\left(a_{21}-a_{12}\right)
 \end{aligned}
 $$
 
-\subsubsection*{Eigenvector and eigenvalue}
+\textbf{特征向量和特征值}
 $$
 \begin{aligned}
 x_{v} & =\left(a_{22}-1\right)\left(a_{33}-1\right)-a_{23} a_{32} \\
@@ -1970,9 +1851,9 @@ z_{v} & =\left(a_{11}-1\right)\left(a_{22}-1\right)-a_{12} a_{21} \\
 \end{aligned}
 $$
 
-\subsubsection*{Euler angles to quaternion}
-Using the transform $\mathbf{R}_{\gamma, z} \mathbf{R}_{\beta, y} \mathbf{R}_{\alpha, x}$ :
+\textbf{欧拉角转换为四元数}
 
+使用变换$\mathbf{R}_{\gamma, z} \mathbf{R}_{\beta, y} \mathbf{R}_{\alpha, x}$:
 $$
 \begin{aligned}
 s & =\cos \frac{1}{2} \gamma \cos \frac{1}{2} \beta \cos \frac{1}{2} \alpha+\sin \frac{1}{2} \gamma \sin \frac{1}{2} \beta \sin \frac{1}{2} \alpha \\
@@ -1981,9 +1862,7 @@ y_{q} & =\cos \frac{1}{2} \gamma \sin \frac{1}{2} \beta \cos \frac{1}{2} \alpha+
 z_{q} & =\sin \frac{1}{2} \gamma \cos \frac{1}{2} \beta \cos \frac{1}{2} \alpha-\cos \frac{1}{2} \gamma \sin \frac{1}{2} \beta \sin \frac{1}{2} \alpha
 \end{aligned}
 $$
-
-where
-
+其中
 $$
 q=\left[s, x_{q} \mathbf{i}+y_{q} \mathbf{j}+z_{q} \mathbf{k}\right]
 $$
