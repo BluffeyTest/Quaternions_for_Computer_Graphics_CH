@@ -1868,21 +1868,19 @@ q=\left[s, x_{q} \mathbf{i}+y_{q} \mathbf{j}+z_{q} \mathbf{k}\right]
 $$
 
 \section{样例}
-Here are some further worked examples that employ the ideas described above.
+下面是一些进一步使用上述思想的示例。
 
-Example 1 Use $q p$ to rotate $p=[0, \mathbf{j}] 90^{\circ}$ about the $x$-axis.
+\begin{example}\label{ex:71}
+    使用$q p$将$p=[0, \mathbf{j}] 90^{\circ}$旋转到$x$-轴。
 
-For this to work $q$ must be orthogonal to $p$ :
-
+    要实现这个，$q$必须与$p$正交:
 $$
 \begin{aligned}
 q & =[\cos \theta, \sin \theta \mathbf{i}] \\
 & =[0, \mathbf{i}]
 \end{aligned}
 $$
-
-and
-
+且
 $$
 \begin{aligned}
 p^{\prime} & =q p \\
@@ -1891,34 +1889,40 @@ p^{\prime} & =q p \\
 \end{aligned}
 $$
 
-Example 2 Use $q p q^{-1}$ to rotate $p=[0, \mathbf{j}] 90^{\circ}$ about the $x$-axis.
 
-For this to work:
+\end{example}
 
-$$
-\begin{aligned}
-q & =\left[\cos \frac{1}{2} \theta, \sin \frac{1}{2} \theta \mathbf{i}\right] \\
-& =\left[\frac{\sqrt{2}}{2}, \frac{\sqrt{2}}{2} \mathbf{i}\right]
-\end{aligned}
-$$
 
-and
 
-$$
-\begin{aligned}
-p^{\prime} & =q p q^{-1} \\
-& =\left[\frac{\sqrt{2}}{2}, \frac{\sqrt{2}}{2} \mathbf{i}\right][0, \mathbf{j}]\left[\frac{\sqrt{2}}{2},-\frac{\sqrt{2}}{2} \mathbf{i}\right] \\
-& =\left[0, \frac{\sqrt{2}}{2} \mathbf{j}+\frac{\sqrt{2}}{2} \mathbf{k}\right]\left[\frac{\sqrt{2}}{2},-\frac{\sqrt{2}}{2} \mathbf{i}\right] \\
-& =\left[0, \frac{\sqrt{2}}{2}\left(\frac{\sqrt{2}}{2} \mathbf{j}+\frac{\sqrt{2}}{2} \mathbf{k}\right)+\frac{1}{2} \mathbf{j}+\frac{1}{2} \mathbf{k}\right] \\
-& =\left[0, \frac{1}{2} \mathbf{j}+\frac{1}{2} \mathbf{k}-\frac{1}{2} \mathbf{j}+\frac{1}{2} \mathbf{k}\right] \\
-& =[0, \mathbf{k}]
-\end{aligned}
-$$
 
-which agrees with the answer for Example 1.
+\begin{example}
+    使用$q p q^{-1}$将$p=[0, \mathbf{j}] 90^{\circ}$旋转到$x$-轴。
 
-Example 3 Evaluate the triple $q p q^{-1}$ for $p=[0, \mathbf{p}]$ and $q=\left[\cos \frac{1}{2} \theta, \sin \frac{1}{2} \theta \mathbf{v}\right]$, where $\theta=360^{\circ}$.
+    要做到这一点:
+    $$
+    \begin{aligned}
+    q & =\left[\cos \frac{1}{2} \theta, \sin \frac{1}{2} \theta \mathbf{i}\right] \\
+    & =\left[\frac{\sqrt{2}}{2}, \frac{\sqrt{2}}{2} \mathbf{i}\right]
+    \end{aligned}
+    $$
+    且
+    $$
+    \begin{aligned}
+    p^{\prime} & =q p q^{-1} \\
+    & =\left[\frac{\sqrt{2}}{2}, \frac{\sqrt{2}}{2} \mathbf{i}\right][0, \mathbf{j}]\left[\frac{\sqrt{2}}{2},-\frac{\sqrt{2}}{2} \mathbf{i}\right] \\
+    & =\left[0, \frac{\sqrt{2}}{2} \mathbf{j}+\frac{\sqrt{2}}{2} \mathbf{k}\right]\left[\frac{\sqrt{2}}{2},-\frac{\sqrt{2}}{2} \mathbf{i}\right] \\
+    & =\left[0, \frac{\sqrt{2}}{2}\left(\frac{\sqrt{2}}{2} \mathbf{j}+\frac{\sqrt{2}}{2} \mathbf{k}\right)+\frac{1}{2} \mathbf{j}+\frac{1}{2} \mathbf{k}\right] \\
+    & =\left[0, \frac{1}{2} \mathbf{j}+\frac{1}{2} \mathbf{k}-\frac{1}{2} \mathbf{j}+\frac{1}{2} \mathbf{k}\right] \\
+    & =[0, \mathbf{k}]
+    \end{aligned}
+    $$
+    这与例\ref{ex:71}的答案一致。
 
+\end{example}
+
+
+\begin{example}
+    求三重积$q p q^{-1}$，求$p=[0, \mathbf{p}]$和$q=\left[\cos \frac{1}{2} \theta, \sin \frac{1}{2} \theta \mathbf{v}\right]$，其中$\theta=360^{\circ}$。
 $$
 \begin{aligned}
 q & =[-1, \mathbf{0}] \\
@@ -1928,127 +1932,124 @@ q p q^{-1} & =[-1, \mathbf{0}][0, \mathbf{p}][-1, \mathbf{0}] \\
 \end{aligned}
 $$
 
-which confirms that the vector remains unmoved, as expected.
+这就证实了向量保持不变，正如预期的那样。
+\end{example}
 
-Example 4 Compute the matrix (7.15) for $q=\left[\frac{1}{2}, \frac{\sqrt{3}}{2} \mathbf{k}\right]$, and find its eigenvector and eigenvalue. From $q$
+\begin{example}
+    
+    按式(7.15)计算$q=\left[\frac{1}{2}, \frac{\sqrt{3}}{2} \mathbf{k}\right]$的矩阵，求其特征向量和特征值。从$q$
+    $$
+    \begin{aligned}
+    & s=\frac{1}{2}, \quad x=0, \quad y=0, \quad z=\frac{\sqrt{3}}{2} \\
+    & \mathbf{p}^{\prime}=\left[\begin{array}{ccc}2\left(s^{2}+x^{2}\right)-1 & 2(x y-s z) & 2(x z+s y) \\2(x y+s z) & 2\left(s^{2}+y^{2}\right)-1 & 2(y z-s x) \\2(x z-s y) & 2(y z+s x) & 2\left(s^{2}+z^{2}\right)-1\end{array}\right]\left[\begin{array}{l}x_{p} \\y_{p} \\z_{p}\end{array}\right] \\
+    & =\left[\begin{array}{ccc}-\frac{1}{2} & -\frac{\sqrt{3}}{2} & 0 \\\frac{\sqrt{3}}{2} & -\frac{1}{2} & 0 \\0 & 0 & 1\end{array}\right]\left[\begin{array}{l}x_{p} \\y_{p} \\z_{p}\end{array}\right] \text {. }
+    \end{aligned}
+    $$
+    
+    如果我们代入点$(1,0,0)$，它将围绕$z$-轴旋转$120^{\circ}$:
+    $$
+    \left[\begin{array}{c}
+    -\frac{1}{2} \\
+    \frac{\sqrt{3}}{2} \\
+    1
+    \end{array}\right]=\left[\begin{array}{ccc}
+    -\frac{1}{2} & -\frac{\sqrt{3}}{2} & 0 \\
+    \frac{\sqrt{3}}{2} & -\frac{1}{2} & 0 \\
+    0 & 0 & 1
+    \end{array}\right]\left[\begin{array}{l}
+    1 \\
+    0 \\
+    0
+    \end{array}\right]
+    $$
+    
+    使用 
+    $$
+    \begin{aligned}
+    \cos \theta & =\frac{1}{2}\left(\operatorname{Tr}\left(q p q^{-1}\right)-1\right) \\
+    & =\frac{1}{2}(0-1) \\
+    \theta & =120^{\circ}
+    \end{aligned}
+    $$
+    
+    使用
+    $$
+    \begin{aligned}
+    x_{v} & =\left(a_{22}-1\right)\left(a_{33}-1\right)-a_{23} a_{32} \\
+    & =\left(-\frac{3}{2}\right)(0)-0 \\
+    & =0 \\
+    y_{v} & =\left(a_{33}-1\right)\left(a_{11}-1\right)-a_{31} a_{13} \\
+    & =(0)\left(-\frac{3}{2}\right)-0 \\
+    & =0 \\
+    z_{v} & =\left(a_{11}-1\right)\left(a_{22}-1\right)-a_{12} a_{21} \\
+    & =\left(-\frac{3}{2}\right)\left(-\frac{3}{2}\right)+\frac{\sqrt{3}}{2} \frac{\sqrt{3}}{2} \\
+    & =3
+    \end{aligned}
+    $$
+    
+    这算出了特征向量$3 \mathbf{k}$和特征值$120^{\circ}$。
+\end{example}
 
-$$
-\begin{aligned}
-& s=\frac{1}{2}, \quad x=0, \quad y=0, \quad z=\frac{\sqrt{3}}{2} \\
-& \mathbf{p}^{\prime}=\left[\begin{array}{ccc}2\left(s^{2}+x^{2}\right)-1 & 2(x y-s z) & 2(x z+s y) \\2(x y+s z) & 2\left(s^{2}+y^{2}\right)-1 & 2(y z-s x) \\2(x z-s y) & 2(y z+s x) & 2\left(s^{2}+z^{2}\right)-1\end{array}\right]\left[\begin{array}{l}x_{p} \\y_{p} \\z_{p}\end{array}\right] \\
-& =\left[\begin{array}{ccc}-\frac{1}{2} & -\frac{\sqrt{3}}{2} & 0 \\\frac{\sqrt{3}}{2} & -\frac{1}{2} & 0 \\0 & 0 & 1\end{array}\right]\left[\begin{array}{l}x_{p} \\y_{p} \\z_{p}\end{array}\right] \text {. }
-\end{aligned}
-$$
+\begin{example}
+    当$\alpha=90^{\circ}$时，查找$q_{1}=\left[\cos \frac{1}{2} \alpha, \sin \frac{1}{2} \alpha \mathbf{k}\right]$和$q_{2}=\left[\cos \frac{1}{2} \alpha, \sin \frac{1}{2} \alpha \mathbf{i}\right]$之间的中间四元数。证明它是单位范数四元数，并求出它的旋转角度。
+    
+    $q_{1}$与$q_{2}$之间的夹角为$\theta$，其中
+    $$
+    \begin{aligned}
+    \cos \theta & =\frac{s_{1} s_{2}+x_{1} x_{2}+y_{1} y_{2}+z_{1} z_{2}}{\left|q_{1}\right|\left|q_{2}\right|} \\
+    & =\cos ^{2} \frac{1}{2} \alpha \\
+    & =0.5 \\
+    \theta & =60^{\circ} .
+    \end{aligned}
+    $$
+    
+    使用
+    $$
+    \begin{aligned}
+    q & =\frac{\sin (1-t) \theta}{\sin \theta} q_{1}+\frac{\sin t \theta}{\sin \theta} q_{2} \\
+    & =\frac{\sin 30^{\circ}}{\sin 60^{\circ}}\left[\cos 45^{\circ}, \sin 45^{\circ} \mathbf{k}\right]+\frac{\sin 30^{\circ}}{\sin 60^{\circ}}\left[\cos 45^{\circ}, \sin 45^{\circ} \mathbf{i}\right] \\
+    & =\frac{1}{\sqrt{3}}\left[\frac{\sqrt{2}}{2}, \frac{\sqrt{2}}{2} \mathbf{k}\right]+\frac{1}{\sqrt{3}}\left[\frac{\sqrt{2}}{2}, \frac{\sqrt{2}}{2} \mathbf{i}\right] \\
+    & =\left[\frac{\sqrt{2}}{\sqrt{3}}, \frac{\sqrt{2}}{2 \sqrt{3}} \mathbf{i}+\frac{\sqrt{2}}{2 \sqrt{3}} \mathbf{k}\right] \\
+    & =\left[\frac{2}{\sqrt{6}}, \frac{1}{\sqrt{6}} \mathbf{i}+\frac{1}{\sqrt{6}} \mathbf{k}\right]
+    \end{aligned}
+    $$
+    
+    q的范数是
+    $$
+    \begin{aligned}
+    |q| & =\left(\frac{2}{\sqrt{6}}\right)^{2}+\left(\frac{1}{\sqrt{6}}\right)^{2}+\left(\frac{1}{\sqrt{6}}\right)^{2} \\
+    & =\frac{2}{3}+\frac{1}{6}+\frac{1}{6} \\
+    & =1
+    \end{aligned}
+    $$
+    
+    因此, $\displaystyle\cos \frac{1}{2} \alpha=\frac{\sqrt{2}}{\sqrt{3}}$ ， $\displaystyle\sin \frac{1}{2} \alpha=\frac{1}{\sqrt{3}}$, 且 $\alpha \approx 70.5^{\circ}$.
+\end{example}
 
-If we plug in the point $(1,0,0)$ it is rotated about the $z$-axis by $120^{\circ}$ :
+\begin{example}
+    将给定矩阵转换为四元数并识别其函数。
+    $$
+    \mathbf{M}=\left[\begin{array}{ccc}
+    0 & 0 & 1 \\
+    0 & 1 & 0 \\
+    -1 & 0 & 0
+    \end{array}\right]
+    $$
+    
+    因此,
+    $$
+    \begin{aligned}
+        \displaystyle
+    s & =\frac{1}{2} \sqrt{1+a_{11}+a_{22}+a_{33}} \\
+    & =\frac{1}{2} \sqrt{1+0+1+0}=\frac{\sqrt{2}}{2}\\
+    x & =\frac{1}{4 s}\left(a_{32}-a_{23}\right) \\
+    & =\frac{\sqrt{2}}{4}(0+0)=0 \\
+    y & =\frac{1}{4 s}\left(a_{13}-a_{31}\right) \\
+    & =\frac{\sqrt{2}}{4}(1+1)=\frac{\sqrt{2}}{2} \\
+    z & =\frac{1}{4 s}\left(a_{21}-a_{12}\right) \\
+    & =\frac{\sqrt{2}}{4}(0+0)=0
+    \end{aligned}
+    $$
 
-$$
-\left[\begin{array}{c}
--\frac{1}{2} \\
-\frac{\sqrt{3}}{2} \\
-1
-\end{array}\right]=\left[\begin{array}{ccc}
--\frac{1}{2} & -\frac{\sqrt{3}}{2} & 0 \\
-\frac{\sqrt{3}}{2} & -\frac{1}{2} & 0 \\
-0 & 0 & 1
-\end{array}\right]\left[\begin{array}{l}
-1 \\
-0 \\
-0
-\end{array}\right]
-$$
-
-Using
-
-$$
-\begin{aligned}
-\cos \theta & =\frac{1}{2}\left(\operatorname{Tr}\left(q p q^{-1}\right)-1\right) \\
-& =\frac{1}{2}(0-1) \\
-\theta & =120^{\circ}
-\end{aligned}
-$$
-
-Using
-
-$$
-\begin{aligned}
-x_{v} & =\left(a_{22}-1\right)\left(a_{33}-1\right)-a_{23} a_{32} \\
-& =\left(-\frac{3}{2}\right)(0)-0 \\
-& =0 \\
-y_{v} & =\left(a_{33}-1\right)\left(a_{11}-1\right)-a_{31} a_{13} \\
-& =(0)\left(-\frac{3}{2}\right)-0 \\
-& =0 \\
-z_{v} & =\left(a_{11}-1\right)\left(a_{22}-1\right)-a_{12} a_{21} \\
-& =\left(-\frac{3}{2}\right)\left(-\frac{3}{2}\right)+\frac{\sqrt{3}}{2} \frac{\sqrt{3}}{2} \\
-& =3
-\end{aligned}
-$$
-
-which makes the eigenvector $3 \mathbf{k}$ and the eigenvalue $120^{\circ}$. Example 5 Find the half-way quaternion between $q_{1}=\left[\cos \frac{1}{2} \alpha, \sin \frac{1}{2} \alpha \mathbf{k}\right]$ and $q_{2}=$ $\left[\cos \frac{1}{2} \alpha, \sin \frac{1}{2} \alpha \mathbf{i}\right]$ when $\alpha=90^{\circ}$. Show that it is a unit-norm quaternion, and find its angle of rotation.
-
-The angle between $q_{1}$ and $q_{2}$ is $\theta$ where
-
-$$
-\begin{aligned}
-\cos \theta & =\frac{s_{1} s_{2}+x_{1} x_{2}+y_{1} y_{2}+z_{1} z_{2}}{\left|q_{1}\right|\left|q_{2}\right|} \\
-& =\cos ^{2} \frac{1}{2} \alpha \\
-& =0.5 \\
-\theta & =60^{\circ} .
-\end{aligned}
-$$
-
-Using
-
-$$
-\begin{aligned}
-q & =\frac{\sin (1-t) \theta}{\sin \theta} q_{1}+\frac{\sin t \theta}{\sin \theta} q_{2} \\
-& =\frac{\sin 30^{\circ}}{\sin 60^{\circ}}\left[\cos 45^{\circ}, \sin 45^{\circ} \mathbf{k}\right]+\frac{\sin 30^{\circ}}{\sin 60^{\circ}}\left[\cos 45^{\circ}, \sin 45^{\circ} \mathbf{i}\right] \\
-& =\frac{1}{\sqrt{3}}\left[\frac{\sqrt{2}}{2}, \frac{\sqrt{2}}{2} \mathbf{k}\right]+\frac{1}{\sqrt{3}}\left[\frac{\sqrt{2}}{2}, \frac{\sqrt{2}}{2} \mathbf{i}\right] \\
-& =\left[\frac{\sqrt{2}}{\sqrt{3}}, \frac{\sqrt{2}}{2 \sqrt{3}} \mathbf{i}+\frac{\sqrt{2}}{2 \sqrt{3}} \mathbf{k}\right] \\
-& =\left[\frac{2}{\sqrt{6}}, \frac{1}{\sqrt{6}} \mathbf{i}+\frac{1}{\sqrt{6}} \mathbf{k}\right]
-\end{aligned}
-$$
-
-The norm of $q$ is
-
-$$
-\begin{aligned}
-|q| & =\left(\frac{2}{\sqrt{6}}\right)^{2}+\left(\frac{1}{\sqrt{6}}\right)^{2}+\left(\frac{1}{\sqrt{6}}\right)^{2} \\
-& =\frac{2}{3}+\frac{1}{6}+\frac{1}{6} \\
-& =1
-\end{aligned}
-$$
-
-Therefore, $\cos \frac{1}{2} \alpha=\frac{\sqrt{2}}{\sqrt{3}}$ and $\sin \frac{1}{2} \alpha=\frac{1}{\sqrt{3}}$, and $\alpha \approx 70.5^{\circ}$.
-
-Example 6 Convert the given matrix into a quaternion and identify its function.
-
-$$
-\mathbf{M}=\left[\begin{array}{ccc}
-0 & 0 & 1 \\
-0 & 1 & 0 \\
--1 & 0 & 0
-\end{array}\right]
-$$
-
-therefore,
-
-$$
-\begin{aligned}
-s & =\frac{1}{2} \sqrt{1+a_{11}+a_{22}+a_{33}} \\
-& =\frac{1}{2} \sqrt{1+0+1+0}=\frac{\sqrt{2}}{2}
-\end{aligned}
-$$
-
-$$
-\begin{aligned}
-x & =\frac{1}{4 s}\left(a_{32}-a_{23}\right) \\
-& =\frac{\sqrt{2}}{4}(0+0)=0 \\
-y & =\frac{1}{4 s}\left(a_{13}-a_{31}\right) \\
-& =\frac{\sqrt{2}}{4}(1+1)=\frac{\sqrt{2}}{2} \\
-z & =\frac{1}{4 s}\left(a_{21}-a_{12}\right) \\
-& =\frac{\sqrt{2}}{4}(0+0)=0
-\end{aligned}
-$$
-
-which is the quaternion $\left[\frac{\sqrt{2}}{2}, \frac{\sqrt{2}}{2} \mathbf{j}\right]$ which is a rotation of $90^{\circ}$ about the $y$-axis.
+    它是四元数$\displaystyle\left[\frac{\sqrt{2}}{2}, \frac{\sqrt{2}}{2} \mathbf{j}\right]$，它是围绕$y$-轴旋转$90^{\circ}$。
+\end{example}

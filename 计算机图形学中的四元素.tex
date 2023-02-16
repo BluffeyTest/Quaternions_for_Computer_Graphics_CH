@@ -32,6 +32,37 @@
 \usepackage{indentfirst} 
 \setlength{\parindent}{2em}
 
+\usepackage{amsthm}
+% 中文定理环境
+\theoremstyle{plain}
+% \indent 为了段前空两格
+% \newtheorem{theorem}{\indent 定理}[section]
+\newtheorem{theorem}{\indent 定理}[chapter]
+\newtheorem{lemma}[theorem]{\indent 引理}
+\newtheorem{proposition}[theorem]{\indent 命题}
+\newtheorem{corollary}[theorem]{\indent 推论}
+\newtheorem{definition}{\indent 定义}[section]
+% \newtheorem{example}{\indent 例}[section]
+% \newtheorem{example}{\indent 例}%[chapter]
+\newtheorem{example}{\indent 例}%[chapter]
+\newtheorem{remark}{\indent 注}[section]
+\newenvironment{solution}{\begin{proof}[\indent\bf 解]}{\end{proof}}
+% \renewcommand{\proofname}{\indent\bf 证明}
+
+
+% % English theorem environment
+% \newtheorem{theorem}{Theorem}[section]
+% \newtheorem{lemma}[theorem]{Lemma}
+% \newtheorem{proposition}[theorem]{Proposition}
+% \newtheorem{corollary}[theorem]{Corollary}
+% \newtheorem{definition}{Definition}[section]
+% \newtheorem{remark}{Remark}[section]
+% \newtheorem{example}{Example}[section]
+% \newenvironment{solution}{\begin{proof}[Solution]}{\end{proof}}
+
+% 附录
+\usepackage[title]{appendix}
+
 %设置行距
 \linespread{1.4}
 
@@ -42,7 +73,11 @@
 \newcommand{\hsp}{\hspace{20pt}}
 \titleformat{\chapter}{\Huge\bfseries}{\begin{CJK}{UTF8}{gkai}第\,\thechapter\,章\hsp\textcolor{gray75}{|}\hsp\end{CJK}}{0pt}{\Huge\bfseries}
 
-\newcommand{\chap}[1]{\begin{CJK}{UTF8}{gkai}\chapter{#1} \end{CJK}}
+%% 重新定义章节字体，并同时更新例子编号
+\newcommand{\chap}[1]{
+	\begin{CJK}{UTF8}{gkai}\chapter{#1} \end{CJK} %更改字体
+	\setcounter{example}{0} % 更改例子编号
+}
 
 \makeatletter %使\subsection中的内容左对齐
 \renewcommand{\subsection}{\@startsection{subsection}{2}{0mm}
@@ -172,6 +207,7 @@
 \include{3D_Rotation_Transforms}
 \include{Quaternions_in_Space}
 \include{Conclusion}
+\include{Appendix_eigen}
 \include{References}
 %\include{num_pro}
 %\include{mod_trans}
