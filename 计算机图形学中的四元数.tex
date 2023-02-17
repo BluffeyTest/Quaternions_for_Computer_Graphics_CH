@@ -87,6 +87,9 @@
 
 % 更改目录的章显示
 \usepackage{titletoc}
+% \titlecontents{chapter}[0pt]{\addvspace{1.5pt}\filright\bf}%
+%                {\contentspush{第\,\thecontentslabel\,章\quad}}%
+%                {}{\titlerule*[8pt]{.}\contentspage}
 \titlecontents{chapter}[0pt]{\addvspace{1.5pt}\filright\bf}%
                {\contentspush{第\,\thecontentslabel\,章\quad}}%
                {}{\titlerule*[8pt]{.}\contentspage}
@@ -147,7 +150,7 @@
   \vspace*{1cm}
 	\begin{center}
 		{\Huge \textbf{计算机图形学中的四元数}\par}
-		%{\large \textbf{第三册}\par}
+		{\Large \textbf{Quaternion for Computer Graphics}\par}
 		%{\Huge\raggedright 图形瑰宝\par}
   		%\noindent\hrulefill\par
   		\vspace*{1cm}
@@ -190,8 +193,11 @@
 %\bookmark[page=1,level=0]{标题}
 \newpage
 \include{Preface}
+
+\begin{CJK}{UTF8}{gkai}
 \pdfbookmark{\contentsname}{Contents}
 \tableofcontents
+\end{CJK}
 % \bookmark[dest=\HyperLocalCurrentHref, level=0]{目录}
 %\pdfbookmark{目录}{contentsname}
 %\bookmark[page=9,level=0]{目录}

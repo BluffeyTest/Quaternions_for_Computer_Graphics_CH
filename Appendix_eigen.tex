@@ -1,12 +1,26 @@
 
 \appendix
-\renewcommand{\thetable}{A.\arabic{table}} %在表格序号前面加上章节号，如：A-1，B-1 
-\renewcommand{\theequation}{A.\arabic{equation}} %在公式序号前加上章节号，
+%\renewcommand{\thetable}{A.\arabic{table}} %在表格序号前面加上章节号，如：A-1，B-1 
+%\renewcommand{\theequation}{A.\arabic{equation}} %在公式序号前加上章节号，
 
+% 修改附录的章节显示格式
+\titleformat{\chapter}{
+    \Huge\bfseries}{\begin{CJK}{UTF8}{gkai}
+        %第\,\thechapter\,章
+        \hsp\textcolor{gray75}{|}\hsp\end{CJK}}{0pt}{\Huge\bfseries}
+
+%更改附录的目录显示
+\titlecontents{chapter}[0pt]{\addvspace{1.5pt}\filright\bf}%
+        {}%
+        {}{\titlerule*[8pt]{.}\contentspage}
+
+% 修改附录章节的页眉页脚格式
+\renewcommand{\chaptermark}[1]{\markboth{\begin{CJK}{UTF8}{gkai}#1\end{CJK}}{}}
+\renewcommand{\sectionmark}[1]{\markright{\thesection\, #1}}
 
 \begin{CJK}{UTF8}{gkai}
-    \pdfbookmark{附录：特征值和特征向量}{eigenvector}
-    \chapter*{附录：特征值和特征向量}
+    % \pdfbookmark{附录：特征值和特征向量}{eigenvector}
+    \chapter{附录：特征值和特征向量}
 \end{CJK}
 
 这个附录展示了如何计算旋转矩阵的特征向量。
