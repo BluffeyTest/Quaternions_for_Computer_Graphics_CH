@@ -1077,81 +1077,91 @@ $$
 
 \section{样例}
 下面是一些进一步使用上述思想的示例。在某些情况下，包括测试来确认结果。
+\begin{example}
+    加减以下四元数:
+    $$
+    \begin{aligned}
+    q_{a} & =[2,-2 \mathbf{i}+3 \mathbf{j}-4 \mathbf{k}] \\
+    q_{b} & =[1,-2 \mathbf{i}+5 \mathbf{j}-6 \mathbf{k}] \\
+    q_{a}+q_{b} & =[3,-4 \mathbf{i}+8 \mathbf{j}-10 \mathbf{k}] \\
+    q_{a}-q_{b} & =[1,-2 \mathbf{j}+2 \mathbf{k}] .
+    \end{aligned}
+    $$
+\end{example}
 
-例1 加减以下四元数:
-$$
-\begin{aligned}
-q_{a} & =[2,-2 \mathbf{i}+3 \mathbf{j}-4 \mathbf{k}] \\
-q_{b} & =[1,-2 \mathbf{i}+5 \mathbf{j}-6 \mathbf{k}] \\
-q_{a}+q_{b} & =[3,-4 \mathbf{i}+8 \mathbf{j}-10 \mathbf{k}] \\
-q_{a}-q_{b} & =[1,-2 \mathbf{j}+2 \mathbf{k}] .
-\end{aligned}
-$$
+\begin{example}
+    求下列四元数的范数:
+    $$
+    \begin{aligned}
+    q_{a} & =[2,-2 \mathbf{i}+3 \mathbf{j}-4 \mathbf{k}] \\
+    q_{b} & =[1,-2 \mathbf{i}+5 \mathbf{j}-6 \mathbf{k}] \\
+    \left|q_{a}\right| & =\sqrt{2^{2}+(-2)^{2}+3^{2}+(-4)^{2}}=\sqrt{33} \\
+    \left|q_{b}\right| & =\sqrt{1^{2}+(-2)^{2}+5^{2}+(-6)^{2}}=\sqrt{66} .
+    \end{aligned}
+    $$
+\end{example}
 
-例2 求下列四元数的范数:
-$$
-\begin{aligned}
-q_{a} & =[2,-2 \mathbf{i}+3 \mathbf{j}-4 \mathbf{k}] \\
-q_{b} & =[1,-2 \mathbf{i}+5 \mathbf{j}-6 \mathbf{k}] \\
-\left|q_{a}\right| & =\sqrt{2^{2}+(-2)^{2}+3^{2}+(-4)^{2}}=\sqrt{33} \\
-\left|q_{b}\right| & =\sqrt{1^{2}+(-2)^{2}+5^{2}+(-6)^{2}}=\sqrt{66} .
-\end{aligned}
-$$
+\begin{example}
+    将这些四元数转换为它们的单位范数形式:
+    $$
+    \begin{aligned}
+    q_{a} & =[2,-2 \mathbf{i}+3 \mathbf{j}-4 \mathbf{k}] \\
+    q_{b} & =[1,-2 \mathbf{i}+5 \mathbf{j}-6 \mathbf{k}] \\
+    \left|q_{a}\right| & =\sqrt{33} \\
+    \left|q_{b}\right| & =\sqrt{66} \\
+    q_{a}^{\prime} & =\frac{1}{\sqrt{33}}[2,-2 \mathbf{i}+3 \mathbf{j}-4 \mathbf{k}] \\
+    q_{b}^{\prime} & =\frac{1}{\sqrt{66}}[1,-2 \mathbf{i}+5 \mathbf{j}-6 \mathbf{k}] .
+    \end{aligned}
+    $$
+\end{example}
 
-例3 将这些四元数转换为它们的单位范数形式:
-$$
-\begin{aligned}
-q_{a} & =[2,-2 \mathbf{i}+3 \mathbf{j}-4 \mathbf{k}] \\
-q_{b} & =[1,-2 \mathbf{i}+5 \mathbf{j}-6 \mathbf{k}] \\
-\left|q_{a}\right| & =\sqrt{33} \\
-\left|q_{b}\right| & =\sqrt{66} \\
-q_{a}^{\prime} & =\frac{1}{\sqrt{33}}[2,-2 \mathbf{i}+3 \mathbf{j}-4 \mathbf{k}] \\
-q_{b}^{\prime} & =\frac{1}{\sqrt{66}}[1,-2 \mathbf{i}+5 \mathbf{j}-6 \mathbf{k}] .
-\end{aligned}
-$$
+\begin{example}
+    计算以下四元数的乘积和反向乘积。
+    $$
+    \begin{aligned}
+    q_{a}= & {[2,-2 \mathbf{i}+3 \mathbf{j}-4 \mathbf{k}] } \\
+    q_{b}= & {[1,-2 \mathbf{i}+5 \mathbf{j}-6 \mathbf{k}] } \\
+    q_{a} q_{b}= & {[2,-2 \mathbf{i}+3 \mathbf{j}-4 \mathbf{k}][1,-2 \mathbf{i}+5 \mathbf{j}-6 \mathbf{k}] } \\
+    = & {[2 \times 1-((-2) \times(-2)+3 \times 5+(-4) \times(-6)),} \\
+    & 2(-2 \mathbf{i}+5 \mathbf{j}-6 \mathbf{k})+1(-2 \mathbf{i}+3 \mathbf{j}-4 \mathbf{k}) \\
+    & +(3 \times(-6)-(-4) \times 5) \mathbf{i}-((-2) \times(-6)-(-4) \times(-2)) \mathbf{j} \\
+    & +((-2) \times 5-3 \times(-2)) \mathbf{k}] \\
+    = & {[-41,-6 \mathbf{i}+13 \mathbf{j}-16 \mathbf{k}+2 \mathbf{i}-4 \mathbf{j}-4 \mathbf{k}] } \\
+    = & {[-41,-4 \mathbf{i}+9 \mathbf{j}-20 \mathbf{k}] }\\
+    q_{b} q_{a}= & {[1,-2 \mathbf{i}+5 \mathbf{j}-6 \mathbf{k}][2-2 \mathbf{i}+3 \mathbf{j}-4 \mathbf{k}] } \\
+    = & {[1 \times 2-((-2) \times(-2)+5 \times 3+(-6) \times(-4)),} \\
+    & 1(-2 \mathbf{i}+3 \mathbf{j}-4 \mathbf{k})+2(-2 \mathbf{i}+5 \mathbf{j}-6 \mathbf{k}) \\
+    & +(5 \times(-4)-(-6) \times 3) \mathbf{i}-((-2) \times(-4)-(-6) \times(-2)) \mathbf{j} \\
+    & +((-2) \times 3-5 \times(-2)) \mathbf{k}] \\
+    = & {[-41,-6 \mathbf{i}+13 \mathbf{j}-16 \mathbf{k}-2 \mathbf{i}+4 \mathbf{j}+4 \mathbf{k}] } \\
+    = & {[-41,-8 \mathbf{i}+17 \mathbf{j}-12 \mathbf{k}] }
+    \end{aligned}
+    $$
+    
+    注意:在这个计算中唯一改变的是轴向量叉乘的符号。
+\end{example}
 
-例4 计算以下四元数的乘积和反向乘积。
-$$
-\begin{aligned}
-q_{a}= & {[2,-2 \mathbf{i}+3 \mathbf{j}-4 \mathbf{k}] } \\
-q_{b}= & {[1,-2 \mathbf{i}+5 \mathbf{j}-6 \mathbf{k}] } \\
-q_{a} q_{b}= & {[2,-2 \mathbf{i}+3 \mathbf{j}-4 \mathbf{k}][1,-2 \mathbf{i}+5 \mathbf{j}-6 \mathbf{k}] } \\
-= & {[2 \times 1-((-2) \times(-2)+3 \times 5+(-4) \times(-6)),} \\
-& 2(-2 \mathbf{i}+5 \mathbf{j}-6 \mathbf{k})+1(-2 \mathbf{i}+3 \mathbf{j}-4 \mathbf{k}) \\
-& +(3 \times(-6)-(-4) \times 5) \mathbf{i}-((-2) \times(-6)-(-4) \times(-2)) \mathbf{j} \\
-& +((-2) \times 5-3 \times(-2)) \mathbf{k}] \\
-= & {[-41,-6 \mathbf{i}+13 \mathbf{j}-16 \mathbf{k}+2 \mathbf{i}-4 \mathbf{j}-4 \mathbf{k}] } \\
-= & {[-41,-4 \mathbf{i}+9 \mathbf{j}-20 \mathbf{k}] }\\
-q_{b} q_{a}= & {[1,-2 \mathbf{i}+5 \mathbf{j}-6 \mathbf{k}][2-2 \mathbf{i}+3 \mathbf{j}-4 \mathbf{k}] } \\
-= & {[1 \times 2-((-2) \times(-2)+5 \times 3+(-6) \times(-4)),} \\
-& 1(-2 \mathbf{i}+3 \mathbf{j}-4 \mathbf{k})+2(-2 \mathbf{i}+5 \mathbf{j}-6 \mathbf{k}) \\
-& +(5 \times(-4)-(-6) \times 3) \mathbf{i}-((-2) \times(-4)-(-6) \times(-2)) \mathbf{j} \\
-& +((-2) \times 3-5 \times(-2)) \mathbf{k}] \\
-= & {[-41,-6 \mathbf{i}+13 \mathbf{j}-16 \mathbf{k}-2 \mathbf{i}+4 \mathbf{j}+4 \mathbf{k}] } \\
-= & {[-41,-8 \mathbf{i}+17 \mathbf{j}-12 \mathbf{k}] }
-\end{aligned}
-$$
+\begin{example}
+    计算这个四元数的平方:
+    $$
+    \begin{aligned}
+    q= & {[2,-2 \mathbf{i}+3 \mathbf{j}-4 \mathbf{k}] } \\
+    q^{2}= & {[2,-2 \mathbf{i}+3 \mathbf{j}-4 \mathbf{k}][2,-2 \mathbf{i}+3 \mathbf{j}-4 \mathbf{k}] } \\
+    = & {[2 \times 2-((-2) \times(-2)+3 \times 3+(-4) \times(-4))} \\
+    & 2 \times 2(-2 \mathbf{i}+3 \mathbf{j}-4 \mathbf{k})] \\
+    = & {[-25,-8 \mathbf{i}+12 \mathbf{j}-16 \mathbf{k}] }
+    \end{aligned}
+    $$
+\end{example}
 
-注意:在这个计算中唯一改变的是轴向量叉乘的符号。
-
-例5 计算这个四元数的平方:
-$$
-\begin{aligned}
-q= & {[2,-2 \mathbf{i}+3 \mathbf{j}-4 \mathbf{k}] } \\
-q^{2}= & {[2,-2 \mathbf{i}+3 \mathbf{j}-4 \mathbf{k}][2,-2 \mathbf{i}+3 \mathbf{j}-4 \mathbf{k}] } \\
-= & {[2 \times 2-((-2) \times(-2)+3 \times 3+(-4) \times(-4))} \\
-& 2 \times 2(-2 \mathbf{i}+3 \mathbf{j}-4 \mathbf{k})] \\
-= & {[-25,-8 \mathbf{i}+12 \mathbf{j}-16 \mathbf{k}] }
-\end{aligned}
-$$
-
-例6 计算这个四元数的逆:
-
-$$
-\begin{aligned}
-q & =[2,-2 \mathbf{i}+3 \mathbf{j}-4 \mathbf{k}] \\
-q^{*} & =[2,+2 \mathbf{i}-3 \mathbf{j}+4 \mathbf{k}] \\
-|q|^{2} & =2^{2}+(-2)^{2}+3^{2}+(-4)^{2}=33 \\
-q^{-1} & =\frac{1}{33}[2,2 \mathbf{i}-3 \mathbf{j}+4 \mathbf{k}] .
-\end{aligned}
-$$
+\begin{example}
+    计算这个四元数的逆:
+    $$
+    \begin{aligned}
+    q & =[2,-2 \mathbf{i}+3 \mathbf{j}-4 \mathbf{k}] \\
+    q^{*} & =[2,+2 \mathbf{i}-3 \mathbf{j}+4 \mathbf{k}] \\
+    |q|^{2} & =2^{2}+(-2)^{2}+3^{2}+(-4)^{2}=33 \\
+    q^{-1} & =\frac{1}{33}[2,2 \mathbf{i}-3 \mathbf{j}+4 \mathbf{k}] .
+    \end{aligned}
+    $$
+\end{example}

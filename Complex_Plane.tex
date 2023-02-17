@@ -460,135 +460,141 @@ $$
 
 \section{样例}
 下面是一些进一步使用上述思想的示例。在某些情况下，包括测试来确认结果。
+\begin{example}
+    
+    从$1+2 i$开始，将得到的复数乘以$i$四次，并将结果绘制在复平面上。
+    
+    点$p$通过乘以$i$旋转$90^{\circ}$到$q$:
+    $$
+    \begin{aligned}
+    i(1+2 i) & =i+2 i^{2} \\
+    & =-2+i .
+    \end{aligned}
+    $$
+    
+    点$q$通过乘以$i$旋转$90^{\circ}$到$r$:
+    $$
+    \begin{aligned}
+    i(-2+i) & =-2 i+i^{2} \\
+    & =-1-2 i
+    \end{aligned}
+    $$
+    
+    点$r$再乘以$i$旋转$90^{\circ}$到$s$:
+    $$
+    \begin{aligned}
+    i(-1-2 i) & =-i-2 i^{2} \\
+    & =2-i .
+    \end{aligned}
+    $$
+    
+    最后，点$s$乘以$i$被旋转$90^{\circ}$为$p$:
+    $$
+    \begin{aligned}
+    i(2-i) & =2 i-i^{2} \\
+    & =2+i .
+    \end{aligned}
+    $$
+    
+    图$4.6$显示了四个被$90^{\circ}$隔开的复数。
+    \begin{figure}[h!]
+        \centering
+        \includegraphics[max width=0.6\textwidth]{2023_01_16_a848224efad29cd66460g-059}
+        \caption{有四个复数的复平面}
+    \end{figure}
+\end{example}
 
-例1 从$1+2 i$开始，将得到的复数乘以$i$四次，并将结果绘制在复平面上。
+\begin{example}
+    用极坐标形式计算乘积$ zw $和商$z / w$。
+    $$
+    \begin{gathered}
+    z=3+3 i \\
+    w=-1-i
+    \end{gathered}
+    $$
+    
+    乘积:
+    $$
+    \begin{aligned}
+    z & =3 \sqrt{2}\left(\cos 45^{\circ}+i \sin 45^{\circ}\right)=3 \sqrt{2} e^{i \pi / 4} \\
+    w & =\sqrt{2}\left(\cos 225^{\circ}+i \sin 225^{\circ}\right)=\sqrt{2} e^{i 5 \pi / 4} \\
+    |z w| & =3 \sqrt{2} \sqrt{2}=6 \\
+    \arg (z w) & =45^{\circ}+225^{\circ}=270^{\circ}
+    \end{aligned}
+    $$
+    这编码复数$-6 i$。
+    
+    测试:使用普通的复代数，乘积$ zw $为
+    $$
+    z w=(3+3 i)(-1-i)=-6 i .
+    $$
+    
+    商:
+    $$
+    \begin{aligned}
+    |z| & =3 \sqrt{2} \\
+    |w| & =\sqrt{2} \\
+    |z / w| & =3 \sqrt{2} / \sqrt{2}=3 \\
+    \arg (z / w) & =45^{\circ}-225^{\circ}=180^{\circ}
+    \end{aligned}
+    $$
+    这编码复数$-3$.
+    
+    测试:使用普通的复代数，乘积$ z/w $为
+    $$
+    \begin{aligned}
+    \frac{z}{w} & =\frac{(3+3 i)}{(-1-i)} \frac{(-1+i)}{(-1+i)} \\
+    & =\frac{-6}{2} \\
+    & =-3
+    \end{aligned}
+    $$
+    
+    并且符合极坐标形式。
+\end{example}
 
-点$p$通过乘以$i$旋转$90^{\circ}$到$q$:
-$$
-\begin{aligned}
-i(1+2 i) & =i+2 i^{2} \\
-& =-2+i .
-\end{aligned}
-$$
+\begin{example}
+    设计一个转子，将一个复数旋转$30^{\circ}$而不缩放。
+    
+    这样开始
+    $$
+    e^{i \theta}=\cos \theta+i \sin \theta
+    $$
+    
+    令 $\theta=30^{\circ}=\pi / 6$
+    $$
+    \begin{aligned}
+    e^{i \pi / 6} & =\cos 30^{\circ}+i \sin 30^{\circ} \\
+    & =\frac{\sqrt{3}}{2}+i \frac{1}{2} \\
+    & =\frac{1}{2}(\sqrt{3}+i) .
+    \end{aligned}
+    $$
+    
+    测试:让我们用这个转子将$1+0 i$旋转三次到$i$。
+    $$
+    \begin{aligned}
+    \frac{1}{2}(\sqrt{3}+i) \frac{1}{2}(\sqrt{3}+i) \frac{1}{2}(\sqrt{3}+i) 1 & =\frac{1}{8}(\sqrt{3}+i)(\sqrt{3}+i)(\sqrt{3}+i) \\
+    & =\frac{1}{8}(2+2 \sqrt{3} i)(\sqrt{3}+i) \\
+    & =\frac{1}{8}(2 \sqrt{3}-2 \sqrt{3}+2 i+6 i) \\
+    & =i
+    \end{aligned}
+    $$
+\end{example}
 
-点$q$通过乘以$i$旋转$90^{\circ}$到$r$:
-$$
-\begin{aligned}
-i(-2+i) & =-2 i+i^{2} \\
-& =-1-2 i
-\end{aligned}
-$$
-
-点$r$再乘以$i$旋转$90^{\circ}$到$s$:
-$$
-\begin{aligned}
-i(-1-2 i) & =-i-2 i^{2} \\
-& =2-i .
-\end{aligned}
-$$
-
-最后，点$s$乘以$i$被旋转$90^{\circ}$为$p$:
-$$
-\begin{aligned}
-i(2-i) & =2 i-i^{2} \\
-& =2+i .
-\end{aligned}
-$$
-
-图$4.6$显示了四个被$90^{\circ}$隔开的复数。
-\begin{figure}[h!]
-    \centering
-    \includegraphics[max width=0.6\textwidth]{2023_01_16_a848224efad29cd66460g-059}
-    \caption{有四个复数的复平面}
-\end{figure}
-
-例2  用极坐标形式计算乘积$ zw $和商$z / w$。
-
-$$
-\begin{gathered}
-z=3+3 i \\
-w=-1-i
-\end{gathered}
-$$
-
-乘积:
-$$
-\begin{aligned}
-z & =3 \sqrt{2}\left(\cos 45^{\circ}+i \sin 45^{\circ}\right)=3 \sqrt{2} e^{i \pi / 4} \\
-w & =\sqrt{2}\left(\cos 225^{\circ}+i \sin 225^{\circ}\right)=\sqrt{2} e^{i 5 \pi / 4} \\
-|z w| & =3 \sqrt{2} \sqrt{2}=6 \\
-\arg (z w) & =45^{\circ}+225^{\circ}=270^{\circ}
-\end{aligned}
-$$
-这编码复数$-6 i$。
-
-测试:使用普通的复代数，乘积$ zw $为
-$$
-z w=(3+3 i)(-1-i)=-6 i .
-$$
-
-商:
-$$
-\begin{aligned}
-|z| & =3 \sqrt{2} \\
-|w| & =\sqrt{2} \\
-|z / w| & =3 \sqrt{2} / \sqrt{2}=3 \\
-\arg (z / w) & =45^{\circ}-225^{\circ}=180^{\circ}
-\end{aligned}
-$$
-这编码复数$-3$.
-
-测试:使用普通的复代数，乘积$ z/w $为
-$$
-\begin{aligned}
-\frac{z}{w} & =\frac{(3+3 i)}{(-1-i)} \frac{(-1+i)}{(-1+i)} \\
-& =\frac{-6}{2} \\
-& =-3
-\end{aligned}
-$$
-
-并且符合极坐标形式。
-
-例3 设计一个转子，将一个复数旋转$30^{\circ}$而不缩放。
-
-
-这样开始
-$$
-e^{i \theta}=\cos \theta+i \sin \theta
-$$
-
-令 $\theta=30^{\circ}=\pi / 6$
-$$
-\begin{aligned}
-e^{i \pi / 6} & =\cos 30^{\circ}+i \sin 30^{\circ} \\
-& =\frac{\sqrt{3}}{2}+i \frac{1}{2} \\
-& =\frac{1}{2}(\sqrt{3}+i) .
-\end{aligned}
-$$
-
-测试:让我们用这个转子将$1+0 i$旋转三次到$i$。
-$$
-\begin{aligned}
-\frac{1}{2}(\sqrt{3}+i) \frac{1}{2}(\sqrt{3}+i) \frac{1}{2}(\sqrt{3}+i) 1 & =\frac{1}{8}(\sqrt{3}+i)(\sqrt{3}+i)(\sqrt{3}+i) \\
-& =\frac{1}{8}(2+2 \sqrt{3} i)(\sqrt{3}+i) \\
-& =\frac{1}{8}(2 \sqrt{3}-2 \sqrt{3}+2 i+6 i) \\
-& =i
-\end{aligned}
-$$
-
-例4 设计一个转子，将一个复数旋转$-60^{\circ}$而不缩放。
-
-这样开始
-$$
-e^{i \theta}=\cos \theta+i \sin \theta
-$$
-
-令 $\theta=-60^{\circ}=-\pi / 3$
-
-$$
-\begin{aligned}
-e^{-i \pi / 3} & =\cos \left(-60^{\circ}\right)+i \sin \left(-60^{\circ}\right) \\
-& =\frac{1}{2}-\frac{\sqrt{3}}{2} i \\
-& =\frac{1}{2}(1-\sqrt{3} i)
-\end{aligned}
-$$
+\begin{example}
+    设计一个转子，将一个复数旋转$-60^{\circ}$而不缩放。
+    
+    这样开始
+    $$
+    e^{i \theta}=\cos \theta+i \sin \theta
+    $$
+    
+    令 $\theta=-60^{\circ}=-\pi / 3$
+    
+    $$
+    \begin{aligned}
+    e^{-i \pi / 3} & =\cos \left(-60^{\circ}\right)+i \sin \left(-60^{\circ}\right) \\
+    & =\frac{1}{2}-\frac{\sqrt{3}}{2} i \\
+    & =\frac{1}{2}(1-\sqrt{3} i)
+    \end{aligned}
+    $$
+\end{example}
